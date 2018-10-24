@@ -1,0 +1,82 @@
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <parent>
+        <groupId>org.ctoolkit.maven</groupId>
+        <artifactId>ctoolkit-public</artifactId>
+        <version>2</version>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>biz.turnonline.ecosystem</groupId>
+    <artifactId>turnonline-product-billing-client</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <name>Product Billing Java Client</name>
+    <description>TurnOnline.biz Ecosystem Product Billing REST API Java Client</description>
+
+    <scm>
+        <connection>scm:git:[fetch=]git@github.com:turnonline/product-billing-client.git</connection>
+        <developerConnection>scm:git:[push=]git@github.com:turnonline/product-billing-client.git</developerConnection>
+        <url>https://github.com/turnonline/product-billing-client</url>
+        <tag>HEAD</tag>
+    </scm>
+
+    <issueManagement>
+        <url>https://github.com/turnonline/product-billing-client/issues</url>
+    </issueManagement>
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.ctoolkit.maven</groupId>
+                <artifactId>ctoolkit-library-bom</artifactId>
+                <version>${ctoolkit-library-bom.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.ctoolkit.restapi</groupId>
+            <artifactId>ctoolkit-rest-facade-api</artifactId>
+            <version>${ctoolkit-rest-facade-api.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.ctoolkit.restapi</groupId>
+            <artifactId>ctoolkit-rest-facade-adapter</artifactId>
+            <version>${ctoolkit-rest-facade-adapter.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.api-client</groupId>
+            <artifactId>google-api-client</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.inject</groupId>
+            <artifactId>javax.inject</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.google.inject</groupId>
+            <artifactId>guice</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+    </dependencies>
+
+    <properties>
+        <ctoolkit-library-bom.version>9</ctoolkit-library-bom.version>
+        <ctoolkit-rest-facade-api.version>0.24</ctoolkit-rest-facade-api.version>
+        <ctoolkit-rest-facade-adapter.version>0.28</ctoolkit-rest-facade-adapter.version>
+    </properties>
+</project>

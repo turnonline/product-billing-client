@@ -1,18 +1,25 @@
 package biz.turnonline.ecosystem.billing.facade.adaptee;
 
 import biz.turnonline.ecosystem.billing.Billing;
+import biz.turnonline.ecosystem.billing.facade.ProductBillingClientModule;
 import biz.turnonline.ecosystem.billing.model.Invoice;
 import com.google.common.base.MoreObjects;
 import org.ctoolkit.restapi.client.Identifier;
+import org.ctoolkit.restapi.client.NotFoundException;
+import org.ctoolkit.restapi.client.adaptee.DownloadExecutorAdaptee;
 import org.ctoolkit.restapi.client.adaptee.MediaProvider;
 import org.ctoolkit.restapi.client.adaptee.RestExecutorAdaptee;
 import org.ctoolkit.restapi.client.adapter.AbstractGoogleClientAdaptee;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -25,8 +32,10 @@ import java.util.Map;
 @Singleton
 public class InvoiceAdaptee
         extends AbstractGoogleClientAdaptee<Billing>
-        implements RestExecutorAdaptee<Invoice>
+        implements RestExecutorAdaptee<Invoice>, DownloadExecutorAdaptee<Invoice>
 {
+    private static final Logger logger = LoggerFactory.getLogger( InvoiceAdaptee.class );
+
     @Inject
     public InvoiceAdaptee( Billing client )
     {
@@ -177,5 +186,48 @@ public class InvoiceAdaptee
                                  @Nullable Locale locale ) throws IOException
     {
         return execute( request, parameters );
+    }
+
+    /**
+     * Renders invoice PDF in following format:
+     * '{rootUrl}/orders/{order_id}/invoices/{invoice_id}/pdf/{pin}'
+     * If '/_ah/api/' is part of the root URL then will be removed.
+     */
+    @Override
+    public URL prepareDownloadUrl( @Nonnull Identifier identifier,
+                                   @Nullable String type,
+                                   @Nullable Map<String, Object> parameters,
+                                   @Nullable Locale locale )
+    {
+        Long orderId = identifier.getLong();
+        Long invoiceId = identifier.child().getLong();
+        String pin = identifier.child().child().getString();
+
+        String rootUrl = client().getRootUrl();
+        rootUrl = rootUrl.replace( "/_ah/api/", "/" );
+        String fullUrl = rootUrl + "orders/" + orderId + "/invoices/" + invoiceId + "/pdf/" + pin;
+
+        try
+        {
+            return new URL( fullUrl );
+        }
+        catch ( MalformedURLException e )
+        {
+            logger.error( "Download URL preparation has failed."
+                    + MoreObjects.toStringHelper( "Full URL" )
+                    .add( "Identifier", identifier.toString() )
+                    .add( "type", type )
+                    .add( "locale", locale )
+                    .addValue( parameters )
+                    .toString(), e );
+
+            throw new NotFoundException( "URL '" + fullUrl + "' not found." );
+        }
+    }
+
+    @Override
+    public String getApiPrefix()
+    {
+        return ProductBillingClientModule.API_PREFIX;
     }
 }

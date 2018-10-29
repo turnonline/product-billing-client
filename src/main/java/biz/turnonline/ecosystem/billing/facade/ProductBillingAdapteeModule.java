@@ -25,6 +25,7 @@ import biz.turnonline.ecosystem.billing.model.VatRate;
 import com.google.inject.AbstractModule;
 import com.google.inject.TypeLiteral;
 import org.ctoolkit.restapi.client.adaptee.DeleteExecutorAdaptee;
+import org.ctoolkit.restapi.client.adaptee.DownloadExecutorAdaptee;
 import org.ctoolkit.restapi.client.adaptee.GetExecutorAdaptee;
 import org.ctoolkit.restapi.client.adaptee.InsertExecutorAdaptee;
 import org.ctoolkit.restapi.client.adaptee.ListExecutorAdaptee;
@@ -135,6 +136,10 @@ public class ProductBillingAdapteeModule
         } ).to( InvoiceAdaptee.class );
 
         bind( new TypeLiteral<DeleteExecutorAdaptee<Invoice>>()
+        {
+        } ).to( InvoiceAdaptee.class );
+
+        bind( new TypeLiteral<DownloadExecutorAdaptee<Invoice>>()
         {
         } ).to( InvoiceAdaptee.class );
 

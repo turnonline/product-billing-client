@@ -26,11 +26,6 @@ package biz.turnonline.ecosystem.billing;
  * </p>
  *
  * <p>
- * For more information about this service, see the
- * <a href="" target="_blank">API Documentation</a>
- * </p>
- *
- * <p>
  * This service uses {@link BillingRequestInitializer} to initialize global parameters via its
  * {@link Builder}.
  * </p>
@@ -600,7 +595,7 @@ public class Billing
             }
 
             /**
-
+             *
              */
             public java.lang.String getProfileName()
             {
@@ -691,7 +686,7 @@ public class Billing
             }
 
             /**
-
+             *
              */
             public java.lang.String getProfileName()
             {
@@ -818,7 +813,7 @@ public class Billing
             }
 
             /**
-
+             *
              */
             public java.lang.Boolean getBillCompany()
             {
@@ -1298,7 +1293,7 @@ public class Billing
             }
 
             /**
-
+             *
              */
             public java.lang.Long getOrderId()
             {
@@ -1399,7 +1394,7 @@ public class Billing
             }
 
             /**
-
+             *
              */
             public java.lang.Long getOrderId()
             {
@@ -1487,7 +1482,7 @@ public class Billing
             }
 
             /**
-
+             *
              */
             public java.lang.Boolean getBillCompany()
             {
@@ -1742,7 +1737,7 @@ public class Billing
             }
 
             /**
-
+             *
              */
             public java.lang.Long getOrderId()
             {
@@ -1946,7 +1941,7 @@ public class Billing
                 }
 
                 /**
-
+                 *
                  */
                 public java.lang.Long getOrderId()
                 {
@@ -1960,7 +1955,7 @@ public class Billing
                 }
 
                 /**
-
+                 *
                  */
                 public java.lang.Long getInvoiceId()
                 {
@@ -2066,7 +2061,7 @@ public class Billing
                 }
 
                 /**
-
+                 *
                  */
                 public java.lang.Long getOrderId()
                 {
@@ -2080,7 +2075,7 @@ public class Billing
                 }
 
                 /**
-
+                 *
                  */
                 public java.lang.Long getInvoiceId()
                 {
@@ -2173,7 +2168,7 @@ public class Billing
                 }
 
                 /**
-
+                 *
                  */
                 public java.lang.Long getOrderId()
                 {
@@ -2187,7 +2182,7 @@ public class Billing
                 }
 
                 /**
-
+                 *
                  */
                 public java.lang.Boolean getBillCompany()
                 {
@@ -2297,7 +2292,7 @@ public class Billing
                 }
 
                 /**
-
+                 *
                  */
                 public java.lang.Long getOrderId()
                 {
@@ -2468,7 +2463,7 @@ public class Billing
                 }
 
                 /**
-
+                 *
                  */
                 public java.lang.Long getOrderId()
                 {
@@ -2482,7 +2477,7 @@ public class Billing
                 }
 
                 /**
-
+                 *
                  */
                 public java.lang.Long getInvoiceId()
                 {
@@ -2686,7 +2681,7 @@ public class Billing
                     }
 
                     /**
-
+                     *
                      */
                     public java.lang.Long getOrderId()
                     {
@@ -2700,7 +2695,7 @@ public class Billing
                     }
 
                     /**
-
+                     *
                      */
                     public java.lang.Long getInvoiceId()
                     {
@@ -2714,7 +2709,7 @@ public class Billing
                     }
 
                     /**
-
+                     *
                      */
                     public java.lang.Long getItemId()
                     {
@@ -2825,7 +2820,7 @@ public class Billing
                     }
 
                     /**
-
+                     *
                      */
                     public java.lang.Long getOrderId()
                     {
@@ -2839,7 +2834,7 @@ public class Billing
                     }
 
                     /**
-
+                     *
                      */
                     public java.lang.Long getInvoiceId()
                     {
@@ -2853,7 +2848,7 @@ public class Billing
                     }
 
                     /**
-
+                     *
                      */
                     public java.lang.Long getItemId()
                     {
@@ -2950,7 +2945,7 @@ public class Billing
                     }
 
                     /**
-
+                     *
                      */
                     public java.lang.Long getOrderId()
                     {
@@ -2964,7 +2959,7 @@ public class Billing
                     }
 
                     /**
-
+                     *
                      */
                     public java.lang.Long getInvoiceId()
                     {
@@ -3070,7 +3065,7 @@ public class Billing
                     }
 
                     /**
-
+                     *
                      */
                     public java.lang.Long getOrderId()
                     {
@@ -3084,7 +3079,7 @@ public class Billing
                     }
 
                     /**
-
+                     *
                      */
                     public java.lang.Long getInvoiceId()
                     {
@@ -3187,7 +3182,7 @@ public class Billing
                     }
 
                     /**
-
+                     *
                      */
                     public java.lang.Long getOrderId()
                     {
@@ -3201,7 +3196,7 @@ public class Billing
                     }
 
                     /**
-
+                     *
                      */
                     public java.lang.Long getInvoiceId()
                     {
@@ -3215,7 +3210,7 @@ public class Billing
                     }
 
                     /**
-
+                     *
                      */
                     public java.lang.Long getItemId()
                     {
@@ -3407,7 +3402,7 @@ public class Billing
                 }
 
                 /**
-
+                 *
                  */
                 public java.lang.Long getOrderId()
                 {
@@ -3421,7 +3416,7 @@ public class Billing
                 }
 
                 /**
-
+                 *
                  */
                 public java.lang.Long getItemId()
                 {
@@ -3527,7 +3522,7 @@ public class Billing
                 }
 
                 /**
-
+                 *
                  */
                 public java.lang.Long getOrderId()
                 {
@@ -3541,7 +3536,7 @@ public class Billing
                 }
 
                 /**
-
+                 *
                  */
                 public java.lang.Long getItemId()
                 {
@@ -3631,7 +3626,7 @@ public class Billing
                 }
 
                 /**
-
+                 *
                  */
                 public java.lang.Long getOrderId()
                 {
@@ -3732,7 +3727,7 @@ public class Billing
                 }
 
                 /**
-
+                 *
                  */
                 public java.lang.Long getOrderId()
                 {
@@ -3829,7 +3824,7 @@ public class Billing
                 }
 
                 /**
-
+                 *
                  */
                 public java.lang.Long getOrderId()
                 {
@@ -3843,7 +3838,7 @@ public class Billing
                 }
 
                 /**
-
+                 *
                  */
                 public java.lang.Long getItemId()
                 {
@@ -4133,7 +4128,7 @@ public class Billing
             }
 
             /**
-
+             *
              */
             public java.lang.Long getProductId()
             {
@@ -4234,7 +4229,7 @@ public class Billing
             }
 
             /**
-
+             *
              */
             public java.lang.Long getProductId()
             {
@@ -4513,7 +4508,7 @@ public class Billing
             }
 
             /**
-
+             *
              */
             public java.lang.Long getProductId()
             {
@@ -4675,7 +4670,7 @@ public class Billing
                 }
 
                 /**
-
+                 *
                  */
                 public java.lang.Long getProductId()
                 {
@@ -4776,7 +4771,7 @@ public class Billing
                 }
 
                 /**
-
+                 *
                  */
                 public java.lang.Long getProductId()
                 {
@@ -4867,7 +4862,7 @@ public class Billing
                 }
 
                 /**
-
+                 *
                  */
                 public java.lang.Long getProductId()
                 {
@@ -4984,7 +4979,7 @@ public class Billing
                     }
 
                     /**
-
+                     *
                      */
                     public java.lang.Long getProductId()
                     {
@@ -4998,7 +4993,7 @@ public class Billing
                     }
 
                     /**
-
+                     *
                      */
                     public java.lang.Integer getOrder()
                     {
@@ -5122,7 +5117,7 @@ public class Billing
             }
 
             /**
-
+             *
              */
             public java.lang.String getDomicile()
             {

@@ -19,7 +19,7 @@
 package biz.turnonline.ecosystem.billing.model;
 
 /**
- * Model definition for EventEnd.
+ * Model definition for ProductPublishingAt.
  *
  * <p> This is the Java data model class that specifies how to parse/serialize into the JSON that is
  * transmitted over HTTP when working with the TurnOnline.biz Product Billing. For a detailed
@@ -30,7 +30,7 @@ package biz.turnonline.ecosystem.billing.model;
  * @author Google, Inc.
  */
 @SuppressWarnings( "javadoc" )
-public final class EventEnd
+public final class ProductPublishingAt
         extends com.google.api.client.json.GenericJson
 {
 
@@ -38,104 +38,127 @@ public final class EventEnd
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.lang.Integer from;
+    private java.lang.String domain;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private com.google.api.client.util.DateTime on;
+    private java.lang.String name;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.lang.Boolean show;
+    private java.lang.String subdomain;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.lang.Integer to;
+    private java.lang.String uri;
+
+    /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
+    private java.lang.String url;
 
     /**
      * @return value or {@code null} for none
      */
-    public java.lang.Integer getFrom()
+    public java.lang.String getDomain()
     {
-        return from;
+        return domain;
     }
 
     /**
-     * @param from from or {@code null} for none
+     * @param domain domain or {@code null} for none
      */
-    public EventEnd setFrom( java.lang.Integer from )
+    public ProductPublishingAt setDomain( java.lang.String domain )
     {
-        this.from = from;
+        this.domain = domain;
         return this;
     }
 
     /**
      * @return value or {@code null} for none
      */
-    public com.google.api.client.util.DateTime getOn()
+    public java.lang.String getName()
     {
-        return on;
+        return name;
     }
 
     /**
-     * @param on on or {@code null} for none
+     * @param name name or {@code null} for none
      */
-    public EventEnd setOn( com.google.api.client.util.DateTime on )
+    public ProductPublishingAt setName( java.lang.String name )
     {
-        this.on = on;
+        this.name = name;
         return this;
     }
 
     /**
      * @return value or {@code null} for none
      */
-    public java.lang.Boolean getShow()
+    public java.lang.String getSubdomain()
     {
-        return show;
+        return subdomain;
     }
 
     /**
-     * @param show show or {@code null} for none
+     * @param subdomain subdomain or {@code null} for none
      */
-    public EventEnd setShow( java.lang.Boolean show )
+    public ProductPublishingAt setSubdomain( java.lang.String subdomain )
     {
-        this.show = show;
+        this.subdomain = subdomain;
         return this;
     }
 
     /**
      * @return value or {@code null} for none
      */
-    public java.lang.Integer getTo()
+    public java.lang.String getUri()
     {
-        return to;
+        return uri;
     }
 
     /**
-     * @param to to or {@code null} for none
+     * @param uri uri or {@code null} for none
      */
-    public EventEnd setTo( java.lang.Integer to )
+    public ProductPublishingAt setUri( java.lang.String uri )
     {
-        this.to = to;
+        this.uri = uri;
+        return this;
+    }
+
+    /**
+     * @return value or {@code null} for none
+     */
+    public java.lang.String getUrl()
+    {
+        return url;
+    }
+
+    /**
+     * @param url url or {@code null} for none
+     */
+    public ProductPublishingAt setUrl( java.lang.String url )
+    {
+        this.url = url;
         return this;
     }
 
     @Override
-    public EventEnd set( String fieldName, Object value )
+    public ProductPublishingAt set( String fieldName, Object value )
     {
-        return ( EventEnd ) super.set( fieldName, value );
+        return ( ProductPublishingAt ) super.set( fieldName, value );
     }
 
     @Override
-    public EventEnd clone()
+    public ProductPublishingAt clone()
     {
-        return ( EventEnd ) super.clone();
+        return ( ProductPublishingAt ) super.clone();
     }
 
 }

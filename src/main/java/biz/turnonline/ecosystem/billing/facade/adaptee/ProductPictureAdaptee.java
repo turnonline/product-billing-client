@@ -1,6 +1,6 @@
 package biz.turnonline.ecosystem.billing.facade.adaptee;
 
-import biz.turnonline.ecosystem.billing.Billing;
+import biz.turnonline.ecosystem.billing.ProductBilling;
 import biz.turnonline.ecosystem.billing.model.ProductPicture;
 import org.ctoolkit.restapi.client.Identifier;
 import org.ctoolkit.restapi.client.adapter.AbstractDeleteExecutorAdaptee;
@@ -17,10 +17,10 @@ import java.io.IOException;
  */
 @Singleton
 public class ProductPictureAdaptee
-        extends AbstractDeleteExecutorAdaptee<Billing, ProductPicture>
+        extends AbstractDeleteExecutorAdaptee<ProductBilling, ProductPicture>
 {
     @Inject
-    public ProductPictureAdaptee( Billing client )
+    public ProductPictureAdaptee( ProductBilling client )
     {
         super( client );
     }

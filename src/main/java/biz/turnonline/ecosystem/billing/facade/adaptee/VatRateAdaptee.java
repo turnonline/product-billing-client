@@ -1,6 +1,6 @@
 package biz.turnonline.ecosystem.billing.facade.adaptee;
 
-import biz.turnonline.ecosystem.billing.Billing;
+import biz.turnonline.ecosystem.billing.ProductBilling;
 import biz.turnonline.ecosystem.billing.model.VatRate;
 import org.ctoolkit.restapi.client.Identifier;
 import org.ctoolkit.restapi.client.adaptee.ListExecutorAdaptee;
@@ -22,11 +22,11 @@ import java.util.Map;
  */
 @Singleton
 public class VatRateAdaptee
-        extends AbstractGoogleClientAdaptee<Billing>
+        extends AbstractGoogleClientAdaptee<ProductBilling>
         implements ListExecutorAdaptee<VatRate>
 {
     @Inject
-    public VatRateAdaptee( Billing client )
+    public VatRateAdaptee( ProductBilling client )
     {
         super( client );
     }
@@ -46,7 +46,7 @@ public class VatRateAdaptee
                                       @Nullable String orderBy,
                                       @Nullable Boolean ascending ) throws IOException
     {
-        Billing.VatRates.List list = ( Billing.VatRates.List ) request;
+        ProductBilling.VatRates.List list = ( ProductBilling.VatRates.List ) request;
         fill( request, parameters );
         return list.execute().getItems();
     }

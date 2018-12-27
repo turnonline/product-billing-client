@@ -1,6 +1,6 @@
 package biz.turnonline.ecosystem.billing.facade.adaptee;
 
-import biz.turnonline.ecosystem.billing.Billing;
+import biz.turnonline.ecosystem.billing.ProductBilling;
 import biz.turnonline.ecosystem.billing.model.PricingItem;
 import com.google.common.base.MoreObjects;
 import org.ctoolkit.restapi.client.Identifier;
@@ -24,11 +24,11 @@ import java.util.Map;
  */
 @Singleton
 public class PricingItemAdaptee
-        extends AbstractGoogleClientAdaptee<Billing>
+        extends AbstractGoogleClientAdaptee<ProductBilling>
         implements RestExecutorAdaptee<PricingItem>
 {
     @Inject
-    public PricingItemAdaptee( Billing client )
+    public PricingItemAdaptee( ProductBilling client )
     {
         super( client );
     }
@@ -187,15 +187,15 @@ public class PricingItemAdaptee
                                           @Nullable String orderBy,
                                           @Nullable Boolean ascending ) throws IOException
     {
-        if ( request instanceof Billing.Orders.Items.List )
+        if ( request instanceof ProductBilling.Orders.Items.List )
         {
-            Billing.Orders.Items.List list = ( Billing.Orders.Items.List ) request;
+            ProductBilling.Orders.Items.List list = ( ProductBilling.Orders.Items.List ) request;
             fill( request, parameters );
             return list.execute().getItems();
         }
-        else if ( request instanceof Billing.Orders.Invoices.Items.List )
+        else if ( request instanceof ProductBilling.Orders.Invoices.Items.List )
         {
-            Billing.Orders.Invoices.Items.List list = ( Billing.Orders.Invoices.Items.List ) request;
+            ProductBilling.Orders.Invoices.Items.List list = ( ProductBilling.Orders.Invoices.Items.List ) request;
             fill( request, parameters );
             return list.execute().getItems();
         }

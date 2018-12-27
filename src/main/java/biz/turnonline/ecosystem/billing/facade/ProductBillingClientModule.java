@@ -1,7 +1,7 @@
 package biz.turnonline.ecosystem.billing.facade;
 
-import biz.turnonline.ecosystem.billing.Billing;
-import biz.turnonline.ecosystem.billing.BillingScopes;
+import biz.turnonline.ecosystem.billing.ProductBilling;
+import biz.turnonline.ecosystem.billing.ProductBillingScopes;
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.common.base.Strings;
 import com.google.inject.AbstractModule;
@@ -35,10 +35,10 @@ public class ProductBillingClientModule
 
     @Provides
     @Singleton
-    Billing provideBilling( GoogleApiProxyFactory factory )
+    ProductBilling provideBilling( GoogleApiProxyFactory factory )
     {
-        Set<String> scopes = BillingScopes.all();
-        Billing.Builder builder;
+        Set<String> scopes = ProductBillingScopes.all();
+        ProductBilling.Builder builder;
 
         String applicationName = factory.getApplicationName( API_PREFIX );
         String endpointUrl = factory.getEndpointUrl( API_PREFIX );
@@ -49,7 +49,7 @@ public class ProductBillingClientModule
             initialized = factory.authorize( scopes, null, API_PREFIX );
             HttpRequestInitializer credential = initialized.getCredential();
 
-            builder = new Billing.Builder( factory.getHttpTransport(), factory.getJsonFactory(), credential );
+            builder = new ProductBilling.Builder( factory.getHttpTransport(), factory.getJsonFactory(), credential );
             builder.setApplicationName( applicationName );
 
             if ( !Strings.isNullOrEmpty( endpointUrl ) )
@@ -81,7 +81,7 @@ public class ProductBillingClientModule
 
     @Provides
     @AccessToken( apiName = API_PREFIX )
-    ApiToken.Data provideBillingApiTokenData( Billing client )
+    ApiToken.Data provideProductBillingApiTokenData( ProductBilling client )
     {
         initialized.setServiceUrl( client.getBaseUrl() );
         return initialized.getTokenData();

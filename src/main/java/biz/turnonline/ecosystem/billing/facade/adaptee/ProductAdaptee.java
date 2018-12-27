@@ -1,6 +1,6 @@
 package biz.turnonline.ecosystem.billing.facade.adaptee;
 
-import biz.turnonline.ecosystem.billing.Billing;
+import biz.turnonline.ecosystem.billing.ProductBilling;
 import biz.turnonline.ecosystem.billing.model.Product;
 import org.ctoolkit.restapi.client.Identifier;
 import org.ctoolkit.restapi.client.adaptee.MediaProvider;
@@ -23,11 +23,11 @@ import java.util.Map;
  */
 @Singleton
 public class ProductAdaptee
-        extends AbstractGoogleClientAdaptee<Billing>
+        extends AbstractGoogleClientAdaptee<ProductBilling>
         implements RestExecutorAdaptee<Product>
 {
     @Inject
-    public ProductAdaptee( Billing client )
+    public ProductAdaptee( ProductBilling client )
     {
         super( client );
     }
@@ -91,7 +91,7 @@ public class ProductAdaptee
                                       @Nullable String orderBy,
                                       @Nullable Boolean ascending ) throws IOException
     {
-        Billing.Products.List list = ( Billing.Products.List ) request;
+        ProductBilling.Products.List list = ( ProductBilling.Products.List ) request;
 
         if ( offset != null && offset > 0 )
         {

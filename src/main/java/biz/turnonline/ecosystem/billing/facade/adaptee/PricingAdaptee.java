@@ -1,6 +1,6 @@
 package biz.turnonline.ecosystem.billing.facade.adaptee;
 
-import biz.turnonline.ecosystem.billing.Billing;
+import biz.turnonline.ecosystem.billing.ProductBilling;
 import biz.turnonline.ecosystem.billing.model.Pricing;
 import org.ctoolkit.restapi.client.Identifier;
 import org.ctoolkit.restapi.client.adaptee.MediaProvider;
@@ -19,10 +19,10 @@ import java.io.IOException;
  */
 @Singleton
 public class PricingAdaptee
-        extends AbstractInsertExecutorAdaptee<Billing, Pricing>
+        extends AbstractInsertExecutorAdaptee<ProductBilling, Pricing>
 {
     @Inject
-    public PricingAdaptee( Billing client )
+    public PricingAdaptee( ProductBilling client )
     {
         super( client );
     }

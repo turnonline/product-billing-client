@@ -1,6 +1,6 @@
 package biz.turnonline.ecosystem.billing.facade.adaptee;
 
-import biz.turnonline.ecosystem.billing.Billing;
+import biz.turnonline.ecosystem.billing.ProductBilling;
 import biz.turnonline.ecosystem.billing.facade.ProductBillingClientModule;
 import biz.turnonline.ecosystem.billing.model.Invoice;
 import com.google.common.base.MoreObjects;
@@ -31,13 +31,13 @@ import java.util.Map;
  */
 @Singleton
 public class InvoiceAdaptee
-        extends AbstractGoogleClientAdaptee<Billing>
+        extends AbstractGoogleClientAdaptee<ProductBilling>
         implements RestExecutorAdaptee<Invoice>, DownloadExecutorAdaptee<Invoice>
 {
     private static final Logger logger = LoggerFactory.getLogger( InvoiceAdaptee.class );
 
     @Inject
-    public InvoiceAdaptee( Billing client )
+    public InvoiceAdaptee( ProductBilling client )
     {
         super( client );
     }
@@ -123,9 +123,9 @@ public class InvoiceAdaptee
     {
         fill( request, parameters );
 
-        if ( request instanceof Billing.Invoices.List )
+        if ( request instanceof ProductBilling.Invoices.List )
         {
-            Billing.Invoices.List list = ( Billing.Invoices.List ) request;
+            ProductBilling.Invoices.List list = ( ProductBilling.Invoices.List ) request;
 
             if ( offset != null && offset > 0 )
             {
@@ -139,9 +139,9 @@ public class InvoiceAdaptee
             return list.execute().getItems();
 
         }
-        else if ( request instanceof Billing.Orders.Invoices.List )
+        else if ( request instanceof ProductBilling.Orders.Invoices.List )
         {
-            Billing.Orders.Invoices.List list = ( Billing.Orders.Invoices.List ) request;
+            ProductBilling.Orders.Invoices.List list = ( ProductBilling.Orders.Invoices.List ) request;
 
             if ( offset != null && offset > 0 )
             {

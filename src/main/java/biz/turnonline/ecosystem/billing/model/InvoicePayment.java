@@ -19,7 +19,7 @@
 package biz.turnonline.ecosystem.billing.model;
 
 /**
- * Model definition for ProductPublishing.
+ * Model definition for InvoicePayment.
  *
  * <p> This is the Java data model class that specifies how to parse/serialize into the JSON that is
  * transmitted over HTTP when working with the TurnOnline.biz Product Billing. For a detailed
@@ -30,204 +30,189 @@ package biz.turnonline.ecosystem.billing.model;
  * @author Google, Inc.
  */
 @SuppressWarnings( "javadoc" )
-public final class ProductPublishing
+public final class InvoicePayment
         extends com.google.api.client.json.GenericJson
 {
 
-    /**
-     * The value may be {@code null}.
-     */
-    @com.google.api.client.util.Key
-    private ProductDomain at;
+    static
+    {
+        // hack to force ProGuard to consider Transaction used, since otherwise it would be stripped out
+        // see https://github.com/google/google-api-java-client/issues/543
+        com.google.api.client.util.Data.nullOf( Transaction.class );
+    }
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.lang.Boolean comingSoon;
+    private BankAccount bankAccount;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.lang.String description;
+    private com.google.api.client.util.DateTime dueDate;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.lang.Boolean facebookLike;
+    private java.lang.String key;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.lang.Boolean googlePlus;
+    private java.lang.String method;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.lang.Boolean linkedInShare;
+    private java.lang.Double totalAmount;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.util.List<ProductPicture> pictures;
+    private java.util.List<Transaction> transactions;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.lang.Boolean published;
+    @com.google.api.client.json.JsonString
+    private java.lang.Long variableSymbol;
 
     /**
      * @return value or {@code null} for none
      */
-    public ProductDomain getAt()
+    public BankAccount getBankAccount()
     {
-        return at;
+        return bankAccount;
     }
 
     /**
-     * @param at at or {@code null} for none
+     * @param bankAccount bankAccount or {@code null} for none
      */
-    public ProductPublishing setAt( ProductDomain at )
+    public InvoicePayment setBankAccount( BankAccount bankAccount )
     {
-        this.at = at;
+        this.bankAccount = bankAccount;
         return this;
     }
 
     /**
      * @return value or {@code null} for none
      */
-    public java.lang.Boolean getComingSoon()
+    public com.google.api.client.util.DateTime getDueDate()
     {
-        return comingSoon;
+        return dueDate;
     }
 
     /**
-     * @param comingSoon comingSoon or {@code null} for none
+     * @param dueDate dueDate or {@code null} for none
      */
-    public ProductPublishing setComingSoon( java.lang.Boolean comingSoon )
+    public InvoicePayment setDueDate( com.google.api.client.util.DateTime dueDate )
     {
-        this.comingSoon = comingSoon;
+        this.dueDate = dueDate;
         return this;
     }
 
     /**
      * @return value or {@code null} for none
      */
-    public java.lang.String getDescription()
+    public java.lang.String getKey()
     {
-        return description;
+        return key;
     }
 
     /**
-     * @param description description or {@code null} for none
+     * @param key key or {@code null} for none
      */
-    public ProductPublishing setDescription( java.lang.String description )
+    public InvoicePayment setKey( java.lang.String key )
     {
-        this.description = description;
+        this.key = key;
         return this;
     }
 
     /**
      * @return value or {@code null} for none
      */
-    public java.lang.Boolean getFacebookLike()
+    public java.lang.String getMethod()
     {
-        return facebookLike;
+        return method;
     }
 
     /**
-     * @param facebookLike facebookLike or {@code null} for none
+     * @param method method or {@code null} for none
      */
-    public ProductPublishing setFacebookLike( java.lang.Boolean facebookLike )
+    public InvoicePayment setMethod( java.lang.String method )
     {
-        this.facebookLike = facebookLike;
+        this.method = method;
         return this;
     }
 
     /**
      * @return value or {@code null} for none
      */
-    public java.lang.Boolean getGooglePlus()
+    public java.lang.Double getTotalAmount()
     {
-        return googlePlus;
+        return totalAmount;
     }
 
     /**
-     * @param googlePlus googlePlus or {@code null} for none
+     * @param totalAmount totalAmount or {@code null} for none
      */
-    public ProductPublishing setGooglePlus( java.lang.Boolean googlePlus )
+    public InvoicePayment setTotalAmount( java.lang.Double totalAmount )
     {
-        this.googlePlus = googlePlus;
+        this.totalAmount = totalAmount;
         return this;
     }
 
     /**
      * @return value or {@code null} for none
      */
-    public java.lang.Boolean getLinkedInShare()
+    public java.util.List<Transaction> getTransactions()
     {
-        return linkedInShare;
+        return transactions;
     }
 
     /**
-     * @param linkedInShare linkedInShare or {@code null} for none
+     * @param transactions transactions or {@code null} for none
      */
-    public ProductPublishing setLinkedInShare( java.lang.Boolean linkedInShare )
+    public InvoicePayment setTransactions( java.util.List<Transaction> transactions )
     {
-        this.linkedInShare = linkedInShare;
+        this.transactions = transactions;
         return this;
     }
 
     /**
      * @return value or {@code null} for none
      */
-    public java.util.List<ProductPicture> getPictures()
+    public java.lang.Long getVariableSymbol()
     {
-        return pictures;
+        return variableSymbol;
     }
 
     /**
-     * @param pictures pictures or {@code null} for none
+     * @param variableSymbol variableSymbol or {@code null} for none
      */
-    public ProductPublishing setPictures( java.util.List<ProductPicture> pictures )
+    public InvoicePayment setVariableSymbol( java.lang.Long variableSymbol )
     {
-        this.pictures = pictures;
-        return this;
-    }
-
-    /**
-     * @return value or {@code null} for none
-     */
-    public java.lang.Boolean getPublished()
-    {
-        return published;
-    }
-
-    /**
-     * @param published published or {@code null} for none
-     */
-    public ProductPublishing setPublished( java.lang.Boolean published )
-    {
-        this.published = published;
+        this.variableSymbol = variableSymbol;
         return this;
     }
 
     @Override
-    public ProductPublishing set( String fieldName, Object value )
+    public InvoicePayment set( String fieldName, Object value )
     {
-        return ( ProductPublishing ) super.set( fieldName, value );
+        return ( InvoicePayment ) super.set( fieldName, value );
     }
 
     @Override
-    public ProductPublishing clone()
+    public InvoicePayment clone()
     {
-        return ( ProductPublishing ) super.clone();
+        return ( InvoicePayment ) super.clone();
     }
 
 }

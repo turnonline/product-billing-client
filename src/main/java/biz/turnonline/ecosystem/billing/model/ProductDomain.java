@@ -19,7 +19,7 @@
 package biz.turnonline.ecosystem.billing.model;
 
 /**
- * Model definition for Increment.
+ * Model definition for ProductDomain.
  *
  * <p> This is the Java data model class that specifies how to parse/serialize into the JSON that is
  * transmitted over HTTP when working with the TurnOnline.biz Product Billing. For a detailed
@@ -30,7 +30,7 @@ package biz.turnonline.ecosystem.billing.model;
  * @author Google, Inc.
  */
 @SuppressWarnings( "javadoc" )
-public final class Increment
+public final class ProductDomain
         extends com.google.api.client.json.GenericJson
 {
 
@@ -38,151 +38,127 @@ public final class Increment
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.lang.String current;
+    private java.lang.String domain;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    @com.google.api.client.json.JsonString
-    private java.lang.Long id;
+    private java.lang.String name;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.lang.Integer length;
+    private java.lang.String subdomain;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.lang.String postfix;
+    private java.lang.String uri;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.lang.String prefix;
-
-    /**
-     * The value may be {@code null}.
-     */
-    @com.google.api.client.util.Key
-    private java.lang.Integer year;
+    private java.lang.String url;
 
     /**
      * @return value or {@code null} for none
      */
-    public java.lang.String getCurrent()
+    public java.lang.String getDomain()
     {
-        return current;
+        return domain;
     }
 
     /**
-     * @param current current or {@code null} for none
+     * @param domain domain or {@code null} for none
      */
-    public Increment setCurrent( java.lang.String current )
+    public ProductDomain setDomain( java.lang.String domain )
     {
-        this.current = current;
+        this.domain = domain;
         return this;
     }
 
     /**
      * @return value or {@code null} for none
      */
-    public java.lang.Long getId()
+    public java.lang.String getName()
     {
-        return id;
+        return name;
     }
 
     /**
-     * @param id id or {@code null} for none
+     * @param name name or {@code null} for none
      */
-    public Increment setId( java.lang.Long id )
+    public ProductDomain setName( java.lang.String name )
     {
-        this.id = id;
+        this.name = name;
         return this;
     }
 
     /**
      * @return value or {@code null} for none
      */
-    public java.lang.Integer getLength()
+    public java.lang.String getSubdomain()
     {
-        return length;
+        return subdomain;
     }
 
     /**
-     * @param length length or {@code null} for none
+     * @param subdomain subdomain or {@code null} for none
      */
-    public Increment setLength( java.lang.Integer length )
+    public ProductDomain setSubdomain( java.lang.String subdomain )
     {
-        this.length = length;
+        this.subdomain = subdomain;
         return this;
     }
 
     /**
      * @return value or {@code null} for none
      */
-    public java.lang.String getPostfix()
+    public java.lang.String getUri()
     {
-        return postfix;
+        return uri;
     }
 
     /**
-     * @param postfix postfix or {@code null} for none
+     * @param uri uri or {@code null} for none
      */
-    public Increment setPostfix( java.lang.String postfix )
+    public ProductDomain setUri( java.lang.String uri )
     {
-        this.postfix = postfix;
+        this.uri = uri;
         return this;
     }
 
     /**
      * @return value or {@code null} for none
      */
-    public java.lang.String getPrefix()
+    public java.lang.String getUrl()
     {
-        return prefix;
+        return url;
     }
 
     /**
-     * @param prefix prefix or {@code null} for none
+     * @param url url or {@code null} for none
      */
-    public Increment setPrefix( java.lang.String prefix )
+    public ProductDomain setUrl( java.lang.String url )
     {
-        this.prefix = prefix;
-        return this;
-    }
-
-    /**
-     * @return value or {@code null} for none
-     */
-    public java.lang.Integer getYear()
-    {
-        return year;
-    }
-
-    /**
-     * @param year year or {@code null} for none
-     */
-    public Increment setYear( java.lang.Integer year )
-    {
-        this.year = year;
+        this.url = url;
         return this;
     }
 
     @Override
-    public Increment set( String fieldName, Object value )
+    public ProductDomain set( String fieldName, Object value )
     {
-        return ( Increment ) super.set( fieldName, value );
+        return ( ProductDomain ) super.set( fieldName, value );
     }
 
     @Override
-    public Increment clone()
+    public ProductDomain clone()
     {
-        return ( Increment ) super.clone();
+        return ( ProductDomain ) super.clone();
     }
 
 }

@@ -1,6 +1,6 @@
 package biz.turnonline.ecosystem.billing.facade.adaptee;
 
-import biz.turnonline.ecosystem.billing.Billing;
+import biz.turnonline.ecosystem.billing.ProductBilling;
 import biz.turnonline.ecosystem.billing.model.AccountingSystem;
 import org.ctoolkit.restapi.client.Identifier;
 import org.ctoolkit.restapi.client.adaptee.DeleteExecutorAdaptee;
@@ -22,11 +22,11 @@ import java.util.Map;
  */
 @Singleton
 public class AccountingSystemAdaptee
-        extends AbstractUpdateExecutorAdaptee<Billing, AccountingSystem>
+        extends AbstractUpdateExecutorAdaptee<ProductBilling, AccountingSystem>
         implements DeleteExecutorAdaptee<AccountingSystem>
 {
     @Inject
-    public AccountingSystemAdaptee( Billing client )
+    public AccountingSystemAdaptee( ProductBilling client )
     {
         super( client );
     }

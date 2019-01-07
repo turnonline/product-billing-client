@@ -18,8 +18,6 @@
 
 package biz.turnonline.ecosystem.billing.model;
 
-import java.io.Serializable;
-
 /**
  * Model definition for EventEnd.
  *
@@ -34,10 +32,7 @@ import java.io.Serializable;
 @SuppressWarnings( "javadoc" )
 public final class EventEnd
         extends com.google.api.client.json.GenericJson
-        implements Serializable
 {
-    private static final long serialVersionUID = -8071418571858878399L;
-
     /**
      * The value may be {@code null}.
      */

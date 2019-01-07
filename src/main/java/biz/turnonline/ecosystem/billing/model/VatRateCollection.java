@@ -18,8 +18,6 @@
 
 package biz.turnonline.ecosystem.billing.model;
 
-import java.io.Serializable;
-
 /**
  * Model definition for VatRateCollection.
  *
@@ -34,10 +32,7 @@ import java.io.Serializable;
 @SuppressWarnings( "javadoc" )
 public final class VatRateCollection
         extends com.google.api.client.json.GenericJson
-        implements Serializable
 {
-    private static final long serialVersionUID = -7077300171063801803L;
-
     static
     {
         // hack to force ProGuard to consider VatRate used, since otherwise it would be stripped out

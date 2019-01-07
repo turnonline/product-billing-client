@@ -18,8 +18,6 @@
 
 package biz.turnonline.ecosystem.billing.model;
 
-import java.io.Serializable;
-
 /**
  * Model definition for NumberSeriesCollection.
  *
@@ -34,10 +32,7 @@ import java.io.Serializable;
 @SuppressWarnings( "javadoc" )
 public final class NumberSeriesCollection
         extends com.google.api.client.json.GenericJson
-        implements Serializable
 {
-    private static final long serialVersionUID = -5695045160550939844L;
-
     /**
      * The value may be {@code null}.
      */

@@ -18,8 +18,6 @@
 
 package biz.turnonline.ecosystem.billing.model;
 
-import java.io.Serializable;
-
 /**
  * Model definition for ProductCollection.
  *
@@ -34,10 +32,7 @@ import java.io.Serializable;
 @SuppressWarnings( "javadoc" )
 public final class ProductCollection
         extends com.google.api.client.json.GenericJson
-        implements Serializable
 {
-    private static final long serialVersionUID = -4612292075094185298L;
-
     static
     {
         // hack to force ProGuard to consider Product used, since otherwise it would be stripped out

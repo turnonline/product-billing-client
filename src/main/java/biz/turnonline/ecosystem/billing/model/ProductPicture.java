@@ -18,8 +18,6 @@
 
 package biz.turnonline.ecosystem.billing.model;
 
-import java.io.Serializable;
-
 /**
  * Model definition for ProductPicture.
  *
@@ -34,10 +32,7 @@ import java.io.Serializable;
 @SuppressWarnings( "javadoc" )
 public final class ProductPicture
         extends com.google.api.client.json.GenericJson
-        implements Serializable
 {
-    private static final long serialVersionUID = -8795011837933433461L;
-
     /**
      * The value may be {@code null}.
      */

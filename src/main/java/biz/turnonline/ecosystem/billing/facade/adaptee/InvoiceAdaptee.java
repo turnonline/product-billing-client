@@ -191,7 +191,6 @@ public class InvoiceAdaptee
     /**
      * Renders invoice PDF in following format:
      * '{baseUrl}/pdf/orders/{order_id}/invoices/{invoice_id}/{pin}'
-     * If '/_ah/api/' is part of the root URL then will be removed.
      */
     @Override
     public URL prepareDownloadUrl( @Nonnull Identifier identifier,
@@ -203,7 +202,7 @@ public class InvoiceAdaptee
         Long invoiceId = identifier.child().getLong();
         String pin = identifier.child().child().getString();
 
-        String baseUrl = client().getBaseUrl().replace( "/_ah/api/", "/" );
+        String baseUrl = client().getBaseUrl();
         String fullUrl = baseUrl + "pdf/orders/" + orderId + "/invoices/" + invoiceId + "/" + pin;
 
         try

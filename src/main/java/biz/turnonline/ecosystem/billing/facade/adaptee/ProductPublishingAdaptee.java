@@ -11,6 +11,7 @@ import org.ctoolkit.restapi.client.adapter.AbstractGetExecutorAdaptee;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.inject.Inject;
+import javax.inject.Provider;
 import javax.inject.Singleton;
 import java.io.IOException;
 import java.util.Locale;
@@ -27,7 +28,7 @@ public class ProductPublishingAdaptee
         implements UpdateExecutorAdaptee<ProductPublishing>, DeleteExecutorAdaptee<ProductPublishing>
 {
     @Inject
-    public ProductPublishingAdaptee( ProductBilling client )
+    public ProductPublishingAdaptee( Provider<ProductBilling> client )
     {
         super( client );
     }

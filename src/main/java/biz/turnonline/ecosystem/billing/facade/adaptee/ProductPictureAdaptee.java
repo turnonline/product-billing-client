@@ -7,6 +7,7 @@ import org.ctoolkit.restapi.client.adapter.AbstractDeleteExecutorAdaptee;
 
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
+import javax.inject.Provider;
 import javax.inject.Singleton;
 import java.io.IOException;
 
@@ -20,7 +21,7 @@ public class ProductPictureAdaptee
         extends AbstractDeleteExecutorAdaptee<ProductBilling, ProductPicture>
 {
     @Inject
-    public ProductPictureAdaptee( ProductBilling client )
+    public ProductPictureAdaptee( Provider<ProductBilling> client )
     {
         super( client );
     }

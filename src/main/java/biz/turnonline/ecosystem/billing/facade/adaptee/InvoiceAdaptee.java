@@ -16,6 +16,7 @@ import org.slf4j.LoggerFactory;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.inject.Inject;
+import javax.inject.Provider;
 import javax.inject.Singleton;
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -37,7 +38,7 @@ public class InvoiceAdaptee
     private static final Logger logger = LoggerFactory.getLogger( InvoiceAdaptee.class );
 
     @Inject
-    public InvoiceAdaptee( ProductBilling client )
+    public InvoiceAdaptee( Provider<ProductBilling> client )
     {
         super( client );
     }

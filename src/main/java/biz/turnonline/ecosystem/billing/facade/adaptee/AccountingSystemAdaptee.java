@@ -10,6 +10,7 @@ import org.ctoolkit.restapi.client.adapter.AbstractUpdateExecutorAdaptee;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.inject.Inject;
+import javax.inject.Provider;
 import javax.inject.Singleton;
 import java.io.IOException;
 import java.util.Locale;
@@ -26,7 +27,7 @@ public class AccountingSystemAdaptee
         implements DeleteExecutorAdaptee<AccountingSystem>
 {
     @Inject
-    public AccountingSystemAdaptee( ProductBilling client )
+    public AccountingSystemAdaptee( Provider<ProductBilling> client )
     {
         super( client );
     }

@@ -9,6 +9,7 @@ import org.ctoolkit.restapi.client.adapter.AbstractInsertExecutorAdaptee;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.inject.Inject;
+import javax.inject.Provider;
 import javax.inject.Singleton;
 import java.io.IOException;
 
@@ -22,7 +23,7 @@ public class PricingAdaptee
         extends AbstractInsertExecutorAdaptee<ProductBilling, Pricing>
 {
     @Inject
-    public PricingAdaptee( ProductBilling client )
+    public PricingAdaptee( Provider<ProductBilling> client )
     {
         super( client );
     }

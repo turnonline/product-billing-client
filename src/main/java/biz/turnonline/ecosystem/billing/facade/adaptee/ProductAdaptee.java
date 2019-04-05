@@ -10,6 +10,7 @@ import org.ctoolkit.restapi.client.adapter.AbstractGoogleClientAdaptee;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.inject.Inject;
+import javax.inject.Provider;
 import javax.inject.Singleton;
 import java.io.IOException;
 import java.util.List;
@@ -27,7 +28,7 @@ public class ProductAdaptee
         implements RestExecutorAdaptee<Product>
 {
     @Inject
-    public ProductAdaptee( ProductBilling client )
+    public ProductAdaptee( Provider<ProductBilling> client )
     {
         super( client );
     }

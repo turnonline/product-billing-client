@@ -19,7 +19,7 @@
 package biz.turnonline.ecosystem.billing.model;
 
 /**
- * Model definition for NumberSeriesCollection.
+ * Model definition for OrderStatus.
  *
  * <p> This is the Java data model class that specifies how to parse/serialize into the JSON that is
  * transmitted over HTTP when working with the TurnOnline.biz Product Billing. For a detailed
@@ -30,7 +30,7 @@ package biz.turnonline.ecosystem.billing.model;
  * @author Google, Inc.
  */
 @SuppressWarnings( "javadoc" )
-public final class NumberSeriesCollection
+public final class OrderStatus
         extends com.google.api.client.json.GenericJson
 {
 
@@ -38,35 +38,35 @@ public final class NumberSeriesCollection
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.util.List<NumberSeries> items;
+    private java.lang.String status;
 
     /**
      * @return value or {@code null} for none
      */
-    public java.util.List<NumberSeries> getItems()
+    public java.lang.String getStatus()
     {
-        return items;
+        return status;
     }
 
     /**
-     * @param items items or {@code null} for none
+     * @param status status or {@code null} for none
      */
-    public NumberSeriesCollection setItems( java.util.List<NumberSeries> items )
+    public OrderStatus setStatus( java.lang.String status )
     {
-        this.items = items;
+        this.status = status;
         return this;
     }
 
     @Override
-    public NumberSeriesCollection set( String fieldName, Object value )
+    public OrderStatus set( String fieldName, Object value )
     {
-        return ( NumberSeriesCollection ) super.set( fieldName, value );
+        return ( OrderStatus ) super.set( fieldName, value );
     }
 
     @Override
-    public NumberSeriesCollection clone()
+    public OrderStatus clone()
     {
-        return ( NumberSeriesCollection ) super.clone();
+        return ( OrderStatus ) super.clone();
     }
 
 }

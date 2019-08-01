@@ -162,12 +162,6 @@ public final class Invoice
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.util.List<Deduction> tlements;
-
-    /**
-     * The value may be {@code null}.
-     */
-    @com.google.api.client.util.Key
     private java.lang.String type;
 
     /**
@@ -473,23 +467,6 @@ public final class Invoice
     public Invoice setStatus( java.lang.String status )
     {
         this.status = status;
-        return this;
-    }
-
-    /**
-     * @return value or {@code null} for none
-     */
-    public java.util.List<Deduction> getTlements()
-    {
-        return tlements;
-    }
-
-    /**
-     * @param tlements tlements or {@code null} for none
-     */
-    public Invoice setTlements( java.util.List<Deduction> tlements )
-    {
-        this.tlements = tlements;
         return this;
     }
 

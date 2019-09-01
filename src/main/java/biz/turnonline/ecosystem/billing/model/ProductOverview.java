@@ -19,7 +19,7 @@
 package biz.turnonline.ecosystem.billing.model;
 
 /**
- * Model definition for ProductDiscount.
+ * Model definition for ProductOverview.
  *
  * <p> This is the Java data model class that specifies how to parse/serialize into the JSON that is
  * transmitted over HTTP when working with the TurnOnline.biz Product Billing. For a detailed
@@ -30,7 +30,7 @@ package biz.turnonline.ecosystem.billing.model;
  * @author Google, Inc.
  */
 @SuppressWarnings( "javadoc" )
-public final class ProductDiscount
+public final class ProductOverview
         extends com.google.api.client.json.GenericJson
 {
 
@@ -38,127 +38,104 @@ public final class ProductDiscount
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.util.List<java.lang.String> codes;
+    private java.lang.String about;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.lang.Boolean enabled;
+    private java.lang.String productUrl;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.lang.Double off;
+    private java.lang.Boolean published;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.lang.String rule;
-
-    /**
-     * The value may be {@code null}.
-     */
-    @com.google.api.client.util.Key
-    private java.lang.String unit;
+    private java.lang.String thumbnailUrl;
 
     /**
      * @return value or {@code null} for none
      */
-    public java.util.List<java.lang.String> getCodes()
+    public java.lang.String getAbout()
     {
-        return codes;
+        return about;
     }
 
     /**
-     * @param codes codes or {@code null} for none
+     * @param about about or {@code null} for none
      */
-    public ProductDiscount setCodes( java.util.List<java.lang.String> codes )
+    public ProductOverview setAbout( java.lang.String about )
     {
-        this.codes = codes;
+        this.about = about;
         return this;
     }
 
     /**
      * @return value or {@code null} for none
      */
-    public java.lang.Boolean getEnabled()
+    public java.lang.String getProductUrl()
     {
-        return enabled;
+        return productUrl;
     }
 
     /**
-     * @param enabled enabled or {@code null} for none
+     * @param productUrl productUrl or {@code null} for none
      */
-    public ProductDiscount setEnabled( java.lang.Boolean enabled )
+    public ProductOverview setProductUrl( java.lang.String productUrl )
     {
-        this.enabled = enabled;
+        this.productUrl = productUrl;
         return this;
     }
 
     /**
      * @return value or {@code null} for none
      */
-    public java.lang.Double getOff()
+    public java.lang.Boolean getPublished()
     {
-        return off;
+        return published;
     }
 
     /**
-     * @param off off or {@code null} for none
+     * @param published published or {@code null} for none
      */
-    public ProductDiscount setOff( java.lang.Double off )
+    public ProductOverview setPublished( java.lang.Boolean published )
     {
-        this.off = off;
+        this.published = published;
         return this;
     }
 
     /**
      * @return value or {@code null} for none
      */
-    public java.lang.String getRule()
+    public java.lang.String getThumbnailUrl()
     {
-        return rule;
+        return thumbnailUrl;
     }
 
     /**
-     * @param rule rule or {@code null} for none
+     * @param thumbnailUrl thumbnailUrl or {@code null} for none
      */
-    public ProductDiscount setRule( java.lang.String rule )
+    public ProductOverview setThumbnailUrl( java.lang.String thumbnailUrl )
     {
-        this.rule = rule;
-        return this;
-    }
-
-    /**
-     * @return value or {@code null} for none
-     */
-    public java.lang.String getUnit()
-    {
-        return unit;
-    }
-
-    /**
-     * @param unit unit or {@code null} for none
-     */
-    public ProductDiscount setUnit( java.lang.String unit )
-    {
-        this.unit = unit;
+        this.thumbnailUrl = thumbnailUrl;
         return this;
     }
 
     @Override
-    public ProductDiscount set( String fieldName, Object value )
+    public ProductOverview set( String fieldName, Object value )
     {
-        return ( ProductDiscount ) super.set( fieldName, value );
+        return ( ProductOverview ) super.set( fieldName, value );
     }
 
     @Override
-    public ProductDiscount clone()
+    public ProductOverview clone()
     {
-        return ( ProductDiscount ) super.clone();
+        return ( ProductOverview ) super.clone();
     }
 
 }

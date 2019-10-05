@@ -191,7 +191,8 @@ public class InvoiceAdaptee
 
     /**
      * Renders invoice PDF in following format:
-     * '{baseUrl}/pdf/orders/{order_id}/invoices/{invoice_id}/{pin}'
+     * '{rootUrl}/storage/{ServicePath}/pdf/orders/{order_id}/invoices/{invoice_id}/{pin}'
+     * If rootUrl ends with 'api/' that part will be removed.
      */
     @Override
     public URL prepareDownloadUrl( @Nonnull Identifier identifier,
@@ -203,7 +204,19 @@ public class InvoiceAdaptee
         Long invoiceId = identifier.child().getLong();
         String pin = identifier.child().child().getString();
 
-        String baseUrl = client().getBaseUrl();
+        String rootUrl = client().getRootUrl();
+        String servicePath = client().getServicePath();
+
+        if ( rootUrl.endsWith( "api/" ) )
+        {
+            rootUrl = rootUrl.substring( 0, rootUrl.length() - 4 );
+            if ( !rootUrl.endsWith( "/" ) )
+            {
+                rootUrl += "/";
+            }
+        }
+
+        String baseUrl = rootUrl + servicePath;
         String fullUrl = baseUrl + "pdf/orders/" + orderId + "/invoices/" + invoiceId + "/" + pin;
 
         try

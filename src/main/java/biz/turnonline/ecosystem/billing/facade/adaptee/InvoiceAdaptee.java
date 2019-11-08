@@ -216,7 +216,7 @@ public class InvoiceAdaptee
             }
         }
 
-        String baseUrl = rootUrl + servicePath;
+        String baseUrl = rootUrl + "storage/" + servicePath;
         String fullUrl = baseUrl + "pdf/orders/" + orderId + "/invoices/" + invoiceId + "/" + pin;
 
         try

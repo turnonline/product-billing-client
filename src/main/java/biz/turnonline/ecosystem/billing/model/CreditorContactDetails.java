@@ -19,7 +19,7 @@
 package biz.turnonline.ecosystem.billing.model;
 
 /**
- * Model definition for BankAccount.
+ * Model definition for CreditorContactDetails.
  *
  * <p> This is the Java data model class that specifies how to parse/serialize into the JSON that is
  * transmitted over HTTP when working with the TurnOnline.biz Product Billing. For a detailed
@@ -29,8 +29,7 @@ package biz.turnonline.ecosystem.billing.model;
  *
  * @author Google, Inc.
  */
-@SuppressWarnings( "javadoc" )
-public final class BankAccount
+public final class CreditorContactDetails
         extends com.google.api.client.json.GenericJson
 {
 
@@ -38,128 +37,104 @@ public final class BankAccount
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.lang.String bic;
+    private java.lang.String email;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.lang.String currency;
+    private java.lang.String name;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.lang.String formatted;
+    private java.lang.String phone;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.lang.String iban;
-
-    /**
-     * The value may be {@code null}.
-     */
-    @com.google.api.client.util.Key
-    @com.google.api.client.json.JsonString
-    private java.lang.Long id;
+    private java.lang.String website;
 
     /**
      * @return value or {@code null} for none
      */
-    public java.lang.String getBic()
+    public java.lang.String getEmail()
     {
-        return bic;
+        return email;
     }
 
     /**
-     * @param bic bic or {@code null} for none
+     * @param email email or {@code null} for none
      */
-    public BankAccount setBic( java.lang.String bic )
+    public CreditorContactDetails setEmail( java.lang.String email )
     {
-        this.bic = bic;
+        this.email = email;
         return this;
     }
 
     /**
      * @return value or {@code null} for none
      */
-    public java.lang.String getCurrency()
+    public java.lang.String getName()
     {
-        return currency;
+        return name;
     }
 
     /**
-     * @param currency currency or {@code null} for none
+     * @param name name or {@code null} for none
      */
-    public BankAccount setCurrency( java.lang.String currency )
+    public CreditorContactDetails setName( java.lang.String name )
     {
-        this.currency = currency;
+        this.name = name;
         return this;
     }
 
     /**
      * @return value or {@code null} for none
      */
-    public java.lang.String getFormatted()
+    public java.lang.String getPhone()
     {
-        return formatted;
+        return phone;
     }
 
     /**
-     * @param formatted formatted or {@code null} for none
+     * @param phone phone or {@code null} for none
      */
-    public BankAccount setFormatted( java.lang.String formatted )
+    public CreditorContactDetails setPhone( java.lang.String phone )
     {
-        this.formatted = formatted;
+        this.phone = phone;
         return this;
     }
 
     /**
      * @return value or {@code null} for none
      */
-    public java.lang.String getIban()
+    public java.lang.String getWebsite()
     {
-        return iban;
+        return website;
     }
 
     /**
-     * @param iban iban or {@code null} for none
+     * @param website website or {@code null} for none
      */
-    public BankAccount setIban( java.lang.String iban )
+    public CreditorContactDetails setWebsite( java.lang.String website )
     {
-        this.iban = iban;
-        return this;
-    }
-
-    /**
-     * @return value or {@code null} for none
-     */
-    public java.lang.Long getId()
-    {
-        return id;
-    }
-
-    /**
-     * @param id id or {@code null} for none
-     */
-    public BankAccount setId( java.lang.Long id )
-    {
-        this.id = id;
+        this.website = website;
         return this;
     }
 
     @Override
-    public BankAccount set( String fieldName, Object value )
+    public CreditorContactDetails set( String fieldName, Object value )
     {
-        return ( BankAccount ) super.set( fieldName, value );
+        return ( CreditorContactDetails ) super.set( fieldName, value );
     }
 
     @Override
-    public BankAccount clone()
+    public CreditorContactDetails clone()
     {
-        return ( BankAccount ) super.clone();
+        return ( CreditorContactDetails ) super.clone();
     }
 
 }

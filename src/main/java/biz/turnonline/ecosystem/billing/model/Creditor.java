@@ -19,7 +19,7 @@
 package biz.turnonline.ecosystem.billing.model;
 
 /**
- * Model definition for Customer.
+ * Model definition for Creditor.
  *
  * <p> This is the Java data model class that specifies how to parse/serialize into the JSON that is
  * transmitted over HTTP when working with the TurnOnline.biz Product Billing. For a detailed
@@ -29,8 +29,7 @@ package biz.turnonline.ecosystem.billing.model;
  *
  * @author Google, Inc.
  */
-@SuppressWarnings( "javadoc" )
-public final class Customer
+public final class Creditor
         extends com.google.api.client.json.GenericJson
 {
 
@@ -51,12 +50,6 @@ public final class Customer
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.lang.String ccEmail;
-
-    /**
-     * The value may be {@code null}.
-     */
-    @com.google.api.client.util.Key
     private java.lang.String city;
 
     /**
@@ -69,13 +62,7 @@ public final class Customer
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.lang.String contactEmail;
-
-    /**
-     * The value may be {@code null}.
-     */
-    @com.google.api.client.util.Key
-    private java.lang.String contactPhone;
+    private CreditorContactDetails contact;
 
     /**
      * The value may be {@code null}.
@@ -87,25 +74,13 @@ public final class Customer
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.lang.String email;
+    private java.lang.Double latitude;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.lang.String firstName;
-
-    /**
-     * The value may be {@code null}.
-     */
-    @com.google.api.client.util.Key
-    private java.lang.String lastName;
-
-    /**
-     * The value may be {@code null}.
-     */
-    @com.google.api.client.util.Key
-    private java.lang.String locale;
+    private java.lang.String legalForm;
 
     /**
      * The value may be {@code null}.
@@ -117,7 +92,7 @@ public final class Customer
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private CustomerPostalAddress postalAddress;
+    private java.lang.Double longitude;
 
     /**
      * The value may be {@code null}.
@@ -129,19 +104,7 @@ public final class Customer
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.lang.String prefix;
-
-    /**
-     * The value may be {@code null}.
-     */
-    @com.google.api.client.util.Key
     private java.lang.String street;
-
-    /**
-     * The value may be {@code null}.
-     */
-    @com.google.api.client.util.Key
-    private java.lang.String suffix;
 
     /**
      * The value may be {@code null}.
@@ -156,6 +119,12 @@ public final class Customer
     private java.lang.String vatId;
 
     /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
+    private java.lang.Boolean vatPayer;
+
+    /**
      * @return value or {@code null} for none
      */
     public java.lang.Long getAccount()
@@ -166,7 +135,7 @@ public final class Customer
     /**
      * @param account account or {@code null} for none
      */
-    public Customer setAccount( java.lang.Long account )
+    public Creditor setAccount( java.lang.Long account )
     {
         this.account = account;
         return this;
@@ -183,26 +152,9 @@ public final class Customer
     /**
      * @param businessName businessName or {@code null} for none
      */
-    public Customer setBusinessName( java.lang.String businessName )
+    public Creditor setBusinessName( java.lang.String businessName )
     {
         this.businessName = businessName;
-        return this;
-    }
-
-    /**
-     * @return value or {@code null} for none
-     */
-    public java.lang.String getCcEmail()
-    {
-        return ccEmail;
-    }
-
-    /**
-     * @param ccEmail ccEmail or {@code null} for none
-     */
-    public Customer setCcEmail( java.lang.String ccEmail )
-    {
-        this.ccEmail = ccEmail;
         return this;
     }
 
@@ -217,7 +169,7 @@ public final class Customer
     /**
      * @param city city or {@code null} for none
      */
-    public Customer setCity( java.lang.String city )
+    public Creditor setCity( java.lang.String city )
     {
         this.city = city;
         return this;
@@ -234,7 +186,7 @@ public final class Customer
     /**
      * @param companyId companyId or {@code null} for none
      */
-    public Customer setCompanyId( java.lang.String companyId )
+    public Creditor setCompanyId( java.lang.String companyId )
     {
         this.companyId = companyId;
         return this;
@@ -243,34 +195,17 @@ public final class Customer
     /**
      * @return value or {@code null} for none
      */
-    public java.lang.String getContactEmail()
+    public CreditorContactDetails getContact()
     {
-        return contactEmail;
+        return contact;
     }
 
     /**
-     * @param contactEmail contactEmail or {@code null} for none
+     * @param contact contact or {@code null} for none
      */
-    public Customer setContactEmail( java.lang.String contactEmail )
+    public Creditor setContact( CreditorContactDetails contact )
     {
-        this.contactEmail = contactEmail;
-        return this;
-    }
-
-    /**
-     * @return value or {@code null} for none
-     */
-    public java.lang.String getContactPhone()
-    {
-        return contactPhone;
-    }
-
-    /**
-     * @param contactPhone contactPhone or {@code null} for none
-     */
-    public Customer setContactPhone( java.lang.String contactPhone )
-    {
-        this.contactPhone = contactPhone;
+        this.contact = contact;
         return this;
     }
 
@@ -285,7 +220,7 @@ public final class Customer
     /**
      * @param country country or {@code null} for none
      */
-    public Customer setCountry( java.lang.String country )
+    public Creditor setCountry( java.lang.String country )
     {
         this.country = country;
         return this;
@@ -294,68 +229,34 @@ public final class Customer
     /**
      * @return value or {@code null} for none
      */
-    public java.lang.String getEmail()
+    public java.lang.Double getLatitude()
     {
-        return email;
+        return latitude;
     }
 
     /**
-     * @param email email or {@code null} for none
+     * @param latitude latitude or {@code null} for none
      */
-    public Customer setEmail( java.lang.String email )
+    public Creditor setLatitude( java.lang.Double latitude )
     {
-        this.email = email;
+        this.latitude = latitude;
         return this;
     }
 
     /**
      * @return value or {@code null} for none
      */
-    public java.lang.String getFirstName()
+    public java.lang.String getLegalForm()
     {
-        return firstName;
+        return legalForm;
     }
 
     /**
-     * @param firstName firstName or {@code null} for none
+     * @param legalForm legalForm or {@code null} for none
      */
-    public Customer setFirstName( java.lang.String firstName )
+    public Creditor setLegalForm( java.lang.String legalForm )
     {
-        this.firstName = firstName;
-        return this;
-    }
-
-    /**
-     * @return value or {@code null} for none
-     */
-    public java.lang.String getLastName()
-    {
-        return lastName;
-    }
-
-    /**
-     * @param lastName lastName or {@code null} for none
-     */
-    public Customer setLastName( java.lang.String lastName )
-    {
-        this.lastName = lastName;
-        return this;
-    }
-
-    /**
-     * @return value or {@code null} for none
-     */
-    public java.lang.String getLocale()
-    {
-        return locale;
-    }
-
-    /**
-     * @param locale locale or {@code null} for none
-     */
-    public Customer setLocale( java.lang.String locale )
-    {
-        this.locale = locale;
+        this.legalForm = legalForm;
         return this;
     }
 
@@ -370,7 +271,7 @@ public final class Customer
     /**
      * @param logoServingUrl logoServingUrl or {@code null} for none
      */
-    public Customer setLogoServingUrl( java.lang.String logoServingUrl )
+    public Creditor setLogoServingUrl( java.lang.String logoServingUrl )
     {
         this.logoServingUrl = logoServingUrl;
         return this;
@@ -379,17 +280,17 @@ public final class Customer
     /**
      * @return value or {@code null} for none
      */
-    public CustomerPostalAddress getPostalAddress()
+    public java.lang.Double getLongitude()
     {
-        return postalAddress;
+        return longitude;
     }
 
     /**
-     * @param postalAddress postalAddress or {@code null} for none
+     * @param longitude longitude or {@code null} for none
      */
-    public Customer setPostalAddress( CustomerPostalAddress postalAddress )
+    public Creditor setLongitude( java.lang.Double longitude )
     {
-        this.postalAddress = postalAddress;
+        this.longitude = longitude;
         return this;
     }
 
@@ -404,26 +305,9 @@ public final class Customer
     /**
      * @param postcode postcode or {@code null} for none
      */
-    public Customer setPostcode( java.lang.String postcode )
+    public Creditor setPostcode( java.lang.String postcode )
     {
         this.postcode = postcode;
-        return this;
-    }
-
-    /**
-     * @return value or {@code null} for none
-     */
-    public java.lang.String getPrefix()
-    {
-        return prefix;
-    }
-
-    /**
-     * @param prefix prefix or {@code null} for none
-     */
-    public Customer setPrefix( java.lang.String prefix )
-    {
-        this.prefix = prefix;
         return this;
     }
 
@@ -438,26 +322,9 @@ public final class Customer
     /**
      * @param street street or {@code null} for none
      */
-    public Customer setStreet( java.lang.String street )
+    public Creditor setStreet( java.lang.String street )
     {
         this.street = street;
-        return this;
-    }
-
-    /**
-     * @return value or {@code null} for none
-     */
-    public java.lang.String getSuffix()
-    {
-        return suffix;
-    }
-
-    /**
-     * @param suffix suffix or {@code null} for none
-     */
-    public Customer setSuffix( java.lang.String suffix )
-    {
-        this.suffix = suffix;
         return this;
     }
 
@@ -472,7 +339,7 @@ public final class Customer
     /**
      * @param taxId taxId or {@code null} for none
      */
-    public Customer setTaxId( java.lang.String taxId )
+    public Creditor setTaxId( java.lang.String taxId )
     {
         this.taxId = taxId;
         return this;
@@ -489,22 +356,39 @@ public final class Customer
     /**
      * @param vatId vatId or {@code null} for none
      */
-    public Customer setVatId( java.lang.String vatId )
+    public Creditor setVatId( java.lang.String vatId )
     {
         this.vatId = vatId;
         return this;
     }
 
-    @Override
-    public Customer set( String fieldName, Object value )
+    /**
+     * @return value or {@code null} for none
+     */
+    public java.lang.Boolean getVatPayer()
     {
-        return ( Customer ) super.set( fieldName, value );
+        return vatPayer;
+    }
+
+    /**
+     * @param vatPayer vatPayer or {@code null} for none
+     */
+    public Creditor setVatPayer( java.lang.Boolean vatPayer )
+    {
+        this.vatPayer = vatPayer;
+        return this;
     }
 
     @Override
-    public Customer clone()
+    public Creditor set( String fieldName, Object value )
     {
-        return ( Customer ) super.clone();
+        return ( Creditor ) super.set( fieldName, value );
+    }
+
+    @Override
+    public Creditor clone()
+    {
+        return ( Creditor ) super.clone();
     }
 
 }

@@ -19,7 +19,7 @@
 package biz.turnonline.ecosystem.billing.model;
 
 /**
- * Model definition for Order.
+ * Model definition for PurchaseOrder.
  *
  * <p> This is the Java data model class that specifies how to parse/serialize into the JSON that is
  * transmitted over HTTP when working with the TurnOnline.biz Product Billing. For a detailed
@@ -29,17 +29,9 @@ package biz.turnonline.ecosystem.billing.model;
  *
  * @author Google, Inc.
  */
-@SuppressWarnings( "javadoc" )
-public final class Order
+public final class PurchaseOrder
         extends com.google.api.client.json.GenericJson
 {
-
-    static
-    {
-        // hack to force ProGuard to consider PricingItem used, since otherwise it would be stripped out
-        // see https://github.com/google/google-api-java-client/issues/543
-        com.google.api.client.util.Data.nullOf( PricingItem.class );
-    }
 
     /**
      * The value may be {@code null}.
@@ -52,6 +44,12 @@ public final class Order
      */
     @com.google.api.client.util.Key
     private com.google.api.client.util.DateTime createdDate;
+
+    /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
+    private Creditor creditor;
 
     /**
      * The value may be {@code null}.
@@ -82,7 +80,7 @@ public final class Order
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.util.List<Invoice> invoices;
+    private java.util.List<IncomingInvoice> invoices;
 
     /**
      * The value may be {@code null}.
@@ -155,7 +153,7 @@ public final class Order
     /**
      * @param beginOn beginOn or {@code null} for none
      */
-    public Order setBeginOn( com.google.api.client.util.DateTime beginOn )
+    public PurchaseOrder setBeginOn( com.google.api.client.util.DateTime beginOn )
     {
         this.beginOn = beginOn;
         return this;
@@ -172,9 +170,26 @@ public final class Order
     /**
      * @param createdDate createdDate or {@code null} for none
      */
-    public Order setCreatedDate( com.google.api.client.util.DateTime createdDate )
+    public PurchaseOrder setCreatedDate( com.google.api.client.util.DateTime createdDate )
     {
         this.createdDate = createdDate;
+        return this;
+    }
+
+    /**
+     * @return value or {@code null} for none
+     */
+    public Creditor getCreditor()
+    {
+        return creditor;
+    }
+
+    /**
+     * @param creditor creditor or {@code null} for none
+     */
+    public PurchaseOrder setCreditor( Creditor creditor )
+    {
+        this.creditor = creditor;
         return this;
     }
 
@@ -189,7 +204,7 @@ public final class Order
     /**
      * @param currency currency or {@code null} for none
      */
-    public Order setCurrency( java.lang.String currency )
+    public PurchaseOrder setCurrency( java.lang.String currency )
     {
         this.currency = currency;
         return this;
@@ -206,7 +221,7 @@ public final class Order
     /**
      * @param customer customer or {@code null} for none
      */
-    public Order setCustomer( Customer customer )
+    public PurchaseOrder setCustomer( Customer customer )
     {
         this.customer = customer;
         return this;
@@ -223,7 +238,7 @@ public final class Order
     /**
      * @param id id or {@code null} for none
      */
-    public Order setId( java.lang.Long id )
+    public PurchaseOrder setId( java.lang.Long id )
     {
         this.id = id;
         return this;
@@ -240,7 +255,7 @@ public final class Order
     /**
      * @param invoiceType invoiceType or {@code null} for none
      */
-    public Order setInvoiceType( java.lang.String invoiceType )
+    public PurchaseOrder setInvoiceType( java.lang.String invoiceType )
     {
         this.invoiceType = invoiceType;
         return this;
@@ -249,7 +264,7 @@ public final class Order
     /**
      * @return value or {@code null} for none
      */
-    public java.util.List<Invoice> getInvoices()
+    public java.util.List<IncomingInvoice> getInvoices()
     {
         return invoices;
     }
@@ -257,7 +272,7 @@ public final class Order
     /**
      * @param invoices invoices or {@code null} for none
      */
-    public Order setInvoices( java.util.List<Invoice> invoices )
+    public PurchaseOrder setInvoices( java.util.List<IncomingInvoice> invoices )
     {
         this.invoices = invoices;
         return this;
@@ -274,7 +289,7 @@ public final class Order
     /**
      * @param items items or {@code null} for none
      */
-    public Order setItems( java.util.List<PricingItem> items )
+    public PurchaseOrder setItems( java.util.List<PricingItem> items )
     {
         this.items = items;
         return this;
@@ -291,7 +306,7 @@ public final class Order
     /**
      * @param lastBillingDate lastBillingDate or {@code null} for none
      */
-    public Order setLastBillingDate( com.google.api.client.util.DateTime lastBillingDate )
+    public PurchaseOrder setLastBillingDate( com.google.api.client.util.DateTime lastBillingDate )
     {
         this.lastBillingDate = lastBillingDate;
         return this;
@@ -308,7 +323,7 @@ public final class Order
     /**
      * @param modificationDate modificationDate or {@code null} for none
      */
-    public Order setModificationDate( com.google.api.client.util.DateTime modificationDate )
+    public PurchaseOrder setModificationDate( com.google.api.client.util.DateTime modificationDate )
     {
         this.modificationDate = modificationDate;
         return this;
@@ -325,7 +340,7 @@ public final class Order
     /**
      * @param nextBillingDate nextBillingDate or {@code null} for none
      */
-    public Order setNextBillingDate( com.google.api.client.util.DateTime nextBillingDate )
+    public PurchaseOrder setNextBillingDate( com.google.api.client.util.DateTime nextBillingDate )
     {
         this.nextBillingDate = nextBillingDate;
         return this;
@@ -342,7 +357,7 @@ public final class Order
     /**
      * @param numberOfDays numberOfDays or {@code null} for none
      */
-    public Order setNumberOfDays( java.lang.Integer numberOfDays )
+    public PurchaseOrder setNumberOfDays( java.lang.Integer numberOfDays )
     {
         this.numberOfDays = numberOfDays;
         return this;
@@ -359,7 +374,7 @@ public final class Order
     /**
      * @param periodicity periodicity or {@code null} for none
      */
-    public Order setPeriodicity( java.lang.String periodicity )
+    public PurchaseOrder setPeriodicity( java.lang.String periodicity )
     {
         this.periodicity = periodicity;
         return this;
@@ -376,7 +391,7 @@ public final class Order
     /**
      * @param status status or {@code null} for none
      */
-    public Order setStatus( java.lang.String status )
+    public PurchaseOrder setStatus( java.lang.String status )
     {
         this.status = status;
         return this;
@@ -393,7 +408,7 @@ public final class Order
     /**
      * @param totalPrice totalPrice or {@code null} for none
      */
-    public Order setTotalPrice( java.lang.Double totalPrice )
+    public PurchaseOrder setTotalPrice( java.lang.Double totalPrice )
     {
         this.totalPrice = totalPrice;
         return this;
@@ -410,7 +425,7 @@ public final class Order
     /**
      * @param totalPriceExclVat totalPriceExclVat or {@code null} for none
      */
-    public Order setTotalPriceExclVat( java.lang.Double totalPriceExclVat )
+    public PurchaseOrder setTotalPriceExclVat( java.lang.Double totalPriceExclVat )
     {
         this.totalPriceExclVat = totalPriceExclVat;
         return this;
@@ -427,22 +442,22 @@ public final class Order
     /**
      * @param totalVatBase totalVatBase or {@code null} for none
      */
-    public Order setTotalVatBase( java.lang.Double totalVatBase )
+    public PurchaseOrder setTotalVatBase( java.lang.Double totalVatBase )
     {
         this.totalVatBase = totalVatBase;
         return this;
     }
 
     @Override
-    public Order set( String fieldName, Object value )
+    public PurchaseOrder set( String fieldName, Object value )
     {
-        return ( Order ) super.set( fieldName, value );
+        return ( PurchaseOrder ) super.set( fieldName, value );
     }
 
     @Override
-    public Order clone()
+    public PurchaseOrder clone()
     {
-        return ( Order ) super.clone();
+        return ( PurchaseOrder ) super.clone();
     }
 
 }

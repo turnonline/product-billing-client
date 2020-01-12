@@ -19,7 +19,7 @@
 package biz.turnonline.ecosystem.billing.model;
 
 /**
- * Model definition for Product.
+ * Model definition for IncomingInvoice.
  *
  * <p> This is the Java data model class that specifies how to parse/serialize into the JSON that is
  * transmitted over HTTP when working with the TurnOnline.biz Product Billing. For a detailed
@@ -29,8 +29,7 @@ package biz.turnonline.ecosystem.billing.model;
  *
  * @author Google, Inc.
  */
-@SuppressWarnings( "javadoc" )
-public final class Product
+public final class IncomingInvoice
         extends com.google.api.client.json.GenericJson
 {
 
@@ -44,7 +43,25 @@ public final class Product
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private Event event;
+    private Creditor creditor;
+
+    /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
+    private java.lang.String currency;
+
+    /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
+    private com.google.api.client.util.DateTime dateOfIssue;
+
+    /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
+    private com.google.api.client.util.DateTime dateOfTaxable;
 
     /**
      * The value may be {@code null}.
@@ -57,19 +74,7 @@ public final class Product
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private ProductInvoicing invoicing;
-
-    /**
-     * The value may be {@code null}.
-     */
-    @com.google.api.client.util.Key
-    private java.lang.String itemName;
-
-    /**
-     * The value may be {@code null}.
-     */
-    @com.google.api.client.util.Key
-    private ProductMetaFields metaFields;
+    private java.lang.String invoiceNumber;
 
     /**
      * The value may be {@code null}.
@@ -81,25 +86,38 @@ public final class Product
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private ProductOverview overview;
+    @com.google.api.client.json.JsonString
+    private java.lang.Long orderId;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private ProductPricing pricing;
+    private InvoicePayment payment;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private ProductPublishing publishing;
+    private java.lang.String pin;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.lang.String snippet;
+    private InvoicePricing pricing;
+
+    /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
+    private java.lang.String servingUrl;
+
+    /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
+    private java.lang.String type;
 
     /**
      * @return value or {@code null} for none
@@ -112,7 +130,7 @@ public final class Product
     /**
      * @param createdDate createdDate or {@code null} for none
      */
-    public Product setCreatedDate( com.google.api.client.util.DateTime createdDate )
+    public IncomingInvoice setCreatedDate( com.google.api.client.util.DateTime createdDate )
     {
         this.createdDate = createdDate;
         return this;
@@ -121,17 +139,68 @@ public final class Product
     /**
      * @return value or {@code null} for none
      */
-    public Event getEvent()
+    public Creditor getCreditor()
     {
-        return event;
+        return creditor;
     }
 
     /**
-     * @param event event or {@code null} for none
+     * @param creditor creditor or {@code null} for none
      */
-    public Product setEvent( Event event )
+    public IncomingInvoice setCreditor( Creditor creditor )
     {
-        this.event = event;
+        this.creditor = creditor;
+        return this;
+    }
+
+    /**
+     * @return value or {@code null} for none
+     */
+    public java.lang.String getCurrency()
+    {
+        return currency;
+    }
+
+    /**
+     * @param currency currency or {@code null} for none
+     */
+    public IncomingInvoice setCurrency( java.lang.String currency )
+    {
+        this.currency = currency;
+        return this;
+    }
+
+    /**
+     * @return value or {@code null} for none
+     */
+    public com.google.api.client.util.DateTime getDateOfIssue()
+    {
+        return dateOfIssue;
+    }
+
+    /**
+     * @param dateOfIssue dateOfIssue or {@code null} for none
+     */
+    public IncomingInvoice setDateOfIssue( com.google.api.client.util.DateTime dateOfIssue )
+    {
+        this.dateOfIssue = dateOfIssue;
+        return this;
+    }
+
+    /**
+     * @return value or {@code null} for none
+     */
+    public com.google.api.client.util.DateTime getDateOfTaxable()
+    {
+        return dateOfTaxable;
+    }
+
+    /**
+     * @param dateOfTaxable dateOfTaxable or {@code null} for none
+     */
+    public IncomingInvoice setDateOfTaxable( com.google.api.client.util.DateTime dateOfTaxable )
+    {
+        this.dateOfTaxable = dateOfTaxable;
         return this;
     }
 
@@ -146,7 +215,7 @@ public final class Product
     /**
      * @param id id or {@code null} for none
      */
-    public Product setId( java.lang.Long id )
+    public IncomingInvoice setId( java.lang.Long id )
     {
         this.id = id;
         return this;
@@ -155,51 +224,17 @@ public final class Product
     /**
      * @return value or {@code null} for none
      */
-    public ProductInvoicing getInvoicing()
+    public java.lang.String getInvoiceNumber()
     {
-        return invoicing;
+        return invoiceNumber;
     }
 
     /**
-     * @param invoicing invoicing or {@code null} for none
+     * @param invoiceNumber invoiceNumber or {@code null} for none
      */
-    public Product setInvoicing( ProductInvoicing invoicing )
+    public IncomingInvoice setInvoiceNumber( java.lang.String invoiceNumber )
     {
-        this.invoicing = invoicing;
-        return this;
-    }
-
-    /**
-     * @return value or {@code null} for none
-     */
-    public java.lang.String getItemName()
-    {
-        return itemName;
-    }
-
-    /**
-     * @param itemName itemName or {@code null} for none
-     */
-    public Product setItemName( java.lang.String itemName )
-    {
-        this.itemName = itemName;
-        return this;
-    }
-
-    /**
-     * @return value or {@code null} for none
-     */
-    public ProductMetaFields getMetaFields()
-    {
-        return metaFields;
-    }
-
-    /**
-     * @param metaFields metaFields or {@code null} for none
-     */
-    public Product setMetaFields( ProductMetaFields metaFields )
-    {
-        this.metaFields = metaFields;
+        this.invoiceNumber = invoiceNumber;
         return this;
     }
 
@@ -214,7 +249,7 @@ public final class Product
     /**
      * @param modificationDate modificationDate or {@code null} for none
      */
-    public Product setModificationDate( com.google.api.client.util.DateTime modificationDate )
+    public IncomingInvoice setModificationDate( com.google.api.client.util.DateTime modificationDate )
     {
         this.modificationDate = modificationDate;
         return this;
@@ -223,24 +258,58 @@ public final class Product
     /**
      * @return value or {@code null} for none
      */
-    public ProductOverview getOverview()
+    public java.lang.Long getOrderId()
     {
-        return overview;
+        return orderId;
     }
 
     /**
-     * @param overview overview or {@code null} for none
+     * @param orderId orderId or {@code null} for none
      */
-    public Product setOverview( ProductOverview overview )
+    public IncomingInvoice setOrderId( java.lang.Long orderId )
     {
-        this.overview = overview;
+        this.orderId = orderId;
         return this;
     }
 
     /**
      * @return value or {@code null} for none
      */
-    public ProductPricing getPricing()
+    public InvoicePayment getPayment()
+    {
+        return payment;
+    }
+
+    /**
+     * @param payment payment or {@code null} for none
+     */
+    public IncomingInvoice setPayment( InvoicePayment payment )
+    {
+        this.payment = payment;
+        return this;
+    }
+
+    /**
+     * @return value or {@code null} for none
+     */
+    public java.lang.String getPin()
+    {
+        return pin;
+    }
+
+    /**
+     * @param pin pin or {@code null} for none
+     */
+    public IncomingInvoice setPin( java.lang.String pin )
+    {
+        this.pin = pin;
+        return this;
+    }
+
+    /**
+     * @return value or {@code null} for none
+     */
+    public InvoicePricing getPricing()
     {
         return pricing;
     }
@@ -248,7 +317,7 @@ public final class Product
     /**
      * @param pricing pricing or {@code null} for none
      */
-    public Product setPricing( ProductPricing pricing )
+    public IncomingInvoice setPricing( InvoicePricing pricing )
     {
         this.pricing = pricing;
         return this;
@@ -257,47 +326,47 @@ public final class Product
     /**
      * @return value or {@code null} for none
      */
-    public ProductPublishing getPublishing()
+    public java.lang.String getServingUrl()
     {
-        return publishing;
+        return servingUrl;
     }
 
     /**
-     * @param publishing publishing or {@code null} for none
+     * @param servingUrl servingUrl or {@code null} for none
      */
-    public Product setPublishing( ProductPublishing publishing )
+    public IncomingInvoice setServingUrl( java.lang.String servingUrl )
     {
-        this.publishing = publishing;
+        this.servingUrl = servingUrl;
         return this;
     }
 
     /**
      * @return value or {@code null} for none
      */
-    public java.lang.String getSnippet()
+    public java.lang.String getType()
     {
-        return snippet;
+        return type;
     }
 
     /**
-     * @param snippet snippet or {@code null} for none
+     * @param type type or {@code null} for none
      */
-    public Product setSnippet( java.lang.String snippet )
+    public IncomingInvoice setType( java.lang.String type )
     {
-        this.snippet = snippet;
+        this.type = type;
         return this;
     }
 
     @Override
-    public Product set( String fieldName, Object value )
+    public IncomingInvoice set( String fieldName, Object value )
     {
-        return ( Product ) super.set( fieldName, value );
+        return ( IncomingInvoice ) super.set( fieldName, value );
     }
 
     @Override
-    public Product clone()
+    public IncomingInvoice clone()
     {
-        return ( Product ) super.clone();
+        return ( IncomingInvoice ) super.clone();
     }
 
 }

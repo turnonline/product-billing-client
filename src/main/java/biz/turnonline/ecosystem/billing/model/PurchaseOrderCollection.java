@@ -19,7 +19,7 @@
 package biz.turnonline.ecosystem.billing.model;
 
 /**
- * Model definition for OrderStatus.
+ * Model definition for PurchaseOrderCollection.
  *
  * <p> This is the Java data model class that specifies how to parse/serialize into the JSON that is
  * transmitted over HTTP when working with the TurnOnline.biz Product Billing. For a detailed
@@ -29,44 +29,50 @@ package biz.turnonline.ecosystem.billing.model;
  *
  * @author Google, Inc.
  */
-@SuppressWarnings( "javadoc" )
-public final class OrderStatus
+public final class PurchaseOrderCollection
         extends com.google.api.client.json.GenericJson
 {
+
+    static
+    {
+        // hack to force ProGuard to consider PurchaseOrder used, since otherwise it would be stripped out
+        // see https://github.com/google/google-api-java-client/issues/543
+        com.google.api.client.util.Data.nullOf( PurchaseOrder.class );
+    }
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.lang.String status;
+    private java.util.List<PurchaseOrder> items;
 
     /**
      * @return value or {@code null} for none
      */
-    public java.lang.String getStatus()
+    public java.util.List<PurchaseOrder> getItems()
     {
-        return status;
+        return items;
     }
 
     /**
-     * @param status status or {@code null} for none
+     * @param items items or {@code null} for none
      */
-    public OrderStatus setStatus( java.lang.String status )
+    public PurchaseOrderCollection setItems( java.util.List<PurchaseOrder> items )
     {
-        this.status = status;
+        this.items = items;
         return this;
     }
 
     @Override
-    public OrderStatus set( String fieldName, Object value )
+    public PurchaseOrderCollection set( String fieldName, Object value )
     {
-        return ( OrderStatus ) super.set( fieldName, value );
+        return ( PurchaseOrderCollection ) super.set( fieldName, value );
     }
 
     @Override
-    public OrderStatus clone()
+    public PurchaseOrderCollection clone()
     {
-        return ( OrderStatus ) super.clone();
+        return ( PurchaseOrderCollection ) super.clone();
     }
 
 }

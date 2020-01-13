@@ -2,6 +2,8 @@ package biz.turnonline.ecosystem.billing.facade;
 
 import biz.turnonline.ecosystem.billing.facade.adaptee.AccountingSystemAdaptee;
 import biz.turnonline.ecosystem.billing.facade.adaptee.BillingUnitAdaptee;
+import biz.turnonline.ecosystem.billing.facade.adaptee.IncomingInvoiceGetAdaptee;
+import biz.turnonline.ecosystem.billing.facade.adaptee.IncomingInvoiceListAdaptee;
 import biz.turnonline.ecosystem.billing.facade.adaptee.InvoiceAdaptee;
 import biz.turnonline.ecosystem.billing.facade.adaptee.NumberSeriesAdaptee;
 import biz.turnonline.ecosystem.billing.facade.adaptee.OrderAdaptee;
@@ -10,9 +12,13 @@ import biz.turnonline.ecosystem.billing.facade.adaptee.PricingItemAdaptee;
 import biz.turnonline.ecosystem.billing.facade.adaptee.ProductAdaptee;
 import biz.turnonline.ecosystem.billing.facade.adaptee.ProductPictureAdaptee;
 import biz.turnonline.ecosystem.billing.facade.adaptee.ProductPublishingAdaptee;
+import biz.turnonline.ecosystem.billing.facade.adaptee.PurchaseOrderDeleteAdaptee;
+import biz.turnonline.ecosystem.billing.facade.adaptee.PurchaseOrderGetAdaptee;
+import biz.turnonline.ecosystem.billing.facade.adaptee.PurchaseOrderListAdaptee;
 import biz.turnonline.ecosystem.billing.facade.adaptee.VatRateAdaptee;
 import biz.turnonline.ecosystem.billing.model.AccountingSystem;
 import biz.turnonline.ecosystem.billing.model.BillingUnit;
+import biz.turnonline.ecosystem.billing.model.IncomingInvoice;
 import biz.turnonline.ecosystem.billing.model.Invoice;
 import biz.turnonline.ecosystem.billing.model.NumberSeries;
 import biz.turnonline.ecosystem.billing.model.Order;
@@ -21,6 +27,7 @@ import biz.turnonline.ecosystem.billing.model.PricingItem;
 import biz.turnonline.ecosystem.billing.model.Product;
 import biz.turnonline.ecosystem.billing.model.ProductPicture;
 import biz.turnonline.ecosystem.billing.model.ProductPublishing;
+import biz.turnonline.ecosystem.billing.model.PurchaseOrder;
 import biz.turnonline.ecosystem.billing.model.VatRate;
 import com.google.inject.AbstractModule;
 import com.google.inject.TypeLiteral;
@@ -117,6 +124,19 @@ public class ProductBillingAdapteeModule
         {
         } ).to( OrderAdaptee.class );
 
+        // Purchase Order
+        bind( new TypeLiteral<GetExecutorAdaptee<PurchaseOrder>>()
+        {
+        } ).to( PurchaseOrderGetAdaptee.class );
+
+        bind( new TypeLiteral<ListExecutorAdaptee<PurchaseOrder>>()
+        {
+        } ).to( PurchaseOrderListAdaptee.class );
+
+        bind( new TypeLiteral<DeleteExecutorAdaptee<PurchaseOrder>>()
+        {
+        } ).to( PurchaseOrderDeleteAdaptee.class );
+
 
         // Invoice
         bind( new TypeLiteral<GetExecutorAdaptee<Invoice>>()
@@ -142,6 +162,15 @@ public class ProductBillingAdapteeModule
         bind( new TypeLiteral<DownloadExecutorAdaptee<Invoice>>()
         {
         } ).to( InvoiceAdaptee.class );
+
+        // Incoming Invoice
+        bind( new TypeLiteral<GetExecutorAdaptee<IncomingInvoice>>()
+        {
+        } ).to( IncomingInvoiceGetAdaptee.class );
+
+        bind( new TypeLiteral<ListExecutorAdaptee<IncomingInvoice>>()
+        {
+        } ).to( IncomingInvoiceListAdaptee.class );
 
         // PricingItem
         bind( new TypeLiteral<GetExecutorAdaptee<PricingItem>>()

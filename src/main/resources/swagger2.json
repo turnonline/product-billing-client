@@ -4025,15 +4025,14 @@
                     "type": "string",
                     "description": "The payment key as an ID to identify incoming payment related to this invoice. Might be generated at the client side. It may be the same value as the variable symbol, but not necessarily."
                 },
-                "method": {
+                "type": {
                     "type": "string",
                     "description": "The intended payment method type. It's case insensitive.",
-                    "default": "BANK_TRANSFER",
+                    "default": "TRANSFER",
                     "enum": [
-                        "BANK_TRANSFER",
+                        "CARD_PAYMENT",
                         "CASH",
-                        "CREDIT_CARD",
-                        "DEBIT_CARD"
+                        "TRANSFER"
                     ]
                 },
                 "totalAmount": {
@@ -5111,14 +5110,13 @@
                     "type": "string",
                     "description": "The payment currency alphabetic code based on the ISO 4217."
                 },
-                "form": {
+                "type": {
                     "type": "string",
-                    "description": "The form of payment method that has been used to make this payment.",
+                    "description": "The payment type that has been used to make this payment.",
                     "enum": [
-                        "BANK_TRANSFER",
+                        "CARD_PAYMENT",
                         "CASH",
-                        "CREDIT_CARD",
-                        "DEBIT_CARD"
+                        "TRANSFER"
                     ]
                 },
                 "key": {

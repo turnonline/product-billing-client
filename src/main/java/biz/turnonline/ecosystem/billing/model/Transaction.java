@@ -54,13 +54,13 @@ public final class Transaction
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.lang.String form;
+    private java.lang.String key;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.lang.String key;
+    private java.lang.String type;
 
     /**
      * @return value or {@code null} for none
@@ -116,23 +116,6 @@ public final class Transaction
     /**
      * @return value or {@code null} for none
      */
-    public java.lang.String getForm()
-    {
-        return form;
-    }
-
-    /**
-     * @param form form or {@code null} for none
-     */
-    public Transaction setForm( java.lang.String form )
-    {
-        this.form = form;
-        return this;
-    }
-
-    /**
-     * @return value or {@code null} for none
-     */
     public java.lang.String getKey()
     {
         return key;
@@ -144,6 +127,23 @@ public final class Transaction
     public Transaction setKey( java.lang.String key )
     {
         this.key = key;
+        return this;
+    }
+
+    /**
+     * @return value or {@code null} for none
+     */
+    public java.lang.String getType()
+    {
+        return type;
+    }
+
+    /**
+     * @param type type or {@code null} for none
+     */
+    public Transaction setType( java.lang.String type )
+    {
+        this.type = type;
         return this;
     }
 

@@ -61,12 +61,6 @@ public final class InvoicePayment
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.lang.String method;
-
-    /**
-     * The value may be {@code null}.
-     */
-    @com.google.api.client.util.Key
     private java.lang.Double totalAmount;
 
     /**
@@ -74,6 +68,12 @@ public final class InvoicePayment
      */
     @com.google.api.client.util.Key
     private java.util.List<Transaction> transactions;
+
+    /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
+    private java.lang.String type;
 
     /**
      * The value may be {@code null}.
@@ -136,23 +136,6 @@ public final class InvoicePayment
     /**
      * @return value or {@code null} for none
      */
-    public java.lang.String getMethod()
-    {
-        return method;
-    }
-
-    /**
-     * @param method method or {@code null} for none
-     */
-    public InvoicePayment setMethod( java.lang.String method )
-    {
-        this.method = method;
-        return this;
-    }
-
-    /**
-     * @return value or {@code null} for none
-     */
     public java.lang.Double getTotalAmount()
     {
         return totalAmount;
@@ -181,6 +164,23 @@ public final class InvoicePayment
     public InvoicePayment setTransactions( java.util.List<Transaction> transactions )
     {
         this.transactions = transactions;
+        return this;
+    }
+
+    /**
+     * @return value or {@code null} for none
+     */
+    public java.lang.String getType()
+    {
+        return type;
+    }
+
+    /**
+     * @param type type or {@code null} for none
+     */
+    public InvoicePayment setType( java.lang.String type )
+    {
+        this.type = type;
         return this;
     }
 

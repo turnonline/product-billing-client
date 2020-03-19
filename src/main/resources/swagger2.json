@@ -414,6 +414,14 @@
                         "description": "The contact email address where current copy of the invoice will be sent. This email address has higher priority as an email defined in Invoice.customer.contactEmail, but will not be stored and original customer's contact email will be kept.\n\nUseful only if vnd.turnon.cloud.send-invoice is set to TRUE, otherwise ignored."
                     },
                     {
+                        "name": "vnd.turnon.cloud.bank-account-id",
+                        "in": "header",
+                        "required": false,
+                        "type": "integer",
+                        "format": "int64",
+                        "description": "The identification of the bank account (within Payment Processor) to be listed at invoice as a beneficiary."
+                    },
+                    {
                         "name": "body",
                         "in": "body",
                         "required": true,
@@ -899,6 +907,14 @@
                         "description": "The contact email address where current copy of the invoice will be sent. This email address has higher priority as an email defined in Invoice.customer.contactEmail, but will not be stored and original customer's contact email will be kept.\n\nUseful only if vnd.turnon.cloud.send-invoice is set to TRUE, otherwise ignored."
                     },
                     {
+                        "name": "vnd.turnon.cloud.bank-account-id",
+                        "in": "header",
+                        "required": false,
+                        "type": "integer",
+                        "format": "int64",
+                        "description": "The identification of the bank account (within Payment Processor) to be listed at invoice as a beneficiary."
+                    },
+                    {
                         "name": "body",
                         "in": "body",
                         "required": true,
@@ -1045,6 +1061,14 @@
                         "required": false,
                         "type": "string",
                         "description": "The contact email address where current copy of the invoice will be sent. This email address has higher priority as an email defined in Invoice.customer.contactEmail, but will not be stored and original customer's contact email will be kept.\n\nUseful only if vnd.turnon.cloud.send-invoice is set to TRUE, otherwise ignored."
+                    },
+                    {
+                        "name": "vnd.turnon.cloud.bank-account-id",
+                        "in": "header",
+                        "required": false,
+                        "type": "integer",
+                        "format": "int64",
+                        "description": "The identification of the bank account (within Payment Processor) to be listed at invoice as a beneficiary."
                     },
                     {
                         "name": "body",
@@ -3289,33 +3313,50 @@
         },
         "BankAccount": {
             "type": "object",
-            "required": [
-                "id"
-            ],
             "properties": {
+                "beneficiary": {
+                    "type": "string",
+                    "description": "The bank account beneficiary name (business name)."
+                },
                 "bic": {
                     "type": "string",
-                    "description": "The international Bank Identifier Code (BIC/ISO 9362, a normalized code - also known as Business Identifier Code, Bank International Code and SWIFT code). Populated by the service."
+                    "description": "The international Bank Identifier Code (BIC/ISO 9362, a normalized code - also known as Business Identifier Code, Bank International Code and SWIFT code)."
+                },
+                "branch": {
+                    "type": "string",
+                    "description": "The bank branch identification."
                 },
                 "currency": {
                     "type": "string",
-                    "description": "The bank account currency. An alphabetic code based on the ISO 4217. Populated by the service."
-                },
-                "formatted": {
-                    "type": "string",
-                    "description": "The formatted full bank account number incl. bank code. Populated by the service."
+                    "description": "The bank account currency. An alphabetic code based on the ISO 4217."
                 },
                 "iban": {
                     "type": "string",
-                    "description": "The international bank account number. Populated by the service."
-                },
+                    "description": "The international bank account number."
+                }
+            },
+            "description": "The bank account at invoice.\n\nIf provided a bank account Id as a header while creating or updating the invoice, the bank account will be populated by the service taken the details from the Payment Processor."
+        },
+        "Bill": {
+            "type": "object",
+            "properties": {
                 "id": {
                     "type": "integer",
                     "format": "int64",
-                    "description": "The identification of the bank account (within Payment Processor) to be listed at invoice."
+                    "description": "The unique identification of the bill (receipt)."
+                },
+                "invoiceId": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": "The invoice identification, unique only for specified order."
+                },
+                "orderId": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": "The unique identification of the order associated with the settled invoice."
                 }
             },
-            "description": "The bank account at invoice."
+            "description": "Identification of the bill (receipt) or invoice document settled by associated transaction."
         },
         "BillingUnit": {
             "type": "object",
@@ -4032,6 +4073,7 @@
                     "enum": [
                         "CARD_PAYMENT",
                         "CASH",
+                        "REFUND",
                         "TRANSFER"
                     ]
                 },
@@ -4040,13 +4082,6 @@
                     "format": "double",
                     "description": "The total amount due. It will have a zero value once invoice is fully settled.",
                     "default": 0
-                },
-                "transactions": {
-                    "type": "array",
-                    "description": "The list of already settled payments related to this invoice.",
-                    "items": {
-                        "$ref": "#/definitions/Transaction"
-                    }
                 },
                 "variableSymbol": {
                     "type": "integer",
@@ -4923,21 +4958,6 @@
                     "type": "string",
                     "description": "The product description for public use. It might be any plain text or HTML document."
                 },
-                "facebookLike": {
-                    "type": "boolean",
-                    "description": "The boolean indication whether to render in final document Facebook like button.",
-                    "default": false
-                },
-                "googlePlus": {
-                    "type": "boolean",
-                    "description": "The boolean indication whether to render in final document Google Plus button.",
-                    "default": false
-                },
-                "linkedInShare": {
-                    "type": "boolean",
-                    "description": "The boolean indication whether to render in final document LinkedIn share like button.",
-                    "default": false
-                },
                 "modificationDate": {
                     "type": "string",
                     "format": "date-time",
@@ -5089,17 +5109,32 @@
         "Transaction": {
             "type": "object",
             "required": [
-                "amount",
-                "credit",
-                "currency",
-                "form",
-                "key"
+                "bill"
             ],
             "properties": {
                 "amount": {
                     "type": "number",
                     "format": "double",
-                    "description": "The transaction amount absolute value."
+                    "description": "The transaction amount absolute value.",
+                    "default": 0
+                },
+                "balance": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "The balance after the transaction."
+                },
+                "bankAccount": {
+                    "description": "The bank account associated with this transaction.",
+                    "$ref": "#/definitions/TransactionBank"
+                },
+                "bill": {
+                    "description": "Identification of the bill (receipt) or invoice document settled by this transaction.",
+                    "$ref": "#/definitions/Bill"
+                },
+                "completedAt": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The date when the transaction was completed (status COMPLETED)."
                 },
                 "credit": {
                     "type": "boolean",
@@ -5108,7 +5143,28 @@
                 },
                 "currency": {
                     "type": "string",
-                    "description": "The payment currency alphabetic code based on the ISO 4217."
+                    "description": "The payment currency alphabetic code based on the ISO 4217.",
+                    "default": "EUR"
+                },
+                "reference": {
+                    "type": "string",
+                    "description": "A user provided payment reference."
+                },
+                "key": {
+                    "type": "string",
+                    "description": "The unique payment identification related to the associated bill."
+                },
+                "status": {
+                    "type": "string",
+                    "description": "The transaction status.",
+                    "enum": [
+                        "CREATED",
+                        "PENDING",
+                        "COMPLETED",
+                        "DECLINED",
+                        "FAILED"
+                    ],
+                    "default": "CREATED"
                 },
                 "type": {
                     "type": "string",
@@ -5116,15 +5172,27 @@
                     "enum": [
                         "CARD_PAYMENT",
                         "CASH",
+                        "REFUND",
                         "TRANSFER"
-                    ]
-                },
-                "key": {
-                    "type": "string",
-                    "description": "The unique payment identification related to the associated invoice."
+                    ],
+                    "default": "TRANSFER"
                 }
             },
             "description": "Transaction that represents either a credit or debit operation."
+        },
+        "TransactionBank": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "string",
+                    "description": "The bank identified by a bank code."
+                },
+                "iban": {
+                    "type": "string",
+                    "description": "The international bank account number."
+                }
+            },
+            "description": "The bank account associated with this transaction."
         },
         "VatRate": {
             "type": "object",

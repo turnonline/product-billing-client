@@ -27,7 +27,6 @@ package biz.turnonline.ecosystem.billing.model;
  *
  * @author Google, Inc.
  */
-@SuppressWarnings( "javadoc" )
 public final class Transaction
         extends com.google.api.client.json.GenericJson
 {
@@ -37,6 +36,30 @@ public final class Transaction
      */
     @com.google.api.client.util.Key
     private java.lang.Double amount;
+
+    /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
+    private java.lang.Double balance;
+
+    /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
+    private TransactionBank bankAccount;
+
+    /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
+    private Bill bill;
+
+    /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
+    private com.google.api.client.util.DateTime completedAt;
 
     /**
      * The value may be {@code null}.
@@ -60,6 +83,18 @@ public final class Transaction
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
+    private java.lang.String reference;
+
+    /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
+    private java.lang.String status;
+
+    /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
     private java.lang.String type;
 
     /**
@@ -76,6 +111,74 @@ public final class Transaction
     public Transaction setAmount( java.lang.Double amount )
     {
         this.amount = amount;
+        return this;
+    }
+
+    /**
+     * @return value or {@code null} for none
+     */
+    public java.lang.Double getBalance()
+    {
+        return balance;
+    }
+
+    /**
+     * @param balance balance or {@code null} for none
+     */
+    public Transaction setBalance( java.lang.Double balance )
+    {
+        this.balance = balance;
+        return this;
+    }
+
+    /**
+     * @return value or {@code null} for none
+     */
+    public TransactionBank getBankAccount()
+    {
+        return bankAccount;
+    }
+
+    /**
+     * @param bankAccount bankAccount or {@code null} for none
+     */
+    public Transaction setBankAccount( TransactionBank bankAccount )
+    {
+        this.bankAccount = bankAccount;
+        return this;
+    }
+
+    /**
+     * @return value or {@code null} for none
+     */
+    public Bill getBill()
+    {
+        return bill;
+    }
+
+    /**
+     * @param bill bill or {@code null} for none
+     */
+    public Transaction setBill( Bill bill )
+    {
+        this.bill = bill;
+        return this;
+    }
+
+    /**
+     * @return value or {@code null} for none
+     */
+    public com.google.api.client.util.DateTime getCompletedAt()
+    {
+        return completedAt;
+    }
+
+    /**
+     * @param completedAt completedAt or {@code null} for none
+     */
+    public Transaction setCompletedAt( com.google.api.client.util.DateTime completedAt )
+    {
+        this.completedAt = completedAt;
         return this;
     }
 
@@ -127,6 +230,40 @@ public final class Transaction
     public Transaction setKey( java.lang.String key )
     {
         this.key = key;
+        return this;
+    }
+
+    /**
+     * @return value or {@code null} for none
+     */
+    public java.lang.String getReference()
+    {
+        return reference;
+    }
+
+    /**
+     * @param reference reference or {@code null} for none
+     */
+    public Transaction setReference( java.lang.String reference )
+    {
+        this.reference = reference;
+        return this;
+    }
+
+    /**
+     * @return value or {@code null} for none
+     */
+    public java.lang.String getStatus()
+    {
+        return status;
+    }
+
+    /**
+     * @param status status or {@code null} for none
+     */
+    public Transaction setStatus( java.lang.String status )
+    {
+        this.status = status;
         return this;
     }
 

@@ -17,7 +17,7 @@
 package biz.turnonline.ecosystem.billing.model;
 
 /**
- * Model definition for BankAccount.
+ * Model definition for TransactionBank.
  *
  * <p> This is the Java data model class that specifies how to parse/serialize into the JSON that is
  * transmitted over HTTP when working with the TurnOnline.biz Product Billing. For a detailed
@@ -27,7 +27,7 @@ package biz.turnonline.ecosystem.billing.model;
  *
  * @author Google, Inc.
  */
-public final class BankAccount
+public final class TransactionBank
         extends com.google.api.client.json.GenericJson
 {
 
@@ -35,19 +35,7 @@ public final class BankAccount
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.lang.String beneficiary;
-
-    /**
-     * The value may be {@code null}.
-     */
-    @com.google.api.client.util.Key
-    private java.lang.String bic;
-
-    /**
-     * The value may be {@code null}.
-     */
-    @com.google.api.client.util.Key
-    private java.lang.String currency;
+    private java.lang.String code;
 
     /**
      * The value may be {@code null}.
@@ -58,51 +46,17 @@ public final class BankAccount
     /**
      * @return value or {@code null} for none
      */
-    public java.lang.String getBeneficiary()
+    public java.lang.String getCode()
     {
-        return beneficiary;
+        return code;
     }
 
     /**
-     * @param beneficiary beneficiary or {@code null} for none
+     * @param code code or {@code null} for none
      */
-    public BankAccount setBeneficiary( java.lang.String beneficiary )
+    public TransactionBank setCode( java.lang.String code )
     {
-        this.beneficiary = beneficiary;
-        return this;
-    }
-
-    /**
-     * @return value or {@code null} for none
-     */
-    public java.lang.String getBic()
-    {
-        return bic;
-    }
-
-    /**
-     * @param bic bic or {@code null} for none
-     */
-    public BankAccount setBic( java.lang.String bic )
-    {
-        this.bic = bic;
-        return this;
-    }
-
-    /**
-     * @return value or {@code null} for none
-     */
-    public java.lang.String getCurrency()
-    {
-        return currency;
-    }
-
-    /**
-     * @param currency currency or {@code null} for none
-     */
-    public BankAccount setCurrency( java.lang.String currency )
-    {
-        this.currency = currency;
+        this.code = code;
         return this;
     }
 
@@ -117,22 +71,22 @@ public final class BankAccount
     /**
      * @param iban iban or {@code null} for none
      */
-    public BankAccount setIban( java.lang.String iban )
+    public TransactionBank setIban( java.lang.String iban )
     {
         this.iban = iban;
         return this;
     }
 
     @Override
-    public BankAccount set( String fieldName, Object value )
+    public TransactionBank set( String fieldName, Object value )
     {
-        return ( BankAccount ) super.set( fieldName, value );
+        return ( TransactionBank ) super.set( fieldName, value );
     }
 
     @Override
-    public BankAccount clone()
+    public TransactionBank clone()
     {
-        return ( BankAccount ) super.clone();
+        return ( TransactionBank ) super.clone();
     }
 
 }

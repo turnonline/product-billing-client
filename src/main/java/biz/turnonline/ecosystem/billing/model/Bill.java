@@ -17,7 +17,7 @@
 package biz.turnonline.ecosystem.billing.model;
 
 /**
- * Model definition for BankAccount.
+ * Model definition for Bill.
  *
  * <p> This is the Java data model class that specifies how to parse/serialize into the JSON that is
  * transmitted over HTTP when working with the TurnOnline.biz Product Billing. For a detailed
@@ -27,7 +27,7 @@ package biz.turnonline.ecosystem.billing.model;
  *
  * @author Google, Inc.
  */
-public final class BankAccount
+public final class Bill
         extends com.google.api.client.json.GenericJson
 {
 
@@ -35,104 +35,84 @@ public final class BankAccount
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.lang.String beneficiary;
+    @com.google.api.client.json.JsonString
+    private java.lang.Long id;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.lang.String bic;
+    @com.google.api.client.json.JsonString
+    private java.lang.Long invoiceId;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.lang.String currency;
-
-    /**
-     * The value may be {@code null}.
-     */
-    @com.google.api.client.util.Key
-    private java.lang.String iban;
+    @com.google.api.client.json.JsonString
+    private java.lang.Long orderId;
 
     /**
      * @return value or {@code null} for none
      */
-    public java.lang.String getBeneficiary()
+    public java.lang.Long getId()
     {
-        return beneficiary;
+        return id;
     }
 
     /**
-     * @param beneficiary beneficiary or {@code null} for none
+     * @param id id or {@code null} for none
      */
-    public BankAccount setBeneficiary( java.lang.String beneficiary )
+    public Bill setId( java.lang.Long id )
     {
-        this.beneficiary = beneficiary;
+        this.id = id;
         return this;
     }
 
     /**
      * @return value or {@code null} for none
      */
-    public java.lang.String getBic()
+    public java.lang.Long getInvoiceId()
     {
-        return bic;
+        return invoiceId;
     }
 
     /**
-     * @param bic bic or {@code null} for none
+     * @param invoiceId invoiceId or {@code null} for none
      */
-    public BankAccount setBic( java.lang.String bic )
+    public Bill setInvoiceId( java.lang.Long invoiceId )
     {
-        this.bic = bic;
+        this.invoiceId = invoiceId;
         return this;
     }
 
     /**
      * @return value or {@code null} for none
      */
-    public java.lang.String getCurrency()
+    public java.lang.Long getOrderId()
     {
-        return currency;
+        return orderId;
     }
 
     /**
-     * @param currency currency or {@code null} for none
+     * @param orderId orderId or {@code null} for none
      */
-    public BankAccount setCurrency( java.lang.String currency )
+    public Bill setOrderId( java.lang.Long orderId )
     {
-        this.currency = currency;
-        return this;
-    }
-
-    /**
-     * @return value or {@code null} for none
-     */
-    public java.lang.String getIban()
-    {
-        return iban;
-    }
-
-    /**
-     * @param iban iban or {@code null} for none
-     */
-    public BankAccount setIban( java.lang.String iban )
-    {
-        this.iban = iban;
+        this.orderId = orderId;
         return this;
     }
 
     @Override
-    public BankAccount set( String fieldName, Object value )
+    public Bill set( String fieldName, Object value )
     {
-        return ( BankAccount ) super.set( fieldName, value );
+        return ( Bill ) super.set( fieldName, value );
     }
 
     @Override
-    public BankAccount clone()
+    public Bill clone()
     {
-        return ( BankAccount ) super.clone();
+        return ( Bill ) super.clone();
     }
 
 }

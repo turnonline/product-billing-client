@@ -3261,6 +3261,66 @@
                     "description": "The invoice identification unique for specified order"
                 }
             ]
+        },
+        "/v1/transactions": {
+            "post": {
+                "tags": [
+                    "Purchases"
+                ],
+                "summary": "Push the transaction to be paired",
+                "description": "Push the transaction to be paired with a bill.",
+                "operationId": "pushTransaction",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Transaction"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Confirmation the transaction has matched and will be paired."
+                    },
+                    "400": {
+                        "description": "The error when client tries to push a transaction with identification of a bill that doesn’t exist.",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "The error when the authentication credential fails.",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "It's a failure of the server. The client can repeat the request without modifications at any later time.",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "503": {
+                        "description": "The service is unavailable or the server has timed out processing of the request. The client may repeat the request without modifications at any later time.",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "firebase-a9a2a51a": []
+                    }
+                ]
+            }
         }
     },
     "securityDefinitions": {
@@ -5153,25 +5213,25 @@
                 "status": {
                     "type": "string",
                     "description": "The transaction status.",
+                    "default": "CREATED",
                     "enum": [
                         "CREATED",
                         "PENDING",
                         "COMPLETED",
                         "DECLINED",
                         "FAILED"
-                    ],
-                    "default": "CREATED"
+                    ]
                 },
                 "type": {
                     "type": "string",
                     "description": "The payment type that has been used to make this payment.",
+                    "default": "TRANSFER",
                     "enum": [
                         "CARD_PAYMENT",
                         "CASH",
                         "REFUND",
                         "TRANSFER"
-                    ],
-                    "default": "TRANSFER"
+                    ]
                 }
             },
             "description": "Transaction that represents either a credit or debit operation."

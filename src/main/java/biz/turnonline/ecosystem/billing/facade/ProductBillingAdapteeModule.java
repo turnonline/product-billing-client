@@ -31,6 +31,7 @@ import biz.turnonline.ecosystem.billing.facade.adaptee.ProductPublishingAdaptee;
 import biz.turnonline.ecosystem.billing.facade.adaptee.PurchaseOrderDeleteAdaptee;
 import biz.turnonline.ecosystem.billing.facade.adaptee.PurchaseOrderGetAdaptee;
 import biz.turnonline.ecosystem.billing.facade.adaptee.PurchaseOrderListAdaptee;
+import biz.turnonline.ecosystem.billing.facade.adaptee.TransactionAdaptee;
 import biz.turnonline.ecosystem.billing.facade.adaptee.VatRateAdaptee;
 import biz.turnonline.ecosystem.billing.model.AccountingSystem;
 import biz.turnonline.ecosystem.billing.model.BillingUnit;
@@ -44,6 +45,7 @@ import biz.turnonline.ecosystem.billing.model.Product;
 import biz.turnonline.ecosystem.billing.model.ProductPicture;
 import biz.turnonline.ecosystem.billing.model.ProductPublishing;
 import biz.turnonline.ecosystem.billing.model.PurchaseOrder;
+import biz.turnonline.ecosystem.billing.model.Transaction;
 import biz.turnonline.ecosystem.billing.model.VatRate;
 import com.google.inject.AbstractModule;
 import com.google.inject.TypeLiteral;
@@ -222,5 +224,10 @@ public class ProductBillingAdapteeModule
         bind( new TypeLiteral<DeleteExecutorAdaptee<AccountingSystem>>()
         {
         } ).to( AccountingSystemAdaptee.class );
+
+        // Transaction
+        bind( new TypeLiteral<InsertExecutorAdaptee<Transaction>>()
+        {
+        } ).to( TransactionAdaptee.class );
     }
 }

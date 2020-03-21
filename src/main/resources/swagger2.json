@@ -3412,7 +3412,7 @@
                     "description": "The unique identification of the order associated with the settled invoice."
                 }
             },
-            "description": "Identification of the bill (receipt) or invoice document settled by associated transaction."
+            "description": "Identification of the bill (receipt) or invoice document settled by associated transaction. In order to successfully pair the bill either a valid receipt identification or invoice identification (it includes order Id too) must be provided."
         },
         "BillingUnit": {
             "type": "object",

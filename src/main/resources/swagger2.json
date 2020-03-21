@@ -3268,7 +3268,7 @@
                     "Purchases"
                 ],
                 "summary": "Push the transaction to be paired",
-                "description": "Push the transaction to be paired with a bill.",
+                "description": "Push the transaction to be paired with a bill.\n\n**Error handling:**\n* In case of an invalid or unknown transaction's property enum values the  default value will be set.\n* A transaction that did not match any bill will be ignored",
                 "operationId": "pushTransaction",
                 "consumes": [
                     "application/json"
@@ -3291,7 +3291,7 @@
                         "description": "Confirmation the transaction has matched and will be paired."
                     },
                     "400": {
-                        "description": "The error when client tries to push a transaction with identification of a bill that doesn’t exist.",
+                        "description": "The error when client tries to push a transaction with an invalid structure.",
                         "schema": {
                             "$ref": "#/definitions/Error"
                         }

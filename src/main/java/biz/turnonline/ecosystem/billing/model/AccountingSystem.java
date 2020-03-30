@@ -27,17 +27,9 @@ package biz.turnonline.ecosystem.billing.model;
  *
  * @author Google, Inc.
  */
-@SuppressWarnings( "javadoc" )
 public final class AccountingSystem
         extends com.google.api.client.json.GenericJson
 {
-
-    /**
-     * The value may be {@code null}.
-     */
-    @com.google.api.client.util.Key
-    private java.lang.String company;
-
     /**
      * The value may be {@code null}.
      */
@@ -67,23 +59,6 @@ public final class AccountingSystem
      */
     @com.google.api.client.util.Key
     private java.lang.String username;
-
-    /**
-     * @return value or {@code null} for none
-     */
-    public java.lang.String getCompany()
-    {
-        return company;
-    }
-
-    /**
-     * @param company company or {@code null} for none
-     */
-    public AccountingSystem setCompany( java.lang.String company )
-    {
-        this.company = company;
-        return this;
-    }
 
     /**
      * @return value or {@code null} for none

@@ -191,7 +191,8 @@
                 "tags": [
                     "Product Billing"
                 ],
-                "summary": "Modify accounting system profile",
+                "summary": "Modify accounting system access config",
+                "description": "It supports multiple access configurations. Unless you provide at least single 'default' profile configuration, the integration with the underlying accounting system will be disabled.\nIn order to enable access to the built-in accounting system, create a 'default' profile with either an empty body or with type FLEXI_BEE.",
                 "operationId": "modifyAccountingSystemProfile",
                 "consumes": [
                     "application/json"
@@ -301,7 +302,7 @@
                     "in": "path",
                     "required": true,
                     "type": "string",
-                    "description": "The accounting system profile name."
+                    "description": "The accounting system profile name. Use 'default' for single access."
                 }
             ]
         },
@@ -3337,10 +3338,6 @@
         "AccountingSystem": {
             "type": "object",
             "properties": {
-                "company": {
-                    "type": "string",
-                    "description": "The company name. It's part of the accounting system integration URL that represents a concrete company."
-                },
                 "disableGZip": {
                     "type": "boolean",
                     "description": "Indication whether to disable GZip compression of HTTP content for requests to sync with accounting system.",
@@ -3362,14 +3359,14 @@
                 },
                 "url": {
                     "type": "string",
-                    "description": "The accounting system integration URL dedicated to this account. Full path including protocol and port number."
+                    "description": "The accounting system integration URL dedicated to this account. Full path including protocol and port number. If not provided the built-in accounting system integration will be used (for FLEXI_BEE type only)."
                 },
                 "username": {
                     "type": "string",
                     "description": "The accounting system username if any."
                 }
             },
-            "description": "Accounting system related properties of the concrete profile."
+            "description": "Accounting system access configuration."
         },
         "BankAccount": {
             "type": "object",

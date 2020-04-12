@@ -420,7 +420,7 @@
                         "required": false,
                         "type": "integer",
                         "format": "int64",
-                        "description": "The identification of the bank account (within Payment Processor) to be listed at invoice as a beneficiary."
+                        "description": "The identification (within Product Billing service) of the bank account to be listed at invoice as a beneficiary."
                     },
                     {
                         "name": "body",
@@ -913,7 +913,7 @@
                         "required": false,
                         "type": "integer",
                         "format": "int64",
-                        "description": "The identification of the bank account (within Payment Processor) to be listed at invoice as a beneficiary."
+                        "description": "The identification (within Product Billing service) of the bank account to be listed at invoice as a beneficiary."
                     },
                     {
                         "name": "body",
@@ -1069,7 +1069,7 @@
                         "required": false,
                         "type": "integer",
                         "format": "int64",
-                        "description": "The identification of the bank account (within Payment Processor) to be listed at invoice as a beneficiary."
+                        "description": "The identification (within Product Billing service) of the bank account to be listed at invoice as a beneficiary."
                     },
                     {
                         "name": "body",

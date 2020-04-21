@@ -5231,7 +5231,7 @@
                     ]
                 }
             },
-            "description": "Transaction that represents either a credit or debit operation."
+            "description": "Transaction that represents either a credit or debit operation.\n\nTwo transactions are being considered the same if the following properties are same:\n* The ID of the authenticated account\n* Bill.orderId\n* Bill.invoiceId\n* Bill.id\n* credit\n* key"
         },
         "TransactionBank": {
             "type": "object",

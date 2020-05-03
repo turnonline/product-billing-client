@@ -4006,7 +4006,7 @@
                 },
                 "type": {
                     "type": "string",
-                    "description": "The accounting invoice type. It's case insensitive.",
+                    "description": "The bill document type. It's case insensitive.",
                     "default": "INVOICE",
                     "enum": [
                         "INVOICE",

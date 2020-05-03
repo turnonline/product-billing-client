@@ -2040,7 +2040,8 @@
                 "tags": [
                     "Product Billing"
                 ],
-                "summary": "Calculates the price",
+                "summary": "Calculate all pricing items",
+                "description": "Calculate all pricing items and total price.",
                 "operationId": "createPrice",
                 "consumes": [
                     "application/json"
@@ -2842,6 +2843,77 @@
                 }
             ]
         },
+        "/v1/purchases": {
+            "post": {
+                "tags": [
+                    "Purchases"
+                ],
+                "summary": "Register an expense",
+                "description": "Register an expense that represents a purchase outside of the Ecosystem.",
+                "operationId": "createExpenseDocument",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "vnd.turnon.cloud.order-id",
+                        "in": "header",
+                        "required": false,
+                        "type": "integer",
+                        "format": "int64",
+                        "description": "The identification of the purchase order to assign incoming invoice to."
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Expense"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Identification of the document for given expense.",
+                        "schema": {
+                            "$ref": "#/definitions/Bill"
+                        }
+                    },
+                    "400": {
+                        "description": "The error indicates that client has made a request that server couldn't understand. The client should not repeat the request without modifications.",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "The error when the authentication credential fails.",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "It's a failure of the server. The client can repeat the request without modifications at any later time.",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "503": {
+                        "description": "The service is unavailable or the server has timed out processing of the request. The client may repeat the request without modifications at any later time.",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "firebase-a9a2a51a": []
+                    }
+                ]
+            }
+        },
         "/v1/purchases/invoices": {
             "get": {
                 "tags": [
@@ -3286,7 +3358,7 @@
                     "Bill Settlements"
                 ],
                 "summary": "Push the transaction to be paired",
-                "description": "Push the transaction to be paired with a bill.\n\n**Error handling:**\n* In case of an invalid or unknown transaction's property enum values the  default value will be set.\n* A transaction that did not match any bill will be ignored",
+                "description": "Push the transaction to be paired with a bill.\nIn order to successfully pair the bill either a valid receipt identification or invoice identification (it includes order Id too) must be provided.\n\n**Error handling:**\n* In case of an invalid or unknown transaction's property enum values the  default value will be set.\n* A transaction that did not match any bill will be ignored",
                 "operationId": "pushTransaction",
                 "consumes": [
                     "application/json"
@@ -3410,23 +3482,23 @@
         "Bill": {
             "type": "object",
             "properties": {
-                "id": {
+                "receipt": {
                     "type": "integer",
                     "format": "int64",
                     "description": "The unique identification of the bill (receipt)."
                 },
-                "invoiceId": {
+                "invoice": {
                     "type": "integer",
                     "format": "int64",
                     "description": "The invoice identification, unique only for specified order."
                 },
-                "orderId": {
+                "order": {
                     "type": "integer",
                     "format": "int64",
                     "description": "The unique identification of the order associated with the settled invoice."
                 }
             },
-            "description": "Identification of the bill (receipt) or invoice document settled by associated transaction. In order to successfully pair the bill either a valid receipt identification or invoice identification (it includes order Id too) must be provided."
+            "description": "Identification of the bill (receipt) or invoice document. Valid invoice identification includes order identification too."
         },
         "BillingUnit": {
             "type": "object",
@@ -3888,6 +3960,61 @@
                     "description": "The event place street and street number."
                 }
             }
+        },
+        "Expense": {
+            "type": "object",
+            "required": [
+                "dateOfIssue",
+                "items",
+                "supplier"
+            ],
+            "properties": {
+                "bill": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": "The unique bill identification within Billing Processor service."
+                },
+                "billNumber": {
+                    "type": "string",
+                    "description": "Bill (receipt) number, or in case of incoming invoice its invoice number."
+                },
+                "dateOfIssue": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The bill issue date. RFC 3339"
+                },
+                "dateOfTaxable": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The date of taxable supplies. If not provided the date of issue will be used."
+                },
+                "items": {
+                    "type": "array",
+                    "description": "Expense pricing item list.",
+                    "items": {
+                        "$ref": "#/definitions/PricingItem"
+                    }
+                },
+                "supplier": {
+                    "description": "A business that delivered a product or service. It might be an account at Ecosystem but not necessarily.",
+                    "$ref": "#/definitions/Creditor"
+                },
+                "totalPrice": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "The total price as a sum of all checked in items and its amount including target rounding mode. Including VAT."
+                },
+                "type": {
+                    "type": "string",
+                    "description": "The accounting invoice type. It's case insensitive.",
+                    "default": "INVOICE",
+                    "enum": [
+                        "INVOICE",
+                        "RECEIPT"
+                    ]
+                }
+            },
+            "description": "Expense that represents a purchase outside of the Ecosystem."
         },
         "IncomingInvoice": {
             "type": "object",
@@ -5248,7 +5375,7 @@
                     ]
                 }
             },
-            "description": "Transaction that represents either a credit or debit operation.\n\nTwo transactions are being considered the same if the following properties are same:\n* The ID of the authenticated account\n* Bill.orderId\n* Bill.invoiceId\n* Bill.id\n* credit\n* key"
+            "description": "Transaction that represents either a credit or debit operation.\n\nTwo transactions are being considered the same if the following properties are same:\n* The ID of the authenticated account\n* Bill.order\n* Bill.invoice\n* Bill.receipt\n* credit\n* key"
         },
         "TransactionBank": {
             "type": "object",

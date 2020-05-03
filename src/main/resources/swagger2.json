@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "description": "TurnOnline.biz Ecosystem Product Billing microservice. Order, product, and invoice management system for online use cases with support of the product purchases between business accounts.",
+        "description": "TurnOnline.biz Ecosystem Product Billing microservice. Order, product, and invoice management system with support of the product purchases between business accounts.",
         "version": "1.0",
         "title": "Product Billing"
     },
@@ -13,15 +13,32 @@
             "description": "Catalog of products to sell"
         },
         {
+            "name": "Product Publishing",
+            "description": "Product publishing management"
+        },
+        {
+            "name": "Order Management",
+            "description": "Order management and recurring billing"
+        },
+        {
             "name": "Product Billing",
-            "description": "Order and invoice management system for online use cases with support of the product purchases between business accounts"
+            "description": "Invoicing with support of the product purchases between business accounts"
         },
         {
             "name": "Purchases",
             "description": "Purchases of products, memberships, subscriptions within the company"
         },
         {
-            "name": "Common"
+            "name": "Bill Settlements",
+            "description": "Invoices and receipts settlement"
+        },
+        {
+            "name": "Code-books",
+            "description": "Service related code-books"
+        },
+        {
+            "name": "Access Configuration",
+            "description": "Accounting system access configuration"
         }
     ],
     "schemes": [
@@ -31,7 +48,7 @@
         "/v1/codebook/billing-units": {
             "get": {
                 "tags": [
-                    "Product Catalog"
+                    "Code-books"
                 ],
                 "summary": "Available list of units",
                 "description": "Returns the available list of billing units.",
@@ -84,7 +101,7 @@
         "/v1/codebook/number-series": {
             "get": {
                 "tags": [
-                    "Product Catalog"
+                    "Code-books"
                 ],
                 "summary": "List of number series",
                 "description": "Returns the account related list of available number series that might be used to increment invoice number.",
@@ -129,7 +146,7 @@
         "/v1/codebook/vat-rates": {
             "get": {
                 "tags": [
-                    "Product Catalog"
+                    "Code-books"
                 ],
                 "summary": "Get current VAT rates",
                 "description": "Returns the current VAT rates based on the domicile of the authenticated account (either user or associated service account).",
@@ -189,7 +206,7 @@
         "/v1/configs/{profile_name}": {
             "put": {
                 "tags": [
-                    "Product Billing"
+                    "Access Configuration"
                 ],
                 "summary": "Modify accounting system access config",
                 "description": "It supports multiple access configurations. Unless you provide at least single 'default' profile configuration, the integration with the underlying accounting system will be disabled.\nIn order to enable access to the built-in accounting system, create a 'default' profile with either an empty body or with type FLEXI_BEE.",
@@ -250,7 +267,7 @@
             },
             "delete": {
                 "tags": [
-                    "Product Billing"
+                    "Access Configuration"
                 ],
                 "summary": "Delete accounting system profile",
                 "operationId": "deleteAccountingSystemProfile",
@@ -473,7 +490,7 @@
         "/v1/orders": {
             "get": {
                 "tags": [
-                    "Product Billing"
+                    "Order Management"
                 ],
                 "summary": "Search orders",
                 "operationId": "searchOrders",
@@ -542,7 +559,7 @@
             },
             "post": {
                 "tags": [
-                    "Product Billing"
+                    "Order Management"
                 ],
                 "summary": "Create an order",
                 "operationId": "createOrder",
@@ -612,7 +629,7 @@
         "/v1/orders/{order_id}": {
             "get": {
                 "tags": [
-                    "Product Billing"
+                    "Order Management"
                 ],
                 "summary": "Return the order",
                 "operationId": "getOrder",
@@ -670,7 +687,7 @@
             },
             "put": {
                 "tags": [
-                    "Product Billing"
+                    "Order Management"
                 ],
                 "summary": "Update the order",
                 "operationId": "updateOrder",
@@ -736,7 +753,7 @@
             },
             "delete": {
                 "tags": [
-                    "Product Billing"
+                    "Order Management"
                 ],
                 "summary": "Delete the order",
                 "operationId": "deleteOrder",
@@ -1590,7 +1607,7 @@
         "/v1/orders/{order_id}/items": {
             "get": {
                 "tags": [
-                    "Product Billing"
+                    "Order Management"
                 ],
                 "summary": "List order items",
                 "operationId": "listOrderItems",
@@ -1638,7 +1655,7 @@
             },
             "post": {
                 "tags": [
-                    "Product Billing"
+                    "Order Management"
                 ],
                 "summary": "Add order item",
                 "operationId": "addOrderItem",
@@ -1716,7 +1733,7 @@
         "/v1/orders/{order_id}/items/{item_id}": {
             "get": {
                 "tags": [
-                    "Product Billing"
+                    "Order Management"
                 ],
                 "summary": "Return order item",
                 "operationId": "getOrderItem",
@@ -1764,7 +1781,7 @@
             },
             "put": {
                 "tags": [
-                    "Product Billing"
+                    "Order Management"
                 ],
                 "summary": "Modify order item",
                 "operationId": "modifyOrderItem",
@@ -1830,7 +1847,7 @@
             },
             "delete": {
                 "tags": [
-                    "Product Billing"
+                    "Order Management"
                 ],
                 "summary": "Delete order item",
                 "operationId": "deleteOrderItem",
@@ -1898,7 +1915,7 @@
         "/v1/orders/{order_id}/status": {
             "get": {
                 "tags": [
-                    "Product Billing"
+                    "Order Management"
                 ],
                 "summary": "Return current order status",
                 "operationId": "getOrderStatus",
@@ -1946,7 +1963,7 @@
             },
             "put": {
                 "tags": [
-                    "Product Billing"
+                    "Order Management"
                 ],
                 "summary": "Change order status",
                 "operationId": "changeOrderStatus",
@@ -2593,7 +2610,7 @@
         "/v1/products/{product_id}/publishing": {
             "get": {
                 "tags": [
-                    "Product Catalog"
+                    "Product Publishing"
                 ],
                 "summary": "Return the publishing",
                 "operationId": "getProductPublishing",
@@ -2641,7 +2658,7 @@
             },
             "put": {
                 "tags": [
-                    "Product Catalog"
+                    "Product Publishing"
                 ],
                 "summary": "Update the publishing",
                 "operationId": "updateProductPublishing",
@@ -2707,7 +2724,7 @@
             },
             "delete": {
                 "tags": [
-                    "Product Catalog"
+                    "Product Publishing"
                 ],
                 "summary": "Delete the publishing",
                 "operationId": "deleteProductPublishing",
@@ -2763,7 +2780,7 @@
         "/v1/products/{product_id}/publishing/pictures/{order}": {
             "delete": {
                 "tags": [
-                    "Product Catalog"
+                    "Product Publishing"
                 ],
                 "summary": "Delete product picture",
                 "operationId": "deleteProductPicture",
@@ -3266,7 +3283,7 @@
         "/v1/transactions": {
             "post": {
                 "tags": [
-                    "Purchases"
+                    "Bill Settlements"
                 ],
                 "summary": "Push the transaction to be paired",
                 "description": "Push the transaction to be paired with a bill.\n\n**Error handling:**\n* In case of an invalid or unknown transaction's property enum values the  default value will be set.\n* A transaction that did not match any bill will be ignored",
@@ -3289,7 +3306,7 @@
                 ],
                 "responses": {
                     "204": {
-                        "description": "Confirmation the transaction has matched and will be paired."
+                        "description": "Confirmation the transaction has been received."
                     },
                     "400": {
                         "description": "The error when client tries to push a transaction with an invalid structure.",

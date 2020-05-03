@@ -36,7 +36,7 @@ public class ProductBillingClientModule
     {
         bind( ProductBilling.class ).toProvider( ProductBillingProvider.class );
 
-        MapBinder<String, ClientApi> mapBinder;
+        @SuppressWarnings( "rawtypes" ) MapBinder<String, ClientApi> mapBinder;
         mapBinder = MapBinder.newMapBinder( binder(), String.class, ClientApi.class );
         mapBinder.addBinding( API_PREFIX ).to( ProductBillingProvider.class );
     }

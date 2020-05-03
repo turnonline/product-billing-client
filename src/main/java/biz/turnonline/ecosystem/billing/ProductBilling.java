@@ -20,7 +20,7 @@ package biz.turnonline.ecosystem.billing;
  * Service definition for ProductBilling (v1).
  *
  * <p>
- * TurnOnline.biz Ecosystem Product Billing microservice. Order, product, and invoice management system for online use cases with support of the product purchases between business accounts.
+ * TurnOnline.biz Ecosystem Product Billing microservice. Order, product, and invoice management system with support of the product purchases between business accounts.
  * </p>
  *
  * <p>

@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -5482,6 +5482,22 @@ public class ProductBilling
     {
 
         /**
+         * Create a request for the method "purchases.insert".
+         * <p>
+         * This request holds the parameters needed by the billing server.  After setting any optional
+         * parameters, call the {@link Insert#execute()} method to invoke the remote operation.
+         *
+         * @param content the {@link biz.turnonline.ecosystem.billing.model.Expense}
+         * @return the request
+         */
+        public Insert insert( biz.turnonline.ecosystem.billing.model.Expense content ) throws java.io.IOException
+        {
+            Insert result = new Insert( content );
+            initialize( result );
+            return result;
+        }
+
+        /**
          * An accessor for creating requests from the Invoices collection.
          *
          * <p>The typical use is:</p>
@@ -5511,6 +5527,77 @@ public class ProductBilling
         public Orders orders()
         {
             return new Orders();
+        }
+
+        public class Insert
+                extends ProductBillingRequest<biz.turnonline.ecosystem.billing.model.Bill>
+        {
+
+            private static final String REST_PATH = "purchases";
+
+            /**
+             * Create a request for the method "purchases.insert".
+             * <p>
+             * This request holds the parameters needed by the the billing server.  After setting any optional
+             * parameters, call the {@link Insert#execute()} method to invoke the remote operation. <p> {@link
+             * Insert#initialize(com.google.api.client.googleapis.services.AbstractGoogleClientRequest)} must
+             * be called to initialize this instance immediately after invoking the constructor. </p>
+             *
+             * @param content the {@link biz.turnonline.ecosystem.billing.model.Expense}
+             * @since 1.13
+             */
+            protected Insert( biz.turnonline.ecosystem.billing.model.Expense content )
+            {
+                super( ProductBilling.this, "POST", REST_PATH, content, biz.turnonline.ecosystem.billing.model.Bill.class );
+            }
+
+            @Override
+            public Insert setAlt( java.lang.String alt )
+            {
+                return ( Insert ) super.setAlt( alt );
+            }
+
+            @Override
+            public Insert setFields( java.lang.String fields )
+            {
+                return ( Insert ) super.setFields( fields );
+            }
+
+            @Override
+            public Insert setKey( java.lang.String key )
+            {
+                return ( Insert ) super.setKey( key );
+            }
+
+            @Override
+            public Insert setOauthToken( java.lang.String oauthToken )
+            {
+                return ( Insert ) super.setOauthToken( oauthToken );
+            }
+
+            @Override
+            public Insert setPrettyPrint( java.lang.Boolean prettyPrint )
+            {
+                return ( Insert ) super.setPrettyPrint( prettyPrint );
+            }
+
+            @Override
+            public Insert setQuotaUser( java.lang.String quotaUser )
+            {
+                return ( Insert ) super.setQuotaUser( quotaUser );
+            }
+
+            @Override
+            public Insert setUserIp( java.lang.String userIp )
+            {
+                return ( Insert ) super.setUserIp( userIp );
+            }
+
+            @Override
+            public Insert set( String parameterName, Object value )
+            {
+                return ( Insert ) super.set( parameterName, value );
+            }
         }
 
         /**

@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -36,70 +36,70 @@ public final class Bill
      */
     @com.google.api.client.util.Key
     @com.google.api.client.json.JsonString
-    private java.lang.Long id;
+    private java.lang.Long invoice;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
     @com.google.api.client.json.JsonString
-    private java.lang.Long invoiceId;
+    private java.lang.Long order;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
     @com.google.api.client.json.JsonString
-    private java.lang.Long orderId;
+    private java.lang.Long receipt;
 
     /**
      * @return value or {@code null} for none
      */
-    public java.lang.Long getId()
+    public java.lang.Long getInvoice()
     {
-        return id;
+        return invoice;
     }
 
     /**
-     * @param id id or {@code null} for none
+     * @param invoice invoice or {@code null} for none
      */
-    public Bill setId( java.lang.Long id )
+    public Bill setInvoice( java.lang.Long invoice )
     {
-        this.id = id;
+        this.invoice = invoice;
         return this;
     }
 
     /**
      * @return value or {@code null} for none
      */
-    public java.lang.Long getInvoiceId()
+    public java.lang.Long getOrder()
     {
-        return invoiceId;
+        return order;
     }
 
     /**
-     * @param invoiceId invoiceId or {@code null} for none
+     * @param order order or {@code null} for none
      */
-    public Bill setInvoiceId( java.lang.Long invoiceId )
+    public Bill setOrder( java.lang.Long order )
     {
-        this.invoiceId = invoiceId;
+        this.order = order;
         return this;
     }
 
     /**
      * @return value or {@code null} for none
      */
-    public java.lang.Long getOrderId()
+    public java.lang.Long getReceipt()
     {
-        return orderId;
+        return receipt;
     }
 
     /**
-     * @param orderId orderId or {@code null} for none
+     * @param receipt receipt or {@code null} for none
      */
-    public Bill setOrderId( java.lang.Long orderId )
+    public Bill setReceipt( java.lang.Long receipt )
     {
-        this.orderId = orderId;
+        this.receipt = receipt;
         return this;
     }
 

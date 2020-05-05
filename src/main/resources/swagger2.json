@@ -3762,25 +3762,6 @@
                 }
             }
         },
-        "Deduction": {
-            "type": "object",
-            "required": [
-                "invoiceNumber",
-                "settlement"
-            ],
-            "properties": {
-                "invoiceNumber": {
-                    "type": "string",
-                    "description": "The settlement of invoice with advance invoice number."
-                },
-                "settlement": {
-                    "type": "number",
-                    "format": "double",
-                    "description": "The total amount of the payment related to this advance invoice."
-                }
-            },
-            "description": "Deduction that represents a settlement of the invoice."
-        },
         "Error": {
             "type": "object",
             "required": [
@@ -4205,13 +4186,6 @@
                 "servingUrl": {
                     "type": "string",
                     "description": "The full URL of the invoice picture. Provided by the service."
-                },
-                "settlements": {
-                    "type": "array",
-                    "description": "Settlement of advance invoice.",
-                    "items": {
-                        "$ref": "#/definitions/Deduction"
-                    }
                 },
                 "status": {
                     "type": "string",

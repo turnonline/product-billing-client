@@ -3944,11 +3944,6 @@
         },
         "Expense": {
             "type": "object",
-            "required": [
-                "dateOfIssue",
-                "items",
-                "supplier"
-            ],
             "properties": {
                 "bill": {
                     "type": "integer",
@@ -3976,6 +3971,10 @@
                         "$ref": "#/definitions/PricingItem"
                     }
                 },
+                "payment": {
+                    "description": "Expense payment details.",
+                    "$ref": "#/definitions/ExpensePayment"
+                },
                 "supplier": {
                     "description": "A business that delivered a product or service. It might be an account at Ecosystem but not necessarily.",
                     "$ref": "#/definitions/Creditor"
@@ -3996,6 +3995,30 @@
                 }
             },
             "description": "Expense that represents a purchase outside of the Ecosystem."
+        },
+        "ExpensePayment": {
+            "type": "object",
+            "properties": {
+                "bankAccount": {
+                    "description": "The bank and IBAN that has been used to transfer money.",
+                    "$ref": "#/definitions/TransactionBank"
+                },
+                "key": {
+                    "type": "string",
+                    "description": "The expense payment identification."
+                },
+                "type": {
+                    "type": "string",
+                    "description": "The payment type that has been used.",
+                    "default": "CARD_PAYMENT",
+                    "enum": [
+                        "CARD_PAYMENT",
+                        "CASH",
+                        "REFUND",
+                        "TRANSFER"
+                    ]
+                }
+            }
         },
         "IncomingInvoice": {
             "type": "object",

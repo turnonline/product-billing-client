@@ -3979,11 +3979,6 @@
                     "description": "A business that delivered a product or service. It might be an account at Ecosystem but not necessarily.",
                     "$ref": "#/definitions/Creditor"
                 },
-                "totalPrice": {
-                    "type": "number",
-                    "format": "double",
-                    "description": "The total price as a sum of all checked in items and its amount including target rounding mode. Including VAT."
-                },
                 "type": {
                     "type": "string",
                     "description": "The bill document type. It's case insensitive.",

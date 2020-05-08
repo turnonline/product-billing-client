@@ -3998,6 +3998,11 @@
                     "description": "The bank and IBAN that has been used to transfer money.",
                     "$ref": "#/definitions/TransactionBank"
                 },
+                "dueDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The optional invoice due date."
+                },
                 "key": {
                     "type": "string",
                     "description": "The expense payment identification."

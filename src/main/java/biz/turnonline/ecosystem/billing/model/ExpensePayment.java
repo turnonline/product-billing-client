@@ -40,6 +40,12 @@ public final class ExpensePayment
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
+    private com.google.api.client.util.DateTime dueDate;
+
+    /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
     private java.lang.String key;
 
     /**
@@ -62,6 +68,23 @@ public final class ExpensePayment
     public ExpensePayment setBankAccount( TransactionBank bankAccount )
     {
         this.bankAccount = bankAccount;
+        return this;
+    }
+
+    /**
+     * @return value or {@code null} for none
+     */
+    public com.google.api.client.util.DateTime getDueDate()
+    {
+        return dueDate;
+    }
+
+    /**
+     * @param dueDate dueDate or {@code null} for none
+     */
+    public ExpensePayment setDueDate( com.google.api.client.util.DateTime dueDate )
+    {
+        this.dueDate = dueDate;
         return this;
     }
 

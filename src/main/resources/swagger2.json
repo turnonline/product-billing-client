@@ -4001,7 +4001,7 @@
                 "dueDate": {
                     "type": "string",
                     "format": "date-time",
-                    "description": "The optional invoice due date."
+                    "description": "The optional bill due date."
                 },
                 "key": {
                     "type": "string",
@@ -4009,7 +4009,7 @@
                 },
                 "type": {
                     "type": "string",
-                    "description": "The payment type that has been used.",
+                    "description": "The payment type that has been (or expected to be) used.",
                     "default": "CARD_PAYMENT",
                     "enum": [
                         "CARD_PAYMENT",

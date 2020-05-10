@@ -31,7 +31,7 @@ import javax.inject.Singleton;
 import java.io.IOException;
 
 /**
- * * The {@link Expense} adaptee implementation.
+ * The {@link Expense} adaptee implementation.
  *
  * @author <a href="mailto:medvegy@turnonline.biz">Aurel Medvegy</a>
  */

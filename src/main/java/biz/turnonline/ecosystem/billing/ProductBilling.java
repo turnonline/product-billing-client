@@ -6236,6 +6236,23 @@ public class ProductBilling
             {
 
                 /**
+                 * Create a request for the method "invoices.delete".
+                 * <p>
+                 * This request holds the parameters needed by the billing server.  After setting any optional
+                 * parameters, call the {@link Delete#execute()} method to invoke the remote operation.
+                 *
+                 * @param orderId
+                 * @param invoiceId
+                 * @return the request
+                 */
+                public Delete delete( java.lang.Long orderId, java.lang.Long invoiceId ) throws java.io.IOException
+                {
+                    Delete result = new Delete( orderId, invoiceId );
+                    initialize( result );
+                    return result;
+                }
+
+                /**
                  * Create a request for the method "invoices.get".
                  * <p>
                  * This request holds the parameters needed by the billing server.  After setting any optional
@@ -6266,6 +6283,114 @@ public class ProductBilling
                     List result = new List( orderId );
                     initialize( result );
                     return result;
+                }
+
+                public class Delete
+                        extends ProductBillingRequest<Void>
+                {
+
+                    private static final String REST_PATH = "purchases/orders/{order_id}/invoices/{invoice_id}";
+
+                    @com.google.api.client.util.Key( "order_id" )
+                    private java.lang.Long orderId;
+
+                    @com.google.api.client.util.Key( "invoice_id" )
+                    private java.lang.Long invoiceId;
+
+                    /**
+                     * Create a request for the method "invoices.delete".
+                     * <p>
+                     * This request holds the parameters needed by the the billing server.  After setting any optional
+                     * parameters, call the {@link Delete#execute()} method to invoke the remote operation. <p> {@link
+                     * Delete#initialize(com.google.api.client.googleapis.services.AbstractGoogleClientRequest)} must
+                     * be called to initialize this instance immediately after invoking the constructor. </p>
+                     *
+                     * @param orderId
+                     * @param invoiceId
+                     * @since 1.13
+                     */
+                    protected Delete( java.lang.Long orderId, java.lang.Long invoiceId )
+                    {
+                        super( ProductBilling.this, "DELETE", REST_PATH, null, Void.class );
+                        this.orderId = com.google.api.client.util.Preconditions.checkNotNull( orderId, "Required parameter orderId must be specified." );
+                        this.invoiceId = com.google.api.client.util.Preconditions.checkNotNull( invoiceId, "Required parameter invoiceId must be specified." );
+                    }
+
+                    @Override
+                    public Delete setAlt( java.lang.String alt )
+                    {
+                        return ( Delete ) super.setAlt( alt );
+                    }
+
+                    @Override
+                    public Delete setFields( java.lang.String fields )
+                    {
+                        return ( Delete ) super.setFields( fields );
+                    }
+
+                    @Override
+                    public Delete setKey( java.lang.String key )
+                    {
+                        return ( Delete ) super.setKey( key );
+                    }
+
+                    @Override
+                    public Delete setOauthToken( java.lang.String oauthToken )
+                    {
+                        return ( Delete ) super.setOauthToken( oauthToken );
+                    }
+
+                    @Override
+                    public Delete setPrettyPrint( java.lang.Boolean prettyPrint )
+                    {
+                        return ( Delete ) super.setPrettyPrint( prettyPrint );
+                    }
+
+                    @Override
+                    public Delete setQuotaUser( java.lang.String quotaUser )
+                    {
+                        return ( Delete ) super.setQuotaUser( quotaUser );
+                    }
+
+                    @Override
+                    public Delete setUserIp( java.lang.String userIp )
+                    {
+                        return ( Delete ) super.setUserIp( userIp );
+                    }
+
+                    /**
+                     *
+                     */
+                    public java.lang.Long getOrderId()
+                    {
+                        return orderId;
+                    }
+
+                    public Delete setOrderId( java.lang.Long orderId )
+                    {
+                        this.orderId = orderId;
+                        return this;
+                    }
+
+                    /**
+                     *
+                     */
+                    public java.lang.Long getInvoiceId()
+                    {
+                        return invoiceId;
+                    }
+
+                    public Delete setInvoiceId( java.lang.Long invoiceId )
+                    {
+                        this.invoiceId = invoiceId;
+                        return this;
+                    }
+
+                    @Override
+                    public Delete set( String parameterName, Object value )
+                    {
+                        return ( Delete ) super.set( parameterName, value );
+                    }
                 }
 
                 public class Get

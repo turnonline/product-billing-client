@@ -34,7 +34,7 @@ public final class ExpensePayment
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private TransactionBank bankAccount;
+    private BankAccount bankAccount;
 
     /**
      * The value may be {@code null}.
@@ -57,7 +57,7 @@ public final class ExpensePayment
     /**
      * @return value or {@code null} for none
      */
-    public TransactionBank getBankAccount()
+    public BankAccount getBankAccount()
     {
         return bankAccount;
     }
@@ -65,7 +65,7 @@ public final class ExpensePayment
     /**
      * @param bankAccount bankAccount or {@code null} for none
      */
-    public ExpensePayment setBankAccount( TransactionBank bankAccount )
+    public ExpensePayment setBankAccount( BankAccount bankAccount )
     {
         this.bankAccount = bankAccount;
         return this;

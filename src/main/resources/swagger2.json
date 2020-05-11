@@ -3529,7 +3529,7 @@
                     "description": "The international bank account number."
                 }
             },
-            "description": "The bank account at invoice.\n\nIf provided a bank account Id as a header while creating or updating the invoice, the bank account will be populated by the service taken the details from the Payment Processor."
+            "description": "The bank account at invoice."
         },
         "Bill": {
             "type": "object",
@@ -4047,8 +4047,8 @@
             "type": "object",
             "properties": {
                 "bankAccount": {
-                    "description": "The bank and IBAN that has been used to transfer money.",
-                    "$ref": "#/definitions/TransactionBank"
+                    "description": "Creditor's bank account. The bank and IBAN that has been (or expected to be) used to transfer money.",
+                    "$ref": "#/definitions/BankAccount"
                 },
                 "dueDate": {
                     "type": "string",
@@ -4247,7 +4247,7 @@
                     "description": "The order identification, based on which this invoice was issued."
                 },
                 "payment": {
-                    "description": "Payment instruction for the debtor, all necessary information to pay the invoice. If none bank account selected, a bank account in creditor's account marked as primary will be set if any.",
+                    "description": "Payment instruction for the debtor, all necessary information to pay the invoice. If none bank account selected, a bank account in creditor's account marked as primary will be set if any.\n\nIf provided a bank account Id as a header while creating or updating the invoice, the bank account will be set by the service and the details will be taken from the Payment Processor.",
                     "$ref": "#/definitions/InvoicePayment"
                 },
                 "pin": {

@@ -3537,7 +3537,7 @@
                 "receipt": {
                     "type": "integer",
                     "format": "int64",
-                    "description": "The unique identification of the bill (receipt)."
+                    "description": "The unique identification of the bill (receipt) within Billing Processor service."
                 },
                 "invoice": {
                     "type": "integer",
@@ -5422,6 +5422,11 @@
                         "REFUND",
                         "TRANSFER"
                     ]
+                },
+                "transactionId": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": "The identification of the transaction within payment processor service (single tenant)."
                 }
             },
             "description": "Transaction that represents either a credit or debit operation.\n\nTwo transactions are being considered the same if the following properties are same:\n* The ID of the authenticated account\n* Bill.order\n* Bill.invoice\n* Bill.receipt\n* credit\n* key"

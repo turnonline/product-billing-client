@@ -95,6 +95,13 @@ public final class Transaction
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
+    @com.google.api.client.json.JsonString
+    private java.lang.Long transactionId;
+
+    /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
     private java.lang.String type;
 
     /**
@@ -264,6 +271,23 @@ public final class Transaction
     public Transaction setStatus( java.lang.String status )
     {
         this.status = status;
+        return this;
+    }
+
+    /**
+     * @return value or {@code null} for none
+     */
+    public java.lang.Long getTransactionId()
+    {
+        return transactionId;
+    }
+
+    /**
+     * @param transactionId transactionId or {@code null} for none
+     */
+    public Transaction setTransactionId( java.lang.Long transactionId )
+    {
+        this.transactionId = transactionId;
         return this;
     }
 

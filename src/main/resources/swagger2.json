@@ -5354,9 +5354,6 @@
         },
         "Transaction": {
             "type": "object",
-            "required": [
-                "bill"
-            ],
             "properties": {
                 "amount": {
                     "type": "number",
@@ -5392,13 +5389,13 @@
                     "description": "The payment currency alphabetic code based on the ISO 4217.",
                     "default": "EUR"
                 },
-                "reference": {
-                    "type": "string",
-                    "description": "A user provided payment reference."
-                },
                 "key": {
                     "type": "string",
                     "description": "The unique payment identification related to the associated bill."
+                },
+                "reference": {
+                    "type": "string",
+                    "description": "A user provided payment reference."
                 },
                 "status": {
                     "type": "string",
@@ -5412,6 +5409,11 @@
                         "FAILED"
                     ]
                 },
+                "transactionId": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": "The identification of the transaction within payment processor service (single tenant)."
+                },
                 "type": {
                     "type": "string",
                     "description": "The payment type that has been used to make this payment.",
@@ -5422,14 +5424,9 @@
                         "REFUND",
                         "TRANSFER"
                     ]
-                },
-                "transactionId": {
-                    "type": "integer",
-                    "format": "int64",
-                    "description": "The identification of the transaction within payment processor service (single tenant)."
                 }
             },
-            "description": "Transaction that represents either a credit or debit operation.\n\nTwo transactions are being considered the same if the following properties are same:\n* The ID of the authenticated account\n* Bill.order\n* Bill.invoice\n* Bill.receipt\n* credit\n* key"
+            "description": "Transaction that represents either a credit or debit operation.\n\nTwo transactions are being considered the same if the following properties are same:\n* The ID of the authenticated account\n* Bill.transactionId"
         },
         "TransactionBank": {
             "type": "object",

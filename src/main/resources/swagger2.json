@@ -5412,7 +5412,7 @@
                 "transactionId": {
                     "type": "integer",
                     "format": "int64",
-                    "description": "The identification of the transaction within payment processor service (single tenant)."
+                    "description": "The identification of the transaction within payment processor service unique for single Ecosystem account."
                 },
                 "type": {
                     "type": "string",
@@ -5426,7 +5426,7 @@
                     ]
                 }
             },
-            "description": "Transaction that represents either a credit or debit operation.\n\nTwo transactions are being considered the same if the following properties are same:\n* The ID of the authenticated account\n* Bill.transactionId"
+            "description": "Transaction that represents either a credit or debit operation.\n\nTwo transactions are being considered the same if the following properties are same:\n* The ID of the authenticated account\n* Transaction ID"
         },
         "TransactionBank": {
             "type": "object",

@@ -59,6 +59,18 @@ public final class Transaction
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
+    private java.lang.Double billAmount;
+
+    /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
+    private java.lang.String billCurrency;
+
+    /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
     private com.google.api.client.util.DateTime completedAt;
 
     /**
@@ -78,6 +90,12 @@ public final class Transaction
      */
     @com.google.api.client.util.Key
     private java.lang.String key;
+
+    /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
+    private Merchant merchant;
 
     /**
      * The value may be {@code null}.
@@ -175,6 +193,40 @@ public final class Transaction
     /**
      * @return value or {@code null} for none
      */
+    public java.lang.Double getBillAmount()
+    {
+        return billAmount;
+    }
+
+    /**
+     * @param billAmount billAmount or {@code null} for none
+     */
+    public Transaction setBillAmount( java.lang.Double billAmount )
+    {
+        this.billAmount = billAmount;
+        return this;
+    }
+
+    /**
+     * @return value or {@code null} for none
+     */
+    public java.lang.String getBillCurrency()
+    {
+        return billCurrency;
+    }
+
+    /**
+     * @param billCurrency billCurrency or {@code null} for none
+     */
+    public Transaction setBillCurrency( java.lang.String billCurrency )
+    {
+        this.billCurrency = billCurrency;
+        return this;
+    }
+
+    /**
+     * @return value or {@code null} for none
+     */
     public com.google.api.client.util.DateTime getCompletedAt()
     {
         return completedAt;
@@ -237,6 +289,23 @@ public final class Transaction
     public Transaction setKey( java.lang.String key )
     {
         this.key = key;
+        return this;
+    }
+
+    /**
+     * @return value or {@code null} for none
+     */
+    public Merchant getMerchant()
+    {
+        return merchant;
+    }
+
+    /**
+     * @param merchant merchant or {@code null} for none
+     */
+    public Transaction setMerchant( Merchant merchant )
+    {
+        this.merchant = merchant;
         return this;
     }
 

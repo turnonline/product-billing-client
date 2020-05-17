@@ -4393,6 +4393,24 @@
         "JsonMap": {
             "type": "object"
         },
+        "Merchant": {
+            "type": "object",
+            "properties": {
+                "category": {
+                    "type": "string",
+                    "description": "The merchant category."
+                },
+                "city": {
+                    "type": "string",
+                    "description": "The merchant city."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The merchant name."
+                }
+            },
+            "description": "The merchant details, available only for card payments."
+        },
         "NumberSeries": {
             "type": "object",
             "required": [
@@ -5374,6 +5392,15 @@
                     "description": "Identification of the bill (receipt) or invoice document settled by this transaction.",
                     "$ref": "#/definitions/Bill"
                 },
+                "billAmount": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "The billing amount for cross-currency payment. If missing the transaction represents a single currency payment."
+                },
+                "billCurrency": {
+                    "type": "string",
+                    "description": "The billing currency for cross-currency payment. If missing the transaction represents a single currency payment."
+                },
                 "completedAt": {
                     "type": "string",
                     "format": "date-time",
@@ -5392,6 +5419,9 @@
                 "key": {
                     "type": "string",
                     "description": "The unique payment identification related to the associated bill."
+                },
+                "merchant": {
+                    "$ref": "#/definitions/Merchant"
                 },
                 "reference": {
                     "type": "string",

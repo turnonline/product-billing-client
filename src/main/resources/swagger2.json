@@ -3410,7 +3410,7 @@
                     "Bill Settlements"
                 ],
                 "summary": "Push the transaction to be paired",
-                "description": "Push the transaction to be paired with a bill.\nIn order to successfully pair the bill either a valid receipt identification or invoice identification (it includes order Id too) must be provided.\n\n**Error handling:**\n* In case of an invalid or unknown transaction's property enum values the  default value will be set.\n* A transaction that did not match any bill will be ignored",
+                "description": "Push the transaction to be paired with a bill.\nIn order to successfully pair the bill either a valid receipt identification or invoice identification (it includes order Id too) must be provided.\n\n**Error handling:**\n* In case of an invalid or unknown transaction's property enum values the  default value will be set.\n* A transaction that did not match any bill will be marked as a receipt and will be processed later.",
                 "operationId": "pushTransaction",
                 "consumes": [
                     "application/json"

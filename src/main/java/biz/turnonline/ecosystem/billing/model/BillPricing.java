@@ -17,7 +17,7 @@
 package biz.turnonline.ecosystem.billing.model;
 
 /**
- * Model definition for InvoicePricing.
+ * Model definition for BillPricing.
  *
  * <p> This is the Java data model class that specifies how to parse/serialize into the JSON that is
  * transmitted over HTTP when working with the TurnOnline.biz Product Billing. For a detailed
@@ -27,8 +27,7 @@ package biz.turnonline.ecosystem.billing.model;
  *
  * @author Google, Inc.
  */
-@SuppressWarnings( "javadoc" )
-public final class InvoicePricing
+public final class BillPricing
         extends com.google.api.client.json.GenericJson
 {
 
@@ -80,7 +79,7 @@ public final class InvoicePricing
     /**
      * @param items items or {@code null} for none
      */
-    public InvoicePricing setItems( java.util.List<PricingItem> items )
+    public BillPricing setItems( java.util.List<PricingItem> items )
     {
         this.items = items;
         return this;
@@ -97,7 +96,7 @@ public final class InvoicePricing
     /**
      * @param rounding rounding or {@code null} for none
      */
-    public InvoicePricing setRounding( java.lang.String rounding )
+    public BillPricing setRounding( java.lang.String rounding )
     {
         this.rounding = rounding;
         return this;
@@ -114,7 +113,7 @@ public final class InvoicePricing
     /**
      * @param totalPrice totalPrice or {@code null} for none
      */
-    public InvoicePricing setTotalPrice( java.lang.Double totalPrice )
+    public BillPricing setTotalPrice( java.lang.Double totalPrice )
     {
         this.totalPrice = totalPrice;
         return this;
@@ -131,7 +130,7 @@ public final class InvoicePricing
     /**
      * @param totalPriceExclVat totalPriceExclVat or {@code null} for none
      */
-    public InvoicePricing setTotalPriceExclVat( java.lang.Double totalPriceExclVat )
+    public BillPricing setTotalPriceExclVat( java.lang.Double totalPriceExclVat )
     {
         this.totalPriceExclVat = totalPriceExclVat;
         return this;
@@ -148,22 +147,22 @@ public final class InvoicePricing
     /**
      * @param totalVatBase totalVatBase or {@code null} for none
      */
-    public InvoicePricing setTotalVatBase( java.lang.Double totalVatBase )
+    public BillPricing setTotalVatBase( java.lang.Double totalVatBase )
     {
         this.totalVatBase = totalVatBase;
         return this;
     }
 
     @Override
-    public InvoicePricing set( String fieldName, Object value )
+    public BillPricing set( String fieldName, Object value )
     {
-        return ( InvoicePricing ) super.set( fieldName, value );
+        return ( BillPricing ) super.set( fieldName, value );
     }
 
     @Override
-    public InvoicePricing clone()
+    public BillPricing clone()
     {
-        return ( InvoicePricing ) super.clone();
+        return ( BillPricing ) super.clone();
     }
 
 }

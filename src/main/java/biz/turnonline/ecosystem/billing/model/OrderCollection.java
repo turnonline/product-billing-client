@@ -27,17 +27,9 @@ package biz.turnonline.ecosystem.billing.model;
  *
  * @author Google, Inc.
  */
-@SuppressWarnings( "javadoc" )
 public final class OrderCollection
         extends com.google.api.client.json.GenericJson
 {
-
-    static
-    {
-        // hack to force ProGuard to consider Order used, since otherwise it would be stripped out
-        // see https://github.com/google/google-api-java-client/issues/543
-        com.google.api.client.util.Data.nullOf( Order.class );
-    }
 
     /**
      * The value may be {@code null}.

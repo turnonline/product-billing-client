@@ -17,7 +17,7 @@
 package biz.turnonline.ecosystem.billing.model;
 
 /**
- * Model definition for Expense.
+ * Model definition for Expenditure.
  *
  * <p> This is the Java data model class that specifies how to parse/serialize into the JSON that is
  * transmitted over HTTP when working with the TurnOnline.biz Product Billing. For a detailed
@@ -27,16 +27,9 @@ package biz.turnonline.ecosystem.billing.model;
  *
  * @author Google, Inc.
  */
-public final class Expense
+public final class Expenditure
         extends com.google.api.client.json.GenericJson
 {
-
-    static
-    {
-        // hack to force ProGuard to consider PricingItem used, since otherwise it would be stripped out
-        // see https://github.com/google/google-api-java-client/issues/543
-        com.google.api.client.util.Data.nullOf( PricingItem.class );
-    }
 
     /**
      * The value may be {@code null}.
@@ -73,7 +66,7 @@ public final class Expense
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private ExpensePayment payment;
+    private ExpenditurePayment payment;
 
     /**
      * The value may be {@code null}.
@@ -98,7 +91,7 @@ public final class Expense
     /**
      * @param bill bill or {@code null} for none
      */
-    public Expense setBill( java.lang.Long bill )
+    public Expenditure setBill( java.lang.Long bill )
     {
         this.bill = bill;
         return this;
@@ -115,7 +108,7 @@ public final class Expense
     /**
      * @param billNumber billNumber or {@code null} for none
      */
-    public Expense setBillNumber( java.lang.String billNumber )
+    public Expenditure setBillNumber( java.lang.String billNumber )
     {
         this.billNumber = billNumber;
         return this;
@@ -132,7 +125,7 @@ public final class Expense
     /**
      * @param dateOfIssue dateOfIssue or {@code null} for none
      */
-    public Expense setDateOfIssue( com.google.api.client.util.DateTime dateOfIssue )
+    public Expenditure setDateOfIssue( com.google.api.client.util.DateTime dateOfIssue )
     {
         this.dateOfIssue = dateOfIssue;
         return this;
@@ -149,7 +142,7 @@ public final class Expense
     /**
      * @param dateOfTaxable dateOfTaxable or {@code null} for none
      */
-    public Expense setDateOfTaxable( com.google.api.client.util.DateTime dateOfTaxable )
+    public Expenditure setDateOfTaxable( com.google.api.client.util.DateTime dateOfTaxable )
     {
         this.dateOfTaxable = dateOfTaxable;
         return this;
@@ -166,7 +159,7 @@ public final class Expense
     /**
      * @param items items or {@code null} for none
      */
-    public Expense setItems( java.util.List<PricingItem> items )
+    public Expenditure setItems( java.util.List<PricingItem> items )
     {
         this.items = items;
         return this;
@@ -175,7 +168,7 @@ public final class Expense
     /**
      * @return value or {@code null} for none
      */
-    public ExpensePayment getPayment()
+    public ExpenditurePayment getPayment()
     {
         return payment;
     }
@@ -183,7 +176,7 @@ public final class Expense
     /**
      * @param payment payment or {@code null} for none
      */
-    public Expense setPayment( ExpensePayment payment )
+    public Expenditure setPayment( ExpenditurePayment payment )
     {
         this.payment = payment;
         return this;
@@ -200,7 +193,7 @@ public final class Expense
     /**
      * @param supplier supplier or {@code null} for none
      */
-    public Expense setSupplier( Creditor supplier )
+    public Expenditure setSupplier( Creditor supplier )
     {
         this.supplier = supplier;
         return this;
@@ -217,22 +210,22 @@ public final class Expense
     /**
      * @param type type or {@code null} for none
      */
-    public Expense setType( java.lang.String type )
+    public Expenditure setType( java.lang.String type )
     {
         this.type = type;
         return this;
     }
 
     @Override
-    public Expense set( String fieldName, Object value )
+    public Expenditure set( String fieldName, Object value )
     {
-        return ( Expense ) super.set( fieldName, value );
+        return ( Expenditure ) super.set( fieldName, value );
     }
 
     @Override
-    public Expense clone()
+    public Expenditure clone()
     {
-        return ( Expense ) super.clone();
+        return ( Expenditure ) super.clone();
     }
 
 }

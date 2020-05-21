@@ -91,7 +91,7 @@ public final class IncomingInvoice
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private InvoicePayment payment;
+    private BillPayment payment;
 
     /**
      * The value may be {@code null}.
@@ -103,7 +103,7 @@ public final class IncomingInvoice
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private InvoicePricing pricing;
+    private BillPricing pricing;
 
     /**
      * The value may be {@code null}.
@@ -273,7 +273,7 @@ public final class IncomingInvoice
     /**
      * @return value or {@code null} for none
      */
-    public InvoicePayment getPayment()
+    public BillPayment getPayment()
     {
         return payment;
     }
@@ -281,7 +281,7 @@ public final class IncomingInvoice
     /**
      * @param payment payment or {@code null} for none
      */
-    public IncomingInvoice setPayment( InvoicePayment payment )
+    public IncomingInvoice setPayment( BillPayment payment )
     {
         this.payment = payment;
         return this;
@@ -307,7 +307,7 @@ public final class IncomingInvoice
     /**
      * @return value or {@code null} for none
      */
-    public InvoicePricing getPricing()
+    public BillPricing getPricing()
     {
         return pricing;
     }
@@ -315,7 +315,7 @@ public final class IncomingInvoice
     /**
      * @param pricing pricing or {@code null} for none
      */
-    public IncomingInvoice setPricing( InvoicePricing pricing )
+    public IncomingInvoice setPricing( BillPricing pricing )
     {
         this.pricing = pricing;
         return this;

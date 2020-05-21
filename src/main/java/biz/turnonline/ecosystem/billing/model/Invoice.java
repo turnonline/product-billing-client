@@ -27,7 +27,6 @@ package biz.turnonline.ecosystem.billing.model;
  *
  * @author Google, Inc.
  */
-@SuppressWarnings( "javadoc" )
 public final class Invoice
         extends com.google.api.client.json.GenericJson
 {
@@ -109,7 +108,7 @@ public final class Invoice
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private InvoicePayment payment;
+    private BillPayment payment;
 
     /**
      * The value may be {@code null}.
@@ -121,7 +120,7 @@ public final class Invoice
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private InvoicePricing pricing;
+    private BillPricing pricing;
 
     /**
      * The value may be {@code null}.
@@ -348,7 +347,7 @@ public final class Invoice
     /**
      * @return value or {@code null} for none
      */
-    public InvoicePayment getPayment()
+    public BillPayment getPayment()
     {
         return payment;
     }
@@ -356,7 +355,7 @@ public final class Invoice
     /**
      * @param payment payment or {@code null} for none
      */
-    public Invoice setPayment( InvoicePayment payment )
+    public Invoice setPayment( BillPayment payment )
     {
         this.payment = payment;
         return this;
@@ -382,7 +381,7 @@ public final class Invoice
     /**
      * @return value or {@code null} for none
      */
-    public InvoicePricing getPricing()
+    public BillPricing getPricing()
     {
         return pricing;
     }
@@ -390,7 +389,7 @@ public final class Invoice
     /**
      * @param pricing pricing or {@code null} for none
      */
-    public Invoice setPricing( InvoicePricing pricing )
+    public Invoice setPricing( BillPricing pricing )
     {
         this.pricing = pricing;
         return this;

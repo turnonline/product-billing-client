@@ -5487,10 +5487,10 @@ public class ProductBilling
          * This request holds the parameters needed by the billing server.  After setting any optional
          * parameters, call the {@link Insert#execute()} method to invoke the remote operation.
          *
-         * @param content the {@link biz.turnonline.ecosystem.billing.model.Expense}
+         * @param content the {@link biz.turnonline.ecosystem.billing.model.Expenditure}
          * @return the request
          */
-        public Insert insert( biz.turnonline.ecosystem.billing.model.Expense content ) throws java.io.IOException
+        public Insert insert( biz.turnonline.ecosystem.billing.model.Expenditure content ) throws java.io.IOException
         {
             Insert result = new Insert( content );
             initialize( result );
@@ -5543,10 +5543,10 @@ public class ProductBilling
              * Insert#initialize(com.google.api.client.googleapis.services.AbstractGoogleClientRequest)} must
              * be called to initialize this instance immediately after invoking the constructor. </p>
              *
-             * @param content the {@link biz.turnonline.ecosystem.billing.model.Expense}
+             * @param content the {@link biz.turnonline.ecosystem.billing.model.Expenditure}
              * @since 1.13
              */
-            protected Insert( biz.turnonline.ecosystem.billing.model.Expense content )
+            protected Insert( biz.turnonline.ecosystem.billing.model.Expenditure content )
             {
                 super( ProductBilling.this, "POST", REST_PATH, content, biz.turnonline.ecosystem.billing.model.Bill.class );
             }

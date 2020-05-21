@@ -17,7 +17,7 @@
 package biz.turnonline.ecosystem.billing.model;
 
 /**
- * Model definition for InvoicePayment.
+ * Model definition for ExpenditurePayment.
  *
  * <p> This is the Java data model class that specifies how to parse/serialize into the JSON that is
  * transmitted over HTTP when working with the TurnOnline.biz Product Billing. For a detailed
@@ -27,10 +27,9 @@ package biz.turnonline.ecosystem.billing.model;
  *
  * @author Google, Inc.
  */
-public final class InvoicePayment
+public final class ExpenditurePayment
         extends com.google.api.client.json.GenericJson
 {
-
     /**
      * The value may be {@code null}.
      */
@@ -53,20 +52,7 @@ public final class InvoicePayment
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.lang.Double totalAmount;
-
-    /**
-     * The value may be {@code null}.
-     */
-    @com.google.api.client.util.Key
     private java.lang.String type;
-
-    /**
-     * The value may be {@code null}.
-     */
-    @com.google.api.client.util.Key
-    @com.google.api.client.json.JsonString
-    private java.lang.Long variableSymbol;
 
     /**
      * @return value or {@code null} for none
@@ -79,7 +65,7 @@ public final class InvoicePayment
     /**
      * @param bankAccount bankAccount or {@code null} for none
      */
-    public InvoicePayment setBankAccount( BankAccount bankAccount )
+    public ExpenditurePayment setBankAccount( BankAccount bankAccount )
     {
         this.bankAccount = bankAccount;
         return this;
@@ -96,7 +82,7 @@ public final class InvoicePayment
     /**
      * @param dueDate dueDate or {@code null} for none
      */
-    public InvoicePayment setDueDate( com.google.api.client.util.DateTime dueDate )
+    public ExpenditurePayment setDueDate( com.google.api.client.util.DateTime dueDate )
     {
         this.dueDate = dueDate;
         return this;
@@ -113,26 +99,9 @@ public final class InvoicePayment
     /**
      * @param key key or {@code null} for none
      */
-    public InvoicePayment setKey( java.lang.String key )
+    public ExpenditurePayment setKey( java.lang.String key )
     {
         this.key = key;
-        return this;
-    }
-
-    /**
-     * @return value or {@code null} for none
-     */
-    public java.lang.Double getTotalAmount()
-    {
-        return totalAmount;
-    }
-
-    /**
-     * @param totalAmount totalAmount or {@code null} for none
-     */
-    public InvoicePayment setTotalAmount( java.lang.Double totalAmount )
-    {
-        this.totalAmount = totalAmount;
         return this;
     }
 
@@ -147,39 +116,21 @@ public final class InvoicePayment
     /**
      * @param type type or {@code null} for none
      */
-    public InvoicePayment setType( java.lang.String type )
+    public ExpenditurePayment setType( java.lang.String type )
     {
         this.type = type;
         return this;
     }
 
-    /**
-     * @return value or {@code null} for none
-     */
-    public java.lang.Long getVariableSymbol()
+    @Override
+    public ExpenditurePayment set( String fieldName, Object value )
     {
-        return variableSymbol;
-    }
-
-    /**
-     * @param variableSymbol variableSymbol or {@code null} for none
-     */
-    public InvoicePayment setVariableSymbol( java.lang.Long variableSymbol )
-    {
-        this.variableSymbol = variableSymbol;
-        return this;
+        return ( ExpenditurePayment ) super.set( fieldName, value );
     }
 
     @Override
-    public InvoicePayment set( String fieldName, Object value )
+    public ExpenditurePayment clone()
     {
-        return ( InvoicePayment ) super.set( fieldName, value );
+        return ( ExpenditurePayment ) super.clone();
     }
-
-    @Override
-    public InvoicePayment clone()
-    {
-        return ( InvoicePayment ) super.clone();
-    }
-
 }

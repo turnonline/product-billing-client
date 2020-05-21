@@ -18,7 +18,7 @@ package biz.turnonline.ecosystem.billing.facade;
 
 import biz.turnonline.ecosystem.billing.facade.adaptee.AccountingSystemAdaptee;
 import biz.turnonline.ecosystem.billing.facade.adaptee.BillingUnitAdaptee;
-import biz.turnonline.ecosystem.billing.facade.adaptee.ExpenseAdaptee;
+import biz.turnonline.ecosystem.billing.facade.adaptee.ExpenditureAdaptee;
 import biz.turnonline.ecosystem.billing.facade.adaptee.IncomingInvoiceAdaptee;
 import biz.turnonline.ecosystem.billing.facade.adaptee.IncomingInvoiceListAdaptee;
 import biz.turnonline.ecosystem.billing.facade.adaptee.InvoiceAdaptee;
@@ -36,7 +36,7 @@ import biz.turnonline.ecosystem.billing.facade.adaptee.TransactionAdaptee;
 import biz.turnonline.ecosystem.billing.facade.adaptee.VatRateAdaptee;
 import biz.turnonline.ecosystem.billing.model.AccountingSystem;
 import biz.turnonline.ecosystem.billing.model.BillingUnit;
-import biz.turnonline.ecosystem.billing.model.Expense;
+import biz.turnonline.ecosystem.billing.model.Expenditure;
 import biz.turnonline.ecosystem.billing.model.IncomingInvoice;
 import biz.turnonline.ecosystem.billing.model.Invoice;
 import biz.turnonline.ecosystem.billing.model.NumberSeries;
@@ -237,8 +237,8 @@ public class ProductBillingAdapteeModule
         } ).to( TransactionAdaptee.class );
 
         // Expense
-        bind( new TypeLiteral<InsertExecutorAdaptee<Expense>>()
+        bind( new TypeLiteral<InsertExecutorAdaptee<Expenditure>>()
         {
-        } ).to( ExpenseAdaptee.class );
+        } ).to( ExpenditureAdaptee.class );
     }
 }

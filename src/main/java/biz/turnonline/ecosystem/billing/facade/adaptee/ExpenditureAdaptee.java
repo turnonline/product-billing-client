@@ -17,7 +17,7 @@
 package biz.turnonline.ecosystem.billing.facade.adaptee;
 
 import biz.turnonline.ecosystem.billing.ProductBilling;
-import biz.turnonline.ecosystem.billing.model.Expense;
+import biz.turnonline.ecosystem.billing.model.Expenditure;
 import org.ctoolkit.restapi.client.Identifier;
 import org.ctoolkit.restapi.client.adaptee.InsertExecutorAdaptee;
 import org.ctoolkit.restapi.client.adaptee.MediaProvider;
@@ -31,23 +31,23 @@ import javax.inject.Singleton;
 import java.io.IOException;
 
 /**
- * The {@link Expense} adaptee implementation.
+ * The {@link Expenditure} adaptee implementation.
  *
  * @author <a href="mailto:medvegy@turnonline.biz">Aurel Medvegy</a>
  */
 @Singleton
-public class ExpenseAdaptee
-        extends AbstractInsertExecutorAdaptee<ProductBilling, Expense>
-        implements InsertExecutorAdaptee<Expense>
+public class ExpenditureAdaptee
+        extends AbstractInsertExecutorAdaptee<ProductBilling, Expenditure>
+        implements InsertExecutorAdaptee<Expenditure>
 {
     @Inject
-    public ExpenseAdaptee( Provider<ProductBilling> client )
+    public ExpenditureAdaptee( Provider<ProductBilling> client )
     {
         super( client );
     }
 
     @Override
-    public Object prepareInsert( @Nonnull Expense resource,
+    public Object prepareInsert( @Nonnull Expenditure resource,
                                  @Nullable Identifier parentKey,
                                  @Nullable MediaProvider provider ) throws IOException
     {

@@ -2914,14 +2914,14 @@
                 ]
             }
         },
-        "/v1/purchases/invoices": {
+        "/v1/purchases/expenses": {
             "get": {
                 "tags": [
                     "Purchases"
                 ],
-                "summary": "Search incoming invoices",
-                "description": "Search incoming invoices for this company",
-                "operationId": "searchIncomingInvoices",
+                "summary": "Search expenses",
+                "description": "Search expenses for this company that represents any purchase either inside or outside of the Ecosystem.",
+                "operationId": "searchExpenses",
                 "produces": [
                     "application/json"
                 ],
@@ -2949,15 +2949,15 @@
                         "in": "query",
                         "required": false,
                         "type": "boolean",
-                        "description": "Set to TRUE to return fewer invoice's properties in order to make the retrieval faster.",
+                        "description": "Set to TRUE to return fewer expense's properties in order to make the retrieval faster.",
                         "default": false
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "List of filtered incoming invoices. Sorted descending based on the invoice modification date.",
+                        "description": "List of filtered expenses. Sorted descending based on the expense modification date.",
                         "schema": {
-                            "$ref": "#/definitions/IncomingInvoiceCollection"
+                            "$ref": "#/definitions/ExpenseCollection"
                         }
                     },
                     "401": {
@@ -3534,10 +3534,10 @@
         "Bill": {
             "type": "object",
             "properties": {
-                "receipt": {
+                "id": {
                     "type": "integer",
                     "format": "int64",
-                    "description": "The unique identification of the bill (receipt) within Billing Processor service."
+                    "description": "The unique identification of the bill within Billing Processor service."
                 },
                 "invoice": {
                     "type": "integer",
@@ -3547,7 +3547,12 @@
                 "order": {
                     "type": "integer",
                     "format": "int64",
-                    "description": "The unique identification of the order associated with the settled invoice."
+                    "description": "The unique identification of the order associated with the invoice."
+                },
+                "receipt": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": "The unique identification of the receipt within Product Billing service."
                 }
             },
             "description": "Identification of the bill (receipt) or invoice document. Valid invoice identification includes order identification too."
@@ -3662,7 +3667,7 @@
                     "default": false
                 }
             },
-            "description": "The account that represents a business at TurnOnline.biz Ecosystem to whom money will be credited."
+            "description": "The account that represents a business at TurnOnline.biz Ecosystem to whom money will be credited. But not necessarily, only if the account property has a valid identification."
         },
         "CreditorContactDetails": {
             "type": "object",
@@ -4029,7 +4034,7 @@
                 },
                 "supplier": {
                     "description": "A business that delivered a product or service. Defined outside of the Ecosystem.",
-                    "$ref": "#/definitions/Creditor"
+                    "$ref": "#/definitions/Supplier"
                 },
                 "type": {
                     "type": "string",
@@ -4047,7 +4052,7 @@
             "type": "object",
             "properties": {
                 "bankAccount": {
-                    "description": "Creditor's bank account. The bank and IBAN that has been (or expected to be) used to transfer money.",
+                    "description": "Creditor's bank account. The optional bank and IBAN that has been (or expected to be) used to transfer money.",
                     "$ref": "#/definitions/BankAccount"
                 },
                 "dueDate": {
@@ -4055,9 +4060,16 @@
                     "format": "date-time",
                     "description": "The optional bill due date."
                 },
-                "key": {
-                    "type": "string",
-                    "description": "The expense payment identification."
+                "totalAmount": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "The total amount due. Zero value means the bill has been already paid (in this case the Transaction ID is mandatory).",
+                    "default": 0
+                },
+                "transactionId": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": "The identification of the transaction within Product Billing service associated with this expenditure if it has been already matched."
                 },
                 "type": {
                     "type": "string",
@@ -4069,6 +4081,93 @@
                         "REFUND",
                         "TRANSFER"
                     ]
+                }
+            }
+        },
+        "Expense": {
+            "type": "object",
+            "properties": {
+                "bill": {
+                    "description": "Identification of the bill (receipt or invoice) document.",
+                    "$ref": "#/definitions/Bill"
+                },
+                "billNumber": {
+                    "type": "string",
+                    "description": "Bill (receipt) number, or in case of incoming invoice its invoice number."
+                },
+                "currency": {
+                    "type": "string",
+                    "description": "The currency alphabetic code based on the ISO 4217."
+                },
+                "dateOfIssue": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The bill issue date. RFC 3339"
+                },
+                "dateOfTaxable": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The date of taxable supplies. If not provided the date of issue will be used."
+                },
+                "items": {
+                    "type": "array",
+                    "description": "Expense pricing item list.",
+                    "items": {
+                        "$ref": "#/definitions/PricingItem"
+                    }
+                },
+                "payment": {
+                    "description": "Expense payment details.",
+                    "$ref": "#/definitions/BillPayment"
+                },
+                "pin": {
+                    "type": "string",
+                    "description": "The secret hash associated solely with this bill that has to be used to download original PDF."
+                },
+                "servingUrl": {
+                    "type": "string",
+                    "description": "The full URL of the bill picture as it appears in accounting system. Served from the CDN."
+                },
+                "supplier": {
+                    "description": "A business that delivered a product or service. It might be an account at Ecosystem but not necessarily.",
+                    "$ref": "#/definitions/Creditor"
+                },
+                "totalPrice": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "The total price as a sum of all checked in pricing items and its amount including target rounding mode. Including VAT."
+                },
+                "totalPriceExclVat": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "The total price as a sum of all checked in pricing items and its amount including target rounding mode. The price is excluding VAT in case company is VAT payer, otherwise price is final and same as value of totalPrice property."
+                },
+                "totalVatBase": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "The total VAT base as a sum of all checked in pricing items and its amount."
+                },
+                "type": {
+                    "type": "string",
+                    "description": "The bill document type.",
+                    "default": "INVOICE",
+                    "enum": [
+                        "INVOICE",
+                        "RECEIPT"
+                    ]
+                }
+            },
+            "description": "Expense that represents any purchase either inside or outside of the Ecosystem."
+        },
+        "ExpenseCollection": {
+            "type": "object",
+            "properties": {
+                "items": {
+                    "type": "array",
+                    "description": "Expense collection wrapper.",
+                    "items": {
+                        "$ref": "#/definitions/Expense"
+                    }
                 }
             }
         },
@@ -4118,7 +4217,7 @@
                     "description": "The associated order identification"
                 },
                 "payment": {
-                    "description": "Payment instruction for the debtor, all necessary information to pay the bill.",
+                    "description": "Payment instruction for the debtor, all of the necessary information to make a payment.",
                     "$ref": "#/definitions/BillPayment"
                 },
                 "pin": {
@@ -4247,7 +4346,7 @@
                     "description": "The order identification, based on which this invoice was issued."
                 },
                 "payment": {
-                    "description": "Payment instruction for the debtor, all necessary information to pay the bill. If none bank account selected, a bank account in creditor's account marked as primary will be set if any.\n\nIf provided a bank account Id as a header while creating or updating the bill, the bank account will be set by the service and the details will be taken from the Payment Processor.",
+                    "description": "Payment instruction for the debtor, all of the necessary information to make a payment. If none bank account selected, a bank account in creditor's account marked as primary will be set if any.\n\nIf provided a bank account Id as a header while creating or updating the bill, the bank account will be set by the service and the details will be taken from the Payment Processor.",
                     "$ref": "#/definitions/BillPayment"
                 },
                 "pin": {
@@ -4312,6 +4411,12 @@
                     "type": "string",
                     "description": "The payment key as an ID to identify incoming payment related to this invoice. Might be generated at the client side. It may be the same value as the variable symbol, but not necessarily."
                 },
+                "totalAmount": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "The total amount due. It will have a zero value once bill is fully settled.",
+                    "default": 0
+                },
                 "type": {
                     "type": "string",
                     "description": "The intended payment method type. It's case insensitive.",
@@ -4323,19 +4428,13 @@
                         "TRANSFER"
                     ]
                 },
-                "totalAmount": {
-                    "type": "number",
-                    "format": "double",
-                    "description": "The total amount due. It will have a zero value once invoice is fully settled.",
-                    "default": 0
-                },
                 "variableSymbol": {
                     "type": "integer",
                     "format": "int64",
                     "description": "The variable symbol generated by accounting system. The ID to identify incoming payment limited to 10 digits."
                 }
             },
-            "description": "Payment instruction for the debtor, all necessary information to pay the bill."
+            "description": "Payment instruction for the debtor, all of the necessary information to make a payment."
         },
         "BillPricing": {
             "type": "object",
@@ -5367,6 +5466,43 @@
                     "items": {
                         "$ref": "#/definitions/PurchaseOrder"
                     }
+                }
+            }
+        },
+        "Supplier": {
+            "type": "object",
+            "properties": {
+                "businessName": {
+                    "type": "string",
+                    "description": "Supplier business name."
+                },
+                "companyId": {
+                    "type": "string",
+                    "description": "Supplier business identification number."
+                },
+                "taxId": {
+                    "type": "string",
+                    "description": "Supplier tax payer identification number."
+                },
+                "vatId": {
+                    "type": "string",
+                    "description": "Supplier vat payer identification number."
+                },
+                "street": {
+                    "type": "string",
+                    "description": "The street and street number."
+                },
+                "city": {
+                    "type": "string",
+                    "description": "The address city."
+                },
+                "country": {
+                    "type": "string",
+                    "description": "The address ISO 3166 alpha-2 country code. It’s case insensitive."
+                },
+                "postcode": {
+                    "type": "string",
+                    "description": "The address post code."
                 }
             }
         },

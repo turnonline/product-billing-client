@@ -5498,19 +5498,19 @@ public class ProductBilling
         }
 
         /**
-         * An accessor for creating requests from the Invoices collection.
+         * An accessor for creating requests from the Expenses collection.
          *
          * <p>The typical use is:</p>
          * <pre>
          *   {@code ProductBilling billing = new ProductBilling(...);}
-         *   {@code ProductBilling.Invoices.List request = billing.invoices().list(parameters ...)}
+         *   {@code ProductBilling.Expenses.List request = billing.expenses().list(parameters ...)}
          * </pre>
          *
          * @return the resource collection
          */
-        public Invoices invoices()
+        public Expenses expenses()
         {
-            return new Invoices();
+            return new Expenses();
         }
 
         /**
@@ -5601,13 +5601,13 @@ public class ProductBilling
         }
 
         /**
-         * The "invoices" collection of methods.
+         * The "expenses" collection of methods.
          */
-        public class Invoices
+        public class Expenses
         {
 
             /**
-             * Create a request for the method "invoices.list".
+             * Create a request for the method "expenses.list".
              * <p>
              * This request holds the parameters needed by the billing server.  After setting any optional
              * parameters, call the {@link List#execute()} method to invoke the remote operation.
@@ -5622,10 +5622,10 @@ public class ProductBilling
             }
 
             public class List
-                    extends ProductBillingRequest<biz.turnonline.ecosystem.billing.model.IncomingInvoiceCollection>
+                    extends ProductBillingRequest<biz.turnonline.ecosystem.billing.model.ExpenseCollection>
             {
 
-                private static final String REST_PATH = "purchases/invoices";
+                private static final String REST_PATH = "purchases/expenses";
 
                 @com.google.api.client.util.Key
                 private java.lang.Integer limit;
@@ -5637,7 +5637,7 @@ public class ProductBilling
                 private java.lang.Integer offset;
 
                 /**
-                 * Create a request for the method "invoices.list".
+                 * Create a request for the method "expenses.list".
                  * <p>
                  * This request holds the parameters needed by the the billing server.  After setting any optional
                  * parameters, call the {@link List#execute()} method to invoke the remote operation. <p> {@link
@@ -5648,7 +5648,7 @@ public class ProductBilling
                  */
                 protected List()
                 {
-                    super( ProductBilling.this, "GET", REST_PATH, null, biz.turnonline.ecosystem.billing.model.IncomingInvoiceCollection.class );
+                    super( ProductBilling.this, "GET", REST_PATH, null, biz.turnonline.ecosystem.billing.model.ExpenseCollection.class );
                 }
 
                 @Override

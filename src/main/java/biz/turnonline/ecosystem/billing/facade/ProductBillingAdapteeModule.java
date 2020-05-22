@@ -19,6 +19,7 @@ package biz.turnonline.ecosystem.billing.facade;
 import biz.turnonline.ecosystem.billing.facade.adaptee.AccountingSystemAdaptee;
 import biz.turnonline.ecosystem.billing.facade.adaptee.BillingUnitAdaptee;
 import biz.turnonline.ecosystem.billing.facade.adaptee.ExpenditureAdaptee;
+import biz.turnonline.ecosystem.billing.facade.adaptee.ExpenseListAdaptee;
 import biz.turnonline.ecosystem.billing.facade.adaptee.IncomingInvoiceAdaptee;
 import biz.turnonline.ecosystem.billing.facade.adaptee.IncomingInvoiceListAdaptee;
 import biz.turnonline.ecosystem.billing.facade.adaptee.InvoiceAdaptee;
@@ -37,6 +38,7 @@ import biz.turnonline.ecosystem.billing.facade.adaptee.VatRateAdaptee;
 import biz.turnonline.ecosystem.billing.model.AccountingSystem;
 import biz.turnonline.ecosystem.billing.model.BillingUnit;
 import biz.turnonline.ecosystem.billing.model.Expenditure;
+import biz.turnonline.ecosystem.billing.model.Expense;
 import biz.turnonline.ecosystem.billing.model.IncomingInvoice;
 import biz.turnonline.ecosystem.billing.model.Invoice;
 import biz.turnonline.ecosystem.billing.model.NumberSeries;
@@ -195,6 +197,11 @@ public class ProductBillingAdapteeModule
         bind( new TypeLiteral<DeleteExecutorAdaptee<IncomingInvoice>>()
         {
         } ).to( IncomingInvoiceAdaptee.class );
+
+        // Expense
+        bind( new TypeLiteral<ListExecutorAdaptee<Expense>>()
+        {
+        } ).to( ExpenseListAdaptee.class );
 
         // PricingItem
         bind( new TypeLiteral<GetExecutorAdaptee<PricingItem>>()

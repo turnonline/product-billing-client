@@ -46,7 +46,14 @@ public final class ExpenditurePayment
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.lang.String key;
+    private java.lang.Double totalAmount;
+
+    /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
+    @com.google.api.client.json.JsonString
+    private java.lang.Long transactionId;
 
     /**
      * The value may be {@code null}.
@@ -91,17 +98,34 @@ public final class ExpenditurePayment
     /**
      * @return value or {@code null} for none
      */
-    public java.lang.String getKey()
+    public java.lang.Double getTotalAmount()
     {
-        return key;
+        return totalAmount;
     }
 
     /**
-     * @param key key or {@code null} for none
+     * @param totalAmount totalAmount or {@code null} for none
      */
-    public ExpenditurePayment setKey( java.lang.String key )
+    public ExpenditurePayment setTotalAmount( java.lang.Double totalAmount )
     {
-        this.key = key;
+        this.totalAmount = totalAmount;
+        return this;
+    }
+
+    /**
+     * @return value or {@code null} for none
+     */
+    public java.lang.Long getTransactionId()
+    {
+        return transactionId;
+    }
+
+    /**
+     * @param transactionId transactionId or {@code null} for none
+     */
+    public ExpenditurePayment setTransactionId( java.lang.Long transactionId )
+    {
+        this.transactionId = transactionId;
         return this;
     }
 

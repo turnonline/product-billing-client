@@ -17,7 +17,7 @@
 package biz.turnonline.ecosystem.billing.model;
 
 /**
- * Model definition for Order.
+ * Model definition for Expense.
  *
  * <p> This is the Java data model class that specifies how to parse/serialize into the JSON that is
  * transmitted over HTTP when working with the TurnOnline.biz Product Billing. For a detailed
@@ -27,17 +27,9 @@ package biz.turnonline.ecosystem.billing.model;
  *
  * @author Google, Inc.
  */
-public final class Order
+public final class Expense
         extends com.google.api.client.json.GenericJson
 {
-
-    static
-    {
-        // hack to force ProGuard to consider Invoice used, since otherwise it would be stripped out
-        // see https://github.com/google/google-api-java-client/issues/543
-        com.google.api.client.util.Data.nullOf( Invoice.class );
-    }
-
     static
     {
         // hack to force ProGuard to consider PricingItem used, since otherwise it would be stripped out
@@ -49,13 +41,13 @@ public final class Order
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private com.google.api.client.util.DateTime beginOn;
+    private Bill bill;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private com.google.api.client.util.DateTime createdDate;
+    private java.lang.String billNumber;
 
     /**
      * The value may be {@code null}.
@@ -67,26 +59,13 @@ public final class Order
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private Customer customer;
+    private com.google.api.client.util.DateTime dateOfIssue;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    @com.google.api.client.json.JsonString
-    private java.lang.Long id;
-
-    /**
-     * The value may be {@code null}.
-     */
-    @com.google.api.client.util.Key
-    private java.lang.String invoiceType;
-
-    /**
-     * The value may be {@code null}.
-     */
-    @com.google.api.client.util.Key
-    private java.util.List<Invoice> invoices;
+    private com.google.api.client.util.DateTime dateOfTaxable;
 
     /**
      * The value may be {@code null}.
@@ -98,37 +77,25 @@ public final class Order
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private com.google.api.client.util.DateTime lastBillingDate;
+    private BillPayment payment;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private com.google.api.client.util.DateTime modificationDate;
+    private java.lang.String pin;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private com.google.api.client.util.DateTime nextBillingDate;
+    private java.lang.String servingUrl;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.lang.Integer numberOfDays;
-
-    /**
-     * The value may be {@code null}.
-     */
-    @com.google.api.client.util.Key
-    private java.lang.String periodicity;
-
-    /**
-     * The value may be {@code null}.
-     */
-    @com.google.api.client.util.Key
-    private java.lang.String status;
+    private Creditor supplier;
 
     /**
      * The value may be {@code null}.
@@ -149,36 +116,42 @@ public final class Order
     private java.lang.Double totalVatBase;
 
     /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
+    private java.lang.String type;
+
+    /**
      * @return value or {@code null} for none
      */
-    public com.google.api.client.util.DateTime getBeginOn()
+    public Bill getBill()
     {
-        return beginOn;
+        return bill;
     }
 
     /**
-     * @param beginOn beginOn or {@code null} for none
+     * @param bill bill or {@code null} for none
      */
-    public Order setBeginOn( com.google.api.client.util.DateTime beginOn )
+    public Expense setBill( Bill bill )
     {
-        this.beginOn = beginOn;
+        this.bill = bill;
         return this;
     }
 
     /**
      * @return value or {@code null} for none
      */
-    public com.google.api.client.util.DateTime getCreatedDate()
+    public java.lang.String getBillNumber()
     {
-        return createdDate;
+        return billNumber;
     }
 
     /**
-     * @param createdDate createdDate or {@code null} for none
+     * @param billNumber billNumber or {@code null} for none
      */
-    public Order setCreatedDate( com.google.api.client.util.DateTime createdDate )
+    public Expense setBillNumber( java.lang.String billNumber )
     {
-        this.createdDate = createdDate;
+        this.billNumber = billNumber;
         return this;
     }
 
@@ -193,7 +166,7 @@ public final class Order
     /**
      * @param currency currency or {@code null} for none
      */
-    public Order setCurrency( java.lang.String currency )
+    public Expense setCurrency( java.lang.String currency )
     {
         this.currency = currency;
         return this;
@@ -202,68 +175,34 @@ public final class Order
     /**
      * @return value or {@code null} for none
      */
-    public Customer getCustomer()
+    public com.google.api.client.util.DateTime getDateOfIssue()
     {
-        return customer;
+        return dateOfIssue;
     }
 
     /**
-     * @param customer customer or {@code null} for none
+     * @param dateOfIssue dateOfIssue or {@code null} for none
      */
-    public Order setCustomer( Customer customer )
+    public Expense setDateOfIssue( com.google.api.client.util.DateTime dateOfIssue )
     {
-        this.customer = customer;
+        this.dateOfIssue = dateOfIssue;
         return this;
     }
 
     /**
      * @return value or {@code null} for none
      */
-    public java.lang.Long getId()
+    public com.google.api.client.util.DateTime getDateOfTaxable()
     {
-        return id;
+        return dateOfTaxable;
     }
 
     /**
-     * @param id id or {@code null} for none
+     * @param dateOfTaxable dateOfTaxable or {@code null} for none
      */
-    public Order setId( java.lang.Long id )
+    public Expense setDateOfTaxable( com.google.api.client.util.DateTime dateOfTaxable )
     {
-        this.id = id;
-        return this;
-    }
-
-    /**
-     * @return value or {@code null} for none
-     */
-    public java.lang.String getInvoiceType()
-    {
-        return invoiceType;
-    }
-
-    /**
-     * @param invoiceType invoiceType or {@code null} for none
-     */
-    public Order setInvoiceType( java.lang.String invoiceType )
-    {
-        this.invoiceType = invoiceType;
-        return this;
-    }
-
-    /**
-     * @return value or {@code null} for none
-     */
-    public java.util.List<Invoice> getInvoices()
-    {
-        return invoices;
-    }
-
-    /**
-     * @param invoices invoices or {@code null} for none
-     */
-    public Order setInvoices( java.util.List<Invoice> invoices )
-    {
-        this.invoices = invoices;
+        this.dateOfTaxable = dateOfTaxable;
         return this;
     }
 
@@ -278,7 +217,7 @@ public final class Order
     /**
      * @param items items or {@code null} for none
      */
-    public Order setItems( java.util.List<PricingItem> items )
+    public Expense setItems( java.util.List<PricingItem> items )
     {
         this.items = items;
         return this;
@@ -287,102 +226,68 @@ public final class Order
     /**
      * @return value or {@code null} for none
      */
-    public com.google.api.client.util.DateTime getLastBillingDate()
+    public BillPayment getPayment()
     {
-        return lastBillingDate;
+        return payment;
     }
 
     /**
-     * @param lastBillingDate lastBillingDate or {@code null} for none
+     * @param payment payment or {@code null} for none
      */
-    public Order setLastBillingDate( com.google.api.client.util.DateTime lastBillingDate )
+    public Expense setPayment( BillPayment payment )
     {
-        this.lastBillingDate = lastBillingDate;
+        this.payment = payment;
         return this;
     }
 
     /**
      * @return value or {@code null} for none
      */
-    public com.google.api.client.util.DateTime getModificationDate()
+    public java.lang.String getPin()
     {
-        return modificationDate;
+        return pin;
     }
 
     /**
-     * @param modificationDate modificationDate or {@code null} for none
+     * @param pin pin or {@code null} for none
      */
-    public Order setModificationDate( com.google.api.client.util.DateTime modificationDate )
+    public Expense setPin( java.lang.String pin )
     {
-        this.modificationDate = modificationDate;
+        this.pin = pin;
         return this;
     }
 
     /**
      * @return value or {@code null} for none
      */
-    public com.google.api.client.util.DateTime getNextBillingDate()
+    public java.lang.String getServingUrl()
     {
-        return nextBillingDate;
+        return servingUrl;
     }
 
     /**
-     * @param nextBillingDate nextBillingDate or {@code null} for none
+     * @param servingUrl servingUrl or {@code null} for none
      */
-    public Order setNextBillingDate( com.google.api.client.util.DateTime nextBillingDate )
+    public Expense setServingUrl( java.lang.String servingUrl )
     {
-        this.nextBillingDate = nextBillingDate;
+        this.servingUrl = servingUrl;
         return this;
     }
 
     /**
      * @return value or {@code null} for none
      */
-    public java.lang.Integer getNumberOfDays()
+    public Creditor getSupplier()
     {
-        return numberOfDays;
+        return supplier;
     }
 
     /**
-     * @param numberOfDays numberOfDays or {@code null} for none
+     * @param supplier supplier or {@code null} for none
      */
-    public Order setNumberOfDays( java.lang.Integer numberOfDays )
+    public Expense setSupplier( Creditor supplier )
     {
-        this.numberOfDays = numberOfDays;
-        return this;
-    }
-
-    /**
-     * @return value or {@code null} for none
-     */
-    public java.lang.String getPeriodicity()
-    {
-        return periodicity;
-    }
-
-    /**
-     * @param periodicity periodicity or {@code null} for none
-     */
-    public Order setPeriodicity( java.lang.String periodicity )
-    {
-        this.periodicity = periodicity;
-        return this;
-    }
-
-    /**
-     * @return value or {@code null} for none
-     */
-    public java.lang.String getStatus()
-    {
-        return status;
-    }
-
-    /**
-     * @param status status or {@code null} for none
-     */
-    public Order setStatus( java.lang.String status )
-    {
-        this.status = status;
+        this.supplier = supplier;
         return this;
     }
 
@@ -397,7 +302,7 @@ public final class Order
     /**
      * @param totalPrice totalPrice or {@code null} for none
      */
-    public Order setTotalPrice( java.lang.Double totalPrice )
+    public Expense setTotalPrice( java.lang.Double totalPrice )
     {
         this.totalPrice = totalPrice;
         return this;
@@ -414,7 +319,7 @@ public final class Order
     /**
      * @param totalPriceExclVat totalPriceExclVat or {@code null} for none
      */
-    public Order setTotalPriceExclVat( java.lang.Double totalPriceExclVat )
+    public Expense setTotalPriceExclVat( java.lang.Double totalPriceExclVat )
     {
         this.totalPriceExclVat = totalPriceExclVat;
         return this;
@@ -431,22 +336,39 @@ public final class Order
     /**
      * @param totalVatBase totalVatBase or {@code null} for none
      */
-    public Order setTotalVatBase( java.lang.Double totalVatBase )
+    public Expense setTotalVatBase( java.lang.Double totalVatBase )
     {
         this.totalVatBase = totalVatBase;
         return this;
     }
 
-    @Override
-    public Order set( String fieldName, Object value )
+    /**
+     * @return value or {@code null} for none
+     */
+    public java.lang.String getType()
     {
-        return ( Order ) super.set( fieldName, value );
+        return type;
+    }
+
+    /**
+     * @param type type or {@code null} for none
+     */
+    public Expense setType( java.lang.String type )
+    {
+        this.type = type;
+        return this;
     }
 
     @Override
-    public Order clone()
+    public Expense set( String fieldName, Object value )
     {
-        return ( Order ) super.clone();
+        return ( Expense ) super.set( fieldName, value );
+    }
+
+    @Override
+    public Expense clone()
+    {
+        return ( Expense ) super.clone();
     }
 
 }

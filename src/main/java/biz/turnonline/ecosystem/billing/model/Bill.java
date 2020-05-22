@@ -36,6 +36,13 @@ public final class Bill
      */
     @com.google.api.client.util.Key
     @com.google.api.client.json.JsonString
+    private java.lang.Long id;
+
+    /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
+    @com.google.api.client.json.JsonString
     private java.lang.Long invoice;
 
     /**
@@ -51,6 +58,23 @@ public final class Bill
     @com.google.api.client.util.Key
     @com.google.api.client.json.JsonString
     private java.lang.Long receipt;
+
+    /**
+     * @return value or {@code null} for none
+     */
+    public java.lang.Long getId()
+    {
+        return id;
+    }
+
+    /**
+     * @param id id or {@code null} for none
+     */
+    public Bill setId( java.lang.Long id )
+    {
+        this.id = id;
+        return this;
+    }
 
     /**
      * @return value or {@code null} for none

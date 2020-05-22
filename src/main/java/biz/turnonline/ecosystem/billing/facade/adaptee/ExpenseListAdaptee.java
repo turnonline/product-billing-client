@@ -17,7 +17,7 @@
 package biz.turnonline.ecosystem.billing.facade.adaptee;
 
 import biz.turnonline.ecosystem.billing.ProductBilling;
-import biz.turnonline.ecosystem.billing.model.IncomingInvoice;
+import biz.turnonline.ecosystem.billing.model.Expense;
 import org.ctoolkit.restapi.client.Identifier;
 import org.ctoolkit.restapi.client.adaptee.ListExecutorAdaptee;
 import org.ctoolkit.restapi.client.adapter.AbstractGoogleClientAdaptee;
@@ -33,17 +33,17 @@ import java.util.Locale;
 import java.util.Map;
 
 /**
- * The {@link IncomingInvoice} LIST adaptee implementation.
+ * The {@link Expense} LIST adaptee implementation.
  *
  * @author <a href="mailto:aurel.medvegy@ctoolkit.org">Aurel Medvegy</a>
  */
 @Singleton
-public class IncomingInvoiceListAdaptee
+public class ExpenseListAdaptee
         extends AbstractGoogleClientAdaptee<ProductBilling>
-        implements ListExecutorAdaptee<IncomingInvoice>
+        implements ListExecutorAdaptee<Expense>
 {
     @Inject
-    public IncomingInvoiceListAdaptee( Provider<ProductBilling> client )
+    public ExpenseListAdaptee( Provider<ProductBilling> client )
     {
         super( client );
     }
@@ -51,26 +51,19 @@ public class IncomingInvoiceListAdaptee
     @Override
     public Object prepareList( @Nullable Identifier parent ) throws IOException
     {
-        if ( parent == null )
-        {
-            throw new IllegalArgumentException( "Order ID expected as an identification" );
-        }
-        else
-        {
-            return client().purchases().orders().invoices().list( parent.getLong() );
-        }
+        return client().purchases().expenses().list();
     }
 
     @Override
-    public List<IncomingInvoice> executeList( @Nonnull Object request,
-                                              @Nullable Map<String, Object> parameters,
-                                              @Nullable Locale locale,
-                                              @Nullable Integer offset,
-                                              @Nullable Integer limit,
-                                              @Nullable String orderBy,
-                                              @Nullable Boolean ascending ) throws IOException
+    public List<Expense> executeList( @Nonnull Object request,
+                                      @Nullable Map<String, Object> parameters,
+                                      @Nullable Locale locale,
+                                      @Nullable Integer offset,
+                                      @Nullable Integer limit,
+                                      @Nullable String orderBy,
+                                      @Nullable Boolean ascending ) throws IOException
     {
-        ProductBilling.Purchases.Orders.Invoices.List list = ( ProductBilling.Purchases.Orders.Invoices.List ) request;
+        ProductBilling.Purchases.Expenses.List list = ( ProductBilling.Purchases.Expenses.List ) request;
 
         if ( offset != null && offset > 0 )
         {

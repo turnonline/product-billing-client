@@ -27,7 +27,6 @@ package biz.turnonline.ecosystem.billing.model;
  *
  * @author Google, Inc.
  */
-@SuppressWarnings( "javadoc" )
 public final class ProductPublishing
         extends com.google.api.client.json.GenericJson
 {
@@ -55,24 +54,6 @@ public final class ProductPublishing
      */
     @com.google.api.client.util.Key
     private java.lang.String description;
-
-    /**
-     * The value may be {@code null}.
-     */
-    @com.google.api.client.util.Key
-    private java.lang.Boolean facebookLike;
-
-    /**
-     * The value may be {@code null}.
-     */
-    @com.google.api.client.util.Key
-    private java.lang.Boolean googlePlus;
-
-    /**
-     * The value may be {@code null}.
-     */
-    @com.google.api.client.util.Key
-    private java.lang.Boolean linkedInShare;
 
     /**
      * The value may be {@code null}.
@@ -157,57 +138,6 @@ public final class ProductPublishing
     public ProductPublishing setDescription( java.lang.String description )
     {
         this.description = description;
-        return this;
-    }
-
-    /**
-     * @return value or {@code null} for none
-     */
-    public java.lang.Boolean getFacebookLike()
-    {
-        return facebookLike;
-    }
-
-    /**
-     * @param facebookLike facebookLike or {@code null} for none
-     */
-    public ProductPublishing setFacebookLike( java.lang.Boolean facebookLike )
-    {
-        this.facebookLike = facebookLike;
-        return this;
-    }
-
-    /**
-     * @return value or {@code null} for none
-     */
-    public java.lang.Boolean getGooglePlus()
-    {
-        return googlePlus;
-    }
-
-    /**
-     * @param googlePlus googlePlus or {@code null} for none
-     */
-    public ProductPublishing setGooglePlus( java.lang.Boolean googlePlus )
-    {
-        this.googlePlus = googlePlus;
-        return this;
-    }
-
-    /**
-     * @return value or {@code null} for none
-     */
-    public java.lang.Boolean getLinkedInShare()
-    {
-        return linkedInShare;
-    }
-
-    /**
-     * @param linkedInShare linkedInShare or {@code null} for none
-     */
-    public ProductPublishing setLinkedInShare( java.lang.Boolean linkedInShare )
-    {
-        this.linkedInShare = linkedInShare;
         return this;
     }
 

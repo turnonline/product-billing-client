@@ -17,7 +17,7 @@
 package biz.turnonline.ecosystem.billing.model;
 
 /**
- * Model definition for IncomingInvoiceCollection.
+ * Model definition for ExpenseCollection.
  *
  * <p> This is the Java data model class that specifies how to parse/serialize into the JSON that is
  * transmitted over HTTP when working with the TurnOnline.biz Product Billing. For a detailed
@@ -27,20 +27,19 @@ package biz.turnonline.ecosystem.billing.model;
  *
  * @author Google, Inc.
  */
-public final class IncomingInvoiceCollection
+public final class ExpenseCollection
         extends com.google.api.client.json.GenericJson
 {
-
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.util.List<IncomingInvoice> items;
+    private java.util.List<Expense> items;
 
     /**
      * @return value or {@code null} for none
      */
-    public java.util.List<IncomingInvoice> getItems()
+    public java.util.List<Expense> getItems()
     {
         return items;
     }
@@ -48,22 +47,22 @@ public final class IncomingInvoiceCollection
     /**
      * @param items items or {@code null} for none
      */
-    public IncomingInvoiceCollection setItems( java.util.List<IncomingInvoice> items )
+    public ExpenseCollection setItems( java.util.List<Expense> items )
     {
         this.items = items;
         return this;
     }
 
     @Override
-    public IncomingInvoiceCollection set( String fieldName, Object value )
+    public ExpenseCollection set( String fieldName, Object value )
     {
-        return ( IncomingInvoiceCollection ) super.set( fieldName, value );
+        return ( ExpenseCollection ) super.set( fieldName, value );
     }
 
     @Override
-    public IncomingInvoiceCollection clone()
+    public ExpenseCollection clone()
     {
-        return ( IncomingInvoiceCollection ) super.clone();
+        return ( ExpenseCollection ) super.clone();
     }
 
 }

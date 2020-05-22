@@ -2951,6 +2951,14 @@
                         "type": "boolean",
                         "description": "Set to TRUE to return fewer expense's properties in order to make the retrieval faster.",
                         "default": false
+                    },
+                    {
+                        "name": "orderId",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer",
+                        "format": "int64",
+                        "description": "Identification of the purchase order to filter solely related invoices."
                     }
                 ],
                 "responses": {

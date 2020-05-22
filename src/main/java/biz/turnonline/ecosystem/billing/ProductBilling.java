@@ -47,7 +47,7 @@ public class ProductBilling
      *
      * @since 1.7
      */
-    public static final String DEFAULT_ROOT_URL = "https://product-billing-dot-turn-online-eu.appspot.com/api/";
+    public static final String DEFAULT_ROOT_URL = "https://product-billing-dot-turn-online-eu.ew.r.appspot.com/api/";
 
     /**
      * The default encoded service path of the service. This is determined when the library is
@@ -5628,6 +5628,9 @@ public class ProductBilling
                 private static final String REST_PATH = "purchases/expenses";
 
                 @com.google.api.client.util.Key
+                private java.lang.Long orderId;
+
+                @com.google.api.client.util.Key
                 private java.lang.Integer limit;
 
                 @com.google.api.client.util.Key
@@ -5703,6 +5706,20 @@ public class ProductBilling
                 public List setUserIp( java.lang.String userIp )
                 {
                     return ( List ) super.setUserIp( userIp );
+                }
+
+                /**
+                 *
+                 */
+                public java.lang.Long getOrderId()
+                {
+                    return orderId;
+                }
+
+                public List setOrderId( java.lang.Long orderId )
+                {
+                    this.orderId = orderId;
+                    return this;
                 }
 
                 /**

@@ -243,7 +243,7 @@ public class ProductBillingAdapteeModule
         {
         } ).to( TransactionAdaptee.class );
 
-        // Expense
+        // Expense related
         bind( new TypeLiteral<InsertExecutorAdaptee<Expenditure>>()
         {
         } ).to( ExpenditureAdaptee.class );

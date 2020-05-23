@@ -17,7 +17,7 @@
 package biz.turnonline.ecosystem.billing.model;
 
 /**
- * Model definition for Expenditure.
+ * Model definition for Supplier.
  *
  * <p> This is the Java data model class that specifies how to parse/serialize into the JSON that is
  * transmitted over HTTP when working with the TurnOnline.biz Product Billing. For a detailed
@@ -27,204 +27,203 @@ package biz.turnonline.ecosystem.billing.model;
  *
  * @author Google, Inc.
  */
-public final class Expenditure
+public final class Supplier
         extends com.google.api.client.json.GenericJson
 {
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    @com.google.api.client.json.JsonString
-    private java.lang.Long bill;
+    private java.lang.String businessName;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.lang.String billNumber;
+    private java.lang.String city;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private com.google.api.client.util.DateTime dateOfIssue;
+    private java.lang.String companyId;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private com.google.api.client.util.DateTime dateOfTaxable;
+    private java.lang.String country;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.util.List<PricingItem> items;
+    private java.lang.String postcode;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private ExpenditurePayment payment;
+    private java.lang.String street;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private Supplier supplier;
+    private java.lang.String taxId;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.lang.String type;
+    private java.lang.String vatId;
 
     /**
      * @return value or {@code null} for none
      */
-    public java.lang.Long getBill()
+    public java.lang.String getBusinessName()
     {
-        return bill;
+        return businessName;
     }
 
     /**
-     * @param bill bill or {@code null} for none
+     * @param businessName businessName or {@code null} for none
      */
-    public Expenditure setBill( java.lang.Long bill )
+    public Supplier setBusinessName( java.lang.String businessName )
     {
-        this.bill = bill;
+        this.businessName = businessName;
         return this;
     }
 
     /**
      * @return value or {@code null} for none
      */
-    public java.lang.String getBillNumber()
+    public java.lang.String getCity()
     {
-        return billNumber;
+        return city;
     }
 
     /**
-     * @param billNumber billNumber or {@code null} for none
+     * @param city city or {@code null} for none
      */
-    public Expenditure setBillNumber( java.lang.String billNumber )
+    public Supplier setCity( java.lang.String city )
     {
-        this.billNumber = billNumber;
+        this.city = city;
         return this;
     }
 
     /**
      * @return value or {@code null} for none
      */
-    public com.google.api.client.util.DateTime getDateOfIssue()
+    public java.lang.String getCompanyId()
     {
-        return dateOfIssue;
+        return companyId;
     }
 
     /**
-     * @param dateOfIssue dateOfIssue or {@code null} for none
+     * @param companyId companyId or {@code null} for none
      */
-    public Expenditure setDateOfIssue( com.google.api.client.util.DateTime dateOfIssue )
+    public Supplier setCompanyId( java.lang.String companyId )
     {
-        this.dateOfIssue = dateOfIssue;
+        this.companyId = companyId;
         return this;
     }
 
     /**
      * @return value or {@code null} for none
      */
-    public com.google.api.client.util.DateTime getDateOfTaxable()
+    public java.lang.String getCountry()
     {
-        return dateOfTaxable;
+        return country;
     }
 
     /**
-     * @param dateOfTaxable dateOfTaxable or {@code null} for none
+     * @param country country or {@code null} for none
      */
-    public Expenditure setDateOfTaxable( com.google.api.client.util.DateTime dateOfTaxable )
+    public Supplier setCountry( java.lang.String country )
     {
-        this.dateOfTaxable = dateOfTaxable;
+        this.country = country;
         return this;
     }
 
     /**
      * @return value or {@code null} for none
      */
-    public java.util.List<PricingItem> getItems()
+    public java.lang.String getPostcode()
     {
-        return items;
+        return postcode;
     }
 
     /**
-     * @param items items or {@code null} for none
+     * @param postcode postcode or {@code null} for none
      */
-    public Expenditure setItems( java.util.List<PricingItem> items )
+    public Supplier setPostcode( java.lang.String postcode )
     {
-        this.items = items;
+        this.postcode = postcode;
         return this;
     }
 
     /**
      * @return value or {@code null} for none
      */
-    public ExpenditurePayment getPayment()
+    public java.lang.String getStreet()
     {
-        return payment;
+        return street;
     }
 
     /**
-     * @param payment payment or {@code null} for none
+     * @param street street or {@code null} for none
      */
-    public Expenditure setPayment( ExpenditurePayment payment )
+    public Supplier setStreet( java.lang.String street )
     {
-        this.payment = payment;
+        this.street = street;
         return this;
     }
 
     /**
      * @return value or {@code null} for none
      */
-    public Supplier getSupplier()
+    public java.lang.String getTaxId()
     {
-        return supplier;
+        return taxId;
     }
 
     /**
-     * @param supplier supplier or {@code null} for none
+     * @param taxId taxId or {@code null} for none
      */
-    public Expenditure setSupplier( Supplier supplier )
+    public Supplier setTaxId( java.lang.String taxId )
     {
-        this.supplier = supplier;
+        this.taxId = taxId;
         return this;
     }
 
     /**
      * @return value or {@code null} for none
      */
-    public java.lang.String getType()
+    public java.lang.String getVatId()
     {
-        return type;
+        return vatId;
     }
 
     /**
-     * @param type type or {@code null} for none
+     * @param vatId vatId or {@code null} for none
      */
-    public Expenditure setType( java.lang.String type )
+    public Supplier setVatId( java.lang.String vatId )
     {
-        this.type = type;
+        this.vatId = vatId;
         return this;
     }
 
     @Override
-    public Expenditure set( String fieldName, Object value )
+    public Supplier set( String fieldName, Object value )
     {
-        return ( Expenditure ) super.set( fieldName, value );
+        return ( Supplier ) super.set( fieldName, value );
     }
 
     @Override
-    public Expenditure clone()
+    public Supplier clone()
     {
-        return ( Expenditure ) super.clone();
+        return ( Supplier ) super.clone();
     }
 
 }

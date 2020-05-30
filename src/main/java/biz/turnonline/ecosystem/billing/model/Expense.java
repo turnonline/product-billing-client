@@ -101,6 +101,12 @@ public final class Expense
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
+    private java.lang.String through;
+
+    /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
     private java.lang.Double totalPrice;
 
     /**
@@ -114,12 +120,6 @@ public final class Expense
      */
     @com.google.api.client.util.Key
     private java.lang.Double totalVatBase;
-
-    /**
-     * The value may be {@code null}.
-     */
-    @com.google.api.client.util.Key
-    private java.lang.String type;
 
     /**
      * @return value or {@code null} for none
@@ -294,6 +294,23 @@ public final class Expense
     /**
      * @return value or {@code null} for none
      */
+    public java.lang.String getThrough()
+    {
+        return through;
+    }
+
+    /**
+     * @param through through or {@code null} for none
+     */
+    public Expense setThrough( java.lang.String through )
+    {
+        this.through = through;
+        return this;
+    }
+
+    /**
+     * @return value or {@code null} for none
+     */
     public java.lang.Double getTotalPrice()
     {
         return totalPrice;
@@ -339,23 +356,6 @@ public final class Expense
     public Expense setTotalVatBase( java.lang.Double totalVatBase )
     {
         this.totalVatBase = totalVatBase;
-        return this;
-    }
-
-    /**
-     * @return value or {@code null} for none
-     */
-    public java.lang.String getType()
-    {
-        return type;
-    }
-
-    /**
-     * @param type type or {@code null} for none
-     */
-    public Expense setType( java.lang.String type )
-    {
-        this.type = type;
         return this;
     }
 

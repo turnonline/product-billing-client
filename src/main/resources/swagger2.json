@@ -4140,6 +4140,15 @@
                     "description": "A business that delivered a product or service. It might be an account at Ecosystem but not necessarily.",
                     "$ref": "#/definitions/Creditor"
                 },
+                "through": {
+                    "type": "string",
+                    "description": "A purchase that has been made through: ECOSYSTEM represents a purchase between business accounts of the Ecosystem. EXTERNAL represents a purchase outside of the Ecosystem.",
+                    "default": "ECOSYSTEM",
+                    "enum": [
+                        "ECOSYSTEM",
+                        "EXTERNAL"
+                    ]
+                },
                 "totalPrice": {
                     "type": "number",
                     "format": "double",
@@ -4154,15 +4163,6 @@
                     "type": "number",
                     "format": "double",
                     "description": "The total VAT base as a sum of all checked in pricing items and its amount."
-                },
-                "type": {
-                    "type": "string",
-                    "description": "The bill document type.",
-                    "default": "INVOICE",
-                    "enum": [
-                        "INVOICE",
-                        "RECEIPT"
-                    ]
                 }
             },
             "description": "Expense that represents any purchase either inside or outside of the Ecosystem."

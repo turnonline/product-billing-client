@@ -59,13 +59,13 @@ public final class Expenditure
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.util.List<PricingItem> items;
+    private ExpenditurePayment payment;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private ExpenditurePayment payment;
+    private ExpenditurePricing pricing;
 
     /**
      * The value may be {@code null}.
@@ -150,23 +150,6 @@ public final class Expenditure
     /**
      * @return value or {@code null} for none
      */
-    public java.util.List<PricingItem> getItems()
-    {
-        return items;
-    }
-
-    /**
-     * @param items items or {@code null} for none
-     */
-    public Expenditure setItems( java.util.List<PricingItem> items )
-    {
-        this.items = items;
-        return this;
-    }
-
-    /**
-     * @return value or {@code null} for none
-     */
     public ExpenditurePayment getPayment()
     {
         return payment;
@@ -178,6 +161,23 @@ public final class Expenditure
     public Expenditure setPayment( ExpenditurePayment payment )
     {
         this.payment = payment;
+        return this;
+    }
+
+    /**
+     * @return value or {@code null} for none
+     */
+    public ExpenditurePricing getPricing()
+    {
+        return pricing;
+    }
+
+    /**
+     * @param pricing pricing or {@code null} for none
+     */
+    public Expenditure setPricing( ExpenditurePricing pricing )
+    {
+        this.pricing = pricing;
         return this;
     }
 

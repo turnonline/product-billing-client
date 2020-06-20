@@ -2873,6 +2873,13 @@
                         "schema": {
                             "$ref": "#/definitions/Expenditure"
                         }
+                    },
+                    {
+                        "name": "vnd.turnon.cloud.request-hashcode",
+                        "in": "header",
+                        "required": false,
+                        "type": "string",
+                        "description": "The unique hash code of the new record. If present, it helps to avoid double submission of the same request."
                     }
                 ],
                 "responses": {
@@ -4029,16 +4036,13 @@
                     "format": "date-time",
                     "description": "The date of taxable supplies. If not provided the date of issue will be used."
                 },
-                "items": {
-                    "type": "array",
-                    "description": "Expenditure pricing item list.",
-                    "items": {
-                        "$ref": "#/definitions/PricingItem"
-                    }
-                },
                 "payment": {
                     "description": "Expenditure payment details.",
                     "$ref": "#/definitions/ExpenditurePayment"
+                },
+                "pricing": {
+                    "description": "Expenditure pricing details.",
+                    "$ref": "#/definitions/ExpenditurePricing"
                 },
                 "supplier": {
                     "description": "A business that delivered a product or service. Defined outside of the Ecosystem.",
@@ -4089,6 +4093,36 @@
                         "REFUND",
                         "TRANSFER"
                     ]
+                }
+            }
+        },
+        "ExpenditurePricing": {
+            "type": "object",
+            "properties": {
+                "items": {
+                    "type": "array",
+                    "description": "The optional list of billing items at bill (always BillingItem 'itemType')",
+                    "items": {
+                        "$ref": "#/definitions/PricingItem"
+                    }
+                },
+                "totalPrice": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "The total price as stated at bill.",
+                    "default": 0
+                },
+                "totalVat": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "The total VAT as stated at bill (in case the supplier is a VAT payer).",
+                    "default": 0
+                },
+                "totalVatBase": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "The total VAT base as stated at bill (in case the supplier is a VAT payer).",
+                    "default": 0
                 }
             }
         },

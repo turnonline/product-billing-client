@@ -34,6 +34,12 @@ public final class ExpenditurePricing
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
+    private java.lang.String currency;
+
+    /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
     private java.util.List<PricingItem> items;
 
     /**
@@ -53,6 +59,23 @@ public final class ExpenditurePricing
      */
     @com.google.api.client.util.Key
     private java.lang.Double totalVatBase;
+
+    /**
+     * @return value or {@code null} for none
+     */
+    public java.lang.String getCurrency()
+    {
+        return currency;
+    }
+
+    /**
+     * @param currency currency or {@code null} for none
+     */
+    public ExpenditurePricing setCurrency( java.lang.String currency )
+    {
+        this.currency = currency;
+        return this;
+    }
 
     /**
      * @return value or {@code null} for none

@@ -4099,6 +4099,10 @@
         "ExpenditurePricing": {
             "type": "object",
             "properties": {
+                "currency": {
+                    "type": "string",
+                    "description": "The currency alphabetic code based on the ISO 4217."
+                },
                 "items": {
                     "type": "array",
                     "description": "The optional list of billing items at bill (always BillingItem 'itemType')",

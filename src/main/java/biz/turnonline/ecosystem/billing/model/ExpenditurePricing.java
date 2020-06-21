@@ -61,6 +61,12 @@ public final class ExpenditurePricing
     private java.lang.Double totalVatBase;
 
     /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
+    private java.util.List<VatRateRow> vatRows;
+
+    /**
      * @return value or {@code null} for none
      */
     public java.lang.String getCurrency()
@@ -145,6 +151,23 @@ public final class ExpenditurePricing
         return this;
     }
 
+    /**
+     * @return value or {@code null} for none
+     */
+    public java.util.List<VatRateRow> getVatRows()
+    {
+        return vatRows;
+    }
+
+    /**
+     * @param vatRows vatRows or {@code null} for none
+     */
+    public ExpenditurePricing setVatRows( java.util.List<VatRateRow> vatRows )
+    {
+        this.vatRows = vatRows;
+        return this;
+    }
+
     @Override
     public ExpenditurePricing set( String fieldName, Object value )
     {
@@ -156,5 +179,4 @@ public final class ExpenditurePricing
     {
         return ( ExpenditurePricing ) super.clone();
     }
-
 }

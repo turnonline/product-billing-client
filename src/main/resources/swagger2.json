@@ -4127,6 +4127,13 @@
                     "format": "double",
                     "description": "The total VAT base as stated at bill (in case the supplier is a VAT payer).",
                     "default": 0
+                },
+                "vatRows": {
+                    "type": "array",
+                    "description": "Summary per VAT rate.",
+                    "items": {
+                        "$ref": "#/definitions/VatRateRow"
+                    }
                 }
             }
         },
@@ -5697,6 +5704,32 @@
                     }
                 }
             }
+        },
+        "VatRateRow": {
+            "type": "object",
+            "properties": {
+                "priceInclVat": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "The total price per rate as stated at bill."
+                },
+                "vat": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "The sum of VAT per rate as stated at bill."
+                },
+                "vatBase": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "The sum of VAT base per rate as stated at bill."
+                },
+                "vatRate": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "VAT rate (in percentage) as stated at bill."
+                }
+            },
+            "description": "Summary per VAT rate."
         }
     }
 }

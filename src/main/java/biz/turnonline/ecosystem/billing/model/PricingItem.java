@@ -102,6 +102,12 @@ public final class PricingItem
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
+    private java.lang.Double finalVatAmount;
+
+    /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
     private java.lang.Double finalVatBase;
 
     /**
@@ -391,6 +397,23 @@ public final class PricingItem
     public PricingItem setFinalVat( java.lang.String finalVat )
     {
         this.finalVat = finalVat;
+        return this;
+    }
+
+    /**
+     * @return value or {@code null} for none
+     */
+    public java.lang.Double getFinalVatAmount()
+    {
+        return finalVatAmount;
+    }
+
+    /**
+     * @param finalVatAmount finalVatAmount or {@code null} for none
+     */
+    public PricingItem setFinalVatAmount( java.lang.Double finalVatAmount )
+    {
+        this.finalVatAmount = finalVatAmount;
         return this;
     }
 

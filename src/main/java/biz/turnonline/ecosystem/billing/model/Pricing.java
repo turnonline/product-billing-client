@@ -97,6 +97,12 @@ public final class Pricing
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
+    private java.lang.Double totalVat;
+
+    /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
     private java.lang.Double totalVatBase;
 
     /**
@@ -249,6 +255,23 @@ public final class Pricing
     public Pricing setTotalPriceExclVat( java.lang.Double totalPriceExclVat )
     {
         this.totalPriceExclVat = totalPriceExclVat;
+        return this;
+    }
+
+    /**
+     * @return value or {@code null} for none
+     */
+    public java.lang.Double getTotalVat()
+    {
+        return totalVat;
+    }
+
+    /**
+     * @param totalVat totalVat or {@code null} for none
+     */
+    public Pricing setTotalVat( java.lang.Double totalVat )
+    {
+        this.totalVat = totalVat;
         return this;
     }
 

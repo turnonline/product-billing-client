@@ -4806,6 +4806,12 @@
                     "description": "The total price as a sum of all checked in pricing items and its amount. The price is excluding VAT in case company is VAT payer, otherwise price is final and same as value of totalPrice property.",
                     "default": 0
                 },
+                "totalVat": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "The total VAT as a result of the calculation of all checked in pricing items and its amount including target rounding mode.",
+                    "default": 0
+                },
                 "totalVatBase": {
                     "type": "number",
                     "format": "double",
@@ -4888,6 +4894,11 @@
                 "finalVat": {
                     "type": "string",
                     "description": "The context sensitive (customer country etc) VAT code, taken from the VAT rate code book. The final VAT to be used for final price calculation."
+                },
+                "finalVatAmount": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "The final amount of VAT as a result of the calculation of this item and its amount including target rounding mode."
                 },
                 "finalVatBase": {
                     "type": "number",

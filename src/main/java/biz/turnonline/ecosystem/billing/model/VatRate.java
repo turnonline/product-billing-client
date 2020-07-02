@@ -57,6 +57,12 @@ public final class VatRate
     private java.lang.String locale;
 
     /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
+    private java.lang.Double value;
+
+    /**
      * @return value or {@code null} for none
      */
     public java.lang.String getCode()
@@ -121,6 +127,23 @@ public final class VatRate
     public VatRate setLocale( java.lang.String locale )
     {
         this.locale = locale;
+        return this;
+    }
+
+    /**
+     * @return value or {@code null} for none
+     */
+    public java.lang.Double getValue()
+    {
+        return value;
+    }
+
+    /**
+     * @param value value or {@code null} for none
+     */
+    public VatRate setValue( java.lang.Double value )
+    {
+        this.value = value;
         return this;
     }
 

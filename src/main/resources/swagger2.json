@@ -3413,6 +3413,118 @@
             ]
         },
         "/v1/transactions": {
+            "get": {
+                "tags": [
+                    "Bill Settlements"
+                ],
+                "summary": "Search for bank transactions",
+                "description": "Search for transactions filtered based on the optional criteria.",
+                "operationId": "filterTransactions",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "accountId",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer",
+                        "format": "int64",
+                        "description": "Bank account identification for which to filter transactions."
+                    },
+                    {
+                        "name": "operation",
+                        "in": "query",
+                        "required": false,
+                        "type": "string",
+                        "description": "Type of the bank operation to be included in results. Case insensitive.",
+                        "default": "BOTH",
+                        "enum": [
+                            "CREDIT",
+                            "DEBIT",
+                            "BOTH"
+                        ]
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The position of the first transaction to retrieve, numbered from 0.",
+                        "default": 20
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "The maximum number of transactions to retrieve.",
+                        "default": 0
+                    },
+                    {
+                        "name": "orderId",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer",
+                        "format": "int64",
+                        "description": "Identification of the order to search for transactions. If invoice Id is not provided, a transactions of all associated invoices will be in the results."
+                    },
+                    {
+                        "name": "invoiceId",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer",
+                        "format": "int64",
+                        "description": "Identification of the invoice to search settled transactions. Order Id is being required for successful match."
+                    },
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "required": false,
+                        "type": "string",
+                        "description": "The payment type of the transactions to filter in results. Case insensitive.",
+                        "enum": [
+                            "CARD_PAYMENT",
+                            "CASH",
+                            "REFUND",
+                            "TRANSFER"
+                        ]
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The list of transactions that meets the filter criteria.",
+                        "schema": {
+                            "$ref": "#/definitions/TransactionCollection"
+                        }
+                    },
+                    "401": {
+                        "description": "The error when the authentication credential fails.",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "It's a failure of the server. The client can repeat the request without modifications at any later time.",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "503": {
+                        "description": "The service is unavailable or the server has timed out processing of the request. The client may repeat the request without modifications at any later time.",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "firebase-a9a2a51a": []
+                    }
+                ]
+            },
             "post": {
                 "tags": [
                     "Bill Settlements"
@@ -5664,6 +5776,19 @@
                 }
             },
             "description": "The bank account associated with this transaction."
+        },
+        "TransactionCollection": {
+            "type": "object",
+            "properties": {
+                "items": {
+                    "type": "array",
+                    "description": "Transaction items.",
+                    "items": {
+                        "$ref": "#/definitions/Transaction"
+                    }
+                }
+            },
+            "description": "Bank transaction collection wrapper."
         },
         "VatRate": {
             "type": "object",

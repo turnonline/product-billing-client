@@ -6740,6 +6740,21 @@ public class ProductBilling
             return result;
         }
 
+        /**
+         * Create a request for the method "transactions.list".
+         * <p>
+         * This request holds the parameters needed by the billing server.  After setting any optional
+         * parameters, call the {@link List#execute()} method to invoke the remote operation.
+         *
+         * @return the request
+         */
+        public List list() throws java.io.IOException
+        {
+            List result = new List();
+            initialize( result );
+            return result;
+        }
+
         public class Insert
                 extends ProductBillingRequest<Void>
         {
@@ -6808,6 +6823,210 @@ public class ProductBilling
             public Insert set( String parameterName, Object value )
             {
                 return ( Insert ) super.set( parameterName, value );
+            }
+        }
+
+        public class List
+                extends ProductBillingRequest<biz.turnonline.ecosystem.billing.model.TransactionCollection>
+        {
+
+            private static final String REST_PATH = "transactions";
+
+            @com.google.api.client.util.Key
+            private java.lang.Long orderId;
+
+            @com.google.api.client.util.Key
+            private java.lang.Long invoiceId;
+
+            @com.google.api.client.util.Key
+            private java.lang.Integer limit;
+
+            @com.google.api.client.util.Key
+            private java.lang.Integer offset;
+
+            @com.google.api.client.util.Key
+            private java.lang.String operation;
+
+            @com.google.api.client.util.Key
+            private java.lang.String type;
+
+            @com.google.api.client.util.Key
+            private java.lang.Long accountId;
+
+            /**
+             * Create a request for the method "transactions.list".
+             * <p>
+             * This request holds the parameters needed by the the billing server.  After setting any optional
+             * parameters, call the {@link List#execute()} method to invoke the remote operation. <p> {@link
+             * List#initialize(com.google.api.client.googleapis.services.AbstractGoogleClientRequest)} must be
+             * called to initialize this instance immediately after invoking the constructor. </p>
+             *
+             * @since 1.13
+             */
+            protected List()
+            {
+                super( ProductBilling.this, "GET", REST_PATH, null, biz.turnonline.ecosystem.billing.model.TransactionCollection.class );
+            }
+
+            @Override
+            public com.google.api.client.http.HttpResponse executeUsingHead() throws java.io.IOException
+            {
+                return super.executeUsingHead();
+            }
+
+            @Override
+            public com.google.api.client.http.HttpRequest buildHttpRequestUsingHead() throws java.io.IOException
+            {
+                return super.buildHttpRequestUsingHead();
+            }
+
+            @Override
+            public List setAlt( java.lang.String alt )
+            {
+                return ( List ) super.setAlt( alt );
+            }
+
+            @Override
+            public List setFields( java.lang.String fields )
+            {
+                return ( List ) super.setFields( fields );
+            }
+
+            @Override
+            public List setKey( java.lang.String key )
+            {
+                return ( List ) super.setKey( key );
+            }
+
+            @Override
+            public List setOauthToken( java.lang.String oauthToken )
+            {
+                return ( List ) super.setOauthToken( oauthToken );
+            }
+
+            @Override
+            public List setPrettyPrint( java.lang.Boolean prettyPrint )
+            {
+                return ( List ) super.setPrettyPrint( prettyPrint );
+            }
+
+            @Override
+            public List setQuotaUser( java.lang.String quotaUser )
+            {
+                return ( List ) super.setQuotaUser( quotaUser );
+            }
+
+            @Override
+            public List setUserIp( java.lang.String userIp )
+            {
+                return ( List ) super.setUserIp( userIp );
+            }
+
+            /**
+             *
+             */
+            public java.lang.Long getOrderId()
+            {
+                return orderId;
+            }
+
+            public List setOrderId( java.lang.Long orderId )
+            {
+                this.orderId = orderId;
+                return this;
+            }
+
+            /**
+             *
+             */
+            public java.lang.Long getInvoiceId()
+            {
+                return invoiceId;
+            }
+
+            public List setInvoiceId( java.lang.Long invoiceId )
+            {
+                this.invoiceId = invoiceId;
+                return this;
+            }
+
+            /**
+             * [ default: 20]
+             * [
+             */
+            public java.lang.Integer getLimit()
+            {
+                return limit;
+            }
+
+            public List setLimit( java.lang.Integer limit )
+            {
+                this.limit = limit;
+                return this;
+            }
+
+            /**
+             * [ default: 0]
+             * [
+             */
+            public java.lang.Integer getOffset()
+            {
+                return offset;
+            }
+
+            public List setOffset( java.lang.Integer offset )
+            {
+                this.offset = offset;
+                return this;
+            }
+
+            /**
+             * [ default: both]
+             * [
+             */
+            public java.lang.String getOperation()
+            {
+                return operation;
+            }
+
+            public List setOperation( java.lang.String operation )
+            {
+                this.operation = operation;
+                return this;
+            }
+
+            /**
+             *
+             */
+            public java.lang.String getType()
+            {
+                return type;
+            }
+
+            public List setType( java.lang.String type )
+            {
+                this.type = type;
+                return this;
+            }
+
+            /**
+             *
+             */
+            public java.lang.Long getAccountId()
+            {
+                return accountId;
+            }
+
+            public List setAccountId( java.lang.Long accountId )
+            {
+                this.accountId = accountId;
+                return this;
+            }
+
+            @Override
+            public List set( String parameterName, Object value )
+            {
+                return ( List ) super.set( parameterName, value );
             }
         }
 

@@ -17,7 +17,7 @@
 package biz.turnonline.ecosystem.billing.facade.adaptee;
 
 import biz.turnonline.ecosystem.billing.ProductBilling;
-import biz.turnonline.ecosystem.billing.model.PurchaseOrder;
+import biz.turnonline.ecosystem.billing.model.Transaction;
 import org.ctoolkit.restapi.client.Identifier;
 import org.ctoolkit.restapi.client.adaptee.ListExecutorAdaptee;
 import org.ctoolkit.restapi.client.adapter.AbstractGoogleClientAdaptee;
@@ -33,17 +33,17 @@ import java.util.Locale;
 import java.util.Map;
 
 /**
- * The {@link PurchaseOrder} LIST adaptee implementation.
+ * The {@link Transaction} LIST adaptee implementation.
  *
  * @author <a href="mailto:aurel.medvegy@ctoolkit.org">Aurel Medvegy</a>
  */
 @Singleton
-public class PurchaseOrderListAdaptee
+public class TransactionListAdaptee
         extends AbstractGoogleClientAdaptee<ProductBilling>
-        implements ListExecutorAdaptee<PurchaseOrder>
+        implements ListExecutorAdaptee<Transaction>
 {
     @Inject
-    public PurchaseOrderListAdaptee( Provider<ProductBilling> client )
+    public TransactionListAdaptee( Provider<ProductBilling> client )
     {
         super( client );
     }
@@ -51,19 +51,19 @@ public class PurchaseOrderListAdaptee
     @Override
     public Object prepareList( @Nullable Identifier parentKey ) throws IOException
     {
-        return client().purchases().orders().list();
+        return client().transactions().list();
     }
 
     @Override
-    public List<PurchaseOrder> executeList( @Nonnull Object request,
-                                            @Nullable Map<String, Object> parameters,
-                                            @Nullable Locale locale,
-                                            @Nullable Integer offset,
-                                            @Nullable Integer limit,
-                                            @Nullable String orderBy,
-                                            @Nullable Boolean ascending ) throws IOException
+    public List<Transaction> executeList( @Nonnull Object request,
+                                          @Nullable Map<String, Object> parameters,
+                                          @Nullable Locale locale,
+                                          @Nullable Integer offset,
+                                          @Nullable Integer limit,
+                                          @Nullable String orderBy,
+                                          @Nullable Boolean ascending ) throws IOException
     {
-        ProductBilling.Purchases.Orders.List list = ( ProductBilling.Purchases.Orders.List ) request;
+        ProductBilling.Transactions.List list = ( ProductBilling.Transactions.List ) request;
 
         if ( offset != null && offset > 0 )
         {

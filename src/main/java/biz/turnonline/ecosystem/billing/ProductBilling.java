@@ -6850,9 +6850,6 @@ public class ProductBilling
             @com.google.api.client.util.Key
             private java.lang.String type;
 
-            @com.google.api.client.util.Key
-            private java.lang.Long accountId;
-
             /**
              * Create a request for the method "transactions.list".
              * <p>
@@ -7006,20 +7003,6 @@ public class ProductBilling
             public List setType( java.lang.String type )
             {
                 this.type = type;
-                return this;
-            }
-
-            /**
-             *
-             */
-            public java.lang.Long getAccountId()
-            {
-                return accountId;
-            }
-
-            public List setAccountId( java.lang.Long accountId )
-            {
-                this.accountId = accountId;
                 return this;
             }
 

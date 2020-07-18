@@ -3425,14 +3425,6 @@
                 ],
                 "parameters": [
                     {
-                        "name": "accountId",
-                        "in": "query",
-                        "required": false,
-                        "type": "integer",
-                        "format": "int64",
-                        "description": "Bank account identification for which to filter transactions."
-                    },
-                    {
                         "name": "operation",
                         "in": "query",
                         "required": false,

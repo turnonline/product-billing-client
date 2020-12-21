@@ -16,6 +16,8 @@
 
 package biz.turnonline.ecosystem.billing.model;
 
+import java.io.Serializable;
+
 /**
  * Model definition for ProductDiscount.
  *
@@ -27,10 +29,10 @@ package biz.turnonline.ecosystem.billing.model;
  *
  * @author Google, Inc.
  */
-@SuppressWarnings( "javadoc" )
 public final class ProductDiscount
-        extends com.google.api.client.json.GenericJson
+        implements Serializable
 {
+    private static final long serialVersionUID = -6450806576803241609L;
 
     /**
      * The value may be {@code null}.
@@ -146,17 +148,4 @@ public final class ProductDiscount
         this.unit = unit;
         return this;
     }
-
-    @Override
-    public ProductDiscount set( String fieldName, Object value )
-    {
-        return ( ProductDiscount ) super.set( fieldName, value );
-    }
-
-    @Override
-    public ProductDiscount clone()
-    {
-        return ( ProductDiscount ) super.clone();
-    }
-
 }

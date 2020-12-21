@@ -16,6 +16,8 @@
 
 package biz.turnonline.ecosystem.billing.model;
 
+import java.io.Serializable;
+
 /**
  * Model definition for CustomerPostalAddress.
  *
@@ -27,10 +29,10 @@ package biz.turnonline.ecosystem.billing.model;
  *
  * @author Google, Inc.
  */
-@SuppressWarnings( "javadoc" )
 public final class CustomerPostalAddress
-        extends com.google.api.client.json.GenericJson
+        implements Serializable
 {
+    private static final long serialVersionUID = 7716817853587526312L;
 
     /**
      * The value may be {@code null}.
@@ -238,17 +240,4 @@ public final class CustomerPostalAddress
         this.suffix = suffix;
         return this;
     }
-
-    @Override
-    public CustomerPostalAddress set( String fieldName, Object value )
-    {
-        return ( CustomerPostalAddress ) super.set( fieldName, value );
-    }
-
-    @Override
-    public CustomerPostalAddress clone()
-    {
-        return ( CustomerPostalAddress ) super.clone();
-    }
-
 }

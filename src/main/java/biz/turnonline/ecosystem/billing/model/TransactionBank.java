@@ -16,6 +16,8 @@
 
 package biz.turnonline.ecosystem.billing.model;
 
+import java.io.Serializable;
+
 /**
  * Model definition for TransactionBank.
  *
@@ -28,8 +30,9 @@ package biz.turnonline.ecosystem.billing.model;
  * @author Google, Inc.
  */
 public final class TransactionBank
-        extends com.google.api.client.json.GenericJson
+        implements Serializable
 {
+    private static final long serialVersionUID = -2332293952765209013L;
 
     /**
      * The value may be {@code null}.
@@ -76,17 +79,4 @@ public final class TransactionBank
         this.iban = iban;
         return this;
     }
-
-    @Override
-    public TransactionBank set( String fieldName, Object value )
-    {
-        return ( TransactionBank ) super.set( fieldName, value );
-    }
-
-    @Override
-    public TransactionBank clone()
-    {
-        return ( TransactionBank ) super.clone();
-    }
-
 }

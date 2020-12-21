@@ -16,6 +16,8 @@
 
 package biz.turnonline.ecosystem.billing.model;
 
+import java.io.Serializable;
+
 /**
  * Model definition for PricingItem.
  *
@@ -27,10 +29,10 @@ package biz.turnonline.ecosystem.billing.model;
  *
  * @author Google, Inc.
  */
-@SuppressWarnings( "javadoc" )
 public final class PricingItem
-        extends com.google.api.client.json.GenericJson
+        implements Serializable
 {
+    private static final long serialVersionUID = 3294834273227211635L;
 
     /**
      * The value may be {@code null}.
@@ -722,17 +724,4 @@ public final class PricingItem
         this.vat = vat;
         return this;
     }
-
-    @Override
-    public PricingItem set( String fieldName, Object value )
-    {
-        return ( PricingItem ) super.set( fieldName, value );
-    }
-
-    @Override
-    public PricingItem clone()
-    {
-        return ( PricingItem ) super.clone();
-    }
-
 }

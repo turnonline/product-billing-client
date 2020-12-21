@@ -16,6 +16,8 @@
 
 package biz.turnonline.ecosystem.billing.model;
 
+import java.io.Serializable;
+
 /**
  * Model definition for ExpenseCollection.
  *
@@ -28,8 +30,10 @@ package biz.turnonline.ecosystem.billing.model;
  * @author Google, Inc.
  */
 public final class ExpenseCollection
-        extends com.google.api.client.json.GenericJson
+        implements Serializable
 {
+    private static final long serialVersionUID = 3874391386103722855L;
+
     /**
      * The value may be {@code null}.
      */
@@ -52,17 +56,4 @@ public final class ExpenseCollection
         this.items = items;
         return this;
     }
-
-    @Override
-    public ExpenseCollection set( String fieldName, Object value )
-    {
-        return ( ExpenseCollection ) super.set( fieldName, value );
-    }
-
-    @Override
-    public ExpenseCollection clone()
-    {
-        return ( ExpenseCollection ) super.clone();
-    }
-
 }

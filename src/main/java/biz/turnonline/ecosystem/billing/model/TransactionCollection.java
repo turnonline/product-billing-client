@@ -18,6 +18,8 @@
 
 package biz.turnonline.ecosystem.billing.model;
 
+import java.io.Serializable;
+
 /**
  * Model definition for TransactionCollection.
  *
@@ -30,8 +32,9 @@ package biz.turnonline.ecosystem.billing.model;
  * @author Google, Inc.
  */
 public final class TransactionCollection
-        extends com.google.api.client.json.GenericJson
+        implements Serializable
 {
+    private static final long serialVersionUID = -5715504702342691514L;
 
     /**
      * The value may be {@code null}.
@@ -55,17 +58,4 @@ public final class TransactionCollection
         this.items = items;
         return this;
     }
-
-    @Override
-    public TransactionCollection set( String fieldName, Object value )
-    {
-        return ( TransactionCollection ) super.set( fieldName, value );
-    }
-
-    @Override
-    public TransactionCollection clone()
-    {
-        return ( TransactionCollection ) super.clone();
-    }
-
 }

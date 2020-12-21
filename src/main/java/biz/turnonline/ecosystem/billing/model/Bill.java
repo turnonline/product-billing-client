@@ -16,6 +16,8 @@
 
 package biz.turnonline.ecosystem.billing.model;
 
+import java.io.Serializable;
+
 /**
  * Model definition for Bill.
  *
@@ -28,8 +30,9 @@ package biz.turnonline.ecosystem.billing.model;
  * @author Google, Inc.
  */
 public final class Bill
-        extends com.google.api.client.json.GenericJson
+        implements Serializable
 {
+    private static final long serialVersionUID = -2214009056516668657L;
 
     /**
      * The value may be {@code null}.
@@ -126,17 +129,4 @@ public final class Bill
         this.receipt = receipt;
         return this;
     }
-
-    @Override
-    public Bill set( String fieldName, Object value )
-    {
-        return ( Bill ) super.set( fieldName, value );
-    }
-
-    @Override
-    public Bill clone()
-    {
-        return ( Bill ) super.clone();
-    }
-
 }

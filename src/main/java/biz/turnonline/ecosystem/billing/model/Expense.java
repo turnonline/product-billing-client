@@ -16,6 +16,8 @@
 
 package biz.turnonline.ecosystem.billing.model;
 
+import java.io.Serializable;
+
 /**
  * Model definition for Expense.
  *
@@ -28,8 +30,10 @@ package biz.turnonline.ecosystem.billing.model;
  * @author Google, Inc.
  */
 public final class Expense
-        extends com.google.api.client.json.GenericJson
+        implements Serializable
 {
+    private static final long serialVersionUID = 6954662496821667580L;
+
     static
     {
         // hack to force ProGuard to consider PricingItem used, since otherwise it would be stripped out
@@ -358,17 +362,4 @@ public final class Expense
         this.totalVatBase = totalVatBase;
         return this;
     }
-
-    @Override
-    public Expense set( String fieldName, Object value )
-    {
-        return ( Expense ) super.set( fieldName, value );
-    }
-
-    @Override
-    public Expense clone()
-    {
-        return ( Expense ) super.clone();
-    }
-
 }

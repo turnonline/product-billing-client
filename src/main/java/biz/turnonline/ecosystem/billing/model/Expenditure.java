@@ -16,6 +16,8 @@
 
 package biz.turnonline.ecosystem.billing.model;
 
+import java.io.Serializable;
+
 /**
  * Model definition for Expenditure.
  *
@@ -28,8 +30,10 @@ package biz.turnonline.ecosystem.billing.model;
  * @author Google, Inc.
  */
 public final class Expenditure
-        extends com.google.api.client.json.GenericJson
+        implements Serializable
 {
+    private static final long serialVersionUID = -4535237770861212529L;
+
     /**
      * The value may be {@code null}.
      */
@@ -214,17 +218,4 @@ public final class Expenditure
         this.type = type;
         return this;
     }
-
-    @Override
-    public Expenditure set( String fieldName, Object value )
-    {
-        return ( Expenditure ) super.set( fieldName, value );
-    }
-
-    @Override
-    public Expenditure clone()
-    {
-        return ( Expenditure ) super.clone();
-    }
-
 }

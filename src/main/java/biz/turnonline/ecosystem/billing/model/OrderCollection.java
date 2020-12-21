@@ -16,6 +16,8 @@
 
 package biz.turnonline.ecosystem.billing.model;
 
+import java.io.Serializable;
+
 /**
  * Model definition for OrderCollection.
  *
@@ -28,8 +30,9 @@ package biz.turnonline.ecosystem.billing.model;
  * @author Google, Inc.
  */
 public final class OrderCollection
-        extends com.google.api.client.json.GenericJson
+        implements Serializable
 {
+    private static final long serialVersionUID = 3300914742537080764L;
 
     /**
      * The value may be {@code null}.
@@ -53,17 +56,4 @@ public final class OrderCollection
         this.items = items;
         return this;
     }
-
-    @Override
-    public OrderCollection set( String fieldName, Object value )
-    {
-        return ( OrderCollection ) super.set( fieldName, value );
-    }
-
-    @Override
-    public OrderCollection clone()
-    {
-        return ( OrderCollection ) super.clone();
-    }
-
 }

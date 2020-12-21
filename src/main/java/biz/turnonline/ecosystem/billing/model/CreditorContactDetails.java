@@ -16,6 +16,8 @@
 
 package biz.turnonline.ecosystem.billing.model;
 
+import java.io.Serializable;
+
 /**
  * Model definition for CreditorContactDetails.
  *
@@ -28,8 +30,9 @@ package biz.turnonline.ecosystem.billing.model;
  * @author Google, Inc.
  */
 public final class CreditorContactDetails
-        extends com.google.api.client.json.GenericJson
+        implements Serializable
 {
+    private static final long serialVersionUID = 874530612545748131L;
 
     /**
      * The value may be {@code null}.
@@ -122,17 +125,4 @@ public final class CreditorContactDetails
         this.website = website;
         return this;
     }
-
-    @Override
-    public CreditorContactDetails set( String fieldName, Object value )
-    {
-        return ( CreditorContactDetails ) super.set( fieldName, value );
-    }
-
-    @Override
-    public CreditorContactDetails clone()
-    {
-        return ( CreditorContactDetails ) super.clone();
-    }
-
 }

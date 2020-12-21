@@ -16,6 +16,8 @@
 
 package biz.turnonline.ecosystem.billing.model;
 
+import java.io.Serializable;
+
 /**
  * Model definition for IncomingInvoiceCollection.
  *
@@ -28,8 +30,9 @@ package biz.turnonline.ecosystem.billing.model;
  * @author Google, Inc.
  */
 public final class IncomingInvoiceCollection
-        extends com.google.api.client.json.GenericJson
+        implements Serializable
 {
+    private static final long serialVersionUID = 1936901760212325360L;
 
     /**
      * The value may be {@code null}.
@@ -53,17 +56,4 @@ public final class IncomingInvoiceCollection
         this.items = items;
         return this;
     }
-
-    @Override
-    public IncomingInvoiceCollection set( String fieldName, Object value )
-    {
-        return ( IncomingInvoiceCollection ) super.set( fieldName, value );
-    }
-
-    @Override
-    public IncomingInvoiceCollection clone()
-    {
-        return ( IncomingInvoiceCollection ) super.clone();
-    }
-
 }

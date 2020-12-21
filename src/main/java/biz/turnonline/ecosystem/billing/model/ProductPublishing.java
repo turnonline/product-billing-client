@@ -16,6 +16,8 @@
 
 package biz.turnonline.ecosystem.billing.model;
 
+import java.io.Serializable;
+
 /**
  * Model definition for ProductPublishing.
  *
@@ -28,8 +30,9 @@ package biz.turnonline.ecosystem.billing.model;
  * @author Google, Inc.
  */
 public final class ProductPublishing
-        extends com.google.api.client.json.GenericJson
+        implements Serializable
 {
+    private static final long serialVersionUID = -7627171318802316590L;
 
     /**
      * The value may be {@code null}.
@@ -191,17 +194,4 @@ public final class ProductPublishing
         this.published = published;
         return this;
     }
-
-    @Override
-    public ProductPublishing set( String fieldName, Object value )
-    {
-        return ( ProductPublishing ) super.set( fieldName, value );
-    }
-
-    @Override
-    public ProductPublishing clone()
-    {
-        return ( ProductPublishing ) super.clone();
-    }
-
 }

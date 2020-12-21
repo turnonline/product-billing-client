@@ -16,6 +16,8 @@
 
 package biz.turnonline.ecosystem.billing.model;
 
+import java.io.Serializable;
+
 /**
  * Model definition for OrderStatus.
  *
@@ -27,10 +29,10 @@ package biz.turnonline.ecosystem.billing.model;
  *
  * @author Google, Inc.
  */
-@SuppressWarnings( "javadoc" )
 public final class OrderStatus
-        extends com.google.api.client.json.GenericJson
+        implements Serializable
 {
+    private static final long serialVersionUID = -369780373623722186L;
 
     /**
      * The value may be {@code null}.
@@ -54,17 +56,4 @@ public final class OrderStatus
         this.status = status;
         return this;
     }
-
-    @Override
-    public OrderStatus set( String fieldName, Object value )
-    {
-        return ( OrderStatus ) super.set( fieldName, value );
-    }
-
-    @Override
-    public OrderStatus clone()
-    {
-        return ( OrderStatus ) super.clone();
-    }
-
 }

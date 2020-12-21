@@ -16,6 +16,8 @@
 
 package biz.turnonline.ecosystem.billing.model;
 
+import java.io.Serializable;
+
 /**
  * Model definition for BillPayment.
  *
@@ -28,8 +30,9 @@ package biz.turnonline.ecosystem.billing.model;
  * @author Google, Inc.
  */
 public final class BillPayment
-        extends com.google.api.client.json.GenericJson
+        implements Serializable
 {
+    private static final long serialVersionUID = -2505356586222855754L;
 
     /**
      * The value may be {@code null}.
@@ -169,17 +172,4 @@ public final class BillPayment
         this.variableSymbol = variableSymbol;
         return this;
     }
-
-    @Override
-    public BillPayment set( String fieldName, Object value )
-    {
-        return ( BillPayment ) super.set( fieldName, value );
-    }
-
-    @Override
-    public BillPayment clone()
-    {
-        return ( BillPayment ) super.clone();
-    }
-
 }

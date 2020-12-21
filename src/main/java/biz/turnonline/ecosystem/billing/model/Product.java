@@ -16,6 +16,8 @@
 
 package biz.turnonline.ecosystem.billing.model;
 
+import java.io.Serializable;
+
 /**
  * Model definition for Product.
  *
@@ -27,10 +29,10 @@ package biz.turnonline.ecosystem.billing.model;
  *
  * @author Google, Inc.
  */
-@SuppressWarnings( "javadoc" )
 public final class Product
-        extends com.google.api.client.json.GenericJson
+        implements Serializable
 {
+    private static final long serialVersionUID = 4684561643535674509L;
 
     /**
      * The value may be {@code null}.
@@ -285,17 +287,4 @@ public final class Product
         this.snippet = snippet;
         return this;
     }
-
-    @Override
-    public Product set( String fieldName, Object value )
-    {
-        return ( Product ) super.set( fieldName, value );
-    }
-
-    @Override
-    public Product clone()
-    {
-        return ( Product ) super.clone();
-    }
-
 }

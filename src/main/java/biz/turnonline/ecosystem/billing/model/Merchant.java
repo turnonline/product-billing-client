@@ -16,6 +16,8 @@
 
 package biz.turnonline.ecosystem.billing.model;
 
+import java.io.Serializable;
+
 /**
  * Model definition for Merchant.
  *
@@ -28,8 +30,10 @@ package biz.turnonline.ecosystem.billing.model;
  * @author Google, Inc.
  */
 public final class Merchant
-        extends com.google.api.client.json.GenericJson
+        implements Serializable
 {
+    private static final long serialVersionUID = 6416988953863877292L;
+
     /**
      * The value may be {@code null}.
      */
@@ -97,17 +101,5 @@ public final class Merchant
     {
         this.name = name;
         return this;
-    }
-
-    @Override
-    public Merchant set( String fieldName, Object value )
-    {
-        return ( Merchant ) super.set( fieldName, value );
-    }
-
-    @Override
-    public Merchant clone()
-    {
-        return ( Merchant ) super.clone();
     }
 }

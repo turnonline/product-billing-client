@@ -16,6 +16,8 @@
 
 package biz.turnonline.ecosystem.billing.model;
 
+import java.io.Serializable;
+
 /**
  * Model definition for PurchaseOrder.
  *
@@ -28,8 +30,9 @@ package biz.turnonline.ecosystem.billing.model;
  * @author Google, Inc.
  */
 public final class PurchaseOrder
-        extends com.google.api.client.json.GenericJson
+        implements Serializable
 {
+    private static final long serialVersionUID = 718835365121955433L;
 
     /**
      * The value may be {@code null}.
@@ -445,17 +448,4 @@ public final class PurchaseOrder
         this.totalVatBase = totalVatBase;
         return this;
     }
-
-    @Override
-    public PurchaseOrder set( String fieldName, Object value )
-    {
-        return ( PurchaseOrder ) super.set( fieldName, value );
-    }
-
-    @Override
-    public PurchaseOrder clone()
-    {
-        return ( PurchaseOrder ) super.clone();
-    }
-
 }

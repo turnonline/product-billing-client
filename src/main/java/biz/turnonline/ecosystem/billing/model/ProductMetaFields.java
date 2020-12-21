@@ -16,6 +16,8 @@
 
 package biz.turnonline.ecosystem.billing.model;
 
+import java.io.Serializable;
+
 /**
  * Model definition for ProductMetaFields.
  *
@@ -27,10 +29,10 @@ package biz.turnonline.ecosystem.billing.model;
  *
  * @author Google, Inc.
  */
-@SuppressWarnings( "javadoc" )
 public final class ProductMetaFields
-        extends com.google.api.client.json.GenericJson
+        implements Serializable
 {
+    private static final long serialVersionUID = -558680769373349158L;
 
     /**
      * The value may be {@code null}.
@@ -77,17 +79,4 @@ public final class ProductMetaFields
         this.mandatory = mandatory;
         return this;
     }
-
-    @Override
-    public ProductMetaFields set( String fieldName, Object value )
-    {
-        return ( ProductMetaFields ) super.set( fieldName, value );
-    }
-
-    @Override
-    public ProductMetaFields clone()
-    {
-        return ( ProductMetaFields ) super.clone();
-    }
-
 }

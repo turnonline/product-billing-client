@@ -16,6 +16,8 @@
 
 package biz.turnonline.ecosystem.billing.model;
 
+import java.io.Serializable;
+
 /**
  * Model definition for EventLocation.
  *
@@ -27,10 +29,10 @@ package biz.turnonline.ecosystem.billing.model;
  *
  * @author Google, Inc.
  */
-@SuppressWarnings( "javadoc" )
 public final class EventLocation
-        extends com.google.api.client.json.GenericJson
+        implements Serializable
 {
+    private static final long serialVersionUID = 8540225858748407480L;
 
     /**
      * The value may be {@code null}.
@@ -238,17 +240,4 @@ public final class EventLocation
         this.street = street;
         return this;
     }
-
-    @Override
-    public EventLocation set( String fieldName, Object value )
-    {
-        return ( EventLocation ) super.set( fieldName, value );
-    }
-
-    @Override
-    public EventLocation clone()
-    {
-        return ( EventLocation ) super.clone();
-    }
-
 }

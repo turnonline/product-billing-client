@@ -16,6 +16,8 @@
 
 package biz.turnonline.ecosystem.billing.model;
 
+import java.io.Serializable;
+
 /**
  * Model definition for BankAccount.
  *
@@ -28,8 +30,9 @@ package biz.turnonline.ecosystem.billing.model;
  * @author Google, Inc.
  */
 public final class BankAccount
-        extends com.google.api.client.json.GenericJson
+        implements Serializable
 {
+    private static final long serialVersionUID = -8763537022373892629L;
 
     /**
      * The value may be {@code null}.
@@ -122,17 +125,4 @@ public final class BankAccount
         this.iban = iban;
         return this;
     }
-
-    @Override
-    public BankAccount set( String fieldName, Object value )
-    {
-        return ( BankAccount ) super.set( fieldName, value );
-    }
-
-    @Override
-    public BankAccount clone()
-    {
-        return ( BankAccount ) super.clone();
-    }
-
 }

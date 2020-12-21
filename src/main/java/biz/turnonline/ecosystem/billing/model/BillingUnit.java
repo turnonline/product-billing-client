@@ -16,6 +16,8 @@
 
 package biz.turnonline.ecosystem.billing.model;
 
+import java.io.Serializable;
+
 /**
  * Model definition for BillingUnit.
  *
@@ -27,10 +29,10 @@ package biz.turnonline.ecosystem.billing.model;
  *
  * @author Google, Inc.
  */
-@SuppressWarnings( "javadoc" )
 public final class BillingUnit
-        extends com.google.api.client.json.GenericJson
+        implements Serializable
 {
+    private static final long serialVersionUID = -1132174362982168501L;
 
     /**
      * The value may be {@code null}.
@@ -100,17 +102,4 @@ public final class BillingUnit
         this.locale = locale;
         return this;
     }
-
-    @Override
-    public BillingUnit set( String fieldName, Object value )
-    {
-        return ( BillingUnit ) super.set( fieldName, value );
-    }
-
-    @Override
-    public BillingUnit clone()
-    {
-        return ( BillingUnit ) super.clone();
-    }
-
 }

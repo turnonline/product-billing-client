@@ -16,6 +16,8 @@
 
 package biz.turnonline.ecosystem.billing.model;
 
+import java.io.Serializable;
+
 /**
  * Model definition for Creditor.
  *
@@ -28,8 +30,9 @@ package biz.turnonline.ecosystem.billing.model;
  * @author Google, Inc.
  */
 public final class Creditor
-        extends com.google.api.client.json.GenericJson
+        implements Serializable
 {
+    private static final long serialVersionUID = 18011086147363993L;
 
     /**
      * The value may be {@code null}.
@@ -376,17 +379,4 @@ public final class Creditor
         this.vatPayer = vatPayer;
         return this;
     }
-
-    @Override
-    public Creditor set( String fieldName, Object value )
-    {
-        return ( Creditor ) super.set( fieldName, value );
-    }
-
-    @Override
-    public Creditor clone()
-    {
-        return ( Creditor ) super.clone();
-    }
-
 }

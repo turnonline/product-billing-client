@@ -16,6 +16,8 @@
 
 package biz.turnonline.ecosystem.billing.model;
 
+import java.io.Serializable;
+
 /**
  * Model definition for EventEnd.
  *
@@ -27,10 +29,10 @@ package biz.turnonline.ecosystem.billing.model;
  *
  * @author Google, Inc.
  */
-@SuppressWarnings( "javadoc" )
 public final class EventEnd
-        extends com.google.api.client.json.GenericJson
+        implements Serializable
 {
+    private static final long serialVersionUID = 5972416990821667981L;
 
     /**
      * The value may be {@code null}.
@@ -123,17 +125,4 @@ public final class EventEnd
         this.to = to;
         return this;
     }
-
-    @Override
-    public EventEnd set( String fieldName, Object value )
-    {
-        return ( EventEnd ) super.set( fieldName, value );
-    }
-
-    @Override
-    public EventEnd clone()
-    {
-        return ( EventEnd ) super.clone();
-    }
-
 }

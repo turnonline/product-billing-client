@@ -16,6 +16,8 @@
 
 package biz.turnonline.ecosystem.billing.model;
 
+import java.io.Serializable;
+
 /**
  * Model definition for NumberSeriesCollection.
  *
@@ -27,10 +29,10 @@ package biz.turnonline.ecosystem.billing.model;
  *
  * @author Google, Inc.
  */
-@SuppressWarnings( "javadoc" )
 public final class NumberSeriesCollection
-        extends com.google.api.client.json.GenericJson
+        implements Serializable
 {
+    private static final long serialVersionUID = 2130383544342526066L;
 
     /**
      * The value may be {@code null}.
@@ -54,17 +56,4 @@ public final class NumberSeriesCollection
         this.items = items;
         return this;
     }
-
-    @Override
-    public NumberSeriesCollection set( String fieldName, Object value )
-    {
-        return ( NumberSeriesCollection ) super.set( fieldName, value );
-    }
-
-    @Override
-    public NumberSeriesCollection clone()
-    {
-        return ( NumberSeriesCollection ) super.clone();
-    }
-
 }

@@ -16,6 +16,8 @@
 
 package biz.turnonline.ecosystem.billing.model;
 
+import java.io.Serializable;
+
 /**
  * Model definition for AccountingSystem.
  *
@@ -28,8 +30,10 @@ package biz.turnonline.ecosystem.billing.model;
  * @author Google, Inc.
  */
 public final class AccountingSystem
-        extends com.google.api.client.json.GenericJson
+        implements Serializable
 {
+    private static final long serialVersionUID = 8218583166385503399L;
+
     /**
      * The value may be {@code null}.
      */
@@ -144,17 +148,4 @@ public final class AccountingSystem
         this.username = username;
         return this;
     }
-
-    @Override
-    public AccountingSystem set( String fieldName, Object value )
-    {
-        return ( AccountingSystem ) super.set( fieldName, value );
-    }
-
-    @Override
-    public AccountingSystem clone()
-    {
-        return ( AccountingSystem ) super.clone();
-    }
-
 }

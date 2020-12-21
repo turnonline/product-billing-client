@@ -16,6 +16,8 @@
 
 package biz.turnonline.ecosystem.billing.model;
 
+import java.io.Serializable;
+
 /**
  * Model definition for Order.
  *
@@ -28,8 +30,9 @@ package biz.turnonline.ecosystem.billing.model;
  * @author Google, Inc.
  */
 public final class Order
-        extends com.google.api.client.json.GenericJson
+        implements Serializable
 {
+    private static final long serialVersionUID = -8846615190962213748L;
 
     static
     {
@@ -436,17 +439,4 @@ public final class Order
         this.totalVatBase = totalVatBase;
         return this;
     }
-
-    @Override
-    public Order set( String fieldName, Object value )
-    {
-        return ( Order ) super.set( fieldName, value );
-    }
-
-    @Override
-    public Order clone()
-    {
-        return ( Order ) super.clone();
-    }
-
 }

@@ -16,6 +16,8 @@
 
 package biz.turnonline.ecosystem.billing.model;
 
+import java.io.Serializable;
+
 /**
  * Model definition for Increment.
  *
@@ -27,10 +29,10 @@ package biz.turnonline.ecosystem.billing.model;
  *
  * @author Google, Inc.
  */
-@SuppressWarnings( "javadoc" )
 public final class Increment
-        extends com.google.api.client.json.GenericJson
+        implements Serializable
 {
+    private static final long serialVersionUID = -5235944398078420395L;
 
     /**
      * The value may be {@code null}.
@@ -170,17 +172,4 @@ public final class Increment
         this.year = year;
         return this;
     }
-
-    @Override
-    public Increment set( String fieldName, Object value )
-    {
-        return ( Increment ) super.set( fieldName, value );
-    }
-
-    @Override
-    public Increment clone()
-    {
-        return ( Increment ) super.clone();
-    }
-
 }

@@ -16,6 +16,8 @@
 
 package biz.turnonline.ecosystem.billing.model;
 
+import java.io.Serializable;
+
 /**
  * Model definition for VatRateCollection.
  *
@@ -27,10 +29,10 @@ package biz.turnonline.ecosystem.billing.model;
  *
  * @author Google, Inc.
  */
-@SuppressWarnings( "javadoc" )
 public final class VatRateCollection
-        extends com.google.api.client.json.GenericJson
+        implements Serializable
 {
+    private static final long serialVersionUID = 5130050111496251224L;
 
     static
     {
@@ -61,17 +63,4 @@ public final class VatRateCollection
         this.items = items;
         return this;
     }
-
-    @Override
-    public VatRateCollection set( String fieldName, Object value )
-    {
-        return ( VatRateCollection ) super.set( fieldName, value );
-    }
-
-    @Override
-    public VatRateCollection clone()
-    {
-        return ( VatRateCollection ) super.clone();
-    }
-
 }

@@ -36,9 +36,9 @@ public final class ProductPricing
 
     static
     {
-        // hack to force ProGuard to consider PricingStructureTemplate used, since otherwise it would be stripped out
+        // hack to force ProGuard to consider ProductDiscount used, since otherwise it would be stripped out
         // see https://github.com/google/google-api-java-client/issues/543
-        com.google.api.client.util.Data.nullOf( PricingStructureTemplate.class );
+        com.google.api.client.util.Data.nullOf( ProductDiscount.class );
     }
 
     /**

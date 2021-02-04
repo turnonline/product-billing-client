@@ -34,6 +34,13 @@ public final class NumberSeriesCollection
 {
     private static final long serialVersionUID = 2130383544342526066L;
 
+    static
+    {
+        // hack to force ProGuard to consider NumberSeries used, since otherwise it would be stripped out
+        // see https://github.com/google/google-api-java-client/issues/543
+        com.google.api.client.util.Data.nullOf( NumberSeries.class );
+    }
+
     /**
      * The value may be {@code null}.
      */

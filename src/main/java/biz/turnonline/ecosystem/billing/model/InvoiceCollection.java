@@ -34,6 +34,13 @@ public final class InvoiceCollection
 {
     private static final long serialVersionUID = -7009084579038877965L;
 
+    static
+    {
+        // hack to force ProGuard to consider Invoice used, since otherwise it would be stripped out
+        // see https://github.com/google/google-api-java-client/issues/543
+        com.google.api.client.util.Data.nullOf( Invoice.class );
+    }
+
     /**
      * The value may be {@code null}.
      */

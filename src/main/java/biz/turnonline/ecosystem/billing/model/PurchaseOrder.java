@@ -34,6 +34,20 @@ public final class PurchaseOrder
 {
     private static final long serialVersionUID = 718835365121955433L;
 
+    static
+    {
+        // hack to force ProGuard to consider IncomingInvoice used, since otherwise it would be stripped out
+        // see https://github.com/google/google-api-java-client/issues/543
+        com.google.api.client.util.Data.nullOf( IncomingInvoice.class );
+    }
+
+    static
+    {
+        // hack to force ProGuard to consider PricingItem used, since otherwise it would be stripped out
+        // see https://github.com/google/google-api-java-client/issues/543
+        com.google.api.client.util.Data.nullOf( PricingItem.class );
+    }
+
     /**
      * The value may be {@code null}.
      */

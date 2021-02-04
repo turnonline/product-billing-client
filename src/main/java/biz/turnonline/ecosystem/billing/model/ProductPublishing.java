@@ -32,13 +32,26 @@ import java.io.Serializable;
 public final class ProductPublishing
         implements Serializable
 {
-    private static final long serialVersionUID = -7627171318802316590L;
+    private static final long serialVersionUID = 5139072591152902051L;
+
+    static
+    {
+        // hack to force ProGuard to consider ProductPicture used, since otherwise it would be stripped out
+        // see https://github.com/google/google-api-java-client/issues/543
+        com.google.api.client.util.Data.nullOf( ProductPicture.class );
+    }
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
     private ProductDomain at;
+
+    /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
+    private java.lang.String category;
 
     /**
      * The value may be {@code null}.
@@ -90,6 +103,23 @@ public final class ProductPublishing
     public ProductPublishing setAt( ProductDomain at )
     {
         this.at = at;
+        return this;
+    }
+
+    /**
+     * @return value or {@code null} for none
+     */
+    public java.lang.String getCategory()
+    {
+        return category;
+    }
+
+    /**
+     * @param category category or {@code null} for none
+     */
+    public ProductPublishing setCategory( java.lang.String category )
+    {
+        this.category = category;
         return this;
     }
 

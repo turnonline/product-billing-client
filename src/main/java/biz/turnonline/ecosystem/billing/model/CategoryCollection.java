@@ -19,7 +19,7 @@ package biz.turnonline.ecosystem.billing.model;
 import java.io.Serializable;
 
 /**
- * Model definition for PricingItemCollection.
+ * Model definition for CategoryCollection.
  *
  * <p> This is the Java data model class that specifies how to parse/serialize into the JSON that is
  * transmitted over HTTP when working with the TurnOnline.biz Product Billing. For a detailed
@@ -29,21 +29,21 @@ import java.io.Serializable;
  *
  * @author Google, Inc.
  */
-public final class PricingItemCollection
+public final class CategoryCollection
         implements Serializable
 {
-    private static final long serialVersionUID = 2618434108464557100L;
+    private static final long serialVersionUID = 3557087643151024901L;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.util.List<PricingItem> items;
+    private java.util.List<Category> items;
 
     /**
      * @return value or {@code null} for none
      */
-    public java.util.List<PricingItem> getItems()
+    public java.util.List<Category> getItems()
     {
         return items;
     }
@@ -51,7 +51,7 @@ public final class PricingItemCollection
     /**
      * @param items items or {@code null} for none
      */
-    public PricingItemCollection setItems( java.util.List<PricingItem> items )
+    public CategoryCollection setItems( java.util.List<Category> items )
     {
         this.items = items;
         return this;

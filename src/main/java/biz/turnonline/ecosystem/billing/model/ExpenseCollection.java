@@ -34,6 +34,13 @@ public final class ExpenseCollection
 {
     private static final long serialVersionUID = 3874391386103722855L;
 
+    static
+    {
+        // hack to force ProGuard to consider Expense used, since otherwise it would be stripped out
+        // see https://github.com/google/google-api-java-client/issues/543
+        com.google.api.client.util.Data.nullOf( Expense.class );
+    }
+
     /**
      * The value may be {@code null}.
      */

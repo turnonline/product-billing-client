@@ -34,6 +34,13 @@ public final class OrderCollection
 {
     private static final long serialVersionUID = 3300914742537080764L;
 
+    static
+    {
+        // hack to force ProGuard to consider Order used, since otherwise it would be stripped out
+        // see https://github.com/google/google-api-java-client/issues/543
+        com.google.api.client.util.Data.nullOf( Order.class );
+    }
+
     /**
      * The value may be {@code null}.
      */

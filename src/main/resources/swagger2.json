@@ -98,6 +98,59 @@
                 ]
             }
         },
+        "/v1/codebook/categories": {
+            "get": {
+                "tags": [
+                    "Code-books"
+                ],
+                "summary": "Available list of product categories",
+                "description": "Returns the full list of the product categories. The product category from the (mobile) app user perspective.",
+                "operationId": "listCategories",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Accept-Language",
+                        "in": "header",
+                        "required": false,
+                        "type": "string",
+                        "description": "The language the client has configured to prefer in results. If requested language is not provided, it will fallback to the default language of the associated account."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The full list of the product categories.",
+                        "schema": {
+                            "$ref": "#/definitions/CategoryCollection"
+                        }
+                    },
+                    "401": {
+                        "description": "The error when the authentication credential fails.",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "It's a failure of the server. The client can repeat the request without modifications at any later time.",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "503": {
+                        "description": "The service is unavailable or the server has timed out processing of the request. The client may repeat the request without modifications at any later time.",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "firebase-a9a2a51a": []
+                    }
+                ]
+            }
+        },
         "/v1/codebook/number-series": {
             "get": {
                 "tags": [
@@ -3724,6 +3777,40 @@
                 }
             }
         },
+        "Category": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "string",
+                    "description": "The name as an unique identification of the specific category."
+                },
+                "label": {
+                    "type": "string",
+                    "description": "The language specific max 2 words description of the category."
+                },
+                "locale": {
+                    "type": "string",
+                    "description": "The label language. ISO 639 alpha-2 or alpha-3 language code."
+                },
+                "what": {
+                    "type": "string",
+                    "description": "The category description that helps to understand to the user what this category is about."
+                }
+            },
+            "description": "The product category from the (mobile) app user perspective."
+        },
+        "CategoryCollection": {
+            "type": "object",
+            "properties": {
+                "items": {
+                    "type": "array",
+                    "description": "Category collection wrapper.",
+                    "items": {
+                        "$ref": "#/definitions/Category"
+                    }
+                }
+            }
+        },
         "Creditor": {
             "type": "object",
             "properties": {
@@ -5481,6 +5568,10 @@
                 "at": {
                     "description": "The domain where a product will be publicly available, once published. If no value has been provided the seller’s default domain will be set. The client might select only from existing domains provided by associated account.",
                     "$ref": "#/definitions/ProductDomain"
+                },
+                "category": {
+                    "type": "string",
+                    "description": "The product categorisation from the (mobile) app user perspective. A value taken from the product category code-book."
                 },
                 "comingSoon": {
                     "type": "boolean",

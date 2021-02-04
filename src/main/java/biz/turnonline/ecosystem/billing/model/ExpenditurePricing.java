@@ -34,6 +34,13 @@ public final class ExpenditurePricing
 {
     private static final long serialVersionUID = -4508250167995020386L;
 
+    static
+    {
+        // hack to force ProGuard to consider PricingItem used, since otherwise it would be stripped out
+        // see https://github.com/google/google-api-java-client/issues/543
+        com.google.api.client.util.Data.nullOf( PricingItem.class );
+    }
+
     /**
      * The value may be {@code null}.
      */

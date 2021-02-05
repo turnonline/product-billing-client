@@ -5283,9 +5283,6 @@
         },
         "Product": {
             "type": "object",
-            "required": [
-                "itemName"
-            ],
             "properties": {
                 "createdDate": {
                     "type": "string",

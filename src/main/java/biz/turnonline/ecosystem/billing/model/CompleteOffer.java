@@ -19,7 +19,7 @@ package biz.turnonline.ecosystem.billing.model;
 import java.io.Serializable;
 
 /**
- * Model definition for Order.
+ * Model definition for CompleteOffer.
  *
  * <p> This is the Java data model class that specifies how to parse/serialize into the JSON that is
  * transmitted over HTTP when working with the TurnOnline.biz Product Billing. For a detailed
@@ -29,17 +29,10 @@ import java.io.Serializable;
  *
  * @author Google, Inc.
  */
-public final class Order
+public final class CompleteOffer
         implements Serializable
 {
-    private static final long serialVersionUID = 3772817859300838938L;
-
-    static
-    {
-        // hack to force ProGuard to consider Invoice used, since otherwise it would be stripped out
-        // see https://github.com/google/google-api-java-client/issues/543
-        com.google.api.client.util.Data.nullOf( Invoice.class );
-    }
+    private static final long serialVersionUID = 2695023588692860584L;
 
     static
     {
@@ -107,6 +100,12 @@ public final class Order
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
+    private java.lang.String logo;
+
+    /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
     private com.google.api.client.util.DateTime modificationDate;
 
     /**
@@ -131,7 +130,25 @@ public final class Order
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
+    private java.lang.String picture;
+
+    /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
+    private java.lang.String snippet;
+
+    /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
     private java.lang.String status;
+
+    /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
+    private java.lang.String title;
 
     /**
      * The value may be {@code null}.
@@ -168,7 +185,7 @@ public final class Order
     /**
      * @param beginOn beginOn or {@code null} for none
      */
-    public Order setBeginOn( com.google.api.client.util.DateTime beginOn )
+    public CompleteOffer setBeginOn( com.google.api.client.util.DateTime beginOn )
     {
         this.beginOn = beginOn;
         return this;
@@ -185,7 +202,7 @@ public final class Order
     /**
      * @param createdDate createdDate or {@code null} for none
      */
-    public Order setCreatedDate( com.google.api.client.util.DateTime createdDate )
+    public CompleteOffer setCreatedDate( com.google.api.client.util.DateTime createdDate )
     {
         this.createdDate = createdDate;
         return this;
@@ -202,7 +219,7 @@ public final class Order
     /**
      * @param currency currency or {@code null} for none
      */
-    public Order setCurrency( java.lang.String currency )
+    public CompleteOffer setCurrency( java.lang.String currency )
     {
         this.currency = currency;
         return this;
@@ -219,7 +236,7 @@ public final class Order
     /**
      * @param customer customer or {@code null} for none
      */
-    public Order setCustomer( Customer customer )
+    public CompleteOffer setCustomer( Customer customer )
     {
         this.customer = customer;
         return this;
@@ -236,7 +253,7 @@ public final class Order
     /**
      * @param id id or {@code null} for none
      */
-    public Order setId( java.lang.Long id )
+    public CompleteOffer setId( java.lang.Long id )
     {
         this.id = id;
         return this;
@@ -253,7 +270,7 @@ public final class Order
     /**
      * @param invoiceType invoiceType or {@code null} for none
      */
-    public Order setInvoiceType( java.lang.String invoiceType )
+    public CompleteOffer setInvoiceType( java.lang.String invoiceType )
     {
         this.invoiceType = invoiceType;
         return this;
@@ -270,7 +287,7 @@ public final class Order
     /**
      * @param invoices invoices or {@code null} for none
      */
-    public Order setInvoices( java.util.List<Invoice> invoices )
+    public CompleteOffer setInvoices( java.util.List<Invoice> invoices )
     {
         this.invoices = invoices;
         return this;
@@ -287,7 +304,7 @@ public final class Order
     /**
      * @param items items or {@code null} for none
      */
-    public Order setItems( java.util.List<PricingItem> items )
+    public CompleteOffer setItems( java.util.List<PricingItem> items )
     {
         this.items = items;
         return this;
@@ -304,9 +321,26 @@ public final class Order
     /**
      * @param lastBillingDate lastBillingDate or {@code null} for none
      */
-    public Order setLastBillingDate( com.google.api.client.util.DateTime lastBillingDate )
+    public CompleteOffer setLastBillingDate( com.google.api.client.util.DateTime lastBillingDate )
     {
         this.lastBillingDate = lastBillingDate;
+        return this;
+    }
+
+    /**
+     * @return value or {@code null} for none
+     */
+    public java.lang.String getLogo()
+    {
+        return logo;
+    }
+
+    /**
+     * @param logo logo or {@code null} for none
+     */
+    public CompleteOffer setLogo( java.lang.String logo )
+    {
+        this.logo = logo;
         return this;
     }
 
@@ -321,7 +355,7 @@ public final class Order
     /**
      * @param modificationDate modificationDate or {@code null} for none
      */
-    public Order setModificationDate( com.google.api.client.util.DateTime modificationDate )
+    public CompleteOffer setModificationDate( com.google.api.client.util.DateTime modificationDate )
     {
         this.modificationDate = modificationDate;
         return this;
@@ -338,7 +372,7 @@ public final class Order
     /**
      * @param nextBillingDate nextBillingDate or {@code null} for none
      */
-    public Order setNextBillingDate( com.google.api.client.util.DateTime nextBillingDate )
+    public CompleteOffer setNextBillingDate( com.google.api.client.util.DateTime nextBillingDate )
     {
         this.nextBillingDate = nextBillingDate;
         return this;
@@ -355,7 +389,7 @@ public final class Order
     /**
      * @param numberOfDays numberOfDays or {@code null} for none
      */
-    public Order setNumberOfDays( java.lang.Integer numberOfDays )
+    public CompleteOffer setNumberOfDays( java.lang.Integer numberOfDays )
     {
         this.numberOfDays = numberOfDays;
         return this;
@@ -372,9 +406,43 @@ public final class Order
     /**
      * @param periodicity periodicity or {@code null} for none
      */
-    public Order setPeriodicity( java.lang.String periodicity )
+    public CompleteOffer setPeriodicity( java.lang.String periodicity )
     {
         this.periodicity = periodicity;
+        return this;
+    }
+
+    /**
+     * @return value or {@code null} for none
+     */
+    public java.lang.String getPicture()
+    {
+        return picture;
+    }
+
+    /**
+     * @param picture picture or {@code null} for none
+     */
+    public CompleteOffer setPicture( java.lang.String picture )
+    {
+        this.picture = picture;
+        return this;
+    }
+
+    /**
+     * @return value or {@code null} for none
+     */
+    public java.lang.String getSnippet()
+    {
+        return snippet;
+    }
+
+    /**
+     * @param snippet snippet or {@code null} for none
+     */
+    public CompleteOffer setSnippet( java.lang.String snippet )
+    {
+        this.snippet = snippet;
         return this;
     }
 
@@ -389,9 +457,26 @@ public final class Order
     /**
      * @param status status or {@code null} for none
      */
-    public Order setStatus( java.lang.String status )
+    public CompleteOffer setStatus( java.lang.String status )
     {
         this.status = status;
+        return this;
+    }
+
+    /**
+     * @return value or {@code null} for none
+     */
+    public java.lang.String getTitle()
+    {
+        return title;
+    }
+
+    /**
+     * @param title title or {@code null} for none
+     */
+    public CompleteOffer setTitle( java.lang.String title )
+    {
+        this.title = title;
         return this;
     }
 
@@ -406,7 +491,7 @@ public final class Order
     /**
      * @param totalPrice totalPrice or {@code null} for none
      */
-    public Order setTotalPrice( java.lang.Double totalPrice )
+    public CompleteOffer setTotalPrice( java.lang.Double totalPrice )
     {
         this.totalPrice = totalPrice;
         return this;
@@ -423,7 +508,7 @@ public final class Order
     /**
      * @param totalPriceExclVat totalPriceExclVat or {@code null} for none
      */
-    public Order setTotalPriceExclVat( java.lang.Double totalPriceExclVat )
+    public CompleteOffer setTotalPriceExclVat( java.lang.Double totalPriceExclVat )
     {
         this.totalPriceExclVat = totalPriceExclVat;
         return this;
@@ -440,7 +525,7 @@ public final class Order
     /**
      * @param totalVatAmount totalVatAmount or {@code null} for none
      */
-    public Order setTotalVatAmount( java.lang.Double totalVatAmount )
+    public CompleteOffer setTotalVatAmount( java.lang.Double totalVatAmount )
     {
         this.totalVatAmount = totalVatAmount;
         return this;
@@ -457,7 +542,7 @@ public final class Order
     /**
      * @param totalVatBase totalVatBase or {@code null} for none
      */
-    public Order setTotalVatBase( java.lang.Double totalVatBase )
+    public CompleteOffer setTotalVatBase( java.lang.Double totalVatBase )
     {
         this.totalVatBase = totalVatBase;
         return this;

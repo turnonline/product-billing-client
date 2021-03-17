@@ -32,7 +32,7 @@ import java.io.Serializable;
 public final class BillPricing
         implements Serializable
 {
-    private static final long serialVersionUID = 1070226734788445194L;
+    private static final long serialVersionUID = -6024316421018997492L;
 
     static
     {
@@ -64,6 +64,12 @@ public final class BillPricing
      */
     @com.google.api.client.util.Key
     private java.lang.Double totalPriceExclVat;
+
+    /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
+    private java.lang.Double totalVatAmount;
 
     /**
      * The value may be {@code null}.
@@ -136,6 +142,23 @@ public final class BillPricing
     public BillPricing setTotalPriceExclVat( java.lang.Double totalPriceExclVat )
     {
         this.totalPriceExclVat = totalPriceExclVat;
+        return this;
+    }
+
+    /**
+     * @return value or {@code null} for none
+     */
+    public java.lang.Double getTotalVatAmount()
+    {
+        return totalVatAmount;
+    }
+
+    /**
+     * @param totalVatAmount totalVatAmount or {@code null} for none
+     */
+    public BillPricing setTotalVatAmount( java.lang.Double totalVatAmount )
+    {
+        this.totalVatAmount = totalVatAmount;
         return this;
     }
 

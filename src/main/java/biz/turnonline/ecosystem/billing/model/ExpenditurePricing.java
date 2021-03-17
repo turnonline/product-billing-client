@@ -32,13 +32,20 @@ import java.io.Serializable;
 public final class ExpenditurePricing
         implements Serializable
 {
-    private static final long serialVersionUID = -4508250167995020386L;
+    private static final long serialVersionUID = -1416871282774522646L;
 
     static
     {
         // hack to force ProGuard to consider PricingItem used, since otherwise it would be stripped out
         // see https://github.com/google/google-api-java-client/issues/543
         com.google.api.client.util.Data.nullOf( PricingItem.class );
+    }
+
+    static
+    {
+        // hack to force ProGuard to consider VatRateRow used, since otherwise it would be stripped out
+        // see https://github.com/google/google-api-java-client/issues/543
+        com.google.api.client.util.Data.nullOf( VatRateRow.class );
     }
 
     /**
@@ -63,7 +70,7 @@ public final class ExpenditurePricing
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.lang.Double totalVat;
+    private java.lang.Double totalVatAmount;
 
     /**
      * The value may be {@code null}.
@@ -131,17 +138,17 @@ public final class ExpenditurePricing
     /**
      * @return value or {@code null} for none
      */
-    public java.lang.Double getTotalVat()
+    public java.lang.Double getTotalVatAmount()
     {
-        return totalVat;
+        return totalVatAmount;
     }
 
     /**
-     * @param totalVat totalVat or {@code null} for none
+     * @param totalVatAmount totalVatAmount or {@code null} for none
      */
-    public ExpenditurePricing setTotalVat( java.lang.Double totalVat )
+    public ExpenditurePricing setTotalVatAmount( java.lang.Double totalVatAmount )
     {
-        this.totalVat = totalVat;
+        this.totalVatAmount = totalVatAmount;
         return this;
     }
 

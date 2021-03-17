@@ -32,14 +32,7 @@ import java.io.Serializable;
 public final class PurchaseOrder
         implements Serializable
 {
-    private static final long serialVersionUID = 718835365121955433L;
-
-    static
-    {
-        // hack to force ProGuard to consider IncomingInvoice used, since otherwise it would be stripped out
-        // see https://github.com/google/google-api-java-client/issues/543
-        com.google.api.client.util.Data.nullOf( IncomingInvoice.class );
-    }
+    private static final long serialVersionUID = -492667655498775281L;
 
     static
     {
@@ -150,6 +143,12 @@ public final class PurchaseOrder
      */
     @com.google.api.client.util.Key
     private java.lang.Double totalPriceExclVat;
+
+    /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
+    private java.lang.Double totalVatAmount;
 
     /**
      * The value may be {@code null}.
@@ -443,6 +442,23 @@ public final class PurchaseOrder
     public PurchaseOrder setTotalPriceExclVat( java.lang.Double totalPriceExclVat )
     {
         this.totalPriceExclVat = totalPriceExclVat;
+        return this;
+    }
+
+    /**
+     * @return value or {@code null} for none
+     */
+    public java.lang.Double getTotalVatAmount()
+    {
+        return totalVatAmount;
+    }
+
+    /**
+     * @param totalVatAmount totalVatAmount or {@code null} for none
+     */
+    public PurchaseOrder setTotalVatAmount( java.lang.Double totalVatAmount )
+    {
+        this.totalVatAmount = totalVatAmount;
         return this;
     }
 

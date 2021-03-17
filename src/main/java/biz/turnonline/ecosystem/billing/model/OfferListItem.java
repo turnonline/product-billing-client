@@ -19,7 +19,7 @@ package biz.turnonline.ecosystem.billing.model;
 import java.io.Serializable;
 
 /**
- * Model definition for Expense.
+ * Model definition for OfferListItem.
  *
  * <p> This is the Java data model class that specifies how to parse/serialize into the JSON that is
  * transmitted over HTTP when working with the TurnOnline.biz Product Billing. For a detailed
@@ -29,29 +29,10 @@ import java.io.Serializable;
  *
  * @author Google, Inc.
  */
-public final class Expense
+public final class OfferListItem
         implements Serializable
 {
-    private static final long serialVersionUID = 905720753560116845L;
-
-    static
-    {
-        // hack to force ProGuard to consider PricingItem used, since otherwise it would be stripped out
-        // see https://github.com/google/google-api-java-client/issues/543
-        com.google.api.client.util.Data.nullOf( PricingItem.class );
-    }
-
-    /**
-     * The value may be {@code null}.
-     */
-    @com.google.api.client.util.Key
-    private Bill bill;
-
-    /**
-     * The value may be {@code null}.
-     */
-    @com.google.api.client.util.Key
-    private java.lang.String billNumber;
+    private static final long serialVersionUID = 6464652844150032417L;
 
     /**
      * The value may be {@code null}.
@@ -63,49 +44,44 @@ public final class Expense
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private com.google.api.client.util.DateTime dateOfIssue;
+    private Customer customer;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private com.google.api.client.util.DateTime dateOfTaxable;
+    @com.google.api.client.json.JsonString
+    private java.lang.Long id;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.util.List<PricingItem> items;
+    private java.lang.String logo;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private BillPayment payment;
+    private com.google.api.client.util.DateTime modificationDate;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.lang.String pin;
+    private java.lang.String snippet;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.lang.String servingUrl;
+    private java.lang.String thumbnail;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private Creditor supplier;
-
-    /**
-     * The value may be {@code null}.
-     */
-    @com.google.api.client.util.Key
-    private java.lang.String through;
+    private java.lang.String title;
 
     /**
      * The value may be {@code null}.
@@ -134,40 +110,6 @@ public final class Expense
     /**
      * @return value or {@code null} for none
      */
-    public Bill getBill()
-    {
-        return bill;
-    }
-
-    /**
-     * @param bill bill or {@code null} for none
-     */
-    public Expense setBill( Bill bill )
-    {
-        this.bill = bill;
-        return this;
-    }
-
-    /**
-     * @return value or {@code null} for none
-     */
-    public java.lang.String getBillNumber()
-    {
-        return billNumber;
-    }
-
-    /**
-     * @param billNumber billNumber or {@code null} for none
-     */
-    public Expense setBillNumber( java.lang.String billNumber )
-    {
-        this.billNumber = billNumber;
-        return this;
-    }
-
-    /**
-     * @return value or {@code null} for none
-     */
     public java.lang.String getCurrency()
     {
         return currency;
@@ -176,7 +118,7 @@ public final class Expense
     /**
      * @param currency currency or {@code null} for none
      */
-    public Expense setCurrency( java.lang.String currency )
+    public OfferListItem setCurrency( java.lang.String currency )
     {
         this.currency = currency;
         return this;
@@ -185,136 +127,119 @@ public final class Expense
     /**
      * @return value or {@code null} for none
      */
-    public com.google.api.client.util.DateTime getDateOfIssue()
+    public Customer getCustomer()
     {
-        return dateOfIssue;
+        return customer;
     }
 
     /**
-     * @param dateOfIssue dateOfIssue or {@code null} for none
+     * @param customer customer or {@code null} for none
      */
-    public Expense setDateOfIssue( com.google.api.client.util.DateTime dateOfIssue )
+    public OfferListItem setCustomer( Customer customer )
     {
-        this.dateOfIssue = dateOfIssue;
+        this.customer = customer;
         return this;
     }
 
     /**
      * @return value or {@code null} for none
      */
-    public com.google.api.client.util.DateTime getDateOfTaxable()
+    public java.lang.Long getId()
     {
-        return dateOfTaxable;
+        return id;
     }
 
     /**
-     * @param dateOfTaxable dateOfTaxable or {@code null} for none
+     * @param id id or {@code null} for none
      */
-    public Expense setDateOfTaxable( com.google.api.client.util.DateTime dateOfTaxable )
+    public OfferListItem setId( java.lang.Long id )
     {
-        this.dateOfTaxable = dateOfTaxable;
+        this.id = id;
         return this;
     }
 
     /**
      * @return value or {@code null} for none
      */
-    public java.util.List<PricingItem> getItems()
+    public java.lang.String getLogo()
     {
-        return items;
+        return logo;
     }
 
     /**
-     * @param items items or {@code null} for none
+     * @param logo logo or {@code null} for none
      */
-    public Expense setItems( java.util.List<PricingItem> items )
+    public OfferListItem setLogo( java.lang.String logo )
     {
-        this.items = items;
+        this.logo = logo;
         return this;
     }
 
     /**
      * @return value or {@code null} for none
      */
-    public BillPayment getPayment()
+    public com.google.api.client.util.DateTime getModificationDate()
     {
-        return payment;
+        return modificationDate;
     }
 
     /**
-     * @param payment payment or {@code null} for none
+     * @param modificationDate modificationDate or {@code null} for none
      */
-    public Expense setPayment( BillPayment payment )
+    public OfferListItem setModificationDate( com.google.api.client.util.DateTime modificationDate )
     {
-        this.payment = payment;
+        this.modificationDate = modificationDate;
         return this;
     }
 
     /**
      * @return value or {@code null} for none
      */
-    public java.lang.String getPin()
+    public java.lang.String getSnippet()
     {
-        return pin;
+        return snippet;
     }
 
     /**
-     * @param pin pin or {@code null} for none
+     * @param snippet snippet or {@code null} for none
      */
-    public Expense setPin( java.lang.String pin )
+    public OfferListItem setSnippet( java.lang.String snippet )
     {
-        this.pin = pin;
+        this.snippet = snippet;
         return this;
     }
 
     /**
      * @return value or {@code null} for none
      */
-    public java.lang.String getServingUrl()
+    public java.lang.String getThumbnail()
     {
-        return servingUrl;
+        return thumbnail;
     }
 
     /**
-     * @param servingUrl servingUrl or {@code null} for none
+     * @param thumbnail thumbnail or {@code null} for none
      */
-    public Expense setServingUrl( java.lang.String servingUrl )
+    public OfferListItem setThumbnail( java.lang.String thumbnail )
     {
-        this.servingUrl = servingUrl;
+        this.thumbnail = thumbnail;
         return this;
     }
 
     /**
      * @return value or {@code null} for none
      */
-    public Creditor getSupplier()
+    public java.lang.String getTitle()
     {
-        return supplier;
+        return title;
     }
 
     /**
-     * @param supplier supplier or {@code null} for none
+     * @param title title or {@code null} for none
      */
-    public Expense setSupplier( Creditor supplier )
+    public OfferListItem setTitle( java.lang.String title )
     {
-        this.supplier = supplier;
-        return this;
-    }
-
-    /**
-     * @return value or {@code null} for none
-     */
-    public java.lang.String getThrough()
-    {
-        return through;
-    }
-
-    /**
-     * @param through through or {@code null} for none
-     */
-    public Expense setThrough( java.lang.String through )
-    {
-        this.through = through;
+        this.title = title;
         return this;
     }
 
@@ -329,7 +254,7 @@ public final class Expense
     /**
      * @param totalPrice totalPrice or {@code null} for none
      */
-    public Expense setTotalPrice( java.lang.Double totalPrice )
+    public OfferListItem setTotalPrice( java.lang.Double totalPrice )
     {
         this.totalPrice = totalPrice;
         return this;
@@ -346,7 +271,7 @@ public final class Expense
     /**
      * @param totalPriceExclVat totalPriceExclVat or {@code null} for none
      */
-    public Expense setTotalPriceExclVat( java.lang.Double totalPriceExclVat )
+    public OfferListItem setTotalPriceExclVat( java.lang.Double totalPriceExclVat )
     {
         this.totalPriceExclVat = totalPriceExclVat;
         return this;
@@ -363,7 +288,7 @@ public final class Expense
     /**
      * @param totalVatAmount totalVatAmount or {@code null} for none
      */
-    public Expense setTotalVatAmount( java.lang.Double totalVatAmount )
+    public OfferListItem setTotalVatAmount( java.lang.Double totalVatAmount )
     {
         this.totalVatAmount = totalVatAmount;
         return this;
@@ -380,7 +305,7 @@ public final class Expense
     /**
      * @param totalVatBase totalVatBase or {@code null} for none
      */
-    public Expense setTotalVatBase( java.lang.Double totalVatBase )
+    public OfferListItem setTotalVatBase( java.lang.Double totalVatBase )
     {
         this.totalVatBase = totalVatBase;
         return this;

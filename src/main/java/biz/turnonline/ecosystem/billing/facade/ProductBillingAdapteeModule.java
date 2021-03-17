@@ -71,7 +71,7 @@ import org.ctoolkit.restapi.client.adaptee.UpdateExecutorAdaptee;
 /**
  * The product billing guice default adaptee configuration.
  *
- * @author <a href="mailto:aurel.medvegy@ctoolkit.org">Aurel Medvegy</a>
+ * @author <a href="mailto:medvegy@turnonline.biz">Aurel Medvegy</a>
  */
 public class ProductBillingAdapteeModule
         extends AbstractModule

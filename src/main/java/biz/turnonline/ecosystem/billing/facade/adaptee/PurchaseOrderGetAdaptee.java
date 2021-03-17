@@ -29,7 +29,7 @@ import java.io.IOException;
 /**
  * The {@link PurchaseOrder} GET adaptee implementation.
  *
- * @author <a href="mailto:aurel.medvegy@ctoolkit.org">Aurel Medvegy</a>
+ * @author <a href="mailto:medvegy@turnonline.biz">Aurel Medvegy</a>
  */
 public class PurchaseOrderGetAdaptee
         extends AbstractGetExecutorAdaptee<ProductBilling, PurchaseOrder>

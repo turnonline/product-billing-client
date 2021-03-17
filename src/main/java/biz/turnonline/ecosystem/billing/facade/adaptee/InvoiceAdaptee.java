@@ -44,7 +44,7 @@ import java.util.Map;
 /**
  * The {@link Invoice} adaptee implementation.
  *
- * @author <a href="mailto:aurel.medvegy@ctoolkit.org">Aurel Medvegy</a>
+ * @author <a href="mailto:medvegy@turnonline.biz">Aurel Medvegy</a>
  */
 @Singleton
 public class InvoiceAdaptee

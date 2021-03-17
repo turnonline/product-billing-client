@@ -117,8 +117,8 @@
     </dependencies>
 
     <properties>
-        <ctoolkit-library-bom.version>13</ctoolkit-library-bom.version>
+        <ctoolkit-library-bom.version>14</ctoolkit-library-bom.version>
         <ctoolkit-rest-facade-api.version>0.29</ctoolkit-rest-facade-api.version>
-        <ctoolkit-rest-facade-adapter.version>0.36</ctoolkit-rest-facade-adapter.version>
+        <ctoolkit-rest-facade-adapter.version>0.37</ctoolkit-rest-facade-adapter.version>
     </properties>
 </project>

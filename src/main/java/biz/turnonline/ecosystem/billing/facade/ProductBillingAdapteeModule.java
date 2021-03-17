@@ -24,6 +24,10 @@ import biz.turnonline.ecosystem.billing.facade.adaptee.IncomingInvoiceAdaptee;
 import biz.turnonline.ecosystem.billing.facade.adaptee.IncomingInvoiceListAdaptee;
 import biz.turnonline.ecosystem.billing.facade.adaptee.InvoiceAdaptee;
 import biz.turnonline.ecosystem.billing.facade.adaptee.NumberSeriesAdaptee;
+import biz.turnonline.ecosystem.billing.facade.adaptee.OfferDeleteAdaptee;
+import biz.turnonline.ecosystem.billing.facade.adaptee.OfferGetAdaptee;
+import biz.turnonline.ecosystem.billing.facade.adaptee.OfferListAdaptee;
+import biz.turnonline.ecosystem.billing.facade.adaptee.OfferUpdateAdaptee;
 import biz.turnonline.ecosystem.billing.facade.adaptee.OrderAdaptee;
 import biz.turnonline.ecosystem.billing.facade.adaptee.PricingAdaptee;
 import biz.turnonline.ecosystem.billing.facade.adaptee.PricingItemAdaptee;
@@ -38,11 +42,13 @@ import biz.turnonline.ecosystem.billing.facade.adaptee.TransactionListAdaptee;
 import biz.turnonline.ecosystem.billing.facade.adaptee.VatRateAdaptee;
 import biz.turnonline.ecosystem.billing.model.AccountingSystem;
 import biz.turnonline.ecosystem.billing.model.BillingUnit;
+import biz.turnonline.ecosystem.billing.model.CompleteOffer;
 import biz.turnonline.ecosystem.billing.model.Expenditure;
 import biz.turnonline.ecosystem.billing.model.Expense;
 import biz.turnonline.ecosystem.billing.model.IncomingInvoice;
 import biz.turnonline.ecosystem.billing.model.Invoice;
 import biz.turnonline.ecosystem.billing.model.NumberSeries;
+import biz.turnonline.ecosystem.billing.model.OfferListItem;
 import biz.turnonline.ecosystem.billing.model.Order;
 import biz.turnonline.ecosystem.billing.model.Pricing;
 import biz.turnonline.ecosystem.billing.model.PricingItem;
@@ -50,6 +56,7 @@ import biz.turnonline.ecosystem.billing.model.Product;
 import biz.turnonline.ecosystem.billing.model.ProductPicture;
 import biz.turnonline.ecosystem.billing.model.ProductPublishing;
 import biz.turnonline.ecosystem.billing.model.PurchaseOrder;
+import biz.turnonline.ecosystem.billing.model.PureOffer;
 import biz.turnonline.ecosystem.billing.model.Transaction;
 import biz.turnonline.ecosystem.billing.model.VatRate;
 import com.google.inject.AbstractModule;
@@ -160,6 +167,22 @@ public class ProductBillingAdapteeModule
         {
         } ).to( PurchaseOrderDeleteAdaptee.class );
 
+        // Offer
+        bind( new TypeLiteral<GetExecutorAdaptee<CompleteOffer>>()
+        {
+        } ).to( OfferGetAdaptee.class );
+
+        bind( new TypeLiteral<ListExecutorAdaptee<OfferListItem>>()
+        {
+        } ).to( OfferListAdaptee.class );
+
+        bind( new TypeLiteral<UpdateExecutorAdaptee<PureOffer>>()
+        {
+        } ).to( OfferUpdateAdaptee.class );
+
+        bind( new TypeLiteral<DeleteExecutorAdaptee<CompleteOffer>>()
+        {
+        } ).to( OfferDeleteAdaptee.class );
 
         // Invoice
         bind( new TypeLiteral<GetExecutorAdaptee<Invoice>>()

@@ -688,7 +688,7 @@
                     "Direct Offers"
                 ],
                 "summary": "Create and send offer",
-                "description": "Creates or modifies the offer based on the identified order and it will process it as an offer with applied incoming changes. It sends the offer to the customer if requested. Once customer identification is being provided it must represent an existing TurnOnline.biz Ecosystem account, otherwise bad request will be thrown.",
+                "description": "Creates or modifies the offer based on the identified order and it will process it as an offer with applied incoming changes. It sends the offer to the customer if requested. Once customer identification is being provided it must represent an existing TurnOnline.biz Ecosystem account, otherwise bad request will be thrown. Note, the customer can only either read or decline an offer.",
                 "operationId": "updateOffer",
                 "consumes": [
                     "application/json"
@@ -702,8 +702,8 @@
                         "in": "header",
                         "required": false,
                         "type": "boolean",
-                        "description": "The boolean indicating whether to deliver the offer to the customer. A default value for missing parameter is false.",
-                        "default": true
+                        "description": "The boolean indicating whether to deliver the offer to the customer.",
+                        "default": false
                     },
                     {
                         "in": "body",
@@ -729,6 +729,12 @@
                     },
                     "401": {
                         "description": "The error when the authentication credential fails.",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "The error when the customer is trying to modify the offer. It's not allowed even it was already delivered to him.",
                         "schema": {
                             "$ref": "#/definitions/Error"
                         }

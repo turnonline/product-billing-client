@@ -587,7 +587,8 @@
                         "in": "query",
                         "required": false,
                         "type": "boolean",
-                        "description": "If 'True' then query will filter incoming offers, so the result will be filtered against debtor, not creditor."
+                        "description": "If 'True' then query will filter incoming offers, so the result will be filtered against debtor, not creditor.",
+                        "default": false
                     }
                 ],
                 "responses": {

@@ -32,7 +32,7 @@ import java.io.Serializable;
 public final class OfferListItem
         implements Serializable
 {
-    private static final long serialVersionUID = 6464652844150032417L;
+    private static final long serialVersionUID = -8451513897218392103L;
 
     /**
      * The value may be {@code null}.
@@ -70,6 +70,12 @@ public final class OfferListItem
      */
     @com.google.api.client.util.Key
     private java.lang.String snippet;
+
+    /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
+    private Creditor supplier;
 
     /**
      * The value may be {@code null}.
@@ -206,6 +212,23 @@ public final class OfferListItem
     public OfferListItem setSnippet( java.lang.String snippet )
     {
         this.snippet = snippet;
+        return this;
+    }
+
+    /**
+     * @return value or {@code null} for none
+     */
+    public Creditor getSupplier()
+    {
+        return supplier;
+    }
+
+    /**
+     * @param supplier supplier or {@code null} for none
+     */
+    public OfferListItem setSupplier( Creditor supplier )
+    {
+        this.supplier = supplier;
         return this;
     }
 

@@ -32,14 +32,7 @@ import java.io.Serializable;
 public final class CompleteOffer
         implements Serializable
 {
-    private static final long serialVersionUID = 2695023588692860584L;
-
-    static
-    {
-        // hack to force ProGuard to consider PricingItem used, since otherwise it would be stripped out
-        // see https://github.com/google/google-api-java-client/issues/543
-        com.google.api.client.util.Data.nullOf( PricingItem.class );
-    }
+    private static final long serialVersionUID = -4469641589966500744L;
 
     /**
      * The value may be {@code null}.
@@ -77,12 +70,6 @@ public final class CompleteOffer
      */
     @com.google.api.client.util.Key
     private java.lang.String invoiceType;
-
-    /**
-     * The value may be {@code null}.
-     */
-    @com.google.api.client.util.Key
-    private java.util.List<Invoice> invoices;
 
     /**
      * The value may be {@code null}.
@@ -143,6 +130,12 @@ public final class CompleteOffer
      */
     @com.google.api.client.util.Key
     private java.lang.String status;
+
+    /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
+    private Creditor supplier;
 
     /**
      * The value may be {@code null}.
@@ -273,23 +266,6 @@ public final class CompleteOffer
     public CompleteOffer setInvoiceType( java.lang.String invoiceType )
     {
         this.invoiceType = invoiceType;
-        return this;
-    }
-
-    /**
-     * @return value or {@code null} for none
-     */
-    public java.util.List<Invoice> getInvoices()
-    {
-        return invoices;
-    }
-
-    /**
-     * @param invoices invoices or {@code null} for none
-     */
-    public CompleteOffer setInvoices( java.util.List<Invoice> invoices )
-    {
-        this.invoices = invoices;
         return this;
     }
 
@@ -460,6 +436,23 @@ public final class CompleteOffer
     public CompleteOffer setStatus( java.lang.String status )
     {
         this.status = status;
+        return this;
+    }
+
+    /**
+     * @return value or {@code null} for none
+     */
+    public Creditor getSupplier()
+    {
+        return supplier;
+    }
+
+    /**
+     * @param supplier supplier or {@code null} for none
+     */
+    public CompleteOffer setSupplier( Creditor supplier )
+    {
+        this.supplier = supplier;
         return this;
     }
 

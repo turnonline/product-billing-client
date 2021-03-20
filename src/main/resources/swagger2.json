@@ -634,17 +634,7 @@
                 "produces": [
                     "application/json"
                 ],
-                "parameters": [
-                    {
-                        "name": "invoices",
-                        "in": "query",
-                        "required": false,
-                        "type": "integer",
-                        "format": "int32",
-                        "description": "If present with a positive integer value, the Offer response will include property 'invoices' with list of already issued invoices (if any). It represents a limit of max number of expected invoices to be included in the result.",
-                        "x-example": 1
-                    }
-                ],
+                "parameters": [],
                 "responses": {
                     "200": {
                         "description": "The Offer for requested ID.",
@@ -4103,7 +4093,7 @@
                 "beginOn": {
                     "type": "string",
                     "format": "date-time",
-                    "description": "The date of first invoice issue. Might be selected by the user."
+                    "description": "Proposal of the start date if applicable."
                 },
                 "createdDate": {
                     "type": "string",
@@ -4122,13 +4112,6 @@
                     "type": "integer",
                     "format": "int64",
                     "description": "The unique offer identification."
-                },
-                "invoices": {
-                    "type": "array",
-                    "description": "List of already issued invoices based on this offer, where number of records is limited by value from the query parameter. By default no invoices will be included in the response until the query parameter 'invoices' will be present with a positive integer value (check whether it's supported by endpoint). This number represents a limit of max number of expected invoices to be included in the result.\n\nIf no invoice yet has been issued, the property 'invoices' will be missing in the result whatever was the value of query parameter.\n\nOrdered by invoice modification date (descending).",
-                    "items": {
-                        "$ref": "#/definitions/Invoice"
-                    }
                 },
                 "invoiceType": {
                     "type": "string",
@@ -4151,7 +4134,8 @@
                     "description": "The last billing date. An invoicing that has been already executed.  Set by the service."
                 },
                 "logo": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The supplier's company logo, a full URL of the image served from CDN."
                 },
                 "modificationDate": {
                     "type": "string",
@@ -4183,10 +4167,12 @@
                     ]
                 },
                 "picture": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The serving URL of the picture associated with the offer. Served from the content delivery network (CDN)."
                 },
                 "snippet": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The short description of the offer. It might be a short description one of the product from the order. Alternatively it might be also a direct message to the target customer. The max length is set to 500 characters."
                 },
                 "status": {
                     "type": "string",
@@ -4200,8 +4186,13 @@
                         "FINISHED"
                     ]
                 },
+                "supplier": {
+                    "description": "The supplier account that represents a business at TurnOnline.biz Ecosystem.",
+                    "$ref": "#/definitions/Creditor"
+                },
                 "title": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The offer title. A text that should take an user attention. The max length is set to 100 characters."
                 },
                 "totalPrice": {
                     "type": "number",
@@ -5272,6 +5263,10 @@
                     "type": "string",
                     "description": "The short description of the offer.\n\nIt might be a short description one of the product at order. Alternatively it might be also a direct message to the target customer. The recommended length is max. 500 characters."
                 },
+                "supplier": {
+                    "description": "The supplier account that represents a business at TurnOnline.biz Ecosystem.",
+                    "$ref": "#/definitions/Creditor"
+                },
                 "thumbnail": {
                     "type": "string",
                     "description": "The thumbnail URL of the associated product picture. Served from the content delivery network (CDN)."
@@ -6307,7 +6302,8 @@
                     "type": "string",
                     "description": "The address post code."
                 }
-            }
+            },
+            "description": "A business that delivers a product or service. Defined outside of the Ecosystem."
         },
         "Transaction": {
             "type": "object",

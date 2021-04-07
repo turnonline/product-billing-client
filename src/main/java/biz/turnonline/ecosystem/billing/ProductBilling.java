@@ -7397,6 +7397,22 @@ public class ProductBilling
     {
 
         /**
+         * Create a request for the method "transactions.get".
+         * <p>
+         * This request holds the parameters needed by the billing server.  After setting any optional
+         * parameters, call the {@link Get#execute()} method to invoke the remote operation.
+         *
+         * @param transactionId
+         * @return the request
+         */
+        public Get get( java.lang.Long transactionId ) throws java.io.IOException
+        {
+            Get result = new Get( transactionId );
+            initialize( result );
+            return result;
+        }
+
+        /**
          * Create a request for the method "transactions.insert".
          * <p>
          * This request holds the parameters needed by the billing server.  After setting any optional
@@ -7425,6 +7441,107 @@ public class ProductBilling
             List result = new List();
             initialize( result );
             return result;
+        }
+
+        public class Get
+                extends ProductBillingRequest<biz.turnonline.ecosystem.billing.model.Transaction>
+        {
+
+            private static final String REST_PATH = "transactions/{transaction_id}";
+
+            @com.google.api.client.util.Key( "transaction_id" )
+            private java.lang.Long transactionId;
+
+            /**
+             * Create a request for the method "transactions.get".
+             * <p>
+             * This request holds the parameters needed by the the billing server.  After setting any optional
+             * parameters, call the {@link Get#execute()} method to invoke the remote operation. <p> {@link
+             * Get#initialize(com.google.api.client.googleapis.services.AbstractGoogleClientRequest)} must be
+             * called to initialize this instance immediately after invoking the constructor. </p>
+             *
+             * @param transactionId
+             * @since 1.13
+             */
+            protected Get( java.lang.Long transactionId )
+            {
+                super( ProductBilling.this, "GET", REST_PATH, null, biz.turnonline.ecosystem.billing.model.Transaction.class );
+                this.transactionId = com.google.api.client.util.Preconditions.checkNotNull( transactionId, "Required parameter transactionId must be specified." );
+            }
+
+            @Override
+            public com.google.api.client.http.HttpResponse executeUsingHead() throws java.io.IOException
+            {
+                return super.executeUsingHead();
+            }
+
+            @Override
+            public com.google.api.client.http.HttpRequest buildHttpRequestUsingHead() throws java.io.IOException
+            {
+                return super.buildHttpRequestUsingHead();
+            }
+
+            @Override
+            public Get setAlt( java.lang.String alt )
+            {
+                return ( Get ) super.setAlt( alt );
+            }
+
+            @Override
+            public Get setFields( java.lang.String fields )
+            {
+                return ( Get ) super.setFields( fields );
+            }
+
+            @Override
+            public Get setKey( java.lang.String key )
+            {
+                return ( Get ) super.setKey( key );
+            }
+
+            @Override
+            public Get setOauthToken( java.lang.String oauthToken )
+            {
+                return ( Get ) super.setOauthToken( oauthToken );
+            }
+
+            @Override
+            public Get setPrettyPrint( java.lang.Boolean prettyPrint )
+            {
+                return ( Get ) super.setPrettyPrint( prettyPrint );
+            }
+
+            @Override
+            public Get setQuotaUser( java.lang.String quotaUser )
+            {
+                return ( Get ) super.setQuotaUser( quotaUser );
+            }
+
+            @Override
+            public Get setUserIp( java.lang.String userIp )
+            {
+                return ( Get ) super.setUserIp( userIp );
+            }
+
+            /**
+             *
+             */
+            public java.lang.Long getTransactionId()
+            {
+                return transactionId;
+            }
+
+            public Get setTransactionId( java.lang.Long transactionId )
+            {
+                this.transactionId = transactionId;
+                return this;
+            }
+
+            @Override
+            public Get set( String parameterName, Object value )
+            {
+                return ( Get ) super.set( parameterName, value );
+            }
         }
 
         public class Insert
@@ -7508,7 +7625,13 @@ public class ProductBilling
             private java.lang.String operation;
 
             @com.google.api.client.util.Key
-            private java.lang.Integer limit;
+            private java.lang.Long orderId;
+
+            @com.google.api.client.util.Key
+            private java.lang.Long billId;
+
+            @com.google.api.client.util.Key
+            private java.lang.Long invoiceId;
 
             @com.google.api.client.util.Key
             private java.lang.String type;
@@ -7517,10 +7640,7 @@ public class ProductBilling
             private java.lang.Integer offset;
 
             @com.google.api.client.util.Key
-            private java.lang.Long orderId;
-
-            @com.google.api.client.util.Key
-            private java.lang.Long invoiceId;
+            private java.lang.Integer limit;
 
             /**
              * Create a request for the method "transactions.list".
@@ -7607,17 +7727,44 @@ public class ProductBilling
             }
 
             /**
-             * [ default: 20]
-             * [
+             *
              */
-            public java.lang.Integer getLimit()
+            public java.lang.Long getOrderId()
             {
-                return limit;
+                return orderId;
             }
 
-            public List setLimit( java.lang.Integer limit )
+            public List setOrderId( java.lang.Long orderId )
             {
-                this.limit = limit;
+                this.orderId = orderId;
+                return this;
+            }
+
+            /**
+             *
+             */
+            public java.lang.Long getBillId()
+            {
+                return billId;
+            }
+
+            public List setBillId( java.lang.Long billId )
+            {
+                this.billId = billId;
+                return this;
+            }
+
+            /**
+             *
+             */
+            public java.lang.Long getInvoiceId()
+            {
+                return invoiceId;
+            }
+
+            public List setInvoiceId( java.lang.Long invoiceId )
+            {
+                this.invoiceId = invoiceId;
                 return this;
             }
 
@@ -7651,30 +7798,17 @@ public class ProductBilling
             }
 
             /**
-             *
+             * [ default: 20]
+             * [
              */
-            public java.lang.Long getOrderId()
+            public java.lang.Integer getLimit()
             {
-                return orderId;
+                return limit;
             }
 
-            public List setOrderId( java.lang.Long orderId )
+            public List setLimit( java.lang.Integer limit )
             {
-                this.orderId = orderId;
-                return this;
-            }
-
-            /**
-             *
-             */
-            public java.lang.Long getInvoiceId()
-            {
-                return invoiceId;
-            }
-
-            public List setInvoiceId( java.lang.Long invoiceId )
-            {
-                this.invoiceId = invoiceId;
+                this.limit = limit;
                 return this;
             }
 

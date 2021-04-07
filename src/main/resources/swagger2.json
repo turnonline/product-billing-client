@@ -3810,6 +3810,14 @@
                         "description": "Identification of the invoice to search settled transactions. Order Id is being required for successful match."
                     },
                     {
+                        "name": "billId",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer",
+                        "format": "int64",
+                        "description": "Identification of the bill (ID in Billing Processor service) to search settled transactions."
+                    },
+                    {
                         "name": "type",
                         "in": "query",
                         "required": false,
@@ -3920,6 +3928,68 @@
                     }
                 ]
             }
+        },
+        "/v1/transactions/{transaction_id}": {
+            "get": {
+                "tags": [
+                    "Bill Settlements"
+                ],
+                "summary": "Get transaction",
+                "description": "Get transaction identified by its ID.",
+                "operationId": "getTransaction",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The transaction for given ID.",
+                        "schema": {
+                            "$ref": "#/definitions/Transaction"
+                        }
+                    },
+                    "401": {
+                        "description": "The error when the authentication credential fails.",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "The error when client tries to retrieve a transaction that doesn't exist.",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "It's a failure of the server. The client can repeat the request without modifications at any later time.",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "503": {
+                        "description": "The service is unavailable or the server has timed out processing of the request. The client may repeat the request without modifications at any later time.",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "firebase-a9a2a51a": []
+                    }
+                ]
+            },
+            "parameters": [
+                {
+                    "name": "transaction_id",
+                    "in": "path",
+                    "required": true,
+                    "type": "integer",
+                    "format": "int64",
+                    "description": "The unique transaction identification within Product Billing service."
+                }
+            ]
         }
     },
     "securityDefinitions": {
@@ -6351,6 +6421,11 @@
                     "type": "string",
                     "description": "The payment currency alphabetic code based on the ISO 4217.",
                     "default": "EUR"
+                },
+                "id": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": "The unique transaction identification within Product Billing service."
                 },
                 "key": {
                     "type": "string",

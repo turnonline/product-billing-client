@@ -38,6 +38,7 @@ import biz.turnonline.ecosystem.billing.facade.adaptee.PurchaseOrderDeleteAdapte
 import biz.turnonline.ecosystem.billing.facade.adaptee.PurchaseOrderGetAdaptee;
 import biz.turnonline.ecosystem.billing.facade.adaptee.PurchaseOrderListAdaptee;
 import biz.turnonline.ecosystem.billing.facade.adaptee.TransactionAdaptee;
+import biz.turnonline.ecosystem.billing.facade.adaptee.TransactionGetAdaptee;
 import biz.turnonline.ecosystem.billing.facade.adaptee.TransactionListAdaptee;
 import biz.turnonline.ecosystem.billing.facade.adaptee.VatRateAdaptee;
 import biz.turnonline.ecosystem.billing.model.AccountingSystem;
@@ -270,6 +271,10 @@ public class ProductBillingAdapteeModule
         bind( new TypeLiteral<ListExecutorAdaptee<Transaction>>()
         {
         } ).to( TransactionListAdaptee.class );
+
+        bind( new TypeLiteral<GetExecutorAdaptee<Transaction>>()
+        {
+        } ).to( TransactionGetAdaptee.class );
 
         // Expense related
         bind( new TypeLiteral<InsertExecutorAdaptee<Expenditure>>()

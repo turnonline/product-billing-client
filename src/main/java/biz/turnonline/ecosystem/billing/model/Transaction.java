@@ -32,7 +32,7 @@ import java.io.Serializable;
 public final class Transaction
         implements Serializable
 {
-    private static final long serialVersionUID = -8388245661171936603L;
+    private static final long serialVersionUID = 2399658421847317307L;
 
     /**
      * The value may be {@code null}.
@@ -87,6 +87,13 @@ public final class Transaction
      */
     @com.google.api.client.util.Key
     private java.lang.String currency;
+
+    /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
+    @com.google.api.client.json.JsonString
+    private java.lang.Long id;
 
     /**
      * The value may be {@code null}.
@@ -275,6 +282,23 @@ public final class Transaction
     public Transaction setCurrency( java.lang.String currency )
     {
         this.currency = currency;
+        return this;
+    }
+
+    /**
+     * @return value or {@code null} for none
+     */
+    public java.lang.Long getId()
+    {
+        return id;
+    }
+
+    /**
+     * @param id id or {@code null} for none
+     */
+    public Transaction setId( java.lang.Long id )
+    {
+        this.id = id;
         return this;
     }
 

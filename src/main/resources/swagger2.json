@@ -494,7 +494,7 @@
                         "required": false,
                         "type": "integer",
                         "format": "int64",
-                        "description": "The identification (within Product Billing service) of the bank account to be listed at invoice as a beneficiary."
+                        "description": "The identification (within Product Billing service) of the bank account to be listed at invoice as a beneficiary. If provided it will take a precedence over the bank account defined in the body."
                     },
                     {
                         "name": "body",
@@ -1268,7 +1268,7 @@
                         "required": false,
                         "type": "integer",
                         "format": "int64",
-                        "description": "The identification (within Product Billing service) of the bank account to be listed at invoice as a beneficiary."
+                        "description": "The identification (within Product Billing service) of the bank account to be listed at invoice as a beneficiary. If provided it will take a precedence over the bank account defined in the body."
                     },
                     {
                         "name": "body",
@@ -1424,7 +1424,7 @@
                         "required": false,
                         "type": "integer",
                         "format": "int64",
-                        "description": "The identification (within Product Billing service) of the bank account to be listed at invoice as a beneficiary."
+                        "description": "The identification (within Product Billing service) of the bank account to be listed at invoice as a beneficiary. If provided it will take a precedence over the bank account defined in the body."
                     },
                     {
                         "name": "body",

@@ -6465,7 +6465,7 @@
                 },
                 "exchangeRate": {
                     "$ref": "#/definitions/ExchangeRate",
-                    "description": "The transaction amount conversion exchange rate."
+                    "description": "The conversion exchange rate, from original (bill amount) to new transaction amount."
                 },
                 "id": {
                     "type": "integer",

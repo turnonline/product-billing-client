@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 TurnOnline.biz s.r.o.
+ * Copyright (c) 2021 TurnOnline.biz s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,7 @@ import java.io.Serializable;
 public final class Transaction
         implements Serializable
 {
-    private static final long serialVersionUID = -6694724139521974327L;
+    private static final long serialVersionUID = -8568510665126558952L;
 
     /**
      * The value may be {@code null}.
@@ -75,6 +75,12 @@ public final class Transaction
      */
     @com.google.api.client.util.Key
     private com.google.api.client.util.DateTime completedAt;
+
+    /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
+    private TransactionCounterparty counterparty;
 
     /**
      * The value may be {@code null}.
@@ -254,6 +260,23 @@ public final class Transaction
     public Transaction setCompletedAt( com.google.api.client.util.DateTime completedAt )
     {
         this.completedAt = completedAt;
+        return this;
+    }
+
+    /**
+     * @return value or {@code null} for none
+     */
+    public TransactionCounterparty getCounterparty()
+    {
+        return counterparty;
+    }
+
+    /**
+     * @param counterparty counterparty or {@code null} for none
+     */
+    public Transaction setCounterparty( TransactionCounterparty counterparty )
+    {
+        this.counterparty = counterparty;
         return this;
     }
 

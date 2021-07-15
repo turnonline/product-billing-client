@@ -824,7 +824,7 @@
                     "Direct Offers"
                 ],
                 "summary": "Accept the offer as recipient",
-                "description": "The sponsor at offer will act as a debtor at a newly issued invoice.",
+                "description": "Accept the offer as recipient. Once accepted, the sponsor at offer will act as a debtor at a newly issued invoice.",
                 "operationId": "acceptOffer",
                 "consumes": [
                     "application/json"

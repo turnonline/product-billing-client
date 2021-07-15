@@ -32,7 +32,14 @@ import java.io.Serializable;
 public final class CompleteOffer
         implements Serializable
 {
-    private static final long serialVersionUID = -4469641589966500744L;
+    private static final long serialVersionUID = 3401831435843623055L;
+
+    static
+    {
+        // hack to force ProGuard to consider PricingItem used, since otherwise it would be stripped out
+        // see https://github.com/google/google-api-java-client/issues/543
+        com.google.api.client.util.Data.nullOf( PricingItem.class );
+    }
 
     /**
      * The value may be {@code null}.
@@ -57,6 +64,12 @@ public final class CompleteOffer
      */
     @com.google.api.client.util.Key
     private Customer customer;
+
+    /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
+    private com.google.api.client.util.DateTime expiration;
 
     /**
      * The value may be {@code null}.
@@ -124,6 +137,12 @@ public final class CompleteOffer
      */
     @com.google.api.client.util.Key
     private java.lang.String snippet;
+
+    /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
+    private Customer sponsor;
 
     /**
      * The value may be {@code null}.
@@ -232,6 +251,23 @@ public final class CompleteOffer
     public CompleteOffer setCustomer( Customer customer )
     {
         this.customer = customer;
+        return this;
+    }
+
+    /**
+     * @return value or {@code null} for none
+     */
+    public com.google.api.client.util.DateTime getExpiration()
+    {
+        return expiration;
+    }
+
+    /**
+     * @param expiration expiration or {@code null} for none
+     */
+    public CompleteOffer setExpiration( com.google.api.client.util.DateTime expiration )
+    {
+        this.expiration = expiration;
         return this;
     }
 
@@ -419,6 +455,23 @@ public final class CompleteOffer
     public CompleteOffer setSnippet( java.lang.String snippet )
     {
         this.snippet = snippet;
+        return this;
+    }
+
+    /**
+     * @return value or {@code null} for none
+     */
+    public Customer getSponsor()
+    {
+        return sponsor;
+    }
+
+    /**
+     * @param sponsor sponsor or {@code null} for none
+     */
+    public CompleteOffer setSponsor( Customer sponsor )
+    {
+        this.sponsor = sponsor;
         return this;
     }
 

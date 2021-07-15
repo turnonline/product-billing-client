@@ -32,7 +32,7 @@ import java.io.Serializable;
 public final class OfferListItem
         implements Serializable
 {
-    private static final long serialVersionUID = -8451513897218392103L;
+    private static final long serialVersionUID = 9047625550552774491L;
 
     /**
      * The value may be {@code null}.
@@ -45,6 +45,12 @@ public final class OfferListItem
      */
     @com.google.api.client.util.Key
     private Customer customer;
+
+    /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
+    private com.google.api.client.util.DateTime expiration;
 
     /**
      * The value may be {@code null}.
@@ -70,6 +76,12 @@ public final class OfferListItem
      */
     @com.google.api.client.util.Key
     private java.lang.String snippet;
+
+    /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
+    private Customer sponsor;
 
     /**
      * The value may be {@code null}.
@@ -150,6 +162,23 @@ public final class OfferListItem
     /**
      * @return value or {@code null} for none
      */
+    public com.google.api.client.util.DateTime getExpiration()
+    {
+        return expiration;
+    }
+
+    /**
+     * @param expiration expiration or {@code null} for none
+     */
+    public OfferListItem setExpiration( com.google.api.client.util.DateTime expiration )
+    {
+        this.expiration = expiration;
+        return this;
+    }
+
+    /**
+     * @return value or {@code null} for none
+     */
     public java.lang.Long getId()
     {
         return id;
@@ -212,6 +241,23 @@ public final class OfferListItem
     public OfferListItem setSnippet( java.lang.String snippet )
     {
         this.snippet = snippet;
+        return this;
+    }
+
+    /**
+     * @return value or {@code null} for none
+     */
+    public Customer getSponsor()
+    {
+        return sponsor;
+    }
+
+    /**
+     * @param sponsor sponsor or {@code null} for none
+     */
+    public OfferListItem setSponsor( Customer sponsor )
+    {
+        this.sponsor = sponsor;
         return this;
     }
 

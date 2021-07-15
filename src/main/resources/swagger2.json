@@ -818,6 +818,64 @@
                 }
             ]
         },
+        "/v1/offers/{offer_id}/accept": {
+            "put": {
+                "tags": [
+                    "Direct Offers"
+                ],
+                "summary": "Accept the offer as recipient",
+                "description": "The sponsor at offer will act as a debtor at a newly issued invoice.",
+                "operationId": "acceptOffer",
+                "consumes": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "offer_id",
+                        "in": "path",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64",
+                        "description": "The unique offer identification"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "The confirmation, the offer has been accepted."
+                    },
+                    "400": {
+                        "description": "The error indicates the offer is not allowed to be accepted",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "The error when the authentication credential fails.",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "The error when client tries to accept an offer that does not exist.",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "It's a failure of the server. The client can repeat the request without modifications at any later time.",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "503": {
+                        "description": "The service is unavailable or the server has timed out processing of the request. The client may repeat the request without modifications at any later time.",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
         "/v1/orders": {
             "get": {
                 "tags": [
@@ -4179,6 +4237,11 @@
                     "description": "A customer to be invoiced.",
                     "$ref": "#/definitions/Customer"
                 },
+                "expiration": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The offer expiration date and time. It's a last day the offer might be accepted."
+                },
                 "id": {
                     "type": "integer",
                     "format": "int64",
@@ -4244,6 +4307,10 @@
                 "snippet": {
                     "type": "string",
                     "description": "The short description of the offer. It might be a short description one of the product from the order. Alternatively it might be also a direct message to the target customer. The max length is set to 500 characters."
+                },
+                "sponsor": {
+                    "description": "The ecosystem user account that will pay for this offer if accepted. Once accepted by the recipient, the sponsor will become a debtor at the invoice.",
+                    "$ref": "#/definitions/Customer"
                 },
                 "status": {
                     "type": "string",
@@ -5357,6 +5424,11 @@
                     "description": "The identification of the customer as a recipient of the offer.",
                     "$ref": "#/definitions/Customer"
                 },
+                "expiration": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The offer expiration date and time. It's a last day the offer might be accepted."
+                },
                 "id": {
                     "type": "integer",
                     "format": "int64",
@@ -5374,6 +5446,10 @@
                 "snippet": {
                     "type": "string",
                     "description": "The short description of the offer.\n\nIt might be a short description one of the product at order. Alternatively it might be also a direct message to the target customer. The recommended length is max. 500 characters."
+                },
+                "sponsor": {
+                    "description": "The ecosystem user account that will pay for this offer if accepted. Once accepted by the recipient, the sponsor will become a debtor at the invoice.",
+                    "$ref": "#/definitions/Customer"
                 },
                 "supplier": {
                     "description": "The supplier account that represents a business at TurnOnline.biz Ecosystem.",
@@ -6362,6 +6438,11 @@
                 "customer": {
                     "description": "The identification of the customer as a recipient of the offer.",
                     "$ref": "#/definitions/OfferCustomer"
+                },
+                "expiration": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The offer expiration date and time. It's a last day the offer might be accepted."
                 },
                 "picture": {
                     "type": "string",

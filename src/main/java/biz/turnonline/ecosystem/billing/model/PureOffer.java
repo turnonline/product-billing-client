@@ -32,13 +32,19 @@ import java.io.Serializable;
 public final class PureOffer
         implements Serializable
 {
-    private static final long serialVersionUID = -528594307498872626L;
+    private static final long serialVersionUID = 4278553550945130681L;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
     private OfferCustomer customer;
+
+    /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
+    private com.google.api.client.util.DateTime expiration;
 
     /**
      * The value may be {@code null}.
@@ -72,6 +78,23 @@ public final class PureOffer
     public PureOffer setCustomer( OfferCustomer customer )
     {
         this.customer = customer;
+        return this;
+    }
+
+    /**
+     * @return value or {@code null} for none
+     */
+    public com.google.api.client.util.DateTime getExpiration()
+    {
+        return expiration;
+    }
+
+    /**
+     * @param expiration expiration or {@code null} for none
+     */
+    public PureOffer setExpiration( com.google.api.client.util.DateTime expiration )
+    {
+        this.expiration = expiration;
         return this;
     }
 

@@ -829,6 +829,9 @@
                 "consumes": [
                     "application/json"
                 ],
+                "produces": [
+                    "application/json"
+                ],
                 "parameters": [
                     {
                         "name": "offer_id",

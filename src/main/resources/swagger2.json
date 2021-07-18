@@ -823,8 +823,8 @@
                 "tags": [
                     "Direct Offers"
                 ],
-                "summary": "Accept the offer as recipient",
-                "description": "Accept the offer as recipient. Once accepted, the sponsor at offer will act as a debtor at a newly issued invoice.",
+                "summary": "Accepts the offer as recipient",
+                "description": "Accepts the offer as recipient. Once accepted, either the sponsor (if any) or recipient at offer will act as a debtor at a newly issued invoice.",
                 "operationId": "acceptOffer",
                 "consumes": [
                     "application/json"

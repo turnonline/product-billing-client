@@ -876,7 +876,12 @@
                             "$ref": "#/definitions/Error"
                         }
                     }
-                }
+                },
+                "security": [
+                    {
+                        "firebase-a9a2a51a": []
+                    }
+                ]
             }
         },
         "/v1/orders": {

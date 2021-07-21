@@ -697,6 +697,14 @@
                         "default": false
                     },
                     {
+                        "name": "vnd.turnon.cloud.sponsor",
+                        "in": "header",
+                        "required": false,
+                        "type": "boolean",
+                        "description": "The boolean indicating whether authenticated account become the sponsor for this offer.",
+                        "default": false
+                    },
+                    {
                         "in": "body",
                         "name": "body",
                         "required": false,

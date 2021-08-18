@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 TurnOnline.biz s.r.o.
+ * Copyright (c) 2021 TurnOnline.biz s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,7 @@ import java.io.Serializable;
 public final class CompleteOffer
         implements Serializable
 {
-    private static final long serialVersionUID = 3401831435843623055L;
+    private static final long serialVersionUID = -5906546973414330655L;
 
     static
     {
@@ -142,7 +142,7 @@ public final class CompleteOffer
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private Customer sponsor;
+    private Sponsor sponsor;
 
     /**
      * The value may be {@code null}.
@@ -461,7 +461,7 @@ public final class CompleteOffer
     /**
      * @return value or {@code null} for none
      */
-    public Customer getSponsor()
+    public Sponsor getSponsor()
     {
         return sponsor;
     }
@@ -469,7 +469,7 @@ public final class CompleteOffer
     /**
      * @param sponsor sponsor or {@code null} for none
      */
-    public CompleteOffer setSponsor( Customer sponsor )
+    public CompleteOffer setSponsor( Sponsor sponsor )
     {
         this.sponsor = sponsor;
         return this;

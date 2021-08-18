@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 TurnOnline.biz s.r.o.
+ * Copyright (c) 2021 TurnOnline.biz s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,7 @@ import java.io.Serializable;
 public final class OfferListItem
         implements Serializable
 {
-    private static final long serialVersionUID = 9047625550552774491L;
+    private static final long serialVersionUID = -8910434805007088260L;
 
     /**
      * The value may be {@code null}.
@@ -81,7 +81,7 @@ public final class OfferListItem
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private Customer sponsor;
+    private Sponsor sponsor;
 
     /**
      * The value may be {@code null}.
@@ -247,7 +247,7 @@ public final class OfferListItem
     /**
      * @return value or {@code null} for none
      */
-    public Customer getSponsor()
+    public Sponsor getSponsor()
     {
         return sponsor;
     }
@@ -255,7 +255,7 @@ public final class OfferListItem
     /**
      * @param sponsor sponsor or {@code null} for none
      */
-    public OfferListItem setSponsor( Customer sponsor )
+    public OfferListItem setSponsor( Sponsor sponsor )
     {
         this.sponsor = sponsor;
         return this;

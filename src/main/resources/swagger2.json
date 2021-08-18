@@ -701,7 +701,7 @@
                         "in": "header",
                         "required": false,
                         "type": "boolean",
-                        "description": "The boolean indicating whether authenticated account become the sponsor for this offer.",
+                        "description": "The boolean indicating whether authenticated account will become the sponsor for this offer.",
                         "default": false
                     },
                     {
@@ -4326,7 +4326,7 @@
                 },
                 "sponsor": {
                     "description": "The ecosystem user account that will pay for this offer if accepted. Once accepted by the recipient, the sponsor will become a debtor at the invoice.",
-                    "$ref": "#/definitions/Customer"
+                    "$ref": "#/definitions/Sponsor"
                 },
                 "status": {
                     "type": "string",
@@ -5465,7 +5465,7 @@
                 },
                 "sponsor": {
                     "description": "The ecosystem user account that will pay for this offer if accepted. Once accepted by the recipient, the sponsor will become a debtor at the invoice.",
-                    "$ref": "#/definitions/Customer"
+                    "$ref": "#/definitions/Sponsor"
                 },
                 "supplier": {
                     "description": "The supplier account that represents a business at TurnOnline.biz Ecosystem.",
@@ -6475,6 +6475,89 @@
             },
             "type": "object",
             "description": "The pure offer definition, acts as a request."
+        },
+        "Sponsor": {
+            "type": "object",
+            "properties": {
+                "account": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": "The user account identification of the sponsor (TurnOnline.biz Ecosystem account ID)."
+                },
+                "businessName": {
+                    "type": "string",
+                    "description": "The sponsor company business name."
+                },
+                "city": {
+                    "type": "string",
+                    "description": "The address city."
+                },
+                "companyId": {
+                    "type": "string",
+                    "description": "The sponsor company business identification number."
+                },
+                "contactEmail": {
+                    "type": "string",
+                    "description": "The contact email used either for notification purposes or for dealing with a potential issues, related only to the associated order."
+                },
+                "contactPhone": {
+                    "type": "string",
+                    "description": "The contact phone number used for dealing with potential issues related only to the associated order."
+                },
+                "country": {
+                    "type": "string",
+                    "description": "The address ISO 3166 alpha-2 country code. It’s case insensitive."
+                },
+                "email": {
+                    "type": "string",
+                    "description": "The contact email address as the unique identification within account's address book."
+                },
+                "firstName": {
+                    "type": "string",
+                    "description": "The personal first name."
+                },
+                "lastName": {
+                    "type": "string",
+                    "description": "The personal last name."
+                },
+                "locale": {
+                    "type": "string",
+                    "description": "The preferred language of the issued invoice. If supported, the value will override the seller's account default language. ISO 639 alpha-2 or alpha-3 language code."
+                },
+                "logoServingUrl": {
+                    "type": "string",
+                    "description": "The company logo, a full URL of the image served from the content delivery network (CDN)."
+                },
+                "postalAddress": {
+                    "description": "The sponsor postal address details.",
+                    "$ref": "#/definitions/CustomerPostalAddress"
+                },
+                "postcode": {
+                    "type": "string",
+                    "description": "The address post code."
+                },
+                "prefix": {
+                    "type": "string",
+                    "description": "The personal name prefix."
+                },
+                "street": {
+                    "type": "string",
+                    "description": "The street and street number."
+                },
+                "suffix": {
+                    "type": "string",
+                    "description": "The personal name suffix."
+                },
+                "taxId": {
+                    "type": "string",
+                    "description": "The sponsor company tax payer identification number."
+                },
+                "vatId": {
+                    "type": "string",
+                    "description": "The sponsor company value added tax identification number (VAT ID)."
+                }
+            },
+            "description": "The sponsor as a customer to be invoiced."
         },
         "Supplier": {
             "type": "object",

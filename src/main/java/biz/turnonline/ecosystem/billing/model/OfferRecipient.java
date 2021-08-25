@@ -19,7 +19,7 @@ package biz.turnonline.ecosystem.billing.model;
 import java.io.Serializable;
 
 /**
- * Model definition for PureOffer.
+ * Model definition for OfferRecipient.
  *
  * <p> This is the Java data model class that specifies how to parse/serialize into the JSON that is
  * transmitted over HTTP when working with the TurnOnline.biz Product Billing. For a detailed
@@ -29,146 +29,171 @@ import java.io.Serializable;
  *
  * @author Google, Inc.
  */
-public final class PureOffer
+public final class OfferRecipient
         implements Serializable
 {
-    private static final long serialVersionUID = -6000655416303005546L;
+    private static final long serialVersionUID = -8869739049068468584L;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private OfferCustomer customer;
+    private com.google.api.client.util.DateTime accepted;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private com.google.api.client.util.DateTime expiration;
+    @com.google.api.client.json.JsonString
+    private java.lang.Long accountId;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.lang.Boolean multipleRecipients;
+    private java.lang.String contactEmail;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.lang.String picture;
+    private java.lang.String firstName;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.lang.String snippet;
+    private java.lang.String lastName;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private java.lang.String title;
+    private java.lang.String middleName;
+
+    /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
+    @com.google.api.client.json.JsonString
+    private java.lang.Long offerId;
 
     /**
      * @return value or {@code null} for none
      */
-    public OfferCustomer getCustomer()
+    public com.google.api.client.util.DateTime getAccepted()
     {
-        return customer;
+        return accepted;
     }
 
     /**
-     * @param customer customer or {@code null} for none
+     * @param accepted accepted or {@code null} for none
      */
-    public PureOffer setCustomer( OfferCustomer customer )
+    public OfferRecipient setAccepted( com.google.api.client.util.DateTime accepted )
     {
-        this.customer = customer;
+        this.accepted = accepted;
         return this;
     }
 
     /**
      * @return value or {@code null} for none
      */
-    public com.google.api.client.util.DateTime getExpiration()
+    public java.lang.Long getAccountId()
     {
-        return expiration;
+        return accountId;
     }
 
     /**
-     * @param expiration expiration or {@code null} for none
+     * @param accountId accountId or {@code null} for none
      */
-    public PureOffer setExpiration( com.google.api.client.util.DateTime expiration )
+    public OfferRecipient setAccountId( java.lang.Long accountId )
     {
-        this.expiration = expiration;
+        this.accountId = accountId;
         return this;
     }
 
     /**
      * @return value or {@code null} for none
      */
-    public java.lang.Boolean getMultipleRecipients()
+    public java.lang.String getContactEmail()
     {
-        return multipleRecipients;
+        return contactEmail;
     }
 
     /**
-     * @param multipleRecipients multipleRecipients or {@code null} for none
+     * @param contactEmail contactEmail or {@code null} for none
      */
-    public PureOffer setMultipleRecipients( java.lang.Boolean multipleRecipients )
+    public OfferRecipient setContactEmail( java.lang.String contactEmail )
     {
-        this.multipleRecipients = multipleRecipients;
+        this.contactEmail = contactEmail;
         return this;
     }
 
     /**
      * @return value or {@code null} for none
      */
-    public java.lang.String getPicture()
+    public java.lang.String getFirstName()
     {
-        return picture;
+        return firstName;
     }
 
     /**
-     * @param picture picture or {@code null} for none
+     * @param firstName firstName or {@code null} for none
      */
-    public PureOffer setPicture( java.lang.String picture )
+    public OfferRecipient setFirstName( java.lang.String firstName )
     {
-        this.picture = picture;
+        this.firstName = firstName;
         return this;
     }
 
     /**
      * @return value or {@code null} for none
      */
-    public java.lang.String getSnippet()
+    public java.lang.String getLastName()
     {
-        return snippet;
+        return lastName;
     }
 
     /**
-     * @param snippet snippet or {@code null} for none
+     * @param lastName lastName or {@code null} for none
      */
-    public PureOffer setSnippet( java.lang.String snippet )
+    public OfferRecipient setLastName( java.lang.String lastName )
     {
-        this.snippet = snippet;
+        this.lastName = lastName;
         return this;
     }
 
     /**
      * @return value or {@code null} for none
      */
-    public java.lang.String getTitle()
+    public java.lang.String getMiddleName()
     {
-        return title;
+        return middleName;
     }
 
     /**
-     * @param title title or {@code null} for none
+     * @param middleName middleName or {@code null} for none
      */
-    public PureOffer setTitle( java.lang.String title )
+    public OfferRecipient setMiddleName( java.lang.String middleName )
     {
-        this.title = title;
+        this.middleName = middleName;
+        return this;
+    }
+
+    /**
+     * @return value or {@code null} for none
+     */
+    public java.lang.Long getOfferId()
+    {
+        return offerId;
+    }
+
+    /**
+     * @param offerId offerId or {@code null} for none
+     */
+    public OfferRecipient setOfferId( java.lang.Long offerId )
+    {
+        this.offerId = offerId;
         return this;
     }
 }

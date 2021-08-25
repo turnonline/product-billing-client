@@ -32,7 +32,7 @@ import java.io.Serializable;
 public final class CompleteOffer
         implements Serializable
 {
-    private static final long serialVersionUID = -5906546973414330655L;
+    private static final long serialVersionUID = 479791326070054518L;
 
     static
     {
@@ -107,6 +107,12 @@ public final class CompleteOffer
      */
     @com.google.api.client.util.Key
     private com.google.api.client.util.DateTime modificationDate;
+
+    /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
+    private java.lang.Boolean multipleRecipients;
 
     /**
      * The value may be {@code null}.
@@ -370,6 +376,23 @@ public final class CompleteOffer
     public CompleteOffer setModificationDate( com.google.api.client.util.DateTime modificationDate )
     {
         this.modificationDate = modificationDate;
+        return this;
+    }
+
+    /**
+     * @return value or {@code null} for none
+     */
+    public java.lang.Boolean getMultipleRecipients()
+    {
+        return multipleRecipients;
+    }
+
+    /**
+     * @param multipleRecipients multipleRecipients or {@code null} for none
+     */
+    public CompleteOffer setMultipleRecipients( java.lang.Boolean multipleRecipients )
+    {
+        this.multipleRecipients = multipleRecipients;
         return this;
     }
 

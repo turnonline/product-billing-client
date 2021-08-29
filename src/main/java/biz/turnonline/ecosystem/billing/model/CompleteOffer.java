@@ -32,7 +32,7 @@ import java.io.Serializable;
 public final class CompleteOffer
         implements Serializable
 {
-    private static final long serialVersionUID = 479791326070054518L;
+    private static final long serialVersionUID = 8918085637633531380L;
 
     static
     {
@@ -70,6 +70,12 @@ public final class CompleteOffer
      */
     @com.google.api.client.util.Key
     private com.google.api.client.util.DateTime expiration;
+
+    /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
+    private java.lang.Integer expirationDays;
 
     /**
      * The value may be {@code null}.
@@ -274,6 +280,23 @@ public final class CompleteOffer
     public CompleteOffer setExpiration( com.google.api.client.util.DateTime expiration )
     {
         this.expiration = expiration;
+        return this;
+    }
+
+    /**
+     * @return value or {@code null} for none
+     */
+    public java.lang.Integer getExpirationDays()
+    {
+        return expirationDays;
+    }
+
+    /**
+     * @param expirationDays expirationDays or {@code null} for none
+     */
+    public CompleteOffer setExpirationDays( java.lang.Integer expirationDays )
+    {
+        this.expirationDays = expirationDays;
         return this;
     }
 

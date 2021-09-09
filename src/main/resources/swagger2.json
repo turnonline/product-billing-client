@@ -4434,7 +4434,12 @@
                 "expiration": {
                     "type": "string",
                     "format": "date-time",
-                    "description": "The offer expiration date and time. It's a last day the offer might be accepted."
+                    "description": "The offer expiration date and time. It's a last day the offer might be accepted. If it's explicitly defined, it will take the precedence over the calculated date based on the expirationDays property.\nIf it's missing, it will be calculated while publishing based on the expirationDays property."
+                },
+                "expirationDays": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "The number of days till expiration of the offer."
                 },
                 "id": {
                     "type": "integer",
@@ -6605,7 +6610,12 @@
                 "expiration": {
                     "type": "string",
                     "format": "date-time",
-                    "description": "The offer expiration date and time. It's a last day the offer might be accepted."
+                    "description": "The offer expiration date and time. It's a last day the offer might be accepted. If it's explicitly defined, it will take the precedence over the calculated date based on the expirationDays property.\nMaximum 30 days or minimum 1 day from the publishing date. If the date is in the past while publishing, it will be set to plus 1 day from publishing date."
+                },
+                "expirationDays": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "The number of days till expiration of the offer. The offer expiration will be calculated based on the offer publishing date (publishing date + number of specified days). If the expiration property is explicitly defined, it will take the precedence over this one."
                 },
                 "multipleRecipients": {
                     "type": "boolean",

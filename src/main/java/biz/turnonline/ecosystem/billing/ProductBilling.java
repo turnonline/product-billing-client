@@ -998,10 +998,10 @@ public class ProductBilling
             private java.lang.Integer limit;
 
             @com.google.api.client.util.Key
-            private java.lang.Integer offset;
+            private java.lang.Boolean lightList;
 
             @com.google.api.client.util.Key
-            private java.lang.Boolean lightList;
+            private java.lang.Integer offset;
 
             /**
              * Create a request for the method "invoices.list".
@@ -1088,21 +1088,6 @@ public class ProductBilling
             }
 
             /**
-             * [ default: 0]
-             * [
-             */
-            public java.lang.Integer getOffset()
-            {
-                return offset;
-            }
-
-            public List setOffset( java.lang.Integer offset )
-            {
-                this.offset = offset;
-                return this;
-            }
-
-            /**
              * [ default: false]
              * [
              */
@@ -1143,6 +1128,21 @@ public class ProductBilling
             public List setLightList( java.lang.Boolean lightList )
             {
                 this.lightList = lightList;
+                return this;
+            }
+
+            /**
+             * [ default: 0]
+             * [
+             */
+            public java.lang.Integer getOffset()
+            {
+                return offset;
+            }
+
+            public List setOffset( java.lang.Integer offset )
+            {
+                this.offset = offset;
                 return this;
             }
 
@@ -1652,10 +1652,10 @@ public class ProductBilling
             private java.lang.Boolean incoming;
 
             @com.google.api.client.util.Key
-            private java.lang.Long customerId;
+            private java.lang.Integer limit;
 
             @com.google.api.client.util.Key
-            private java.lang.Integer limit;
+            private java.lang.Long customerId;
 
             @com.google.api.client.util.Key
             private java.lang.Integer offset;
@@ -1774,20 +1774,6 @@ public class ProductBilling
             }
 
             /**
-             *
-             */
-            public java.lang.Long getCustomerId()
-            {
-                return customerId;
-            }
-
-            public List setCustomerId( java.lang.Long customerId )
-            {
-                this.customerId = customerId;
-                return this;
-            }
-
-            /**
              * [ default: 10]
              * [
              */
@@ -1799,6 +1785,20 @@ public class ProductBilling
             public List setLimit( java.lang.Integer limit )
             {
                 this.limit = limit;
+                return this;
+            }
+
+            /**
+             *
+             */
+            public java.lang.Long getCustomerId()
+            {
+                return customerId;
+            }
+
+            public List setCustomerId( java.lang.Long customerId )
+            {
+                this.customerId = customerId;
                 return this;
             }
 
@@ -1921,6 +1921,22 @@ public class ProductBilling
         {
 
             /**
+             * Create a request for the method "recipients.count".
+             * <p>
+             * This request holds the parameters needed by the billing server.  After setting any optional
+             * parameters, call the {@link Count#execute()} method to invoke the remote operation.
+             *
+             * @param offerId
+             * @return the request
+             */
+            public Count count( java.lang.Long offerId ) throws java.io.IOException
+            {
+                Count result = new Count( offerId );
+                initialize( result );
+                return result;
+            }
+
+            /**
              * Create a request for the method "recipients.list".
              * <p>
              * This request holds the parameters needed by the billing server.  After setting any optional
@@ -1936,6 +1952,107 @@ public class ProductBilling
                 return result;
             }
 
+            public class Count
+                    extends ProductBillingRequest<biz.turnonline.ecosystem.billing.model.NumberOfRecipients>
+            {
+
+                private static final String REST_PATH = "offers/{offer_id}/recipients/count";
+
+                @com.google.api.client.util.Key( "offer_id" )
+                private java.lang.Long offerId;
+
+                /**
+                 * Create a request for the method "recipients.count".
+                 * <p>
+                 * This request holds the parameters needed by the the billing server.  After setting any optional
+                 * parameters, call the {@link Count#execute()} method to invoke the remote operation. <p> {@link
+                 * Count#initialize(com.google.api.client.googleapis.services.AbstractGoogleClientRequest)} must
+                 * be called to initialize this instance immediately after invoking the constructor. </p>
+                 *
+                 * @param offerId
+                 * @since 1.13
+                 */
+                protected Count( java.lang.Long offerId )
+                {
+                    super( ProductBilling.this, "GET", REST_PATH, null, biz.turnonline.ecosystem.billing.model.NumberOfRecipients.class );
+                    this.offerId = com.google.api.client.util.Preconditions.checkNotNull( offerId, "Required parameter offerId must be specified." );
+                }
+
+                @Override
+                public com.google.api.client.http.HttpResponse executeUsingHead() throws java.io.IOException
+                {
+                    return super.executeUsingHead();
+                }
+
+                @Override
+                public com.google.api.client.http.HttpRequest buildHttpRequestUsingHead() throws java.io.IOException
+                {
+                    return super.buildHttpRequestUsingHead();
+                }
+
+                @Override
+                public Count setAlt( java.lang.String alt )
+                {
+                    return ( Count ) super.setAlt( alt );
+                }
+
+                @Override
+                public Count setFields( java.lang.String fields )
+                {
+                    return ( Count ) super.setFields( fields );
+                }
+
+                @Override
+                public Count setKey( java.lang.String key )
+                {
+                    return ( Count ) super.setKey( key );
+                }
+
+                @Override
+                public Count setOauthToken( java.lang.String oauthToken )
+                {
+                    return ( Count ) super.setOauthToken( oauthToken );
+                }
+
+                @Override
+                public Count setPrettyPrint( java.lang.Boolean prettyPrint )
+                {
+                    return ( Count ) super.setPrettyPrint( prettyPrint );
+                }
+
+                @Override
+                public Count setQuotaUser( java.lang.String quotaUser )
+                {
+                    return ( Count ) super.setQuotaUser( quotaUser );
+                }
+
+                @Override
+                public Count setUserIp( java.lang.String userIp )
+                {
+                    return ( Count ) super.setUserIp( userIp );
+                }
+
+                /**
+                 *
+                 */
+                public java.lang.Long getOfferId()
+                {
+                    return offerId;
+                }
+
+                public Count setOfferId( java.lang.Long offerId )
+                {
+                    this.offerId = offerId;
+                    return this;
+                }
+
+                @Override
+                public Count set( String parameterName, Object value )
+                {
+                    return ( Count ) super.set( parameterName, value );
+                }
+            }
+
             public class List
                     extends ProductBillingRequest<biz.turnonline.ecosystem.billing.model.OfferRecipientCollection>
             {
@@ -1946,10 +2063,10 @@ public class ProductBilling
                 private java.lang.Long offerId;
 
                 @com.google.api.client.util.Key
-                private java.lang.Integer offset;
+                private java.lang.Integer limit;
 
                 @com.google.api.client.util.Key
-                private java.lang.Integer limit;
+                private java.lang.Integer offset;
 
                 /**
                  * Create a request for the method "recipients.list".
@@ -2037,21 +2154,6 @@ public class ProductBilling
                 }
 
                 /**
-                 * [ default: 0]
-                 * [
-                 */
-                public java.lang.Integer getOffset()
-                {
-                    return offset;
-                }
-
-                public List setOffset( java.lang.Integer offset )
-                {
-                    this.offset = offset;
-                    return this;
-                }
-
-                /**
                  * [ default: 100]
                  * [
                  */
@@ -2063,6 +2165,21 @@ public class ProductBilling
                 public List setLimit( java.lang.Integer limit )
                 {
                     this.limit = limit;
+                    return this;
+                }
+
+                /**
+                 * [ default: 0]
+                 * [
+                 */
+                public java.lang.Integer getOffset()
+                {
+                    return offset;
+                }
+
+                public List setOffset( java.lang.Integer offset )
+                {
+                    this.offset = offset;
                     return this;
                 }
 
@@ -2499,10 +2616,10 @@ public class ProductBilling
             private java.lang.Integer limit;
 
             @com.google.api.client.util.Key
-            private java.lang.Integer offset;
+            private java.lang.Boolean lightList;
 
             @com.google.api.client.util.Key
-            private java.lang.Boolean lightList;
+            private java.lang.Integer offset;
 
             /**
              * Create a request for the method "orders.list".
@@ -2589,21 +2706,6 @@ public class ProductBilling
             }
 
             /**
-             * [ default: 0]
-             * [
-             */
-            public java.lang.Integer getOffset()
-            {
-                return offset;
-            }
-
-            public List setOffset( java.lang.Integer offset )
-            {
-                this.offset = offset;
-                return this;
-            }
-
-            /**
              * [ default: false]
              * [
              */
@@ -2644,6 +2746,21 @@ public class ProductBilling
             public List setLightList( java.lang.Boolean lightList )
             {
                 this.lightList = lightList;
+                return this;
+            }
+
+            /**
+             * [ default: 0]
+             * [
+             */
+            public java.lang.Integer getOffset()
+            {
+                return offset;
+            }
+
+            public List setOffset( java.lang.Integer offset )
+            {
+                this.offset = offset;
                 return this;
             }
 
@@ -3198,13 +3315,13 @@ public class ProductBilling
                 private java.lang.Long orderId;
 
                 @com.google.api.client.util.Key
-                private java.lang.Integer limit;
+                private java.lang.Boolean lightList;
 
                 @com.google.api.client.util.Key
                 private java.lang.Integer offset;
 
                 @com.google.api.client.util.Key
-                private java.lang.Boolean lightList;
+                private java.lang.Integer limit;
 
                 /**
                  * Create a request for the method "invoices.list".
@@ -3292,36 +3409,6 @@ public class ProductBilling
                 }
 
                 /**
-                 * [ default: 10]
-                 * [
-                 */
-                public java.lang.Integer getLimit()
-                {
-                    return limit;
-                }
-
-                public List setLimit( java.lang.Integer limit )
-                {
-                    this.limit = limit;
-                    return this;
-                }
-
-                /**
-                 * [ default: 0]
-                 * [
-                 */
-                public java.lang.Integer getOffset()
-                {
-                    return offset;
-                }
-
-                public List setOffset( java.lang.Integer offset )
-                {
-                    this.offset = offset;
-                    return this;
-                }
-
-                /**
                  * [ default: false]
                  * [
                  */
@@ -3362,6 +3449,36 @@ public class ProductBilling
                 public List setLightList( java.lang.Boolean lightList )
                 {
                     this.lightList = lightList;
+                    return this;
+                }
+
+                /**
+                 * [ default: 0]
+                 * [
+                 */
+                public java.lang.Integer getOffset()
+                {
+                    return offset;
+                }
+
+                public List setOffset( java.lang.Integer offset )
+                {
+                    this.offset = offset;
+                    return this;
+                }
+
+                /**
+                 * [ default: 10]
+                 * [
+                 */
+                public java.lang.Integer getLimit()
+                {
+                    return limit;
+                }
+
+                public List setLimit( java.lang.Integer limit )
+                {
+                    this.limit = limit;
                     return this;
                 }
 
@@ -5694,10 +5811,10 @@ public class ProductBilling
             private java.lang.Integer limit;
 
             @com.google.api.client.util.Key
-            private java.lang.Integer offset;
+            private java.lang.Boolean lightList;
 
             @com.google.api.client.util.Key
-            private java.lang.Boolean lightList;
+            private java.lang.Integer offset;
 
             /**
              * Create a request for the method "products.list".
@@ -5784,21 +5901,6 @@ public class ProductBilling
             }
 
             /**
-             * [ default: 0]
-             * [
-             */
-            public java.lang.Integer getOffset()
-            {
-                return offset;
-            }
-
-            public List setOffset( java.lang.Integer offset )
-            {
-                this.offset = offset;
-                return this;
-            }
-
-            /**
              * [ default: false]
              * [
              */
@@ -5839,6 +5941,21 @@ public class ProductBilling
             public List setLightList( java.lang.Boolean lightList )
             {
                 this.lightList = lightList;
+                return this;
+            }
+
+            /**
+             * [ default: 0]
+             * [
+             */
+            public java.lang.Integer getOffset()
+            {
+                return offset;
+            }
+
+            public List setOffset( java.lang.Integer offset )
+            {
+                this.offset = offset;
                 return this;
             }
 
@@ -6584,13 +6701,13 @@ public class ProductBilling
                 private java.lang.Integer limit;
 
                 @com.google.api.client.util.Key
+                private java.lang.Boolean lightList;
+
+                @com.google.api.client.util.Key
                 private java.lang.Integer offset;
 
                 @com.google.api.client.util.Key
                 private java.lang.Long orderId;
-
-                @com.google.api.client.util.Key
-                private java.lang.Boolean lightList;
 
                 /**
                  * Create a request for the method "expenses.list".
@@ -6677,35 +6794,6 @@ public class ProductBilling
                 }
 
                 /**
-                 * [ default: 0]
-                 * [
-                 */
-                public java.lang.Integer getOffset()
-                {
-                    return offset;
-                }
-
-                public List setOffset( java.lang.Integer offset )
-                {
-                    this.offset = offset;
-                    return this;
-                }
-
-                /**
-                 *
-                 */
-                public java.lang.Long getOrderId()
-                {
-                    return orderId;
-                }
-
-                public List setOrderId( java.lang.Long orderId )
-                {
-                    this.orderId = orderId;
-                    return this;
-                }
-
-                /**
                  * [ default: false]
                  * [
                  */
@@ -6746,6 +6834,35 @@ public class ProductBilling
                 public List setLightList( java.lang.Boolean lightList )
                 {
                     this.lightList = lightList;
+                    return this;
+                }
+
+                /**
+                 * [ default: 0]
+                 * [
+                 */
+                public java.lang.Integer getOffset()
+                {
+                    return offset;
+                }
+
+                public List setOffset( java.lang.Integer offset )
+                {
+                    this.offset = offset;
+                    return this;
+                }
+
+                /**
+                 *
+                 */
+                public java.lang.Long getOrderId()
+                {
+                    return orderId;
+                }
+
+                public List setOrderId( java.lang.Long orderId )
+                {
+                    this.orderId = orderId;
                     return this;
                 }
 
@@ -7044,10 +7161,10 @@ public class ProductBilling
                 private java.lang.Integer limit;
 
                 @com.google.api.client.util.Key
-                private java.lang.Integer offset;
+                private java.lang.Boolean lightList;
 
                 @com.google.api.client.util.Key
-                private java.lang.Boolean lightList;
+                private java.lang.Integer offset;
 
                 /**
                  * Create a request for the method "orders.list".
@@ -7134,21 +7251,6 @@ public class ProductBilling
                 }
 
                 /**
-                 * [ default: 0]
-                 * [
-                 */
-                public java.lang.Integer getOffset()
-                {
-                    return offset;
-                }
-
-                public List setOffset( java.lang.Integer offset )
-                {
-                    this.offset = offset;
-                    return this;
-                }
-
-                /**
                  * [ default: false]
                  * [
                  */
@@ -7189,6 +7291,21 @@ public class ProductBilling
                 public List setLightList( java.lang.Boolean lightList )
                 {
                     this.lightList = lightList;
+                    return this;
+                }
+
+                /**
+                 * [ default: 0]
+                 * [
+                 */
+                public java.lang.Integer getOffset()
+                {
+                    return offset;
+                }
+
+                public List setOffset( java.lang.Integer offset )
+                {
+                    this.offset = offset;
                     return this;
                 }
 
@@ -7493,13 +7610,13 @@ public class ProductBilling
                     private java.lang.Long orderId;
 
                     @com.google.api.client.util.Key
-                    private java.lang.Integer limit;
+                    private java.lang.Boolean lightList;
 
                     @com.google.api.client.util.Key
                     private java.lang.Integer offset;
 
                     @com.google.api.client.util.Key
-                    private java.lang.Boolean lightList;
+                    private java.lang.Integer limit;
 
                     /**
                      * Create a request for the method "invoices.list".
@@ -7587,36 +7704,6 @@ public class ProductBilling
                     }
 
                     /**
-                     * [ default: 10]
-                     * [
-                     */
-                    public java.lang.Integer getLimit()
-                    {
-                        return limit;
-                    }
-
-                    public List setLimit( java.lang.Integer limit )
-                    {
-                        this.limit = limit;
-                        return this;
-                    }
-
-                    /**
-                     * [ default: 0]
-                     * [
-                     */
-                    public java.lang.Integer getOffset()
-                    {
-                        return offset;
-                    }
-
-                    public List setOffset( java.lang.Integer offset )
-                    {
-                        this.offset = offset;
-                        return this;
-                    }
-
-                    /**
                      * [ default: false]
                      * [
                      */
@@ -7657,6 +7744,36 @@ public class ProductBilling
                     public List setLightList( java.lang.Boolean lightList )
                     {
                         this.lightList = lightList;
+                        return this;
+                    }
+
+                    /**
+                     * [ default: 0]
+                     * [
+                     */
+                    public java.lang.Integer getOffset()
+                    {
+                        return offset;
+                    }
+
+                    public List setOffset( java.lang.Integer offset )
+                    {
+                        this.offset = offset;
+                        return this;
+                    }
+
+                    /**
+                     * [ default: 10]
+                     * [
+                     */
+                    public java.lang.Integer getLimit()
+                    {
+                        return limit;
+                    }
+
+                    public List setLimit( java.lang.Integer limit )
+                    {
+                        this.limit = limit;
                         return this;
                     }
 
@@ -7909,10 +8026,7 @@ public class ProductBilling
             private java.lang.Integer limit;
 
             @com.google.api.client.util.Key
-            private java.lang.Long invoiceId;
-
-            @com.google.api.client.util.Key
-            private java.lang.Long orderId;
+            private java.lang.Long billId;
 
             @com.google.api.client.util.Key
             private java.lang.Integer offset;
@@ -7921,7 +8035,10 @@ public class ProductBilling
             private java.lang.String operation;
 
             @com.google.api.client.util.Key
-            private java.lang.Long billId;
+            private java.lang.Long invoiceId;
+
+            @com.google.api.client.util.Key
+            private java.lang.Long orderId;
 
             /**
              * Create a request for the method "transactions.list".
@@ -8024,28 +8141,14 @@ public class ProductBilling
             /**
              *
              */
-            public java.lang.Long getInvoiceId()
+            public java.lang.Long getBillId()
             {
-                return invoiceId;
+                return billId;
             }
 
-            public List setInvoiceId( java.lang.Long invoiceId )
+            public List setBillId( java.lang.Long billId )
             {
-                this.invoiceId = invoiceId;
-                return this;
-            }
-
-            /**
-             *
-             */
-            public java.lang.Long getOrderId()
-            {
-                return orderId;
-            }
-
-            public List setOrderId( java.lang.Long orderId )
-            {
-                this.orderId = orderId;
+                this.billId = billId;
                 return this;
             }
 
@@ -8082,14 +8185,28 @@ public class ProductBilling
             /**
              *
              */
-            public java.lang.Long getBillId()
+            public java.lang.Long getInvoiceId()
             {
-                return billId;
+                return invoiceId;
             }
 
-            public List setBillId( java.lang.Long billId )
+            public List setInvoiceId( java.lang.Long invoiceId )
             {
-                this.billId = billId;
+                this.invoiceId = invoiceId;
+                return this;
+            }
+
+            /**
+             *
+             */
+            public java.lang.Long getOrderId()
+            {
+                return orderId;
+            }
+
+            public List setOrderId( java.lang.Long orderId )
+            {
+                this.orderId = orderId;
                 return this;
             }
 

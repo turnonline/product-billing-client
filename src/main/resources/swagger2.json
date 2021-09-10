@@ -982,6 +982,66 @@
                 ]
             }
         },
+        "/v1/offers/{offer_id}/recipients/count": {
+            "get": {
+                "tags": [
+                    "Direct Offers"
+                ],
+                "summary": "Counts offer recipients",
+                "description": "Counts offer recipients, that accepted an offer.",
+                "operationId": "countRecipients",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "offer_id",
+                        "in": "path",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64",
+                        "description": "The unique offer identification"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A successful response",
+                        "schema": {
+                            "$ref": "#/definitions/NumberOfRecipients"
+                        }
+                    },
+                    "401": {
+                        "description": "The error when the authentication credential fails.",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "The error when client tries to accept an offer that does not exist.",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "It's a failure of the server. The client can repeat the request without modifications at any later time.",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "503": {
+                        "description": "The service is unavailable or the server has timed out processing of the request. The client may repeat the request without modifications at any later time.",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "firebase-a9a2a51a": []
+                    }
+                ]
+            }
+        },
         "/v1/orders": {
             "get": {
                 "tags": [
@@ -5472,6 +5532,17 @@
                 }
             },
             "description": "The merchant details, available only for card payments."
+        },
+        "NumberOfRecipients": {
+            "type": "object",
+            "properties": {
+                "count": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "The number of recipients."
+                }
+            },
+            "description": "The wrapper for number of recipients, that accepted an offer."
         },
         "NumberSeries": {
             "type": "object",

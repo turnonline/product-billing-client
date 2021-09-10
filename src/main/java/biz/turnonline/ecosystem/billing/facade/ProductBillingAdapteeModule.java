@@ -23,6 +23,7 @@ import biz.turnonline.ecosystem.billing.facade.adaptee.ExpenseListAdaptee;
 import biz.turnonline.ecosystem.billing.facade.adaptee.IncomingInvoiceAdaptee;
 import biz.turnonline.ecosystem.billing.facade.adaptee.IncomingInvoiceListAdaptee;
 import biz.turnonline.ecosystem.billing.facade.adaptee.InvoiceAdaptee;
+import biz.turnonline.ecosystem.billing.facade.adaptee.NumberOfRecipientsAdaptee;
 import biz.turnonline.ecosystem.billing.facade.adaptee.NumberSeriesAdaptee;
 import biz.turnonline.ecosystem.billing.facade.adaptee.OfferDeleteAdaptee;
 import biz.turnonline.ecosystem.billing.facade.adaptee.OfferGetAdaptee;
@@ -49,6 +50,7 @@ import biz.turnonline.ecosystem.billing.model.Expenditure;
 import biz.turnonline.ecosystem.billing.model.Expense;
 import biz.turnonline.ecosystem.billing.model.IncomingInvoice;
 import biz.turnonline.ecosystem.billing.model.Invoice;
+import biz.turnonline.ecosystem.billing.model.NumberOfRecipients;
 import biz.turnonline.ecosystem.billing.model.NumberSeries;
 import biz.turnonline.ecosystem.billing.model.OfferListItem;
 import biz.turnonline.ecosystem.billing.model.OfferRecipient;
@@ -191,6 +193,10 @@ public class ProductBillingAdapteeModule
         bind( new TypeLiteral<ListExecutorAdaptee<OfferRecipient>>()
         {
         } ).to( OfferRecipientListAdaptee.class );
+
+        bind( new TypeLiteral<GetExecutorAdaptee<NumberOfRecipients>>()
+        {
+        } ).to( NumberOfRecipientsAdaptee.class );
 
         // Invoice
         bind( new TypeLiteral<GetExecutorAdaptee<Invoice>>()

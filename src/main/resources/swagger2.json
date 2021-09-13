@@ -1495,6 +1495,13 @@
                         "description": "The identification (within Product Billing service) of the bank account to be listed at invoice as a beneficiary. If provided it will take a precedence over the bank account defined in the body."
                     },
                     {
+                        "name": "vnd.turnon.cloud.request-hashcode",
+                        "in": "header",
+                        "required": false,
+                        "type": "string",
+                        "description": "If present, it helps to safely avoid repeated creation of the invoice on retries, without accidentally performing the same operation more times.\n\nIn case an invoice is found with specified hashcode, the operation will be finished as successful and no further processing will be performed on that invoice. The hashcode needs to be unique only for the specified order."
+                    },
+                    {
                         "name": "body",
                         "in": "body",
                         "required": true,

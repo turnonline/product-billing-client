@@ -32,13 +32,19 @@ import java.io.Serializable;
 public final class ProductOverview
         implements Serializable
 {
-    private static final long serialVersionUID = 2227612540858616932L;
+    private static final long serialVersionUID = -6473243935324895930L;
 
     /**
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
     private java.lang.String about;
+
+    /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
+    private java.lang.String category;
 
     /**
      * The value may be {@code null}.
@@ -72,6 +78,23 @@ public final class ProductOverview
     public ProductOverview setAbout( java.lang.String about )
     {
         this.about = about;
+        return this;
+    }
+
+    /**
+     * @return value or {@code null} for none
+     */
+    public java.lang.String getCategory()
+    {
+        return category;
+    }
+
+    /**
+     * @param category category or {@code null} for none
+     */
+    public ProductOverview setCategory( java.lang.String category )
+    {
+        this.category = category;
         return this;
     }
 

@@ -2775,6 +2775,17 @@
                         "schema": {
                             "$ref": "#/definitions/Product"
                         }
+                    },
+                    {
+                        "name": "picsFrom",
+                        "in": "query",
+                        "required": false,
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi",
+                        "description": "The array of URLs to download pictures from. These images will be added to the existing list of pictures\n or ignored if already added before. Images will be stored and the content type will be derived from the file name suffix.\nOnce downloaded it will be served from ConnecSys and the original URL will be kept only for tracking purpose.\nIn case of the error while downloading, that picture will be ignored."
                     }
                 ],
                 "responses": {
@@ -2904,6 +2915,17 @@
                         "schema": {
                             "$ref": "#/definitions/Product"
                         }
+                    },
+                    {
+                        "name": "picsFrom",
+                        "in": "query",
+                        "required": false,
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi",
+                        "description": "The array of URLs to download pictures from. These images will be added to the existing list of pictures\n or ignored if already added before. Images will be stored and the content type will be derived from the file name suffix.\nOnce downloaded it will be served from ConnecSys and the original URL will be kept only for tracking purpose.\nIn case of the error while downloading, that picture will be ignored."
                     }
                 ],
                 "responses": {
@@ -3246,6 +3268,17 @@
                         "schema": {
                             "$ref": "#/definitions/ProductPublishing"
                         }
+                    },
+                    {
+                        "name": "picsFrom",
+                        "in": "query",
+                        "required": false,
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi",
+                        "description": "The array of URLs to download pictures from. These images will be added to the existing list of pictures\n or ignored if already added before. Images will be stored and the content type will be derived from the file name suffix.\nOnce downloaded it will be served from ConnecSys and the original URL will be kept only for tracking purpose.\nIn case of the error while downloading, that picture will be ignored."
                     }
                 ],
                 "responses": {

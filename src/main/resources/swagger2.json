@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "description": "TurnOnline.biz Ecosystem Product Billing microservice. Order, product, and invoice management system with support of the product purchases between business accounts.",
+        "description": "ConnecSys Product Billing microservice. Order, product, and invoice management system with support of the product purchases between business accounts.",
         "version": "1.0",
         "title": "Product Billing"
     },
@@ -580,7 +580,7 @@
                         "required": false,
                         "type": "integer",
                         "format": "int64",
-                        "description": "The customer identification (that represents TurnOnline.biz Ecosystem account), the result will include only offers with this customer."
+                        "description": "The customer identification (that represents ConnecSys account), the result will include only offers with this customer."
                     },
                     {
                         "name": "incoming",
@@ -685,7 +685,7 @@
                     "Direct Offers"
                 ],
                 "summary": "Create and send offer",
-                "description": "Creates or modifies the offer based on the identified order and it will process it as an offer with applied incoming changes. It sends the offer to the customer if requested. Once customer identification is being provided it must represent an existing TurnOnline.biz Ecosystem account, otherwise bad request will be thrown. Note, the customer can only either read or decline an offer.",
+                "description": "Creates or modifies the offer based on the identified order and it will process it as an offer with applied incoming changes. It sends the offer to the customer if requested. Once customer identification is being provided it must represent an existing ConnecSys account, otherwise bad request will be thrown. Note, the customer can only either read or decline an offer.",
                 "operationId": "updateOffer",
                 "consumes": [
                     "application/json"
@@ -3451,7 +3451,7 @@
                     "Purchases"
                 ],
                 "summary": "Register an expense",
-                "description": "Register an expense that represents a purchase outside of the Ecosystem.",
+                "description": "Register an expense that represents a purchase outside of the ConnecSys.",
                 "operationId": "createExpenseDocument",
                 "consumes": [
                     "application/json"
@@ -3522,7 +3522,7 @@
                     "Purchases"
                 ],
                 "summary": "Search expenses",
-                "description": "Search expenses for this company that represents any purchase either inside or outside of the Ecosystem.",
+                "description": "Search expenses for this company that represents any purchase either inside or outside of the ConnecSys.",
                 "operationId": "searchExpenses",
                 "produces": [
                     "application/json"
@@ -4612,7 +4612,7 @@
                     "description": "The short description of the offer. It might be a short description one of the product from the order. Alternatively it might be also a direct message to the target customer. The max length is set to 500 characters."
                 },
                 "sponsor": {
-                    "description": "The ecosystem user account that will pay for this offer if accepted. Once accepted by the recipient, the sponsor will become a debtor at the invoice.",
+                    "description": "The ConnecSys user account that will pay for this offer if accepted. Once accepted by the recipient, the sponsor will become a debtor at the invoice.",
                     "$ref": "#/definitions/Sponsor"
                 },
                 "status": {
@@ -4628,7 +4628,7 @@
                     ]
                 },
                 "supplier": {
-                    "description": "The supplier account that represents a business at TurnOnline.biz Ecosystem.",
+                    "description": "The supplier account that represents a business at ConnecSys.",
                     "$ref": "#/definitions/Creditor"
                 },
                 "title": {
@@ -4665,7 +4665,7 @@
                 "account": {
                     "type": "integer",
                     "format": "int64",
-                    "description": "The account identification that represents a business at TurnOnline.biz Ecosystem."
+                    "description": "The account identification that represents a business at ConnecSys."
                 },
                 "businessName": {
                     "type": "string",
@@ -4728,7 +4728,7 @@
                     "default": false
                 }
             },
-            "description": "The account that represents a business at TurnOnline.biz Ecosystem to whom money will be credited. But not necessarily, only if the account property has a valid identification."
+            "description": "The account that represents a business at ConnecSys to whom money will be credited. In case the account identification is missing the supplier is defined outside the ConnecSys."
         },
         "CreditorContactDetails": {
             "type": "object",
@@ -4758,7 +4758,7 @@
                 "account": {
                     "type": "integer",
                     "format": "int64",
-                    "description": "The user account identification of a business partner entity if any (TurnOnline.biz Ecosystem account ID)."
+                    "description": "The user account identification of a business partner entity if any (ConnecSys account ID)."
                 },
                 "businessName": {
                     "type": "string",
@@ -5132,7 +5132,7 @@
                     "$ref": "#/definitions/ExpenditurePricing"
                 },
                 "supplier": {
-                    "description": "A business that delivered a product or service. Defined outside of the Ecosystem.",
+                    "description": "A business that delivered a product or service. Defined outside of the ConnecSys.",
                     "$ref": "#/definitions/Supplier"
                 },
                 "type": {
@@ -5145,7 +5145,7 @@
                     ]
                 }
             },
-            "description": "Expenditure that represents a purchase outside of the Ecosystem."
+            "description": "Expenditure that represents a purchase outside of the ConnecSys."
         },
         "ExpenditurePayment": {
             "type": "object",
@@ -5269,12 +5269,12 @@
                     "description": "The full URL of the bill picture as it appears in accounting system. Served from the CDN."
                 },
                 "supplier": {
-                    "description": "A business that delivered a product or service. It might be an account at Ecosystem but not necessarily.",
+                    "description": "A business that delivered a product or service. It might be an account at ConnecSys but not necessarily.",
                     "$ref": "#/definitions/Creditor"
                 },
                 "through": {
                     "type": "string",
-                    "description": "A purchase that has been made through: ECOSYSTEM represents a purchase between business accounts of the Ecosystem. EXTERNAL represents a purchase outside of the Ecosystem.",
+                    "description": "A purchase that has been made through: ECOSYSTEM represents a purchase between business accounts of the ConnecSys. EXTERNAL represents a purchase outside of the ConnecSys.",
                     "default": "ECOSYSTEM",
                     "enum": [
                         "ECOSYSTEM",
@@ -5302,7 +5302,7 @@
                     "description": "The total VAT base as a sum of all checked in pricing items and its amount."
                 }
             },
-            "description": "Expense that represents any purchase either inside or outside of the Ecosystem."
+            "description": "Expense that represents any purchase either inside or outside of the ConnecSys."
         },
         "ExpenseCollection": {
             "type": "object",
@@ -5325,7 +5325,7 @@
                     "description": "A date when incoming invoice has been created."
                 },
                 "creditor": {
-                    "description": "The account that represents a business at TurnOnline.biz Ecosystem to whom money will be credited.",
+                    "description": "The account that represents a business at ConnecSys to whom money will be credited.",
                     "$ref": "#/definitions/Creditor"
                 },
                 "currency": {
@@ -5635,7 +5635,7 @@
                 "account": {
                     "type": "integer",
                     "format": "int64",
-                    "description": "The user account identification - TurnOnline.biz Ecosystem account ID."
+                    "description": "The user account identification - ConnecSys account ID."
                 }
             },
             "type": "object"
@@ -5678,11 +5678,11 @@
                     "description": "The short description of the offer.\n\nIt might be a short description one of the product at order. Alternatively it might be also a direct message to the target customer. The recommended length is max. 500 characters."
                 },
                 "sponsor": {
-                    "description": "The ecosystem user account that will pay for this offer if accepted. Once accepted by the recipient, the sponsor will become a debtor at the invoice.",
+                    "description": "The ConnecSys user account that will pay for this offer if accepted. Once accepted by the recipient, the sponsor will become a debtor at the invoice.",
                     "$ref": "#/definitions/Sponsor"
                 },
                 "supplier": {
-                    "description": "The supplier account that represents a business at TurnOnline.biz Ecosystem.",
+                    "description": "The supplier account that represents a business at ConnecSys.",
                     "$ref": "#/definitions/Creditor"
                 },
                 "thumbnail": {
@@ -5739,7 +5739,7 @@
                 "accountId": {
                     "type": "integer",
                     "format": "int64",
-                    "description": "The recipient account unique identification within TurnOnline.biz Ecosystem."
+                    "description": "The recipient account unique identification within ConnecSys."
                 },
                 "contactEmail": {
                     "type": "string",
@@ -6597,7 +6597,7 @@
                     "description": "A date when purchase order has been created. Populated by the service."
                 },
                 "creditor": {
-                    "description": "The account that represents a business at TurnOnline.biz Ecosystem to whom money will be credited.",
+                    "description": "The account that represents a business at ConnecSys to whom money will be credited.",
                     "$ref": "#/definitions/Creditor"
                 },
                 "currency": {
@@ -6758,7 +6758,7 @@
                 "account": {
                     "type": "integer",
                     "format": "int64",
-                    "description": "The user account identification of the sponsor (TurnOnline.biz Ecosystem account ID)."
+                    "description": "The user account identification of the sponsor (ConnecSys account ID)."
                 },
                 "businessName": {
                     "type": "string",
@@ -6871,7 +6871,7 @@
                     "description": "The address post code."
                 }
             },
-            "description": "A business that delivers a product or service. Defined outside of the Ecosystem."
+            "description": "A business that delivers a product or service. Defined outside of the ConnecSys."
         },
         "Transaction": {
             "type": "object",
@@ -6958,7 +6958,7 @@
                 "transactionId": {
                     "type": "integer",
                     "format": "int64",
-                    "description": "The identification of the transaction within payment processor service unique for single Ecosystem account."
+                    "description": "The identification of the transaction within payment processor service unique for single ConnecSys account."
                 },
                 "type": {
                     "type": "string",

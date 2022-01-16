@@ -27,6 +27,7 @@ import biz.turnonline.ecosystem.billing.facade.adaptee.NumberOfRecipientsAdaptee
 import biz.turnonline.ecosystem.billing.facade.adaptee.NumberSeriesAdaptee;
 import biz.turnonline.ecosystem.billing.facade.adaptee.OfferDeleteAdaptee;
 import biz.turnonline.ecosystem.billing.facade.adaptee.OfferGetAdaptee;
+import biz.turnonline.ecosystem.billing.facade.adaptee.OfferInsertAdaptee;
 import biz.turnonline.ecosystem.billing.facade.adaptee.OfferListAdaptee;
 import biz.turnonline.ecosystem.billing.facade.adaptee.OfferRecipientListAdaptee;
 import biz.turnonline.ecosystem.billing.facade.adaptee.OfferUpdateAdaptee;
@@ -180,6 +181,10 @@ public class ProductBillingAdapteeModule
         bind( new TypeLiteral<ListExecutorAdaptee<OfferListItem>>()
         {
         } ).to( OfferListAdaptee.class );
+
+        bind( new TypeLiteral<InsertExecutorAdaptee<PureOffer>>()
+        {
+        } ).to( OfferInsertAdaptee.class );
 
         bind( new TypeLiteral<UpdateExecutorAdaptee<PureOffer>>()
         {

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 TurnOnline.biz s.r.o.
+ * Copyright (c) 2022 TurnOnline.biz s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,14 @@ import java.io.Serializable;
 public final class PureOffer
         implements Serializable
 {
-    private static final long serialVersionUID = -1751518847640757685L;
+    private static final long serialVersionUID = 6059370632761917071L;
+
+    static
+    {
+        // hack to force ProGuard to consider OfferItem used, since otherwise it would be stripped out
+        // see https://github.com/google/google-api-java-client/issues/543
+        com.google.api.client.util.Data.nullOf( OfferItem.class );
+    }
 
     /**
      * The value may be {@code null}.
@@ -51,6 +58,12 @@ public final class PureOffer
      */
     @com.google.api.client.util.Key
     private java.lang.Integer expirationDays;
+
+    /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
+    private java.util.List<OfferItem> items;
 
     /**
      * The value may be {@code null}.
@@ -124,6 +137,23 @@ public final class PureOffer
     public PureOffer setExpirationDays( java.lang.Integer expirationDays )
     {
         this.expirationDays = expirationDays;
+        return this;
+    }
+
+    /**
+     * @return value or {@code null} for none
+     */
+    public java.util.List<OfferItem> getItems()
+    {
+        return items;
+    }
+
+    /**
+     * @param items items or {@code null} for none
+     */
+    public PureOffer setItems( java.util.List<OfferItem> items )
+    {
+        this.items = items;
         return this;
     }
 

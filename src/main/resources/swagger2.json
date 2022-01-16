@@ -648,7 +648,7 @@
                         "in": "header",
                         "required": false,
                         "type": "boolean",
-                        "description": "The boolean indicating whether to deliver the offer to the customer.",
+                        "description": "The boolean indicating whether to send newly created offer immediately to customer.",
                         "default": false
                     },
                     {
@@ -791,7 +791,7 @@
                         "in": "header",
                         "required": false,
                         "type": "boolean",
-                        "description": "The boolean indicating whether to deliver the offer to the customer.",
+                        "description": "The boolean indicating whether to send the offer immediately to customer.",
                         "default": false
                     },
                     {

@@ -4623,6 +4623,10 @@
                     "description": "A customer to be invoiced.",
                     "$ref": "#/definitions/Customer"
                 },
+                "description": {
+                    "type": "string",
+                    "description": "The offer detailed description. It might be a plain text or HTML document."
+                },
                 "expiration": {
                     "type": "string",
                     "format": "date-time",

@@ -32,7 +32,7 @@ import java.io.Serializable;
 public final class CompleteOffer
         implements Serializable
 {
-    private static final long serialVersionUID = 8918085637633531380L;
+    private static final long serialVersionUID = -7184925196815089539L;
 
     static
     {
@@ -64,6 +64,12 @@ public final class CompleteOffer
      */
     @com.google.api.client.util.Key
     private Customer customer;
+
+    /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
+    private java.lang.String description;
 
     /**
      * The value may be {@code null}.
@@ -263,6 +269,23 @@ public final class CompleteOffer
     public CompleteOffer setCustomer( Customer customer )
     {
         this.customer = customer;
+        return this;
+    }
+
+    /**
+     * @return value or {@code null} for none
+     */
+    public java.lang.String getDescription()
+    {
+        return description;
+    }
+
+    /**
+     * @param description description or {@code null} for none
+     */
+    public CompleteOffer setDescription( java.lang.String description )
+    {
+        this.description = description;
         return this;
     }
 

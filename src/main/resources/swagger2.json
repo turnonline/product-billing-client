@@ -6828,6 +6828,10 @@
                     "description": "The identification of the customer as a recipient of the offer.",
                     "$ref": "#/definitions/OfferCustomer"
                 },
+                "description": {
+                    "type": "string",
+                    "description": "The offer detailed description. It might be a plain text or HTML document."
+                },
                 "expiration": {
                     "type": "string",
                     "format": "date-time",

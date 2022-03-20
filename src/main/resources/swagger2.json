@@ -866,7 +866,7 @@
                     "Direct Offers"
                 ],
                 "summary": "Decline the offer as recipient",
-                "description": "Declines the identified offer, however the underlying order will remain. Offer can't be in FINISHED status and can't have an already issued invoices, otherwise bad request will be thrown.",
+                "description": "Declines the identified offer, however the underlying order will remain. Offer can't be in FINISHED or COMPLETED status and can't have an already issued invoices, otherwise bad request will be thrown.",
                 "operationId": "declineOffer",
                 "produces": [
                     "application/json"
@@ -1420,7 +1420,7 @@
                         "description": "The confirmation, the order and all its related resources has been enqueued to be deleted asynchronously."
                     },
                     "400": {
-                        "description": "The error indicates the order is not allowed to be deleted as it has already issued invoices or has status FINISHED.",
+                        "description": "The error indicates the order is not allowed to be deleted as it has already issued invoices or has status FINISHED or COMPLETED.",
                         "schema": {
                             "$ref": "#/definitions/Error"
                         }
@@ -4720,7 +4720,8 @@
                         "ACTIVE",
                         "SUSPENDED",
                         "ISSUE",
-                        "FINISHED"
+                        "FINISHED",
+                        "COMPLETED"
                     ]
                 },
                 "supplier": {
@@ -5978,7 +5979,8 @@
                         "ACTIVE",
                         "SUSPENDED",
                         "ISSUE",
-                        "FINISHED"
+                        "FINISHED",
+                        "COMPLETED"
                     ]
                 },
                 "totalPrice": {
@@ -6002,7 +6004,7 @@
                     "description": "The order total VAT base as a sum of all checked in order items and its amount."
                 }
             },
-            "description": "**Recurring order possibilities**\n* ANNUALLY - Annually recurring billing\n* SEMI_ANNUALLY - Semi-annually recurring billing\n* QUARTERLY - Quarterly recurring billing. A three-month period on a financial calendar.\n* MONTHLY - Monthly recurring billing\n* WEEKLY - Weekly recurring billing\n* MANUALLY - Executed on user action. It issues an invoice based on the current Order.\n\n**Order statuses**\n* TRIALING - A service or subscription in trialing state, a trial run.\n* ACTIVE - A new or active order. It is not in a trial and there is no overdue payment.\n* SUSPENDED - Either creditor or debtor has paused the execution.\n* ISSUE - Set by system if there is an overdue payment. The most recent payment for some reason has failed or debtor has refused the purchase order.\n* FINISHED - A non recurring purchase order that has been completed. Generally it means an ordered product has been paid. A subscription that has been expired due to running its normal life cycle.\n\nThe root elements of the Order pricing item list will be automatically converted the itemType in to OrderItem, so incoming value of the property 'itemType' will not be taken into account.\n\n**Prerequisites to delete order**\n* Order cannot have already issued invoices.\n* Order has not FINISHED status."
+            "description": "**Recurring order possibilities**\n* ANNUALLY - Annually recurring billing\n* SEMI_ANNUALLY - Semi-annually recurring billing\n* QUARTERLY - Quarterly recurring billing. A three-month period on a financial calendar.\n* MONTHLY - Monthly recurring billing\n* WEEKLY - Weekly recurring billing\n* MANUALLY - Executed on user action. It issues an invoice based on the current Order.\n\n**Order statuses**\n* TRIALING - A service or subscription in trialing state, a trial run.\n* ACTIVE - A new or active order. It is not in a trial and there is no overdue payment.\n* SUSPENDED - Either creditor or debtor has paused the execution.\n* ISSUE - Set by system if there is an overdue payment. The most recent payment for some reason has failed or debtor has refused the purchase order.\n* FINISHED - A non recurring purchase order that has been finished. Generally it means an ordered product has been paid. A subscription that has been expired due to running its normal life cycle.\n* COMPLETED - Order has been shipped/picked up, and receipt is confirmed. The client has paid for their products, thus the order is being considered completed.\n\nThe root elements of the Order pricing item list will be automatically converted the itemType in to OrderItem, so incoming value of the property 'itemType' will not be taken into account.\n\n**Prerequisites to delete order**\n* Order cannot have already issued invoices.\n* Order doesn't have FINISHED or COMPLETED status."
         },
         "OrderCollection": {
             "type": "object",
@@ -6030,7 +6032,8 @@
                         "ACTIVE",
                         "SUSPENDED",
                         "ISSUE",
-                        "FINISHED"
+                        "FINISHED",
+                        "COMPLETED"
                     ]
                 }
             },
@@ -6788,7 +6791,8 @@
                         "ACTIVE",
                         "SUSPENDED",
                         "ISSUE",
-                        "FINISHED"
+                        "FINISHED",
+                        "COMPLETED"
                     ]
                 },
                 "totalPrice": {

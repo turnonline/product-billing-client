@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "description": "ConnecSys Product Billing microservice. Order, product, and invoice management system with support of the product purchases between business accounts.",
+        "description": "ConnecSys Product Billing microservice. Order, offer, product, and invoice management system with support of the product purchases between business accounts.",
         "version": "1.0",
         "title": "Product Billing"
     },
@@ -2627,6 +2627,7 @@
                     "Order Management"
                 ],
                 "summary": "Change order status",
+                "description": "Client is allowed to set only one of the following value, rest is managed by the service:\n* TRIALING,\n* ACTIVE,\n* SUSPENDED.\n\nCreditor is allowed to change status from FINISHED to COMPLETED once got the confirmation the package has been picked up.",
                 "operationId": "changeOrderStatus",
                 "consumes": [
                     "application/json"
@@ -4713,8 +4714,8 @@
                 },
                 "status": {
                     "type": "string",
-                    "description": "The current status of the offer.\n\nClient is allowed to set only one of the following value:\nTRIALING, ACTIVE, SUSPENDED.",
-                    "default": "SUSPENDED",
+                    "description": "The current status of the offer.",
+                    "default": "ACTIVE",
                     "enum": [
                         "TRIALING",
                         "ACTIVE",
@@ -5972,8 +5973,8 @@
                 },
                 "status": {
                     "type": "string",
-                    "description": "The current status of the order.\n\nClient is allowed to set only one of the following value:\nTRIALING, ACTIVE, SUSPENDED.",
-                    "default": "SUSPENDED",
+                    "description": "The current status of the order.",
+                    "default": "ACTIVE",
                     "enum": [
                         "TRIALING",
                         "ACTIVE",
@@ -6784,8 +6785,7 @@
                 },
                 "status": {
                     "type": "string",
-                    "description": "The current status of the purchase order.\n\nClient is allowed to set only one of the following value:\nTRIALING, ACTIVE, SUSPENDED.",
-                    "default": "SUSPENDED",
+                    "description": "The current status of the purchase order.",
                     "enum": [
                         "TRIALING",
                         "ACTIVE",

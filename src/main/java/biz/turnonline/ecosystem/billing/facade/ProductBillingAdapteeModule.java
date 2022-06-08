@@ -32,6 +32,7 @@ import biz.turnonline.ecosystem.billing.facade.adaptee.OfferListAdaptee;
 import biz.turnonline.ecosystem.billing.facade.adaptee.OfferRecipientListAdaptee;
 import biz.turnonline.ecosystem.billing.facade.adaptee.OfferUpdateAdaptee;
 import biz.turnonline.ecosystem.billing.facade.adaptee.OrderAdaptee;
+import biz.turnonline.ecosystem.billing.facade.adaptee.OrderPickupPointUpdateAdaptee;
 import biz.turnonline.ecosystem.billing.facade.adaptee.PricingAdaptee;
 import biz.turnonline.ecosystem.billing.facade.adaptee.PricingItemAdaptee;
 import biz.turnonline.ecosystem.billing.facade.adaptee.ProductAdaptee;
@@ -63,6 +64,7 @@ import biz.turnonline.ecosystem.billing.model.ProductPicture;
 import biz.turnonline.ecosystem.billing.model.ProductPublishing;
 import biz.turnonline.ecosystem.billing.model.PurchaseOrder;
 import biz.turnonline.ecosystem.billing.model.PureOffer;
+import biz.turnonline.ecosystem.billing.model.SelectedPickupPoint;
 import biz.turnonline.ecosystem.billing.model.Transaction;
 import biz.turnonline.ecosystem.billing.model.VatRate;
 import com.google.inject.AbstractModule;
@@ -159,6 +161,10 @@ public class ProductBillingAdapteeModule
         bind( new TypeLiteral<DeleteExecutorAdaptee<Order>>()
         {
         } ).to( OrderAdaptee.class );
+
+        bind( new TypeLiteral<UpdateExecutorAdaptee<SelectedPickupPoint>>()
+        {
+        } ).to( OrderPickupPointUpdateAdaptee.class );
 
         // Purchase Order
         bind( new TypeLiteral<GetExecutorAdaptee<PurchaseOrder>>()

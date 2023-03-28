@@ -32,7 +32,7 @@ import java.io.Serializable;
 public final class Sponsor
         implements Serializable
 {
-    private static final long serialVersionUID = 6900027952530350957L;
+    private static final long serialVersionUID = -9203905285647666711L;
 
     /**
      * The value may be {@code null}.
@@ -111,7 +111,7 @@ public final class Sponsor
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private CustomerPostalAddress postalAddress;
+    private PostalAddress postalAddress;
 
     /**
      * The value may be {@code null}.
@@ -356,7 +356,7 @@ public final class Sponsor
     /**
      * @return value or {@code null} for none
      */
-    public CustomerPostalAddress getPostalAddress()
+    public PostalAddress getPostalAddress()
     {
         return postalAddress;
     }
@@ -364,7 +364,7 @@ public final class Sponsor
     /**
      * @param postalAddress postalAddress or {@code null} for none
      */
-    public Sponsor setPostalAddress( CustomerPostalAddress postalAddress )
+    public Sponsor setPostalAddress( PostalAddress postalAddress )
     {
         this.postalAddress = postalAddress;
         return this;

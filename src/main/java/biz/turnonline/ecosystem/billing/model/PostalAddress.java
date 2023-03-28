@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 TurnOnline.biz s.r.o.
+ * Copyright (c) 2023 TurnOnline.biz s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,7 @@ package biz.turnonline.ecosystem.billing.model;
 import java.io.Serializable;
 
 /**
- * Model definition for CustomerPostalAddress.
+ * Model definition for PostalAddress.
  *
  * <p> This is the Java data model class that specifies how to parse/serialize into the JSON that is
  * transmitted over HTTP when working with the TurnOnline.biz Product Billing. For a detailed
@@ -29,10 +29,10 @@ import java.io.Serializable;
  *
  * @author Google, Inc.
  */
-public final class CustomerPostalAddress
+public final class PostalAddress
         implements Serializable
 {
-    private static final long serialVersionUID = 7716817853587526312L;
+    private static final long serialVersionUID = 5966756440438277807L;
 
     /**
      * The value may be {@code null}.
@@ -99,7 +99,7 @@ public final class CustomerPostalAddress
     /**
      * @param businessName businessName or {@code null} for none
      */
-    public CustomerPostalAddress setBusinessName( java.lang.String businessName )
+    public PostalAddress setBusinessName( java.lang.String businessName )
     {
         this.businessName = businessName;
         return this;
@@ -116,7 +116,7 @@ public final class CustomerPostalAddress
     /**
      * @param city city or {@code null} for none
      */
-    public CustomerPostalAddress setCity( java.lang.String city )
+    public PostalAddress setCity( java.lang.String city )
     {
         this.city = city;
         return this;
@@ -133,7 +133,7 @@ public final class CustomerPostalAddress
     /**
      * @param country country or {@code null} for none
      */
-    public CustomerPostalAddress setCountry( java.lang.String country )
+    public PostalAddress setCountry( java.lang.String country )
     {
         this.country = country;
         return this;
@@ -150,7 +150,7 @@ public final class CustomerPostalAddress
     /**
      * @param firstName firstName or {@code null} for none
      */
-    public CustomerPostalAddress setFirstName( java.lang.String firstName )
+    public PostalAddress setFirstName( java.lang.String firstName )
     {
         this.firstName = firstName;
         return this;
@@ -167,7 +167,7 @@ public final class CustomerPostalAddress
     /**
      * @param lastName lastName or {@code null} for none
      */
-    public CustomerPostalAddress setLastName( java.lang.String lastName )
+    public PostalAddress setLastName( java.lang.String lastName )
     {
         this.lastName = lastName;
         return this;
@@ -184,7 +184,7 @@ public final class CustomerPostalAddress
     /**
      * @param postcode postcode or {@code null} for none
      */
-    public CustomerPostalAddress setPostcode( java.lang.String postcode )
+    public PostalAddress setPostcode( java.lang.String postcode )
     {
         this.postcode = postcode;
         return this;
@@ -201,7 +201,7 @@ public final class CustomerPostalAddress
     /**
      * @param prefix prefix or {@code null} for none
      */
-    public CustomerPostalAddress setPrefix( java.lang.String prefix )
+    public PostalAddress setPrefix( java.lang.String prefix )
     {
         this.prefix = prefix;
         return this;
@@ -218,7 +218,7 @@ public final class CustomerPostalAddress
     /**
      * @param street street or {@code null} for none
      */
-    public CustomerPostalAddress setStreet( java.lang.String street )
+    public PostalAddress setStreet( java.lang.String street )
     {
         this.street = street;
         return this;
@@ -235,7 +235,7 @@ public final class CustomerPostalAddress
     /**
      * @param suffix suffix or {@code null} for none
      */
-    public CustomerPostalAddress setSuffix( java.lang.String suffix )
+    public PostalAddress setSuffix( java.lang.String suffix )
     {
         this.suffix = suffix;
         return this;

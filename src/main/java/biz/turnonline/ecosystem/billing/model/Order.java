@@ -32,21 +32,7 @@ import java.io.Serializable;
 public final class Order
         implements Serializable
 {
-    private static final long serialVersionUID = 3772817859300838938L;
-
-    static
-    {
-        // hack to force ProGuard to consider Invoice used, since otherwise it would be stripped out
-        // see https://github.com/google/google-api-java-client/issues/543
-        com.google.api.client.util.Data.nullOf( Invoice.class );
-    }
-
-    static
-    {
-        // hack to force ProGuard to consider PricingItem used, since otherwise it would be stripped out
-        // see https://github.com/google/google-api-java-client/issues/543
-        com.google.api.client.util.Data.nullOf( PricingItem.class );
-    }
+    private static final long serialVersionUID = 537661813139673004L;
 
     /**
      * The value may be {@code null}.
@@ -71,6 +57,12 @@ public final class Order
      */
     @com.google.api.client.util.Key
     private Customer customer;
+
+    /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
+    private ShippingDetails delivery;
 
     /**
      * The value may be {@code null}.
@@ -222,6 +214,23 @@ public final class Order
     public Order setCustomer( Customer customer )
     {
         this.customer = customer;
+        return this;
+    }
+
+    /**
+     * @return value or {@code null} for none
+     */
+    public ShippingDetails getDelivery()
+    {
+        return delivery;
+    }
+
+    /**
+     * @param delivery delivery or {@code null} for none
+     */
+    public Order setDelivery( ShippingDetails delivery )
+    {
+        this.delivery = delivery;
         return this;
     }
 

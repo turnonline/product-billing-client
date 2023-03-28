@@ -2573,13 +2573,13 @@
                 }
             ]
         },
-        "/v1/orders/{order_id}/pickup-point": {
+        "/v1/orders/{order_id}/delivery": {
             "put": {
                 "tags": [
                     "Order Management"
                 ],
                 "summary": "Adds or sets shipping item",
-                "description": "Adds or sets order item that's associated with product for specified shipping representing pickup-point.",
+                "description": "Adds or sets order item that's associated with product for specified carrier (code).",
                 "operationId": "setPickupPoint",
                 "consumes": [
                     "application/json"
@@ -2593,13 +2593,13 @@
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/SelectedPickupPoint"
+                            "$ref": "#/definitions/ShippingDetails"
                         }
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "Pickup-point has been successfully set. Pricing represents the updated list of order items.",
+                        "description": "Delivery has been successfully set. Pricing represents the updated list of order items.",
                         "schema": {
                             "$ref": "#/definitions/Pricing"
                         }
@@ -4703,6 +4703,10 @@
                     "description": "A customer to be invoiced.",
                     "$ref": "#/definitions/Customer"
                 },
+                "delivery": {
+                    "description": "The delivery shipping details. Specified only if the order represents goods and needs to be delivered to the customer.",
+                    "$ref": "#/definitions/ShippingDetails"
+                },
                 "description": {
                     "type": "string",
                     "description": "The offer detailed description. It might be a plain text or HTML document."
@@ -4987,7 +4991,7 @@
                 },
                 "postalAddress": {
                     "description": "The postal address details.",
-                    "$ref": "#/definitions/CustomerPostalAddress"
+                    "$ref": "#/definitions/PostalAddress"
                 },
                 "postcode": {
                     "type": "string",
@@ -5015,47 +5019,6 @@
                 }
             },
             "description": "A customer to be invoiced. In order to have a valid customer at invoice provide either an email (as a contact identification within address book) or customer properties. If a customer with provided email will be found within account's address book the matched customer will be associated with this order.\n\nOnce an account identification is being provided, it will be used as a source of the customer public details.\n\nCustomer values provided here (except email property) will update corresponding record within address book if contactEmail will be matched."
-        },
-        "CustomerPostalAddress": {
-            "type": "object",
-            "properties": {
-                "businessName": {
-                    "type": "string",
-                    "description": "The postal address business name."
-                },
-                "city": {
-                    "type": "string",
-                    "description": "The postal address city."
-                },
-                "country": {
-                    "type": "string",
-                    "description": "The postal address ISO 3166 alpha-2 country code. It’s case insensitive."
-                },
-                "firstName": {
-                    "type": "string",
-                    "description": "The postal address first name."
-                },
-                "lastName": {
-                    "type": "string",
-                    "description": "The postal address last name."
-                },
-                "postcode": {
-                    "type": "string",
-                    "description": "The postal address post code."
-                },
-                "prefix": {
-                    "type": "string",
-                    "description": "The postal address name prefix."
-                },
-                "street": {
-                    "type": "string",
-                    "description": "The postal address street and street number."
-                },
-                "suffix": {
-                    "type": "string",
-                    "description": "The postal address name suffix."
-                }
-            }
         },
         "Error": {
             "type": "object",
@@ -5989,6 +5952,10 @@
                     "description": "A customer to be invoiced.",
                     "$ref": "#/definitions/Customer"
                 },
+                "delivery": {
+                    "description": "The delivery shipping details. Specified only if the offer represents goods and needs to be delivered to the customer.",
+                    "$ref": "#/definitions/ShippingDetails"
+                },
                 "id": {
                     "type": "integer",
                     "format": "int64",
@@ -6118,6 +6085,48 @@
                 }
             },
             "description": "Client is allowed to change and set only these values:\n* TRIALING\n* ACTIVE\n* SUSPENDED"
+        },
+        "PostalAddress": {
+            "type": "object",
+            "properties": {
+                "businessName": {
+                    "type": "string",
+                    "description": "The business name."
+                },
+                "city": {
+                    "type": "string",
+                    "description": "The city."
+                },
+                "country": {
+                    "type": "string",
+                    "description": "The ISO 3166 alpha-2 country code. It's case insensitive."
+                },
+                "firstName": {
+                    "type": "string",
+                    "description": "The first name."
+                },
+                "lastName": {
+                    "type": "string",
+                    "description": "The last name."
+                },
+                "postcode": {
+                    "type": "string",
+                    "description": "The post code."
+                },
+                "prefix": {
+                    "type": "string",
+                    "description": "The name prefix."
+                },
+                "street": {
+                    "type": "string",
+                    "description": "The street and street number."
+                },
+                "suffix": {
+                    "type": "string",
+                    "description": "The name suffix."
+                }
+            },
+            "description": "The postal address details."
         },
         "Pricing": {
             "type": "object",
@@ -6801,6 +6810,10 @@
                     "description": "Invoiced customer.",
                     "$ref": "#/definitions/Customer"
                 },
+                "delivery": {
+                    "description": "The delivery shipping details. Specified only if the order represents goods and needs to be delivered to the customer.",
+                    "$ref": "#/definitions/ShippingDetails"
+                },
                 "id": {
                     "type": "integer",
                     "format": "int64",
@@ -6956,20 +6969,28 @@
             "type": "object",
             "description": "The pure offer definition, acts as a request."
         },
-        "SelectedPickupPoint": {
-            "type": "object",
+        "ShippingDetails": {
+            "description": "The delivery shipping details.",
             "properties": {
-                "externalId": {
-                    "type": "string",
-                    "description": "The pickup point unique identification for the selected shipping company."
+                "address": {
+                    "description": "The shipping address, the address where to deliver a parcel.",
+                    "$ref": "#/definitions/PostalAddress"
                 },
-                "shipping": {
+                "carrier": {
                     "type": "string",
-                    "description": "Shipping company code, the one from the supported list.",
+                    "description": "A company name that undertakes the professional conveyance of goods."
+                },
+                "code": {
+                    "type": "string",
+                    "description": "A carrier company code used within ConnecSys, the one from the supported list.",
                     "default": "ZASILKOVNA",
                     "enum": [
                         "ZASILKOVNA"
                     ]
+                },
+                "externalId": {
+                    "type": "string",
+                    "description": "The pickup point unique identification for the specified carrier."
                 }
             }
         },
@@ -7027,7 +7048,7 @@
                 },
                 "postalAddress": {
                     "description": "The sponsor postal address details.",
-                    "$ref": "#/definitions/CustomerPostalAddress"
+                    "$ref": "#/definitions/PostalAddress"
                 },
                 "postcode": {
                     "type": "string",

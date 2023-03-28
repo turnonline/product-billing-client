@@ -1,7 +1,7 @@
 package biz.turnonline.ecosystem.billing.facade.adaptee;
 
 import biz.turnonline.ecosystem.billing.ProductBilling;
-import biz.turnonline.ecosystem.billing.model.SelectedPickupPoint;
+import biz.turnonline.ecosystem.billing.model.ShippingDetails;
 import org.ctoolkit.restapi.client.Identifier;
 import org.ctoolkit.restapi.client.adaptee.MediaProvider;
 import org.ctoolkit.restapi.client.adapter.AbstractUpdateExecutorAdaptee;
@@ -13,24 +13,24 @@ import javax.inject.Provider;
 import java.io.IOException;
 
 /**
- * The {@link SelectedPickupPoint} PUT adaptee implementation.
+ * The {@link ShippingDetails} PUT adaptee implementation.
  *
  * @author <a href="mailto:medvegy@turnonline.biz">Aurel Medvegy</a>
  */
-public class OrderPickupPointUpdateAdaptee
-        extends AbstractUpdateExecutorAdaptee<ProductBilling, SelectedPickupPoint>
+public class OrderShippingDetailsUpdateAdaptee
+        extends AbstractUpdateExecutorAdaptee<ProductBilling, ShippingDetails>
 {
     @Inject
-    public OrderPickupPointUpdateAdaptee( Provider<ProductBilling> client )
+    public OrderShippingDetailsUpdateAdaptee( Provider<ProductBilling> client )
     {
         super( client );
     }
 
     @Override
-    public Object prepareUpdate( @Nonnull SelectedPickupPoint resource,
+    public Object prepareUpdate( @Nonnull ShippingDetails resource,
                                  @Nonnull Identifier identifier,
                                  @Nullable MediaProvider provider ) throws IOException
     {
-        return client().orders().pickupPoint( identifier.getLong(), resource );
+        return client().orders().delivery( identifier.getLong(), resource );
     }
 }

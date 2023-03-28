@@ -32,7 +32,7 @@ import java.io.Serializable;
 public final class Customer
         implements Serializable
 {
-    private static final long serialVersionUID = 4256332172514769880L;
+    private static final long serialVersionUID = -1639058345722483848L;
 
     /**
      * The value may be {@code null}.
@@ -117,7 +117,7 @@ public final class Customer
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
-    private CustomerPostalAddress postalAddress;
+    private PostalAddress postalAddress;
 
     /**
      * The value may be {@code null}.
@@ -379,7 +379,7 @@ public final class Customer
     /**
      * @return value or {@code null} for none
      */
-    public CustomerPostalAddress getPostalAddress()
+    public PostalAddress getPostalAddress()
     {
         return postalAddress;
     }
@@ -387,7 +387,7 @@ public final class Customer
     /**
      * @param postalAddress postalAddress or {@code null} for none
      */
-    public Customer setPostalAddress( CustomerPostalAddress postalAddress )
+    public Customer setPostalAddress( PostalAddress postalAddress )
     {
         this.postalAddress = postalAddress;
         return this;

@@ -32,14 +32,7 @@ import java.io.Serializable;
 public final class CompleteOffer
         implements Serializable
 {
-    private static final long serialVersionUID = -7184925196815089539L;
-
-    static
-    {
-        // hack to force ProGuard to consider PricingItem used, since otherwise it would be stripped out
-        // see https://github.com/google/google-api-java-client/issues/543
-        com.google.api.client.util.Data.nullOf( PricingItem.class );
-    }
+    private static final long serialVersionUID = 520026110029219133L;
 
     /**
      * The value may be {@code null}.
@@ -64,6 +57,12 @@ public final class CompleteOffer
      */
     @com.google.api.client.util.Key
     private Customer customer;
+
+    /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
+    private ShippingDetails delivery;
 
     /**
      * The value may be {@code null}.
@@ -269,6 +268,23 @@ public final class CompleteOffer
     public CompleteOffer setCustomer( Customer customer )
     {
         this.customer = customer;
+        return this;
+    }
+
+    /**
+     * @return value or {@code null} for none
+     */
+    public ShippingDetails getDelivery()
+    {
+        return delivery;
+    }
+
+    /**
+     * @param delivery delivery or {@code null} for none
+     */
+    public CompleteOffer setDelivery( ShippingDetails delivery )
+    {
+        this.delivery = delivery;
         return this;
     }
 

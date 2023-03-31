@@ -6982,7 +6982,7 @@
                 },
                 "carrier": {
                     "type": "string",
-                    "description": "A company name that undertakes the professional conveyance of goods."
+                    "description": "A company name that undertakes the professional conveyance of goods. (Read only)"
                 },
                 "code": {
                     "type": "string",

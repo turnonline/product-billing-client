@@ -6970,6 +6970,10 @@
             "description": "The pure offer definition, acts as a request."
         },
         "ShippingDetails": {
+            "type": "object",
+            "required": [
+                "code"
+            ],
             "description": "The delivery shipping details.",
             "properties": {
                 "address": {

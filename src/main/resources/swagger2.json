@@ -6986,15 +6986,7 @@
                 },
                 "code": {
                     "type": "string",
-                    "description": "A carrier company code used within ConnecSys, the one from the supported list.",
-                    "default": "ZASILKOVNA",
-                    "enum": [
-                        "ZASILKOVNA",
-                        "SLOVENSKA_POSTA_BALIK_NA_ADRESU",
-                        "SLOVENSKA_POSTA_EXPRES_BALIK_NA_ADRESU",
-                        "TOPTRANS",
-                        "KOKISKASHOP"
-                    ]
+                    "description": "A carrier company code used within ConnecSys, the one from the supported list."
                 },
                 "externalId": {
                     "type": "string",

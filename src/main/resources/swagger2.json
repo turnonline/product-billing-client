@@ -2580,7 +2580,7 @@
                 ],
                 "summary": "Adds or sets shipping item",
                 "description": "Adds or sets order item that's associated with product for specified carrier (code).",
-                "operationId": "setPickupPoint",
+                "operationId": "setDelivery",
                 "consumes": [
                     "application/json"
                 ],

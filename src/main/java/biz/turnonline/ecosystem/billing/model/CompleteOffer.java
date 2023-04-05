@@ -32,7 +32,7 @@ import java.io.Serializable;
 public final class CompleteOffer
         implements Serializable
 {
-    private static final long serialVersionUID = 520026110029219133L;
+    private static final long serialVersionUID = -77464044952051881L;
 
     /**
      * The value may be {@code null}.
@@ -154,6 +154,13 @@ public final class CompleteOffer
      */
     @com.google.api.client.util.Key
     private java.lang.String snippet;
+
+    /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
+    @com.google.api.client.json.JsonString
+    private java.lang.Long sourceId;
 
     /**
      * The value may be {@code null}.
@@ -541,6 +548,22 @@ public final class CompleteOffer
     {
         this.snippet = snippet;
         return this;
+    }
+
+    /**
+     * @return value or {@code null} for none
+     */
+    public Long getSourceId()
+    {
+        return sourceId;
+    }
+
+    /**
+     * @param sourceId sourceId or {@code null} for none
+     */
+    public void setSourceId( Long sourceId )
+    {
+        this.sourceId = sourceId;
     }
 
     /**

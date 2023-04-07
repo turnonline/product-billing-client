@@ -561,9 +561,10 @@ public final class CompleteOffer
     /**
      * @param sourceId sourceId or {@code null} for none
      */
-    public void setSourceId( Long sourceId )
+    public CompleteOffer setSourceId( Long sourceId )
     {
         this.sourceId = sourceId;
+        return this;
     }
 
     /**

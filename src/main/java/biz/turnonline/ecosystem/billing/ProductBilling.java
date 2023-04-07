@@ -41,6 +41,17 @@ public class ProductBilling
         extends com.google.api.client.googleapis.services.json.AbstractGoogleJsonClient
 {
 
+    // Note: Leave this static initializer at the top of the file.
+    static
+    {
+        com.google.api.client.util.Preconditions.checkState(
+                com.google.api.client.googleapis.GoogleUtils.MAJOR_VERSION == 1 &&
+                        com.google.api.client.googleapis.GoogleUtils.MINOR_VERSION >= 15,
+                "You are currently running with version %s of google-api-client. " +
+                        "You need at least version 1.15 of google-api-client to run version " +
+                        "1.25.0 of the TurnOnline.biz Product Billing library.", com.google.api.client.googleapis.GoogleUtils.VERSION );
+    }
+
     /**
      * The default encoded root URL of the service. This is determined when the library is generated
      * and normally should not be changed.
@@ -70,17 +81,6 @@ public class ProductBilling
      * and normally should not be changed.
      */
     public static final String DEFAULT_BASE_URL = DEFAULT_ROOT_URL + DEFAULT_SERVICE_PATH;
-
-    // Note: Leave this static initializer at the top of the file.
-    static
-    {
-        com.google.api.client.util.Preconditions.checkState(
-                com.google.api.client.googleapis.GoogleUtils.MAJOR_VERSION == 1 &&
-                        com.google.api.client.googleapis.GoogleUtils.MINOR_VERSION >= 15,
-                "You are currently running with version %s of google-api-client. " +
-                        "You need at least version 1.15 of google-api-client to run version " +
-                        "1.25.0 of the TurnOnline.biz Product Billing library.", com.google.api.client.googleapis.GoogleUtils.VERSION );
-    }
 
     /**
      * Constructor.
@@ -147,6 +147,111 @@ public class ProductBilling
     }
 
     /**
+     * The "billing_units" collection of methods.
+     */
+    public class BillingUnits
+    {
+
+        /**
+         * Create a request for the method "billing_units.list".
+         * <p>
+         * This request holds the parameters needed by the billing server.  After setting any optional
+         * parameters, call the {@link List#execute()} method to invoke the remote operation.
+         *
+         * @return the request
+         */
+        public List list() throws java.io.IOException
+        {
+            List result = new List();
+            initialize( result );
+            return result;
+        }
+
+        public class List
+                extends ProductBillingRequest<biz.turnonline.ecosystem.billing.model.BillingUnitCollection>
+        {
+
+            private static final String REST_PATH = "codebook/billing-units";
+
+            /**
+             * Create a request for the method "billing_units.list".
+             * <p>
+             * This request holds the parameters needed by the the billing server.  After setting any optional
+             * parameters, call the {@link List#execute()} method to invoke the remote operation. <p> {@link
+             * List#initialize(com.google.api.client.googleapis.services.AbstractGoogleClientRequest)} must be
+             * called to initialize this instance immediately after invoking the constructor. </p>
+             *
+             * @since 1.13
+             */
+            protected List()
+            {
+                super( ProductBilling.this, "GET", REST_PATH, null, biz.turnonline.ecosystem.billing.model.BillingUnitCollection.class );
+            }
+
+            @Override
+            public com.google.api.client.http.HttpResponse executeUsingHead() throws java.io.IOException
+            {
+                return super.executeUsingHead();
+            }
+
+            @Override
+            public com.google.api.client.http.HttpRequest buildHttpRequestUsingHead() throws java.io.IOException
+            {
+                return super.buildHttpRequestUsingHead();
+            }
+
+            @Override
+            public List setAlt( java.lang.String alt )
+            {
+                return ( List ) super.setAlt( alt );
+            }
+
+            @Override
+            public List setFields( java.lang.String fields )
+            {
+                return ( List ) super.setFields( fields );
+            }
+
+            @Override
+            public List setKey( java.lang.String key )
+            {
+                return ( List ) super.setKey( key );
+            }
+
+            @Override
+            public List setOauthToken( java.lang.String oauthToken )
+            {
+                return ( List ) super.setOauthToken( oauthToken );
+            }
+
+            @Override
+            public List setPrettyPrint( java.lang.Boolean prettyPrint )
+            {
+                return ( List ) super.setPrettyPrint( prettyPrint );
+            }
+
+            @Override
+            public List setQuotaUser( java.lang.String quotaUser )
+            {
+                return ( List ) super.setQuotaUser( quotaUser );
+            }
+
+            @Override
+            public List setUserIp( java.lang.String userIp )
+            {
+                return ( List ) super.setUserIp( userIp );
+            }
+
+            @Override
+            public List set( String parameterName, Object value )
+            {
+                return ( List ) super.set( parameterName, value );
+            }
+        }
+
+    }
+
+    /**
      * An accessor for creating requests from the Categories collection.
      *
      * <p>The typical use is:</p>
@@ -160,6 +265,111 @@ public class ProductBilling
     public Categories categories()
     {
         return new Categories();
+    }
+
+    /**
+     * The "categories" collection of methods.
+     */
+    public class Categories
+    {
+
+        /**
+         * Create a request for the method "categories.list".
+         * <p>
+         * This request holds the parameters needed by the billing server.  After setting any optional
+         * parameters, call the {@link List#execute()} method to invoke the remote operation.
+         *
+         * @return the request
+         */
+        public List list() throws java.io.IOException
+        {
+            List result = new List();
+            initialize( result );
+            return result;
+        }
+
+        public class List
+                extends ProductBillingRequest<biz.turnonline.ecosystem.billing.model.CategoryCollection>
+        {
+
+            private static final String REST_PATH = "codebook/categories";
+
+            /**
+             * Create a request for the method "categories.list".
+             * <p>
+             * This request holds the parameters needed by the the billing server.  After setting any optional
+             * parameters, call the {@link List#execute()} method to invoke the remote operation. <p> {@link
+             * List#initialize(com.google.api.client.googleapis.services.AbstractGoogleClientRequest)} must be
+             * called to initialize this instance immediately after invoking the constructor. </p>
+             *
+             * @since 1.13
+             */
+            protected List()
+            {
+                super( ProductBilling.this, "GET", REST_PATH, null, biz.turnonline.ecosystem.billing.model.CategoryCollection.class );
+            }
+
+            @Override
+            public com.google.api.client.http.HttpResponse executeUsingHead() throws java.io.IOException
+            {
+                return super.executeUsingHead();
+            }
+
+            @Override
+            public com.google.api.client.http.HttpRequest buildHttpRequestUsingHead() throws java.io.IOException
+            {
+                return super.buildHttpRequestUsingHead();
+            }
+
+            @Override
+            public List setAlt( java.lang.String alt )
+            {
+                return ( List ) super.setAlt( alt );
+            }
+
+            @Override
+            public List setFields( java.lang.String fields )
+            {
+                return ( List ) super.setFields( fields );
+            }
+
+            @Override
+            public List setKey( java.lang.String key )
+            {
+                return ( List ) super.setKey( key );
+            }
+
+            @Override
+            public List setOauthToken( java.lang.String oauthToken )
+            {
+                return ( List ) super.setOauthToken( oauthToken );
+            }
+
+            @Override
+            public List setPrettyPrint( java.lang.Boolean prettyPrint )
+            {
+                return ( List ) super.setPrettyPrint( prettyPrint );
+            }
+
+            @Override
+            public List setQuotaUser( java.lang.String quotaUser )
+            {
+                return ( List ) super.setQuotaUser( quotaUser );
+            }
+
+            @Override
+            public List setUserIp( java.lang.String userIp )
+            {
+                return ( List ) super.setUserIp( userIp );
+            }
+
+            @Override
+            public List set( String parameterName, Object value )
+            {
+                return ( List ) super.set( parameterName, value );
+            }
+        }
+
     }
 
     /**
@@ -243,6 +453,111 @@ public class ProductBilling
     }
 
     /**
+     * The "number_series" collection of methods.
+     */
+    public class NumberSeries
+    {
+
+        /**
+         * Create a request for the method "number_series.list".
+         * <p>
+         * This request holds the parameters needed by the billing server.  After setting any optional
+         * parameters, call the {@link List#execute()} method to invoke the remote operation.
+         *
+         * @return the request
+         */
+        public List list() throws java.io.IOException
+        {
+            List result = new List();
+            initialize( result );
+            return result;
+        }
+
+        public class List
+                extends ProductBillingRequest<biz.turnonline.ecosystem.billing.model.NumberSeriesCollection>
+        {
+
+            private static final String REST_PATH = "codebook/number-series";
+
+            /**
+             * Create a request for the method "number_series.list".
+             * <p>
+             * This request holds the parameters needed by the the billing server.  After setting any optional
+             * parameters, call the {@link List#execute()} method to invoke the remote operation. <p> {@link
+             * List#initialize(com.google.api.client.googleapis.services.AbstractGoogleClientRequest)} must be
+             * called to initialize this instance immediately after invoking the constructor. </p>
+             *
+             * @since 1.13
+             */
+            protected List()
+            {
+                super( ProductBilling.this, "GET", REST_PATH, null, biz.turnonline.ecosystem.billing.model.NumberSeriesCollection.class );
+            }
+
+            @Override
+            public com.google.api.client.http.HttpResponse executeUsingHead() throws java.io.IOException
+            {
+                return super.executeUsingHead();
+            }
+
+            @Override
+            public com.google.api.client.http.HttpRequest buildHttpRequestUsingHead() throws java.io.IOException
+            {
+                return super.buildHttpRequestUsingHead();
+            }
+
+            @Override
+            public List setAlt( java.lang.String alt )
+            {
+                return ( List ) super.setAlt( alt );
+            }
+
+            @Override
+            public List setFields( java.lang.String fields )
+            {
+                return ( List ) super.setFields( fields );
+            }
+
+            @Override
+            public List setKey( java.lang.String key )
+            {
+                return ( List ) super.setKey( key );
+            }
+
+            @Override
+            public List setOauthToken( java.lang.String oauthToken )
+            {
+                return ( List ) super.setOauthToken( oauthToken );
+            }
+
+            @Override
+            public List setPrettyPrint( java.lang.Boolean prettyPrint )
+            {
+                return ( List ) super.setPrettyPrint( prettyPrint );
+            }
+
+            @Override
+            public List setQuotaUser( java.lang.String quotaUser )
+            {
+                return ( List ) super.setQuotaUser( quotaUser );
+            }
+
+            @Override
+            public List setUserIp( java.lang.String userIp )
+            {
+                return ( List ) super.setUserIp( userIp );
+            }
+
+            @Override
+            public List set( String parameterName, Object value )
+            {
+                return ( List ) super.set( parameterName, value );
+            }
+        }
+
+    }
+
+    /**
      * An accessor for creating requests from the Prices collection.
      *
      * <p>The typical use is:</p>
@@ -320,6 +635,101 @@ public class ProductBilling
     public VatRates vatRates()
     {
         return new VatRates();
+    }
+
+    /**
+     * The "prices" collection of methods.
+     */
+    public class Prices
+    {
+
+        /**
+         * Create a request for the method "prices.insert".
+         * <p>
+         * This request holds the parameters needed by the billing server.  After setting any optional
+         * parameters, call the {@link Insert#execute()} method to invoke the remote operation.
+         *
+         * @param content the {@link biz.turnonline.ecosystem.billing.model.Pricing}
+         * @return the request
+         */
+        public Insert insert( biz.turnonline.ecosystem.billing.model.Pricing content ) throws java.io.IOException
+        {
+            Insert result = new Insert( content );
+            initialize( result );
+            return result;
+        }
+
+        public class Insert
+                extends ProductBillingRequest<biz.turnonline.ecosystem.billing.model.Pricing>
+        {
+
+            private static final String REST_PATH = "prices";
+
+            /**
+             * Create a request for the method "prices.insert".
+             * <p>
+             * This request holds the parameters needed by the the billing server.  After setting any optional
+             * parameters, call the {@link Insert#execute()} method to invoke the remote operation. <p> {@link
+             * Insert#initialize(com.google.api.client.googleapis.services.AbstractGoogleClientRequest)} must
+             * be called to initialize this instance immediately after invoking the constructor. </p>
+             *
+             * @param content the {@link biz.turnonline.ecosystem.billing.model.Pricing}
+             * @since 1.13
+             */
+            protected Insert( biz.turnonline.ecosystem.billing.model.Pricing content )
+            {
+                super( ProductBilling.this, "POST", REST_PATH, content, biz.turnonline.ecosystem.billing.model.Pricing.class );
+            }
+
+            @Override
+            public Insert setAlt( java.lang.String alt )
+            {
+                return ( Insert ) super.setAlt( alt );
+            }
+
+            @Override
+            public Insert setFields( java.lang.String fields )
+            {
+                return ( Insert ) super.setFields( fields );
+            }
+
+            @Override
+            public Insert setKey( java.lang.String key )
+            {
+                return ( Insert ) super.setKey( key );
+            }
+
+            @Override
+            public Insert setOauthToken( java.lang.String oauthToken )
+            {
+                return ( Insert ) super.setOauthToken( oauthToken );
+            }
+
+            @Override
+            public Insert setPrettyPrint( java.lang.Boolean prettyPrint )
+            {
+                return ( Insert ) super.setPrettyPrint( prettyPrint );
+            }
+
+            @Override
+            public Insert setQuotaUser( java.lang.String quotaUser )
+            {
+                return ( Insert ) super.setQuotaUser( quotaUser );
+            }
+
+            @Override
+            public Insert setUserIp( java.lang.String userIp )
+            {
+                return ( Insert ) super.setUserIp( userIp );
+            }
+
+            @Override
+            public Insert set( String parameterName, Object value )
+            {
+                return ( Insert ) super.set( parameterName, value );
+            }
+        }
+
     }
 
     /**
@@ -448,216 +858,6 @@ public class ProductBilling
     }
 
     /**
-     * The "billing_units" collection of methods.
-     */
-    public class BillingUnits
-    {
-
-        /**
-         * Create a request for the method "billing_units.list".
-         * <p>
-         * This request holds the parameters needed by the billing server.  After setting any optional
-         * parameters, call the {@link List#execute()} method to invoke the remote operation.
-         *
-         * @return the request
-         */
-        public List list() throws java.io.IOException
-        {
-            List result = new List();
-            initialize( result );
-            return result;
-        }
-
-        public class List
-                extends ProductBillingRequest<biz.turnonline.ecosystem.billing.model.BillingUnitCollection>
-        {
-
-            private static final String REST_PATH = "codebook/billing-units";
-
-            /**
-             * Create a request for the method "billing_units.list".
-             * <p>
-             * This request holds the parameters needed by the the billing server.  After setting any optional
-             * parameters, call the {@link List#execute()} method to invoke the remote operation. <p> {@link
-             * List#initialize(com.google.api.client.googleapis.services.AbstractGoogleClientRequest)} must be
-             * called to initialize this instance immediately after invoking the constructor. </p>
-             *
-             * @since 1.13
-             */
-            protected List()
-            {
-                super( ProductBilling.this, "GET", REST_PATH, null, biz.turnonline.ecosystem.billing.model.BillingUnitCollection.class );
-            }
-
-            @Override
-            public com.google.api.client.http.HttpResponse executeUsingHead() throws java.io.IOException
-            {
-                return super.executeUsingHead();
-            }
-
-            @Override
-            public com.google.api.client.http.HttpRequest buildHttpRequestUsingHead() throws java.io.IOException
-            {
-                return super.buildHttpRequestUsingHead();
-            }
-
-            @Override
-            public List setAlt( java.lang.String alt )
-            {
-                return ( List ) super.setAlt( alt );
-            }
-
-            @Override
-            public List setFields( java.lang.String fields )
-            {
-                return ( List ) super.setFields( fields );
-            }
-
-            @Override
-            public List setKey( java.lang.String key )
-            {
-                return ( List ) super.setKey( key );
-            }
-
-            @Override
-            public List setOauthToken( java.lang.String oauthToken )
-            {
-                return ( List ) super.setOauthToken( oauthToken );
-            }
-
-            @Override
-            public List setPrettyPrint( java.lang.Boolean prettyPrint )
-            {
-                return ( List ) super.setPrettyPrint( prettyPrint );
-            }
-
-            @Override
-            public List setQuotaUser( java.lang.String quotaUser )
-            {
-                return ( List ) super.setQuotaUser( quotaUser );
-            }
-
-            @Override
-            public List setUserIp( java.lang.String userIp )
-            {
-                return ( List ) super.setUserIp( userIp );
-            }
-
-            @Override
-            public List set( String parameterName, Object value )
-            {
-                return ( List ) super.set( parameterName, value );
-            }
-        }
-
-    }
-
-    /**
-     * The "categories" collection of methods.
-     */
-    public class Categories
-    {
-
-        /**
-         * Create a request for the method "categories.list".
-         * <p>
-         * This request holds the parameters needed by the billing server.  After setting any optional
-         * parameters, call the {@link List#execute()} method to invoke the remote operation.
-         *
-         * @return the request
-         */
-        public List list() throws java.io.IOException
-        {
-            List result = new List();
-            initialize( result );
-            return result;
-        }
-
-        public class List
-                extends ProductBillingRequest<biz.turnonline.ecosystem.billing.model.CategoryCollection>
-        {
-
-            private static final String REST_PATH = "codebook/categories";
-
-            /**
-             * Create a request for the method "categories.list".
-             * <p>
-             * This request holds the parameters needed by the the billing server.  After setting any optional
-             * parameters, call the {@link List#execute()} method to invoke the remote operation. <p> {@link
-             * List#initialize(com.google.api.client.googleapis.services.AbstractGoogleClientRequest)} must be
-             * called to initialize this instance immediately after invoking the constructor. </p>
-             *
-             * @since 1.13
-             */
-            protected List()
-            {
-                super( ProductBilling.this, "GET", REST_PATH, null, biz.turnonline.ecosystem.billing.model.CategoryCollection.class );
-            }
-
-            @Override
-            public com.google.api.client.http.HttpResponse executeUsingHead() throws java.io.IOException
-            {
-                return super.executeUsingHead();
-            }
-
-            @Override
-            public com.google.api.client.http.HttpRequest buildHttpRequestUsingHead() throws java.io.IOException
-            {
-                return super.buildHttpRequestUsingHead();
-            }
-
-            @Override
-            public List setAlt( java.lang.String alt )
-            {
-                return ( List ) super.setAlt( alt );
-            }
-
-            @Override
-            public List setFields( java.lang.String fields )
-            {
-                return ( List ) super.setFields( fields );
-            }
-
-            @Override
-            public List setKey( java.lang.String key )
-            {
-                return ( List ) super.setKey( key );
-            }
-
-            @Override
-            public List setOauthToken( java.lang.String oauthToken )
-            {
-                return ( List ) super.setOauthToken( oauthToken );
-            }
-
-            @Override
-            public List setPrettyPrint( java.lang.Boolean prettyPrint )
-            {
-                return ( List ) super.setPrettyPrint( prettyPrint );
-            }
-
-            @Override
-            public List setQuotaUser( java.lang.String quotaUser )
-            {
-                return ( List ) super.setQuotaUser( quotaUser );
-            }
-
-            @Override
-            public List setUserIp( java.lang.String userIp )
-            {
-                return ( List ) super.setUserIp( userIp );
-            }
-
-            @Override
-            public List set( String parameterName, Object value )
-            {
-                return ( List ) super.set( parameterName, value );
-            }
-        }
-
-    }
-
-    /**
      * The "configs" collection of methods.
      */
     public class Configs
@@ -703,9 +903,6 @@ public class ProductBilling
         {
 
             private static final String REST_PATH = "configs/{profile_name}";
-
-            @com.google.api.client.util.Key( "profile_name" )
-            private java.lang.String profileName;
 
             /**
              * Create a request for the method "configs.delete".
@@ -766,6 +963,9 @@ public class ProductBilling
                 return ( Delete ) super.setUserIp( userIp );
             }
 
+            @com.google.api.client.util.Key( "profile_name" )
+            private java.lang.String profileName;
+
             /**
              *
              */
@@ -792,9 +992,6 @@ public class ProductBilling
         {
 
             private static final String REST_PATH = "configs/{profile_name}";
-
-            @com.google.api.client.util.Key( "profile_name" )
-            private java.lang.String profileName;
 
             /**
              * Create a request for the method "configs.update".
@@ -857,6 +1054,9 @@ public class ProductBilling
                 return ( Update ) super.setUserIp( userIp );
             }
 
+            @com.google.api.client.util.Key( "profile_name" )
+            private java.lang.String profileName;
+
             /**
              *
              */
@@ -898,21 +1098,6 @@ public class ProductBilling
         public Insert insert( biz.turnonline.ecosystem.billing.model.Invoice content ) throws java.io.IOException
         {
             Insert result = new Insert( content );
-            initialize( result );
-            return result;
-        }
-
-        /**
-         * Create a request for the method "invoices.list".
-         * <p>
-         * This request holds the parameters needed by the billing server.  After setting any optional
-         * parameters, call the {@link List#execute()} method to invoke the remote operation.
-         *
-         * @return the request
-         */
-        public List list() throws java.io.IOException
-        {
-            List result = new List();
             initialize( result );
             return result;
         }
@@ -988,20 +1173,26 @@ public class ProductBilling
             }
         }
 
+        /**
+         * Create a request for the method "invoices.list".
+         * <p>
+         * This request holds the parameters needed by the billing server.  After setting any optional
+         * parameters, call the {@link List#execute()} method to invoke the remote operation.
+         *
+         * @return the request
+         */
+        public List list() throws java.io.IOException
+        {
+            List result = new List();
+            initialize( result );
+            return result;
+        }
+
         public class List
                 extends ProductBillingRequest<biz.turnonline.ecosystem.billing.model.InvoiceCollection>
         {
 
             private static final String REST_PATH = "invoices";
-
-            @com.google.api.client.util.Key
-            private java.lang.Boolean lightList;
-
-            @com.google.api.client.util.Key
-            private java.lang.Integer limit;
-
-            @com.google.api.client.util.Key
-            private java.lang.Integer offset;
 
             /**
              * Create a request for the method "invoices.list".
@@ -1072,6 +1263,9 @@ public class ProductBilling
                 return ( List ) super.setUserIp( userIp );
             }
 
+            @com.google.api.client.util.Key
+            private java.lang.Boolean lightList;
+
             /**
              * [ default: false]
              * [
@@ -1080,6 +1274,9 @@ public class ProductBilling
             {
                 return lightList;
             }
+
+            @com.google.api.client.util.Key
+            private java.lang.Integer limit;
 
             /**
              * Convenience method that returns only {@link Boolean#TRUE} or {@link Boolean#FALSE}.
@@ -1110,11 +1307,8 @@ public class ProductBilling
                 return lightList;
             }
 
-            public List setLightList( java.lang.Boolean lightList )
-            {
-                this.lightList = lightList;
-                return this;
-            }
+            @com.google.api.client.util.Key
+            private java.lang.Integer offset;
 
             /**
              * [ default: 10]
@@ -1131,6 +1325,12 @@ public class ProductBilling
                 return this;
             }
 
+            public List setLightList( java.lang.Boolean lightList )
+            {
+                this.lightList = lightList;
+                return this;
+            }
+
             /**
              * [ default: 0]
              * [
@@ -1144,111 +1344,6 @@ public class ProductBilling
             {
                 this.offset = offset;
                 return this;
-            }
-
-            @Override
-            public List set( String parameterName, Object value )
-            {
-                return ( List ) super.set( parameterName, value );
-            }
-        }
-
-    }
-
-    /**
-     * The "number_series" collection of methods.
-     */
-    public class NumberSeries
-    {
-
-        /**
-         * Create a request for the method "number_series.list".
-         * <p>
-         * This request holds the parameters needed by the billing server.  After setting any optional
-         * parameters, call the {@link List#execute()} method to invoke the remote operation.
-         *
-         * @return the request
-         */
-        public List list() throws java.io.IOException
-        {
-            List result = new List();
-            initialize( result );
-            return result;
-        }
-
-        public class List
-                extends ProductBillingRequest<biz.turnonline.ecosystem.billing.model.NumberSeriesCollection>
-        {
-
-            private static final String REST_PATH = "codebook/number-series";
-
-            /**
-             * Create a request for the method "number_series.list".
-             * <p>
-             * This request holds the parameters needed by the the billing server.  After setting any optional
-             * parameters, call the {@link List#execute()} method to invoke the remote operation. <p> {@link
-             * List#initialize(com.google.api.client.googleapis.services.AbstractGoogleClientRequest)} must be
-             * called to initialize this instance immediately after invoking the constructor. </p>
-             *
-             * @since 1.13
-             */
-            protected List()
-            {
-                super( ProductBilling.this, "GET", REST_PATH, null, biz.turnonline.ecosystem.billing.model.NumberSeriesCollection.class );
-            }
-
-            @Override
-            public com.google.api.client.http.HttpResponse executeUsingHead() throws java.io.IOException
-            {
-                return super.executeUsingHead();
-            }
-
-            @Override
-            public com.google.api.client.http.HttpRequest buildHttpRequestUsingHead() throws java.io.IOException
-            {
-                return super.buildHttpRequestUsingHead();
-            }
-
-            @Override
-            public List setAlt( java.lang.String alt )
-            {
-                return ( List ) super.setAlt( alt );
-            }
-
-            @Override
-            public List setFields( java.lang.String fields )
-            {
-                return ( List ) super.setFields( fields );
-            }
-
-            @Override
-            public List setKey( java.lang.String key )
-            {
-                return ( List ) super.setKey( key );
-            }
-
-            @Override
-            public List setOauthToken( java.lang.String oauthToken )
-            {
-                return ( List ) super.setOauthToken( oauthToken );
-            }
-
-            @Override
-            public List setPrettyPrint( java.lang.Boolean prettyPrint )
-            {
-                return ( List ) super.setPrettyPrint( prettyPrint );
-            }
-
-            @Override
-            public List setQuotaUser( java.lang.String quotaUser )
-            {
-                return ( List ) super.setQuotaUser( quotaUser );
-            }
-
-            @Override
-            public List setUserIp( java.lang.String userIp )
-            {
-                return ( List ) super.setUserIp( userIp );
             }
 
             @Override
@@ -1289,11 +1384,13 @@ public class ProductBilling
          * parameters, call the {@link Clone#execute()} method to invoke the remote operation.
          *
          * @param offerId
+         * @param content the {@link biz.turnonline.ecosystem.billing.model.Customer}
          * @return the request
          */
-        public Clone clone( java.lang.Long offerId ) throws java.io.IOException
+        public Clone clone( java.lang.Long offerId, biz.turnonline.ecosystem.billing.model.Customer content )
+                throws java.io.IOException
         {
-            Clone result = new Clone( offerId );
+            Clone result = new Clone( offerId, content );
             initialize( result );
             return result;
         }
@@ -1401,9 +1498,6 @@ public class ProductBilling
 
             private static final String REST_PATH = "offers/{offer_id}/accept";
 
-            @com.google.api.client.util.Key( "offer_id" )
-            private java.lang.Long offerId;
-
             /**
              * Create a request for the method "offers.accept".
              * <p>
@@ -1463,6 +1557,9 @@ public class ProductBilling
                 return ( Accept ) super.setUserIp( userIp );
             }
 
+            @com.google.api.client.util.Key( "offer_id" )
+            private java.lang.Long offerId;
+
             /**
              *
              */
@@ -1481,285 +1578,6 @@ public class ProductBilling
             public Accept set( String parameterName, Object value )
             {
                 return ( Accept ) super.set( parameterName, value );
-            }
-        }
-
-        public class Clone
-                extends ProductBillingRequest<biz.turnonline.ecosystem.billing.model.CompleteOffer>
-        {
-
-            private static final String REST_PATH = "offers/{offer_id}/clone";
-
-            @com.google.api.client.util.Key( "offer_id" )
-            private java.lang.Long offerId;
-
-            /**
-             * Create a request for the method "offers.clone".
-             * <p>
-             * This request holds the parameters needed by the the billing server.  After setting any optional
-             * parameters, call the {@link Clone#execute()} method to invoke the remote operation. <p> {@link
-             * Clone#initialize(com.google.api.client.googleapis.services.AbstractGoogleClientRequest)} must
-             * be called to initialize this instance immediately after invoking the constructor. </p>
-             *
-             * @param offerId
-             * @since 1.13
-             */
-            protected Clone( java.lang.Long offerId )
-            {
-                super( ProductBilling.this, "POST", REST_PATH, null, biz.turnonline.ecosystem.billing.model.CompleteOffer.class );
-                this.offerId = com.google.api.client.util.Preconditions.checkNotNull( offerId, "Required parameter offerId must be specified." );
-            }
-
-            @Override
-            public Clone setAlt( java.lang.String alt )
-            {
-                return ( Clone ) super.setAlt( alt );
-            }
-
-            @Override
-            public Clone setFields( java.lang.String fields )
-            {
-                return ( Clone ) super.setFields( fields );
-            }
-
-            @Override
-            public Clone setKey( java.lang.String key )
-            {
-                return ( Clone ) super.setKey( key );
-            }
-
-            @Override
-            public Clone setOauthToken( java.lang.String oauthToken )
-            {
-                return ( Clone ) super.setOauthToken( oauthToken );
-            }
-
-            @Override
-            public Clone setPrettyPrint( java.lang.Boolean prettyPrint )
-            {
-                return ( Clone ) super.setPrettyPrint( prettyPrint );
-            }
-
-            @Override
-            public Clone setQuotaUser( java.lang.String quotaUser )
-            {
-                return ( Clone ) super.setQuotaUser( quotaUser );
-            }
-
-            @Override
-            public Clone setUserIp( java.lang.String userIp )
-            {
-                return ( Clone ) super.setUserIp( userIp );
-            }
-
-            /**
-             *
-             */
-            public java.lang.Long getOfferId()
-            {
-                return offerId;
-            }
-
-            public Clone setOfferId( java.lang.Long offerId )
-            {
-                this.offerId = offerId;
-                return this;
-            }
-
-            @Override
-            public Clone set( String parameterName, Object value )
-            {
-                return ( Clone ) super.set( parameterName, value );
-            }
-        }
-
-        public class Delete
-                extends ProductBillingRequest<Void>
-        {
-
-            private static final String REST_PATH = "offers/{offer_id}";
-
-            @com.google.api.client.util.Key( "offer_id" )
-            private java.lang.Long offerId;
-
-            /**
-             * Create a request for the method "offers.delete".
-             * <p>
-             * This request holds the parameters needed by the the billing server.  After setting any optional
-             * parameters, call the {@link Delete#execute()} method to invoke the remote operation. <p> {@link
-             * Delete#initialize(com.google.api.client.googleapis.services.AbstractGoogleClientRequest)} must
-             * be called to initialize this instance immediately after invoking the constructor. </p>
-             *
-             * @param offerId
-             * @since 1.13
-             */
-            protected Delete( java.lang.Long offerId )
-            {
-                super( ProductBilling.this, "DELETE", REST_PATH, null, Void.class );
-                this.offerId = com.google.api.client.util.Preconditions.checkNotNull( offerId, "Required parameter offerId must be specified." );
-            }
-
-            @Override
-            public Delete setAlt( java.lang.String alt )
-            {
-                return ( Delete ) super.setAlt( alt );
-            }
-
-            @Override
-            public Delete setFields( java.lang.String fields )
-            {
-                return ( Delete ) super.setFields( fields );
-            }
-
-            @Override
-            public Delete setKey( java.lang.String key )
-            {
-                return ( Delete ) super.setKey( key );
-            }
-
-            @Override
-            public Delete setOauthToken( java.lang.String oauthToken )
-            {
-                return ( Delete ) super.setOauthToken( oauthToken );
-            }
-
-            @Override
-            public Delete setPrettyPrint( java.lang.Boolean prettyPrint )
-            {
-                return ( Delete ) super.setPrettyPrint( prettyPrint );
-            }
-
-            @Override
-            public Delete setQuotaUser( java.lang.String quotaUser )
-            {
-                return ( Delete ) super.setQuotaUser( quotaUser );
-            }
-
-            @Override
-            public Delete setUserIp( java.lang.String userIp )
-            {
-                return ( Delete ) super.setUserIp( userIp );
-            }
-
-            /**
-             *
-             */
-            public java.lang.Long getOfferId()
-            {
-                return offerId;
-            }
-
-            public Delete setOfferId( java.lang.Long offerId )
-            {
-                this.offerId = offerId;
-                return this;
-            }
-
-            @Override
-            public Delete set( String parameterName, Object value )
-            {
-                return ( Delete ) super.set( parameterName, value );
-            }
-        }
-
-        public class Get
-                extends ProductBillingRequest<biz.turnonline.ecosystem.billing.model.CompleteOffer>
-        {
-
-            private static final String REST_PATH = "offers/{offer_id}";
-
-            @com.google.api.client.util.Key( "offer_id" )
-            private java.lang.Long offerId;
-
-            /**
-             * Create a request for the method "offers.get".
-             * <p>
-             * This request holds the parameters needed by the the billing server.  After setting any optional
-             * parameters, call the {@link Get#execute()} method to invoke the remote operation. <p> {@link
-             * Get#initialize(com.google.api.client.googleapis.services.AbstractGoogleClientRequest)} must be
-             * called to initialize this instance immediately after invoking the constructor. </p>
-             *
-             * @param offerId
-             * @since 1.13
-             */
-            protected Get( java.lang.Long offerId )
-            {
-                super( ProductBilling.this, "GET", REST_PATH, null, biz.turnonline.ecosystem.billing.model.CompleteOffer.class );
-                this.offerId = com.google.api.client.util.Preconditions.checkNotNull( offerId, "Required parameter offerId must be specified." );
-            }
-
-            @Override
-            public com.google.api.client.http.HttpResponse executeUsingHead() throws java.io.IOException
-            {
-                return super.executeUsingHead();
-            }
-
-            @Override
-            public com.google.api.client.http.HttpRequest buildHttpRequestUsingHead() throws java.io.IOException
-            {
-                return super.buildHttpRequestUsingHead();
-            }
-
-            @Override
-            public Get setAlt( java.lang.String alt )
-            {
-                return ( Get ) super.setAlt( alt );
-            }
-
-            @Override
-            public Get setFields( java.lang.String fields )
-            {
-                return ( Get ) super.setFields( fields );
-            }
-
-            @Override
-            public Get setKey( java.lang.String key )
-            {
-                return ( Get ) super.setKey( key );
-            }
-
-            @Override
-            public Get setOauthToken( java.lang.String oauthToken )
-            {
-                return ( Get ) super.setOauthToken( oauthToken );
-            }
-
-            @Override
-            public Get setPrettyPrint( java.lang.Boolean prettyPrint )
-            {
-                return ( Get ) super.setPrettyPrint( prettyPrint );
-            }
-
-            @Override
-            public Get setQuotaUser( java.lang.String quotaUser )
-            {
-                return ( Get ) super.setQuotaUser( quotaUser );
-            }
-
-            @Override
-            public Get setUserIp( java.lang.String userIp )
-            {
-                return ( Get ) super.setUserIp( userIp );
-            }
-
-            /**
-             *
-             */
-            public java.lang.Long getOfferId()
-            {
-                return offerId;
-            }
-
-            public Get setOfferId( java.lang.Long offerId )
-            {
-                this.offerId = offerId;
-                return this;
-            }
-
-            @Override
-            public Get set( String parameterName, Object value )
-            {
-                return ( Get ) super.set( parameterName, value );
             }
         }
 
@@ -1834,23 +1652,291 @@ public class ProductBilling
             }
         }
 
+        public class Clone
+                extends ProductBillingRequest<biz.turnonline.ecosystem.billing.model.CompleteOffer>
+        {
+
+            private static final String REST_PATH = "offers/{offer_id}/clone";
+
+            @com.google.api.client.util.Key( "offer_id" )
+            private java.lang.Long offerId;
+
+            @Override
+            public Clone setAlt( java.lang.String alt )
+            {
+                return ( Clone ) super.setAlt( alt );
+            }
+
+            @Override
+            public Clone setFields( java.lang.String fields )
+            {
+                return ( Clone ) super.setFields( fields );
+            }
+
+            @Override
+            public Clone setKey( java.lang.String key )
+            {
+                return ( Clone ) super.setKey( key );
+            }
+
+            @Override
+            public Clone setOauthToken( java.lang.String oauthToken )
+            {
+                return ( Clone ) super.setOauthToken( oauthToken );
+            }
+
+            @Override
+            public Clone setPrettyPrint( java.lang.Boolean prettyPrint )
+            {
+                return ( Clone ) super.setPrettyPrint( prettyPrint );
+            }
+
+            @Override
+            public Clone setQuotaUser( java.lang.String quotaUser )
+            {
+                return ( Clone ) super.setQuotaUser( quotaUser );
+            }
+
+            @Override
+            public Clone setUserIp( java.lang.String userIp )
+            {
+                return ( Clone ) super.setUserIp( userIp );
+            }
+
+            /**
+             * Create a request for the method "offers.clone".
+             * <p>
+             * This request holds the parameters needed by the the billing server.  After setting any optional
+             * parameters, call the {@link Clone#execute()} method to invoke the remote operation. <p> {@link
+             * Clone#initialize(com.google.api.client.googleapis.services.AbstractGoogleClientRequest)} must
+             * be called to initialize this instance immediately after invoking the constructor. </p>
+             *
+             * @param offerId
+             * @param content the {@link biz.turnonline.ecosystem.billing.model.Customer}
+             * @since 1.13
+             */
+            protected Clone( java.lang.Long offerId, biz.turnonline.ecosystem.billing.model.Customer content )
+            {
+                super( ProductBilling.this, "POST", REST_PATH, content, biz.turnonline.ecosystem.billing.model.CompleteOffer.class );
+                this.offerId = com.google.api.client.util.Preconditions.checkNotNull( offerId, "Required parameter offerId must be specified." );
+            }
+
+            /**
+             *
+             */
+            public java.lang.Long getOfferId()
+            {
+                return offerId;
+            }
+
+            public Clone setOfferId( java.lang.Long offerId )
+            {
+                this.offerId = offerId;
+                return this;
+            }
+
+            @Override
+            public Clone set( String parameterName, Object value )
+            {
+                return ( Clone ) super.set( parameterName, value );
+            }
+        }
+
+        public class Delete
+                extends ProductBillingRequest<Void>
+        {
+
+            private static final String REST_PATH = "offers/{offer_id}";
+
+            /**
+             * Create a request for the method "offers.delete".
+             * <p>
+             * This request holds the parameters needed by the the billing server.  After setting any optional
+             * parameters, call the {@link Delete#execute()} method to invoke the remote operation. <p> {@link
+             * Delete#initialize(com.google.api.client.googleapis.services.AbstractGoogleClientRequest)} must
+             * be called to initialize this instance immediately after invoking the constructor. </p>
+             *
+             * @param offerId
+             * @since 1.13
+             */
+            protected Delete( java.lang.Long offerId )
+            {
+                super( ProductBilling.this, "DELETE", REST_PATH, null, Void.class );
+                this.offerId = com.google.api.client.util.Preconditions.checkNotNull( offerId, "Required parameter offerId must be specified." );
+            }
+
+            @Override
+            public Delete setAlt( java.lang.String alt )
+            {
+                return ( Delete ) super.setAlt( alt );
+            }
+
+            @Override
+            public Delete setFields( java.lang.String fields )
+            {
+                return ( Delete ) super.setFields( fields );
+            }
+
+            @Override
+            public Delete setKey( java.lang.String key )
+            {
+                return ( Delete ) super.setKey( key );
+            }
+
+            @Override
+            public Delete setOauthToken( java.lang.String oauthToken )
+            {
+                return ( Delete ) super.setOauthToken( oauthToken );
+            }
+
+            @Override
+            public Delete setPrettyPrint( java.lang.Boolean prettyPrint )
+            {
+                return ( Delete ) super.setPrettyPrint( prettyPrint );
+            }
+
+            @Override
+            public Delete setQuotaUser( java.lang.String quotaUser )
+            {
+                return ( Delete ) super.setQuotaUser( quotaUser );
+            }
+
+            @Override
+            public Delete setUserIp( java.lang.String userIp )
+            {
+                return ( Delete ) super.setUserIp( userIp );
+            }
+
+            @com.google.api.client.util.Key( "offer_id" )
+            private java.lang.Long offerId;
+
+            /**
+             *
+             */
+            public java.lang.Long getOfferId()
+            {
+                return offerId;
+            }
+
+            public Delete setOfferId( java.lang.Long offerId )
+            {
+                this.offerId = offerId;
+                return this;
+            }
+
+            @Override
+            public Delete set( String parameterName, Object value )
+            {
+                return ( Delete ) super.set( parameterName, value );
+            }
+        }
+
+        public class Get
+                extends ProductBillingRequest<biz.turnonline.ecosystem.billing.model.CompleteOffer>
+        {
+
+            private static final String REST_PATH = "offers/{offer_id}";
+
+            /**
+             * Create a request for the method "offers.get".
+             * <p>
+             * This request holds the parameters needed by the the billing server.  After setting any optional
+             * parameters, call the {@link Get#execute()} method to invoke the remote operation. <p> {@link
+             * Get#initialize(com.google.api.client.googleapis.services.AbstractGoogleClientRequest)} must be
+             * called to initialize this instance immediately after invoking the constructor. </p>
+             *
+             * @param offerId
+             * @since 1.13
+             */
+            protected Get( java.lang.Long offerId )
+            {
+                super( ProductBilling.this, "GET", REST_PATH, null, biz.turnonline.ecosystem.billing.model.CompleteOffer.class );
+                this.offerId = com.google.api.client.util.Preconditions.checkNotNull( offerId, "Required parameter offerId must be specified." );
+            }
+
+            @Override
+            public com.google.api.client.http.HttpResponse executeUsingHead() throws java.io.IOException
+            {
+                return super.executeUsingHead();
+            }
+
+            @Override
+            public com.google.api.client.http.HttpRequest buildHttpRequestUsingHead() throws java.io.IOException
+            {
+                return super.buildHttpRequestUsingHead();
+            }
+
+            @Override
+            public Get setAlt( java.lang.String alt )
+            {
+                return ( Get ) super.setAlt( alt );
+            }
+
+            @Override
+            public Get setFields( java.lang.String fields )
+            {
+                return ( Get ) super.setFields( fields );
+            }
+
+            @Override
+            public Get setKey( java.lang.String key )
+            {
+                return ( Get ) super.setKey( key );
+            }
+
+            @Override
+            public Get setOauthToken( java.lang.String oauthToken )
+            {
+                return ( Get ) super.setOauthToken( oauthToken );
+            }
+
+            @Override
+            public Get setPrettyPrint( java.lang.Boolean prettyPrint )
+            {
+                return ( Get ) super.setPrettyPrint( prettyPrint );
+            }
+
+            @Override
+            public Get setQuotaUser( java.lang.String quotaUser )
+            {
+                return ( Get ) super.setQuotaUser( quotaUser );
+            }
+
+            @Override
+            public Get setUserIp( java.lang.String userIp )
+            {
+                return ( Get ) super.setUserIp( userIp );
+            }
+
+            @com.google.api.client.util.Key( "offer_id" )
+            private java.lang.Long offerId;
+
+            /**
+             *
+             */
+            public java.lang.Long getOfferId()
+            {
+                return offerId;
+            }
+
+            public Get setOfferId( java.lang.Long offerId )
+            {
+                this.offerId = offerId;
+                return this;
+            }
+
+            @Override
+            public Get set( String parameterName, Object value )
+            {
+                return ( Get ) super.set( parameterName, value );
+            }
+        }
+
         public class List
                 extends ProductBillingRequest<biz.turnonline.ecosystem.billing.model.OfferListItemCollection>
         {
 
             private static final String REST_PATH = "offers";
-
-            @com.google.api.client.util.Key
-            private java.lang.Boolean incoming;
-
-            @com.google.api.client.util.Key
-            private java.lang.Long customerId;
-
-            @com.google.api.client.util.Key
-            private java.lang.Integer limit;
-
-            @com.google.api.client.util.Key
-            private java.lang.Integer offset;
 
             /**
              * Create a request for the method "offers.list".
@@ -1921,6 +2007,9 @@ public class ProductBilling
                 return ( List ) super.setUserIp( userIp );
             }
 
+            @com.google.api.client.util.Key
+            private java.lang.Boolean incoming;
+
             /**
              * [ default: false]
              * [
@@ -1929,6 +2018,9 @@ public class ProductBilling
             {
                 return incoming;
             }
+
+            @com.google.api.client.util.Key
+            private java.lang.Integer limit;
 
             /**
              * Convenience method that returns only {@link Boolean#TRUE} or {@link Boolean#FALSE}.
@@ -1959,6 +2051,42 @@ public class ProductBilling
                 return incoming;
             }
 
+            @com.google.api.client.util.Key
+            private java.lang.Integer offset;
+
+            /**
+             * [ default: 10]
+             * [
+             */
+            public java.lang.Integer getLimit()
+            {
+                return limit;
+            }
+
+            public List setLimit( java.lang.Integer limit )
+            {
+                this.limit = limit;
+                return this;
+            }
+
+            @com.google.api.client.util.Key
+            private java.lang.Long customerId;
+
+            /**
+             * [ default: 0]
+             * [
+             */
+            public java.lang.Integer getOffset()
+            {
+                return offset;
+            }
+
+            public List setOffset( java.lang.Integer offset )
+            {
+                this.offset = offset;
+                return this;
+            }
+
             public List setIncoming( java.lang.Boolean incoming )
             {
                 this.incoming = incoming;
@@ -1979,36 +2107,6 @@ public class ProductBilling
                 return this;
             }
 
-            /**
-             * [ default: 10]
-             * [
-             */
-            public java.lang.Integer getLimit()
-            {
-                return limit;
-            }
-
-            public List setLimit( java.lang.Integer limit )
-            {
-                this.limit = limit;
-                return this;
-            }
-
-            /**
-             * [ default: 0]
-             * [
-             */
-            public java.lang.Integer getOffset()
-            {
-                return offset;
-            }
-
-            public List setOffset( java.lang.Integer offset )
-            {
-                this.offset = offset;
-                return this;
-            }
-
             @Override
             public List set( String parameterName, Object value )
             {
@@ -2021,9 +2119,6 @@ public class ProductBilling
         {
 
             private static final String REST_PATH = "offers/{order_id}";
-
-            @com.google.api.client.util.Key( "order_id" )
-            private java.lang.Long orderId;
 
             /**
              * Create a request for the method "offers.update".
@@ -2084,6 +2179,9 @@ public class ProductBilling
             {
                 return ( Update ) super.setUserIp( userIp );
             }
+
+            @com.google.api.client.util.Key( "order_id" )
+            private java.lang.Long orderId;
 
             /**
              *
@@ -2149,9 +2247,6 @@ public class ProductBilling
             {
 
                 private static final String REST_PATH = "offers/{offer_id}/recipients/count";
-
-                @com.google.api.client.util.Key( "offer_id" )
-                private java.lang.Long offerId;
 
                 /**
                  * Create a request for the method "recipients.count".
@@ -2224,6 +2319,9 @@ public class ProductBilling
                     return ( Count ) super.setUserIp( userIp );
                 }
 
+                @com.google.api.client.util.Key( "offer_id" )
+                private java.lang.Long offerId;
+
                 /**
                  *
                  */
@@ -2250,15 +2348,6 @@ public class ProductBilling
             {
 
                 private static final String REST_PATH = "offers/{offer_id}/recipients";
-
-                @com.google.api.client.util.Key( "offer_id" )
-                private java.lang.Long offerId;
-
-                @com.google.api.client.util.Key
-                private java.lang.Integer limit;
-
-                @com.google.api.client.util.Key
-                private java.lang.Integer offset;
 
                 /**
                  * Create a request for the method "recipients.list".
@@ -2331,6 +2420,9 @@ public class ProductBilling
                     return ( List ) super.setUserIp( userIp );
                 }
 
+                @com.google.api.client.util.Key( "offer_id" )
+                private java.lang.Long offerId;
+
                 /**
                  *
                  */
@@ -2344,6 +2436,9 @@ public class ProductBilling
                     this.offerId = offerId;
                     return this;
                 }
+
+                @com.google.api.client.util.Key
+                private java.lang.Integer limit;
 
                 /**
                  * [ default: 100]
@@ -2359,6 +2454,9 @@ public class ProductBilling
                     this.limit = limit;
                     return this;
                 }
+
+                @com.google.api.client.util.Key
+                private java.lang.Integer offset;
 
                 /**
                  * [ default: 0]
@@ -2507,6 +2605,77 @@ public class ProductBilling
             return new Invoices();
         }
 
+        public class Insert
+                extends ProductBillingRequest<biz.turnonline.ecosystem.billing.model.Order>
+        {
+
+            private static final String REST_PATH = "orders";
+
+            /**
+             * Create a request for the method "orders.insert".
+             * <p>
+             * This request holds the parameters needed by the the billing server.  After setting any optional
+             * parameters, call the {@link Insert#execute()} method to invoke the remote operation. <p> {@link
+             * Insert#initialize(com.google.api.client.googleapis.services.AbstractGoogleClientRequest)} must
+             * be called to initialize this instance immediately after invoking the constructor. </p>
+             *
+             * @param content the {@link biz.turnonline.ecosystem.billing.model.Order}
+             * @since 1.13
+             */
+            protected Insert( biz.turnonline.ecosystem.billing.model.Order content )
+            {
+                super( ProductBilling.this, "POST", REST_PATH, content, biz.turnonline.ecosystem.billing.model.Order.class );
+            }
+
+            @Override
+            public Insert setAlt( java.lang.String alt )
+            {
+                return ( Insert ) super.setAlt( alt );
+            }
+
+            @Override
+            public Insert setFields( java.lang.String fields )
+            {
+                return ( Insert ) super.setFields( fields );
+            }
+
+            @Override
+            public Insert setKey( java.lang.String key )
+            {
+                return ( Insert ) super.setKey( key );
+            }
+
+            @Override
+            public Insert setOauthToken( java.lang.String oauthToken )
+            {
+                return ( Insert ) super.setOauthToken( oauthToken );
+            }
+
+            @Override
+            public Insert setPrettyPrint( java.lang.Boolean prettyPrint )
+            {
+                return ( Insert ) super.setPrettyPrint( prettyPrint );
+            }
+
+            @Override
+            public Insert setQuotaUser( java.lang.String quotaUser )
+            {
+                return ( Insert ) super.setQuotaUser( quotaUser );
+            }
+
+            @Override
+            public Insert setUserIp( java.lang.String userIp )
+            {
+                return ( Insert ) super.setUserIp( userIp );
+            }
+
+            @Override
+            public Insert set( String parameterName, Object value )
+            {
+                return ( Insert ) super.set( parameterName, value );
+            }
+        }
+
         /**
          * An accessor for creating requests from the Items collection.
          *
@@ -2544,9 +2713,6 @@ public class ProductBilling
         {
 
             private static final String REST_PATH = "orders/{order_id}";
-
-            @com.google.api.client.util.Key( "order_id" )
-            private java.lang.Long orderId;
 
             /**
              * Create a request for the method "orders.delete".
@@ -2607,6 +2773,9 @@ public class ProductBilling
                 return ( Delete ) super.setUserIp( userIp );
             }
 
+            @com.google.api.client.util.Key( "order_id" )
+            private java.lang.Long orderId;
+
             /**
              *
              */
@@ -2633,9 +2802,6 @@ public class ProductBilling
         {
 
             private static final String REST_PATH = "orders/{order_id}/delivery";
-
-            @com.google.api.client.util.Key( "order_id" )
-            private java.lang.Long orderId;
 
             /**
              * Create a request for the method "orders.delivery".
@@ -2698,6 +2864,9 @@ public class ProductBilling
                 return ( Delivery ) super.setUserIp( userIp );
             }
 
+            @com.google.api.client.util.Key( "order_id" )
+            private java.lang.Long orderId;
+
             /**
              *
              */
@@ -2724,12 +2893,6 @@ public class ProductBilling
         {
 
             private static final String REST_PATH = "orders/{order_id}";
-
-            @com.google.api.client.util.Key( "order_id" )
-            private java.lang.Long orderId;
-
-            @com.google.api.client.util.Key
-            private java.lang.Integer invoices;
 
             /**
              * Create a request for the method "orders.get".
@@ -2802,6 +2965,9 @@ public class ProductBilling
                 return ( Get ) super.setUserIp( userIp );
             }
 
+            @com.google.api.client.util.Key( "order_id" )
+            private java.lang.Long orderId;
+
             /**
              *
              */
@@ -2815,6 +2981,9 @@ public class ProductBilling
                 this.orderId = orderId;
                 return this;
             }
+
+            @com.google.api.client.util.Key
+            private java.lang.Integer invoices;
 
             /**
              *
@@ -2837,91 +3006,11 @@ public class ProductBilling
             }
         }
 
-        public class Insert
-                extends ProductBillingRequest<biz.turnonline.ecosystem.billing.model.Order>
-        {
-
-            private static final String REST_PATH = "orders";
-
-            /**
-             * Create a request for the method "orders.insert".
-             * <p>
-             * This request holds the parameters needed by the the billing server.  After setting any optional
-             * parameters, call the {@link Insert#execute()} method to invoke the remote operation. <p> {@link
-             * Insert#initialize(com.google.api.client.googleapis.services.AbstractGoogleClientRequest)} must
-             * be called to initialize this instance immediately after invoking the constructor. </p>
-             *
-             * @param content the {@link biz.turnonline.ecosystem.billing.model.Order}
-             * @since 1.13
-             */
-            protected Insert( biz.turnonline.ecosystem.billing.model.Order content )
-            {
-                super( ProductBilling.this, "POST", REST_PATH, content, biz.turnonline.ecosystem.billing.model.Order.class );
-            }
-
-            @Override
-            public Insert setAlt( java.lang.String alt )
-            {
-                return ( Insert ) super.setAlt( alt );
-            }
-
-            @Override
-            public Insert setFields( java.lang.String fields )
-            {
-                return ( Insert ) super.setFields( fields );
-            }
-
-            @Override
-            public Insert setKey( java.lang.String key )
-            {
-                return ( Insert ) super.setKey( key );
-            }
-
-            @Override
-            public Insert setOauthToken( java.lang.String oauthToken )
-            {
-                return ( Insert ) super.setOauthToken( oauthToken );
-            }
-
-            @Override
-            public Insert setPrettyPrint( java.lang.Boolean prettyPrint )
-            {
-                return ( Insert ) super.setPrettyPrint( prettyPrint );
-            }
-
-            @Override
-            public Insert setQuotaUser( java.lang.String quotaUser )
-            {
-                return ( Insert ) super.setQuotaUser( quotaUser );
-            }
-
-            @Override
-            public Insert setUserIp( java.lang.String userIp )
-            {
-                return ( Insert ) super.setUserIp( userIp );
-            }
-
-            @Override
-            public Insert set( String parameterName, Object value )
-            {
-                return ( Insert ) super.set( parameterName, value );
-            }
-        }
-
         public class List
                 extends ProductBillingRequest<biz.turnonline.ecosystem.billing.model.OrderCollection>
         {
 
             private static final String REST_PATH = "orders";
-
-            @com.google.api.client.util.Key
-            private java.lang.Boolean lightList;
-
-            @com.google.api.client.util.Key
-            private java.lang.Integer limit;
-
-            @com.google.api.client.util.Key
-            private java.lang.Integer offset;
 
             /**
              * Create a request for the method "orders.list".
@@ -2992,6 +3081,9 @@ public class ProductBilling
                 return ( List ) super.setUserIp( userIp );
             }
 
+            @com.google.api.client.util.Key
+            private java.lang.Boolean lightList;
+
             /**
              * [ default: false]
              * [
@@ -3000,6 +3092,9 @@ public class ProductBilling
             {
                 return lightList;
             }
+
+            @com.google.api.client.util.Key
+            private java.lang.Integer limit;
 
             /**
              * Convenience method that returns only {@link Boolean#TRUE} or {@link Boolean#FALSE}.
@@ -3030,11 +3125,8 @@ public class ProductBilling
                 return lightList;
             }
 
-            public List setLightList( java.lang.Boolean lightList )
-            {
-                this.lightList = lightList;
-                return this;
-            }
+            @com.google.api.client.util.Key
+            private java.lang.Integer offset;
 
             /**
              * [ default: 10]
@@ -3048,6 +3140,12 @@ public class ProductBilling
             public List setLimit( java.lang.Integer limit )
             {
                 this.limit = limit;
+                return this;
+            }
+
+            public List setLightList( java.lang.Boolean lightList )
+            {
+                this.lightList = lightList;
                 return this;
             }
 
@@ -3078,9 +3176,6 @@ public class ProductBilling
         {
 
             private static final String REST_PATH = "orders/{order_id}";
-
-            @com.google.api.client.util.Key( "order_id" )
-            private java.lang.Long orderId;
 
             /**
              * Create a request for the method "orders.update".
@@ -3141,6 +3236,9 @@ public class ProductBilling
             {
                 return ( Update ) super.setUserIp( userIp );
             }
+
+            @com.google.api.client.util.Key( "order_id" )
+            private java.lang.Long orderId;
 
             /**
              *
@@ -3295,12 +3393,6 @@ public class ProductBilling
 
                 private static final String REST_PATH = "orders/{order_id}/invoices/{invoice_id}";
 
-                @com.google.api.client.util.Key( "order_id" )
-                private java.lang.Long orderId;
-
-                @com.google.api.client.util.Key( "invoice_id" )
-                private java.lang.Long invoiceId;
-
                 /**
                  * Create a request for the method "invoices.delete".
                  * <p>
@@ -3362,6 +3454,9 @@ public class ProductBilling
                     return ( Delete ) super.setUserIp( userIp );
                 }
 
+                @com.google.api.client.util.Key( "order_id" )
+                private java.lang.Long orderId;
+
                 /**
                  *
                  */
@@ -3375,6 +3470,9 @@ public class ProductBilling
                     this.orderId = orderId;
                     return this;
                 }
+
+                @com.google.api.client.util.Key( "invoice_id" )
+                private java.lang.Long invoiceId;
 
                 /**
                  *
@@ -3402,12 +3500,6 @@ public class ProductBilling
             {
 
                 private static final String REST_PATH = "orders/{order_id}/invoices/{invoice_id}";
-
-                @com.google.api.client.util.Key( "order_id" )
-                private java.lang.Long orderId;
-
-                @com.google.api.client.util.Key( "invoice_id" )
-                private java.lang.Long invoiceId;
 
                 /**
                  * Create a request for the method "invoices.get".
@@ -3482,6 +3574,9 @@ public class ProductBilling
                     return ( Get ) super.setUserIp( userIp );
                 }
 
+                @com.google.api.client.util.Key( "order_id" )
+                private java.lang.Long orderId;
+
                 /**
                  *
                  */
@@ -3495,6 +3590,9 @@ public class ProductBilling
                     this.orderId = orderId;
                     return this;
                 }
+
+                @com.google.api.client.util.Key( "invoice_id" )
+                private java.lang.Long invoiceId;
 
                 /**
                  *
@@ -3522,9 +3620,6 @@ public class ProductBilling
             {
 
                 private static final String REST_PATH = "orders/{order_id}/invoices";
-
-                @com.google.api.client.util.Key( "order_id" )
-                private java.lang.Long orderId;
 
                 /**
                  * Create a request for the method "invoices.insert".
@@ -3586,6 +3681,9 @@ public class ProductBilling
                     return ( Insert ) super.setUserIp( userIp );
                 }
 
+                @com.google.api.client.util.Key( "order_id" )
+                private java.lang.Long orderId;
+
                 /**
                  *
                  */
@@ -3612,18 +3710,6 @@ public class ProductBilling
             {
 
                 private static final String REST_PATH = "orders/{order_id}/invoices";
-
-                @com.google.api.client.util.Key( "order_id" )
-                private java.lang.Long orderId;
-
-                @com.google.api.client.util.Key
-                private java.lang.Boolean lightList;
-
-                @com.google.api.client.util.Key
-                private java.lang.Integer limit;
-
-                @com.google.api.client.util.Key
-                private java.lang.Integer offset;
 
                 /**
                  * Create a request for the method "invoices.list".
@@ -3696,6 +3782,9 @@ public class ProductBilling
                     return ( List ) super.setUserIp( userIp );
                 }
 
+                @com.google.api.client.util.Key( "order_id" )
+                private java.lang.Long orderId;
+
                 /**
                  *
                  */
@@ -3710,6 +3799,9 @@ public class ProductBilling
                     return this;
                 }
 
+                @com.google.api.client.util.Key
+                private java.lang.Boolean lightList;
+
                 /**
                  * [ default: false]
                  * [
@@ -3718,6 +3810,9 @@ public class ProductBilling
                 {
                     return lightList;
                 }
+
+                @com.google.api.client.util.Key
+                private java.lang.Integer limit;
 
                 /**
                  * Convenience method that returns only {@link Boolean#TRUE} or {@link Boolean#FALSE}.
@@ -3748,11 +3843,8 @@ public class ProductBilling
                     return lightList;
                 }
 
-                public List setLightList( java.lang.Boolean lightList )
-                {
-                    this.lightList = lightList;
-                    return this;
-                }
+                @com.google.api.client.util.Key
+                private java.lang.Integer offset;
 
                 /**
                  * [ default: 10]
@@ -3766,6 +3858,12 @@ public class ProductBilling
                 public List setLimit( java.lang.Integer limit )
                 {
                     this.limit = limit;
+                    return this;
+                }
+
+                public List setLightList( java.lang.Boolean lightList )
+                {
+                    this.lightList = lightList;
                     return this;
                 }
 
@@ -3796,12 +3894,6 @@ public class ProductBilling
             {
 
                 private static final String REST_PATH = "orders/{order_id}/invoices/{invoice_id}";
-
-                @com.google.api.client.util.Key( "order_id" )
-                private java.lang.Long orderId;
-
-                @com.google.api.client.util.Key( "invoice_id" )
-                private java.lang.Long invoiceId;
 
                 /**
                  * Create a request for the method "invoices.update".
@@ -3867,6 +3959,9 @@ public class ProductBilling
                     return ( Update ) super.setUserIp( userIp );
                 }
 
+                @com.google.api.client.util.Key( "order_id" )
+                private java.lang.Long orderId;
+
                 /**
                  *
                  */
@@ -3880,6 +3975,9 @@ public class ProductBilling
                     this.orderId = orderId;
                     return this;
                 }
+
+                @com.google.api.client.util.Key( "invoice_id" )
+                private java.lang.Long invoiceId;
 
                 /**
                  *
@@ -4013,15 +4111,6 @@ public class ProductBilling
 
                     private static final String REST_PATH = "orders/{order_id}/invoices/{invoice_id}/items/{item_id}";
 
-                    @com.google.api.client.util.Key( "order_id" )
-                    private java.lang.Long orderId;
-
-                    @com.google.api.client.util.Key( "invoice_id" )
-                    private java.lang.Long invoiceId;
-
-                    @com.google.api.client.util.Key( "item_id" )
-                    private java.lang.Long itemId;
-
                     /**
                      * Create a request for the method "items.delete".
                      * <p>
@@ -4085,6 +4174,9 @@ public class ProductBilling
                         return ( Delete ) super.setUserIp( userIp );
                     }
 
+                    @com.google.api.client.util.Key( "order_id" )
+                    private java.lang.Long orderId;
+
                     /**
                      *
                      */
@@ -4099,6 +4191,9 @@ public class ProductBilling
                         return this;
                     }
 
+                    @com.google.api.client.util.Key( "invoice_id" )
+                    private java.lang.Long invoiceId;
+
                     /**
                      *
                      */
@@ -4112,6 +4207,9 @@ public class ProductBilling
                         this.invoiceId = invoiceId;
                         return this;
                     }
+
+                    @com.google.api.client.util.Key( "item_id" )
+                    private java.lang.Long itemId;
 
                     /**
                      *
@@ -4139,15 +4237,6 @@ public class ProductBilling
                 {
 
                     private static final String REST_PATH = "orders/{order_id}/invoices/{invoice_id}/items/{item_id}";
-
-                    @com.google.api.client.util.Key( "order_id" )
-                    private java.lang.Long orderId;
-
-                    @com.google.api.client.util.Key( "invoice_id" )
-                    private java.lang.Long invoiceId;
-
-                    @com.google.api.client.util.Key( "item_id" )
-                    private java.lang.Long itemId;
 
                     /**
                      * Create a request for the method "items.get".
@@ -4224,6 +4313,9 @@ public class ProductBilling
                         return ( Get ) super.setUserIp( userIp );
                     }
 
+                    @com.google.api.client.util.Key( "order_id" )
+                    private java.lang.Long orderId;
+
                     /**
                      *
                      */
@@ -4238,6 +4330,9 @@ public class ProductBilling
                         return this;
                     }
 
+                    @com.google.api.client.util.Key( "invoice_id" )
+                    private java.lang.Long invoiceId;
+
                     /**
                      *
                      */
@@ -4251,6 +4346,9 @@ public class ProductBilling
                         this.invoiceId = invoiceId;
                         return this;
                     }
+
+                    @com.google.api.client.util.Key( "item_id" )
+                    private java.lang.Long itemId;
 
                     /**
                      *
@@ -4278,12 +4376,6 @@ public class ProductBilling
                 {
 
                     private static final String REST_PATH = "orders/{order_id}/invoices/{invoice_id}/items";
-
-                    @com.google.api.client.util.Key( "order_id" )
-                    private java.lang.Long orderId;
-
-                    @com.google.api.client.util.Key( "invoice_id" )
-                    private java.lang.Long invoiceId;
 
                     /**
                      * Create a request for the method "items.insert".
@@ -4349,6 +4441,9 @@ public class ProductBilling
                         return ( Insert ) super.setUserIp( userIp );
                     }
 
+                    @com.google.api.client.util.Key( "order_id" )
+                    private java.lang.Long orderId;
+
                     /**
                      *
                      */
@@ -4362,6 +4457,9 @@ public class ProductBilling
                         this.orderId = orderId;
                         return this;
                     }
+
+                    @com.google.api.client.util.Key( "invoice_id" )
+                    private java.lang.Long invoiceId;
 
                     /**
                      *
@@ -4389,12 +4487,6 @@ public class ProductBilling
                 {
 
                     private static final String REST_PATH = "orders/{order_id}/invoices/{invoice_id}/items";
-
-                    @com.google.api.client.util.Key( "order_id" )
-                    private java.lang.Long orderId;
-
-                    @com.google.api.client.util.Key( "invoice_id" )
-                    private java.lang.Long invoiceId;
 
                     /**
                      * Create a request for the method "items.list".
@@ -4469,6 +4561,9 @@ public class ProductBilling
                         return ( List ) super.setUserIp( userIp );
                     }
 
+                    @com.google.api.client.util.Key( "order_id" )
+                    private java.lang.Long orderId;
+
                     /**
                      *
                      */
@@ -4482,6 +4577,9 @@ public class ProductBilling
                         this.orderId = orderId;
                         return this;
                     }
+
+                    @com.google.api.client.util.Key( "invoice_id" )
+                    private java.lang.Long invoiceId;
 
                     /**
                      *
@@ -4509,15 +4607,6 @@ public class ProductBilling
                 {
 
                     private static final String REST_PATH = "orders/{order_id}/invoices/{invoice_id}/items/{item_id}";
-
-                    @com.google.api.client.util.Key( "order_id" )
-                    private java.lang.Long orderId;
-
-                    @com.google.api.client.util.Key( "invoice_id" )
-                    private java.lang.Long invoiceId;
-
-                    @com.google.api.client.util.Key( "item_id" )
-                    private java.lang.Long itemId;
 
                     /**
                      * Create a request for the method "items.update".
@@ -4586,6 +4675,9 @@ public class ProductBilling
                         return ( Update ) super.setUserIp( userIp );
                     }
 
+                    @com.google.api.client.util.Key( "order_id" )
+                    private java.lang.Long orderId;
+
                     /**
                      *
                      */
@@ -4600,6 +4692,9 @@ public class ProductBilling
                         return this;
                     }
 
+                    @com.google.api.client.util.Key( "invoice_id" )
+                    private java.lang.Long invoiceId;
+
                     /**
                      *
                      */
@@ -4613,6 +4708,9 @@ public class ProductBilling
                         this.invoiceId = invoiceId;
                         return this;
                     }
+
+                    @com.google.api.client.util.Key( "item_id" )
+                    private java.lang.Long itemId;
 
                     /**
                      *
@@ -4665,12 +4763,6 @@ public class ProductBilling
                 {
 
                     private static final String REST_PATH = "orders/{order_id}/invoices/{invoice_id}/status";
-
-                    @com.google.api.client.util.Key( "order_id" )
-                    private java.lang.Long orderId;
-
-                    @com.google.api.client.util.Key( "invoice_id" )
-                    private java.lang.Long invoiceId;
 
                     /**
                      * Create a request for the method "status.get".
@@ -4745,6 +4837,9 @@ public class ProductBilling
                         return ( Get ) super.setUserIp( userIp );
                     }
 
+                    @com.google.api.client.util.Key( "order_id" )
+                    private java.lang.Long orderId;
+
                     /**
                      *
                      */
@@ -4758,6 +4853,9 @@ public class ProductBilling
                         this.orderId = orderId;
                         return this;
                     }
+
+                    @com.google.api.client.util.Key( "invoice_id" )
+                    private java.lang.Long invoiceId;
 
                     /**
                      *
@@ -4884,12 +4982,6 @@ public class ProductBilling
 
                 private static final String REST_PATH = "orders/{order_id}/items/{item_id}";
 
-                @com.google.api.client.util.Key( "order_id" )
-                private java.lang.Long orderId;
-
-                @com.google.api.client.util.Key( "item_id" )
-                private java.lang.Long itemId;
-
                 /**
                  * Create a request for the method "items.delete".
                  * <p>
@@ -4951,6 +5043,9 @@ public class ProductBilling
                     return ( Delete ) super.setUserIp( userIp );
                 }
 
+                @com.google.api.client.util.Key( "order_id" )
+                private java.lang.Long orderId;
+
                 /**
                  *
                  */
@@ -4964,6 +5059,9 @@ public class ProductBilling
                     this.orderId = orderId;
                     return this;
                 }
+
+                @com.google.api.client.util.Key( "item_id" )
+                private java.lang.Long itemId;
 
                 /**
                  *
@@ -4991,12 +5089,6 @@ public class ProductBilling
             {
 
                 private static final String REST_PATH = "orders/{order_id}/items/{item_id}";
-
-                @com.google.api.client.util.Key( "order_id" )
-                private java.lang.Long orderId;
-
-                @com.google.api.client.util.Key( "item_id" )
-                private java.lang.Long itemId;
 
                 /**
                  * Create a request for the method "items.get".
@@ -5071,6 +5163,9 @@ public class ProductBilling
                     return ( Get ) super.setUserIp( userIp );
                 }
 
+                @com.google.api.client.util.Key( "order_id" )
+                private java.lang.Long orderId;
+
                 /**
                  *
                  */
@@ -5084,6 +5179,9 @@ public class ProductBilling
                     this.orderId = orderId;
                     return this;
                 }
+
+                @com.google.api.client.util.Key( "item_id" )
+                private java.lang.Long itemId;
 
                 /**
                  *
@@ -5111,9 +5209,6 @@ public class ProductBilling
             {
 
                 private static final String REST_PATH = "orders/{order_id}/items";
-
-                @com.google.api.client.util.Key( "order_id" )
-                private java.lang.Long orderId;
 
                 /**
                  * Create a request for the method "items.insert".
@@ -5175,6 +5270,9 @@ public class ProductBilling
                     return ( Insert ) super.setUserIp( userIp );
                 }
 
+                @com.google.api.client.util.Key( "order_id" )
+                private java.lang.Long orderId;
+
                 /**
                  *
                  */
@@ -5201,9 +5299,6 @@ public class ProductBilling
             {
 
                 private static final String REST_PATH = "orders/{order_id}/items";
-
-                @com.google.api.client.util.Key( "order_id" )
-                private java.lang.Long orderId;
 
                 /**
                  * Create a request for the method "items.list".
@@ -5276,6 +5371,9 @@ public class ProductBilling
                     return ( List ) super.setUserIp( userIp );
                 }
 
+                @com.google.api.client.util.Key( "order_id" )
+                private java.lang.Long orderId;
+
                 /**
                  *
                  */
@@ -5302,12 +5400,6 @@ public class ProductBilling
             {
 
                 private static final String REST_PATH = "orders/{order_id}/items/{item_id}";
-
-                @com.google.api.client.util.Key( "order_id" )
-                private java.lang.Long orderId;
-
-                @com.google.api.client.util.Key( "item_id" )
-                private java.lang.Long itemId;
 
                 /**
                  * Create a request for the method "items.update".
@@ -5373,6 +5465,9 @@ public class ProductBilling
                     return ( Update ) super.setUserIp( userIp );
                 }
 
+                @com.google.api.client.util.Key( "order_id" )
+                private java.lang.Long orderId;
+
                 /**
                  *
                  */
@@ -5386,6 +5481,9 @@ public class ProductBilling
                     this.orderId = orderId;
                     return this;
                 }
+
+                @com.google.api.client.util.Key( "item_id" )
+                private java.lang.Long itemId;
 
                 /**
                  *
@@ -5455,9 +5553,6 @@ public class ProductBilling
             {
 
                 private static final String REST_PATH = "orders/{order_id}/status";
-
-                @com.google.api.client.util.Key( "order_id" )
-                private java.lang.Long orderId;
 
                 /**
                  * Create a request for the method "status.get".
@@ -5530,6 +5625,9 @@ public class ProductBilling
                     return ( Get ) super.setUserIp( userIp );
                 }
 
+                @com.google.api.client.util.Key( "order_id" )
+                private java.lang.Long orderId;
+
                 /**
                  *
                  */
@@ -5556,9 +5654,6 @@ public class ProductBilling
             {
 
                 private static final String REST_PATH = "orders/{order_id}/status";
-
-                @com.google.api.client.util.Key( "order_id" )
-                private java.lang.Long orderId;
 
                 /**
                  * Create a request for the method "status.update".
@@ -5620,6 +5715,9 @@ public class ProductBilling
                     return ( Update ) super.setUserIp( userIp );
                 }
 
+                @com.google.api.client.util.Key( "order_id" )
+                private java.lang.Long orderId;
+
                 /**
                  *
                  */
@@ -5642,101 +5740,6 @@ public class ProductBilling
             }
 
         }
-    }
-
-    /**
-     * The "prices" collection of methods.
-     */
-    public class Prices
-    {
-
-        /**
-         * Create a request for the method "prices.insert".
-         * <p>
-         * This request holds the parameters needed by the billing server.  After setting any optional
-         * parameters, call the {@link Insert#execute()} method to invoke the remote operation.
-         *
-         * @param content the {@link biz.turnonline.ecosystem.billing.model.Pricing}
-         * @return the request
-         */
-        public Insert insert( biz.turnonline.ecosystem.billing.model.Pricing content ) throws java.io.IOException
-        {
-            Insert result = new Insert( content );
-            initialize( result );
-            return result;
-        }
-
-        public class Insert
-                extends ProductBillingRequest<biz.turnonline.ecosystem.billing.model.Pricing>
-        {
-
-            private static final String REST_PATH = "prices";
-
-            /**
-             * Create a request for the method "prices.insert".
-             * <p>
-             * This request holds the parameters needed by the the billing server.  After setting any optional
-             * parameters, call the {@link Insert#execute()} method to invoke the remote operation. <p> {@link
-             * Insert#initialize(com.google.api.client.googleapis.services.AbstractGoogleClientRequest)} must
-             * be called to initialize this instance immediately after invoking the constructor. </p>
-             *
-             * @param content the {@link biz.turnonline.ecosystem.billing.model.Pricing}
-             * @since 1.13
-             */
-            protected Insert( biz.turnonline.ecosystem.billing.model.Pricing content )
-            {
-                super( ProductBilling.this, "POST", REST_PATH, content, biz.turnonline.ecosystem.billing.model.Pricing.class );
-            }
-
-            @Override
-            public Insert setAlt( java.lang.String alt )
-            {
-                return ( Insert ) super.setAlt( alt );
-            }
-
-            @Override
-            public Insert setFields( java.lang.String fields )
-            {
-                return ( Insert ) super.setFields( fields );
-            }
-
-            @Override
-            public Insert setKey( java.lang.String key )
-            {
-                return ( Insert ) super.setKey( key );
-            }
-
-            @Override
-            public Insert setOauthToken( java.lang.String oauthToken )
-            {
-                return ( Insert ) super.setOauthToken( oauthToken );
-            }
-
-            @Override
-            public Insert setPrettyPrint( java.lang.Boolean prettyPrint )
-            {
-                return ( Insert ) super.setPrettyPrint( prettyPrint );
-            }
-
-            @Override
-            public Insert setQuotaUser( java.lang.String quotaUser )
-            {
-                return ( Insert ) super.setQuotaUser( quotaUser );
-            }
-
-            @Override
-            public Insert setUserIp( java.lang.String userIp )
-            {
-                return ( Insert ) super.setUserIp( userIp );
-            }
-
-            @Override
-            public Insert set( String parameterName, Object value )
-            {
-                return ( Insert ) super.set( parameterName, value );
-            }
-        }
-
     }
 
     /**
@@ -5848,9 +5851,6 @@ public class ProductBilling
 
             private static final String REST_PATH = "products/{product_id}";
 
-            @com.google.api.client.util.Key( "product_id" )
-            private java.lang.Long productId;
-
             /**
              * Create a request for the method "products.delete".
              * <p>
@@ -5910,6 +5910,9 @@ public class ProductBilling
                 return ( Delete ) super.setUserIp( userIp );
             }
 
+            @com.google.api.client.util.Key( "product_id" )
+            private java.lang.Long productId;
+
             /**
              *
              */
@@ -5936,9 +5939,6 @@ public class ProductBilling
         {
 
             private static final String REST_PATH = "products/{product_id}";
-
-            @com.google.api.client.util.Key( "product_id" )
-            private java.lang.Long productId;
 
             /**
              * Create a request for the method "products.get".
@@ -6011,6 +6011,9 @@ public class ProductBilling
                 return ( Get ) super.setUserIp( userIp );
             }
 
+            @com.google.api.client.util.Key( "product_id" )
+            private java.lang.Long productId;
+
             /**
              *
              */
@@ -6037,9 +6040,6 @@ public class ProductBilling
         {
 
             private static final String REST_PATH = "products";
-
-            @com.google.api.client.util.Key
-            private java.util.List<java.lang.String> picsFrom;
 
             /**
              * Create a request for the method "products.insert".
@@ -6099,6 +6099,9 @@ public class ProductBilling
                 return ( Insert ) super.setUserIp( userIp );
             }
 
+            @com.google.api.client.util.Key
+            private java.util.List<java.lang.String> picsFrom;
+
             /**
              *
              */
@@ -6125,15 +6128,6 @@ public class ProductBilling
         {
 
             private static final String REST_PATH = "products";
-
-            @com.google.api.client.util.Key
-            private java.lang.Boolean lightList;
-
-            @com.google.api.client.util.Key
-            private java.lang.Integer limit;
-
-            @com.google.api.client.util.Key
-            private java.lang.Integer offset;
 
             /**
              * Create a request for the method "products.list".
@@ -6204,6 +6198,9 @@ public class ProductBilling
                 return ( List ) super.setUserIp( userIp );
             }
 
+            @com.google.api.client.util.Key
+            private java.lang.Boolean lightList;
+
             /**
              * [ default: false]
              * [
@@ -6212,6 +6209,9 @@ public class ProductBilling
             {
                 return lightList;
             }
+
+            @com.google.api.client.util.Key
+            private java.lang.Integer limit;
 
             /**
              * Convenience method that returns only {@link Boolean#TRUE} or {@link Boolean#FALSE}.
@@ -6242,11 +6242,8 @@ public class ProductBilling
                 return lightList;
             }
 
-            public List setLightList( java.lang.Boolean lightList )
-            {
-                this.lightList = lightList;
-                return this;
-            }
+            @com.google.api.client.util.Key
+            private java.lang.Integer offset;
 
             /**
              * [ default: 10]
@@ -6260,6 +6257,12 @@ public class ProductBilling
             public List setLimit( java.lang.Integer limit )
             {
                 this.limit = limit;
+                return this;
+            }
+
+            public List setLightList( java.lang.Boolean lightList )
+            {
+                this.lightList = lightList;
                 return this;
             }
 
@@ -6290,12 +6293,6 @@ public class ProductBilling
         {
 
             private static final String REST_PATH = "products/{product_id}";
-
-            @com.google.api.client.util.Key( "product_id" )
-            private java.lang.Long productId;
-
-            @com.google.api.client.util.Key
-            private java.util.List<java.lang.String> picsFrom;
 
             /**
              * Create a request for the method "products.update".
@@ -6357,6 +6354,9 @@ public class ProductBilling
                 return ( Update ) super.setUserIp( userIp );
             }
 
+            @com.google.api.client.util.Key( "product_id" )
+            private java.lang.Long productId;
+
             /**
              *
              */
@@ -6370,6 +6370,9 @@ public class ProductBilling
                 this.productId = productId;
                 return this;
             }
+
+            @com.google.api.client.util.Key
+            private java.util.List<java.lang.String> picsFrom;
 
             /**
              *
@@ -6471,9 +6474,6 @@ public class ProductBilling
 
                 private static final String REST_PATH = "products/{product_id}/publishing";
 
-                @com.google.api.client.util.Key( "product_id" )
-                private java.lang.Long productId;
-
                 /**
                  * Create a request for the method "publishing.delete".
                  * <p>
@@ -6533,6 +6533,9 @@ public class ProductBilling
                     return ( Delete ) super.setUserIp( userIp );
                 }
 
+                @com.google.api.client.util.Key( "product_id" )
+                private java.lang.Long productId;
+
                 /**
                  *
                  */
@@ -6559,9 +6562,6 @@ public class ProductBilling
             {
 
                 private static final String REST_PATH = "products/{product_id}/publishing";
-
-                @com.google.api.client.util.Key( "product_id" )
-                private java.lang.Long productId;
 
                 /**
                  * Create a request for the method "publishing.get".
@@ -6634,6 +6634,9 @@ public class ProductBilling
                     return ( Get ) super.setUserIp( userIp );
                 }
 
+                @com.google.api.client.util.Key( "product_id" )
+                private java.lang.Long productId;
+
                 /**
                  *
                  */
@@ -6660,12 +6663,6 @@ public class ProductBilling
             {
 
                 private static final String REST_PATH = "products/{product_id}/publishing";
-
-                @com.google.api.client.util.Key( "product_id" )
-                private java.lang.Long productId;
-
-                @com.google.api.client.util.Key
-                private java.util.List<java.lang.String> picsFrom;
 
                 /**
                  * Create a request for the method "publishing.update".
@@ -6728,6 +6725,9 @@ public class ProductBilling
                     return ( Update ) super.setUserIp( userIp );
                 }
 
+                @com.google.api.client.util.Key( "product_id" )
+                private java.lang.Long productId;
+
                 /**
                  *
                  */
@@ -6741,6 +6741,9 @@ public class ProductBilling
                     this.productId = productId;
                     return this;
                 }
+
+                @com.google.api.client.util.Key
+                private java.util.List<java.lang.String> picsFrom;
 
                 /**
                  *
@@ -6791,12 +6794,6 @@ public class ProductBilling
                 {
 
                     private static final String REST_PATH = "products/{product_id}/publishing/pictures/{order}";
-
-                    @com.google.api.client.util.Key( "product_id" )
-                    private java.lang.Long productId;
-
-                    @com.google.api.client.util.Key
-                    private java.lang.Integer order;
 
                     /**
                      * Create a request for the method "pictures.delete".
@@ -6859,6 +6856,9 @@ public class ProductBilling
                         return ( Delete ) super.setUserIp( userIp );
                     }
 
+                    @com.google.api.client.util.Key( "product_id" )
+                    private java.lang.Long productId;
+
                     /**
                      *
                      */
@@ -6872,6 +6872,9 @@ public class ProductBilling
                         this.productId = productId;
                         return this;
                     }
+
+                    @com.google.api.client.util.Key
+                    private java.lang.Integer order;
 
                     /**
                      *
@@ -6918,38 +6921,6 @@ public class ProductBilling
             Insert result = new Insert( content );
             initialize( result );
             return result;
-        }
-
-        /**
-         * An accessor for creating requests from the Expenses collection.
-         *
-         * <p>The typical use is:</p>
-         * <pre>
-         *   {@code ProductBilling billing = new ProductBilling(...);}
-         *   {@code ProductBilling.Expenses.List request = billing.expenses().list(parameters ...)}
-         * </pre>
-         *
-         * @return the resource collection
-         */
-        public Expenses expenses()
-        {
-            return new Expenses();
-        }
-
-        /**
-         * An accessor for creating requests from the Orders collection.
-         *
-         * <p>The typical use is:</p>
-         * <pre>
-         *   {@code ProductBilling billing = new ProductBilling(...);}
-         *   {@code ProductBilling.Orders.List request = billing.orders().list(parameters ...)}
-         * </pre>
-         *
-         * @return the resource collection
-         */
-        public Orders orders()
-        {
-            return new Orders();
         }
 
         public class Insert
@@ -7024,6 +6995,38 @@ public class ProductBilling
         }
 
         /**
+         * An accessor for creating requests from the Expenses collection.
+         *
+         * <p>The typical use is:</p>
+         * <pre>
+         *   {@code ProductBilling billing = new ProductBilling(...);}
+         *   {@code ProductBilling.Expenses.List request = billing.expenses().list(parameters ...)}
+         * </pre>
+         *
+         * @return the resource collection
+         */
+        public Expenses expenses()
+        {
+            return new Expenses();
+        }
+
+        /**
+         * An accessor for creating requests from the Orders collection.
+         *
+         * <p>The typical use is:</p>
+         * <pre>
+         *   {@code ProductBilling billing = new ProductBilling(...);}
+         *   {@code ProductBilling.Orders.List request = billing.orders().list(parameters ...)}
+         * </pre>
+         *
+         * @return the resource collection
+         */
+        public Orders orders()
+        {
+            return new Orders();
+        }
+
+        /**
          * The "expenses" collection of methods.
          */
         public class Expenses
@@ -7049,18 +7052,6 @@ public class ProductBilling
             {
 
                 private static final String REST_PATH = "purchases/expenses";
-
-                @com.google.api.client.util.Key
-                private java.lang.Boolean lightList;
-
-                @com.google.api.client.util.Key
-                private java.lang.Long orderId;
-
-                @com.google.api.client.util.Key
-                private java.lang.Integer limit;
-
-                @com.google.api.client.util.Key
-                private java.lang.Integer offset;
 
                 /**
                  * Create a request for the method "expenses.list".
@@ -7131,6 +7122,9 @@ public class ProductBilling
                     return ( List ) super.setUserIp( userIp );
                 }
 
+                @com.google.api.client.util.Key
+                private java.lang.Boolean lightList;
+
                 /**
                  * [ default: false]
                  * [
@@ -7139,6 +7133,9 @@ public class ProductBilling
                 {
                     return lightList;
                 }
+
+                @com.google.api.client.util.Key
+                private java.lang.Integer limit;
 
                 /**
                  * Convenience method that returns only {@link Boolean#TRUE} or {@link Boolean#FALSE}.
@@ -7169,6 +7166,42 @@ public class ProductBilling
                     return lightList;
                 }
 
+                @com.google.api.client.util.Key
+                private java.lang.Integer offset;
+
+                /**
+                 * [ default: 10]
+                 * [
+                 */
+                public java.lang.Integer getLimit()
+                {
+                    return limit;
+                }
+
+                public List setLimit( java.lang.Integer limit )
+                {
+                    this.limit = limit;
+                    return this;
+                }
+
+                @com.google.api.client.util.Key
+                private java.lang.Long orderId;
+
+                /**
+                 * [ default: 0]
+                 * [
+                 */
+                public java.lang.Integer getOffset()
+                {
+                    return offset;
+                }
+
+                public List setOffset( java.lang.Integer offset )
+                {
+                    this.offset = offset;
+                    return this;
+                }
+
                 public List setLightList( java.lang.Boolean lightList )
                 {
                     this.lightList = lightList;
@@ -7186,36 +7219,6 @@ public class ProductBilling
                 public List setOrderId( java.lang.Long orderId )
                 {
                     this.orderId = orderId;
-                    return this;
-                }
-
-                /**
-                 * [ default: 10]
-                 * [
-                 */
-                public java.lang.Integer getLimit()
-                {
-                    return limit;
-                }
-
-                public List setLimit( java.lang.Integer limit )
-                {
-                    this.limit = limit;
-                    return this;
-                }
-
-                /**
-                 * [ default: 0]
-                 * [
-                 */
-                public java.lang.Integer getOffset()
-                {
-                    return offset;
-                }
-
-                public List setOffset( java.lang.Integer offset )
-                {
-                    this.offset = offset;
                     return this;
                 }
 
@@ -7303,9 +7306,6 @@ public class ProductBilling
 
                 private static final String REST_PATH = "purchases/orders/{order_id}";
 
-                @com.google.api.client.util.Key( "order_id" )
-                private java.lang.Long orderId;
-
                 /**
                  * Create a request for the method "orders.delete".
                  * <p>
@@ -7365,6 +7365,9 @@ public class ProductBilling
                     return ( Delete ) super.setUserIp( userIp );
                 }
 
+                @com.google.api.client.util.Key( "order_id" )
+                private java.lang.Long orderId;
+
                 /**
                  *
                  */
@@ -7391,12 +7394,6 @@ public class ProductBilling
             {
 
                 private static final String REST_PATH = "purchases/orders/{order_id}";
-
-                @com.google.api.client.util.Key( "order_id" )
-                private java.lang.Long orderId;
-
-                @com.google.api.client.util.Key
-                private java.lang.Integer invoices;
 
                 /**
                  * Create a request for the method "orders.get".
@@ -7469,6 +7466,9 @@ public class ProductBilling
                     return ( Get ) super.setUserIp( userIp );
                 }
 
+                @com.google.api.client.util.Key( "order_id" )
+                private java.lang.Long orderId;
+
                 /**
                  *
                  */
@@ -7482,6 +7482,9 @@ public class ProductBilling
                     this.orderId = orderId;
                     return this;
                 }
+
+                @com.google.api.client.util.Key
+                private java.lang.Integer invoices;
 
                 /**
                  *
@@ -7509,15 +7512,6 @@ public class ProductBilling
             {
 
                 private static final String REST_PATH = "purchases/orders";
-
-                @com.google.api.client.util.Key
-                private java.lang.Boolean lightList;
-
-                @com.google.api.client.util.Key
-                private java.lang.Integer limit;
-
-                @com.google.api.client.util.Key
-                private java.lang.Integer offset;
 
                 /**
                  * Create a request for the method "orders.list".
@@ -7588,6 +7582,9 @@ public class ProductBilling
                     return ( List ) super.setUserIp( userIp );
                 }
 
+                @com.google.api.client.util.Key
+                private java.lang.Boolean lightList;
+
                 /**
                  * [ default: false]
                  * [
@@ -7596,6 +7593,9 @@ public class ProductBilling
                 {
                     return lightList;
                 }
+
+                @com.google.api.client.util.Key
+                private java.lang.Integer limit;
 
                 /**
                  * Convenience method that returns only {@link Boolean#TRUE} or {@link Boolean#FALSE}.
@@ -7626,11 +7626,8 @@ public class ProductBilling
                     return lightList;
                 }
 
-                public List setLightList( java.lang.Boolean lightList )
-                {
-                    this.lightList = lightList;
-                    return this;
-                }
+                @com.google.api.client.util.Key
+                private java.lang.Integer offset;
 
                 /**
                  * [ default: 10]
@@ -7644,6 +7641,12 @@ public class ProductBilling
                 public List setLimit( java.lang.Integer limit )
                 {
                     this.limit = limit;
+                    return this;
+                }
+
+                public List setLightList( java.lang.Boolean lightList )
+                {
+                    this.lightList = lightList;
                     return this;
                 }
 
@@ -7731,12 +7734,6 @@ public class ProductBilling
 
                     private static final String REST_PATH = "purchases/orders/{order_id}/invoices/{invoice_id}";
 
-                    @com.google.api.client.util.Key( "order_id" )
-                    private java.lang.Long orderId;
-
-                    @com.google.api.client.util.Key( "invoice_id" )
-                    private java.lang.Long invoiceId;
-
                     /**
                      * Create a request for the method "invoices.delete".
                      * <p>
@@ -7798,6 +7795,9 @@ public class ProductBilling
                         return ( Delete ) super.setUserIp( userIp );
                     }
 
+                    @com.google.api.client.util.Key( "order_id" )
+                    private java.lang.Long orderId;
+
                     /**
                      *
                      */
@@ -7811,6 +7811,9 @@ public class ProductBilling
                         this.orderId = orderId;
                         return this;
                     }
+
+                    @com.google.api.client.util.Key( "invoice_id" )
+                    private java.lang.Long invoiceId;
 
                     /**
                      *
@@ -7838,12 +7841,6 @@ public class ProductBilling
                 {
 
                     private static final String REST_PATH = "purchases/orders/{order_id}/invoices/{invoice_id}";
-
-                    @com.google.api.client.util.Key( "order_id" )
-                    private java.lang.Long orderId;
-
-                    @com.google.api.client.util.Key( "invoice_id" )
-                    private java.lang.Long invoiceId;
 
                     /**
                      * Create a request for the method "invoices.get".
@@ -7918,6 +7915,9 @@ public class ProductBilling
                         return ( Get ) super.setUserIp( userIp );
                     }
 
+                    @com.google.api.client.util.Key( "order_id" )
+                    private java.lang.Long orderId;
+
                     /**
                      *
                      */
@@ -7931,6 +7931,9 @@ public class ProductBilling
                         this.orderId = orderId;
                         return this;
                     }
+
+                    @com.google.api.client.util.Key( "invoice_id" )
+                    private java.lang.Long invoiceId;
 
                     /**
                      *
@@ -7958,18 +7961,6 @@ public class ProductBilling
                 {
 
                     private static final String REST_PATH = "purchases/orders/{order_id}/invoices";
-
-                    @com.google.api.client.util.Key( "order_id" )
-                    private java.lang.Long orderId;
-
-                    @com.google.api.client.util.Key
-                    private java.lang.Boolean lightList;
-
-                    @com.google.api.client.util.Key
-                    private java.lang.Integer limit;
-
-                    @com.google.api.client.util.Key
-                    private java.lang.Integer offset;
 
                     /**
                      * Create a request for the method "invoices.list".
@@ -8042,6 +8033,9 @@ public class ProductBilling
                         return ( List ) super.setUserIp( userIp );
                     }
 
+                    @com.google.api.client.util.Key( "order_id" )
+                    private java.lang.Long orderId;
+
                     /**
                      *
                      */
@@ -8056,6 +8050,9 @@ public class ProductBilling
                         return this;
                     }
 
+                    @com.google.api.client.util.Key
+                    private java.lang.Boolean lightList;
+
                     /**
                      * [ default: false]
                      * [
@@ -8064,6 +8061,9 @@ public class ProductBilling
                     {
                         return lightList;
                     }
+
+                    @com.google.api.client.util.Key
+                    private java.lang.Integer limit;
 
                     /**
                      * Convenience method that returns only {@link Boolean#TRUE} or {@link Boolean#FALSE}.
@@ -8094,11 +8094,8 @@ public class ProductBilling
                         return lightList;
                     }
 
-                    public List setLightList( java.lang.Boolean lightList )
-                    {
-                        this.lightList = lightList;
-                        return this;
-                    }
+                    @com.google.api.client.util.Key
+                    private java.lang.Integer offset;
 
                     /**
                      * [ default: 10]
@@ -8112,6 +8109,12 @@ public class ProductBilling
                     public List setLimit( java.lang.Integer limit )
                     {
                         this.limit = limit;
+                        return this;
+                    }
+
+                    public List setLightList( java.lang.Boolean lightList )
+                    {
+                        this.lightList = lightList;
                         return this;
                     }
 
@@ -8194,14 +8197,82 @@ public class ProductBilling
             return result;
         }
 
+        public class Insert
+                extends ProductBillingRequest<Void>
+        {
+
+            private static final String REST_PATH = "transactions";
+
+            /**
+             * Create a request for the method "transactions.insert".
+             * <p>
+             * This request holds the parameters needed by the the billing server.  After setting any optional
+             * parameters, call the {@link Insert#execute()} method to invoke the remote operation. <p> {@link
+             * Insert#initialize(com.google.api.client.googleapis.services.AbstractGoogleClientRequest)} must
+             * be called to initialize this instance immediately after invoking the constructor. </p>
+             *
+             * @param content the {@link biz.turnonline.ecosystem.billing.model.Transaction}
+             * @since 1.13
+             */
+            protected Insert( biz.turnonline.ecosystem.billing.model.Transaction content )
+            {
+                super( ProductBilling.this, "POST", REST_PATH, content, Void.class );
+            }
+
+            @Override
+            public Insert setAlt( java.lang.String alt )
+            {
+                return ( Insert ) super.setAlt( alt );
+            }
+
+            @Override
+            public Insert setFields( java.lang.String fields )
+            {
+                return ( Insert ) super.setFields( fields );
+            }
+
+            @Override
+            public Insert setKey( java.lang.String key )
+            {
+                return ( Insert ) super.setKey( key );
+            }
+
+            @Override
+            public Insert setOauthToken( java.lang.String oauthToken )
+            {
+                return ( Insert ) super.setOauthToken( oauthToken );
+            }
+
+            @Override
+            public Insert setPrettyPrint( java.lang.Boolean prettyPrint )
+            {
+                return ( Insert ) super.setPrettyPrint( prettyPrint );
+            }
+
+            @Override
+            public Insert setQuotaUser( java.lang.String quotaUser )
+            {
+                return ( Insert ) super.setQuotaUser( quotaUser );
+            }
+
+            @Override
+            public Insert setUserIp( java.lang.String userIp )
+            {
+                return ( Insert ) super.setUserIp( userIp );
+            }
+
+            @Override
+            public Insert set( String parameterName, Object value )
+            {
+                return ( Insert ) super.set( parameterName, value );
+            }
+        }
+
         public class Get
                 extends ProductBillingRequest<biz.turnonline.ecosystem.billing.model.Transaction>
         {
 
             private static final String REST_PATH = "transactions/{transaction_id}";
-
-            @com.google.api.client.util.Key( "transaction_id" )
-            private java.lang.Long transactionId;
 
             /**
              * Create a request for the method "transactions.get".
@@ -8274,6 +8345,9 @@ public class ProductBilling
                 return ( Get ) super.setUserIp( userIp );
             }
 
+            @com.google.api.client.util.Key( "transaction_id" )
+            private java.lang.Long transactionId;
+
             /**
              *
              */
@@ -8295,103 +8369,11 @@ public class ProductBilling
             }
         }
 
-        public class Insert
-                extends ProductBillingRequest<Void>
-        {
-
-            private static final String REST_PATH = "transactions";
-
-            /**
-             * Create a request for the method "transactions.insert".
-             * <p>
-             * This request holds the parameters needed by the the billing server.  After setting any optional
-             * parameters, call the {@link Insert#execute()} method to invoke the remote operation. <p> {@link
-             * Insert#initialize(com.google.api.client.googleapis.services.AbstractGoogleClientRequest)} must
-             * be called to initialize this instance immediately after invoking the constructor. </p>
-             *
-             * @param content the {@link biz.turnonline.ecosystem.billing.model.Transaction}
-             * @since 1.13
-             */
-            protected Insert( biz.turnonline.ecosystem.billing.model.Transaction content )
-            {
-                super( ProductBilling.this, "POST", REST_PATH, content, Void.class );
-            }
-
-            @Override
-            public Insert setAlt( java.lang.String alt )
-            {
-                return ( Insert ) super.setAlt( alt );
-            }
-
-            @Override
-            public Insert setFields( java.lang.String fields )
-            {
-                return ( Insert ) super.setFields( fields );
-            }
-
-            @Override
-            public Insert setKey( java.lang.String key )
-            {
-                return ( Insert ) super.setKey( key );
-            }
-
-            @Override
-            public Insert setOauthToken( java.lang.String oauthToken )
-            {
-                return ( Insert ) super.setOauthToken( oauthToken );
-            }
-
-            @Override
-            public Insert setPrettyPrint( java.lang.Boolean prettyPrint )
-            {
-                return ( Insert ) super.setPrettyPrint( prettyPrint );
-            }
-
-            @Override
-            public Insert setQuotaUser( java.lang.String quotaUser )
-            {
-                return ( Insert ) super.setQuotaUser( quotaUser );
-            }
-
-            @Override
-            public Insert setUserIp( java.lang.String userIp )
-            {
-                return ( Insert ) super.setUserIp( userIp );
-            }
-
-            @Override
-            public Insert set( String parameterName, Object value )
-            {
-                return ( Insert ) super.set( parameterName, value );
-            }
-        }
-
         public class List
                 extends ProductBillingRequest<biz.turnonline.ecosystem.billing.model.TransactionCollection>
         {
 
             private static final String REST_PATH = "transactions";
-
-            @com.google.api.client.util.Key
-            private java.lang.Integer limit;
-
-            @com.google.api.client.util.Key
-            private java.lang.String operation;
-
-            @com.google.api.client.util.Key
-            private java.lang.String type;
-
-            @com.google.api.client.util.Key
-            private java.lang.Long invoiceId;
-
-            @com.google.api.client.util.Key
-            private java.lang.Long orderId;
-
-            @com.google.api.client.util.Key
-            private java.lang.Long billId;
-
-            @com.google.api.client.util.Key
-            private java.lang.Integer offset;
 
             /**
              * Create a request for the method "transactions.list".
@@ -8462,6 +8444,9 @@ public class ProductBilling
                 return ( List ) super.setUserIp( userIp );
             }
 
+            @com.google.api.client.util.Key
+            private java.lang.Integer limit;
+
             /**
              * [ default: 20]
              * [
@@ -8477,6 +8462,18 @@ public class ProductBilling
                 return this;
             }
 
+            @com.google.api.client.util.Key
+            private java.lang.Integer offset;
+
+            @com.google.api.client.util.Key
+            private java.lang.String operation;
+
+            @com.google.api.client.util.Key
+            private java.lang.Long orderId;
+
+            @com.google.api.client.util.Key
+            private java.lang.String type;
+
             /**
              * [ default: both]
              * [
@@ -8489,6 +8486,27 @@ public class ProductBilling
             public List setOperation( java.lang.String operation )
             {
                 this.operation = operation;
+                return this;
+            }
+
+            @com.google.api.client.util.Key
+            private java.lang.Long invoiceId;
+
+            @com.google.api.client.util.Key
+            private java.lang.Long billId;
+
+            /**
+             * [ default: 0]
+             * [
+             */
+            public java.lang.Integer getOffset()
+            {
+                return offset;
+            }
+
+            public List setOffset( java.lang.Integer offset )
+            {
+                this.offset = offset;
                 return this;
             }
 
@@ -8509,6 +8527,14 @@ public class ProductBilling
             /**
              *
              */
+            public java.lang.Long getOrderId()
+            {
+                return orderId;
+            }
+
+            /**
+             *
+             */
             public java.lang.Long getInvoiceId()
             {
                 return invoiceId;
@@ -8518,14 +8544,6 @@ public class ProductBilling
             {
                 this.invoiceId = invoiceId;
                 return this;
-            }
-
-            /**
-             *
-             */
-            public java.lang.Long getOrderId()
-            {
-                return orderId;
             }
 
             public List setOrderId( java.lang.Long orderId )
@@ -8545,21 +8563,6 @@ public class ProductBilling
             public List setBillId( java.lang.Long billId )
             {
                 this.billId = billId;
-                return this;
-            }
-
-            /**
-             * [ default: 0]
-             * [
-             */
-            public java.lang.Integer getOffset()
-            {
-                return offset;
-            }
-
-            public List setOffset( java.lang.Integer offset )
-            {
-                this.offset = offset;
                 return this;
             }
 
@@ -8598,9 +8601,6 @@ public class ProductBilling
         {
 
             private static final String REST_PATH = "codebook/vat-rates";
-
-            @com.google.api.client.util.Key
-            private java.lang.String domicile;
 
             /**
              * Create a request for the method "vat_rates.list".
@@ -8670,6 +8670,9 @@ public class ProductBilling
             {
                 return ( List ) super.setUserIp( userIp );
             }
+
+            @com.google.api.client.util.Key
+            private java.lang.String domicile;
 
             /**
              *

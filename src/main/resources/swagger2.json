@@ -995,8 +995,8 @@
                 "tags": [
                     "Direct Offers"
                 ],
-                "summary": "Clones the existing offer",
-                "description": "Clones the existing public offer. Newly created offer will mirror the existing one where 'sourceId' property will be set from the original Offer.\n\nUse this endpoint when a customer has expressed interest in a public offering. Clone the existing public Offer and enlist it as a purchased order for the specified customer.",
+                "summary": "Clones a public offering",
+                "description": "Clones an existing public offering. Newly created offer will mirror the existing one where 'sourceId' property will be set from the original Offer.\n\nUse this endpoint when a customer has expressed interest in a public offering. Clone the existing public Offer and enlist it as a purchased order for the specified customer.\n\nEither owner (creditor) of the offer can clone or the customer account if exist.",
                 "operationId": "cloneOffer",
                 "consumes": [
                     "application/json"
@@ -1037,13 +1037,19 @@
                         }
                     },
                     "400": {
-                        "description": "The error indicates the offer is not allowed to be cloned",
+                        "description": "The error indicates the offer is not allowed to be cloned.\n\nEither it has different status as ACTIVE, TRIALING or offer doesn't represent a public offering (it has customer specified). Also, if customer ID has been provided but not found.",
                         "schema": {
                             "$ref": "#/definitions/Error"
                         }
                     },
                     "401": {
                         "description": "The error when the authentication credential fails.",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "The error when offer has a different owner as the authenticated account and customer is unknown (customer without an account).",
                         "schema": {
                             "$ref": "#/definitions/Error"
                         }

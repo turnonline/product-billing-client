@@ -996,7 +996,7 @@
                     "Direct Offers"
                 ],
                 "summary": "Clones a public offering",
-                "description": "Clones an existing public offering. Newly created offer will mirror the existing one where 'sourceId' property will be set from the original Offer.\n\nUse this endpoint when a customer has expressed interest in a public offering. Clone the existing public Offer and enlist it as a purchased order for the specified customer.\n\nEither owner (creditor) of the offer can clone or the customer account if exist.",
+                "description": "Clones an existing public offering. The newly created offer will mirror the existing one where 'sourceId' property will be set from the original Offer.\n\nUse this endpoint when a customer has expressed interest in a public unexpired offering (single recipient). Clone the existing public Offer and enlist it as a purchased order for the specified customer.\n\nEither owner (creditor) of the offer can clone or the customer account if exist.",
                 "operationId": "cloneOffer",
                 "consumes": [
                     "application/json"
@@ -1037,7 +1037,7 @@
                         }
                     },
                     "400": {
-                        "description": "The error indicates the offer is not allowed to be cloned.\n\nEither it has different status as ACTIVE, TRIALING or offer doesn't represent a public offering (it has customer specified). Also, if customer ID has been provided but not found.",
+                        "description": "The error indicates the offer is not allowed to be cloned.\n\nEither it has different status as ACTIVE, TRIALING; or the offer doesn't represent a publicly available, unexpired offering (as it is customer-specific). Also, if customer ID has been provided but not found.",
                         "schema": {
                             "$ref": "#/definitions/Error"
                         }
@@ -4843,11 +4843,11 @@
                 "modificationDate": {
                     "type": "string",
                     "format": "date-time",
-                    "description": "The date of the last modification of offer values. Managed solely by the service. RFC 3339"
+                    "description": "The last modification date of the offer values. Managed solely by the service. RFC 3339"
                 },
                 "multipleRecipients": {
                     "type": "boolean",
-                    "description": "The boolean indication whether this offer supports multiple recipients.\n If yes, the offer might be offered to arbitrary number of the users."
+                    "description": "The boolean indication whether this offer supports multiple recipients.\n If yes, there might be added arbitrary number of recipients at the single order."
                 },
                 "nextBillingDate": {
                     "type": "string",
@@ -4879,7 +4879,7 @@
                 },
                 "snippet": {
                     "type": "string",
-                    "description": "The short description of the offer. It might be a short description one of the product from the order. Alternatively it might be also a direct message to the target customer. The max length is set to 500 characters."
+                    "description": "The short description of the offer. It might be a short description of one of the products from the order. Alternatively, it might be also a direct message to the target customer. The max length is set to 500 characters."
                 },
                 "sourceId": {
                     "type": "integer",
@@ -4909,7 +4909,7 @@
                 },
                 "title": {
                     "type": "string",
-                    "description": "The offer title. A text that should take an user attention. The max length is set to 100 characters."
+                    "description": "The offer title. A text that should take user attention. The max length is set to 100 characters."
                 },
                 "totalPrice": {
                     "type": "number",
@@ -5589,7 +5589,7 @@
                 "modificationDate": {
                     "type": "string",
                     "format": "date-time",
-                    "description": "The date of the last modification of incoming invoice values. RFC 3339"
+                    "description": "The last modification date of incoming invoice values. RFC 3339"
                 },
                 "orderId": {
                     "type": "integer",
@@ -5714,7 +5714,7 @@
                 "modificationDate": {
                     "type": "string",
                     "format": "date-time",
-                    "description": "The date of the last modification of invoice values. Managed solely by the service. RFC 3339"
+                    "description": "The last modification date of invoice values. Managed solely by the service. RFC 3339"
                 },
                 "numberSeries": {
                     "description": "The number series to be used to increment the invoice number. In order to assign an existing number series provide one of the code from the number series codebook. Omit this property or use DEFAULT value in order to use accounting system default.",
@@ -5916,7 +5916,7 @@
                 "modificationDate": {
                     "type": "string",
                     "format": "date-time",
-                    "description": "The date of the last modification of the associated order values."
+                    "description": "The last modification date of the associated order values."
                 },
                 "multipleRecipients": {
                     "type": "boolean",
@@ -5924,7 +5924,7 @@
                 },
                 "snippet": {
                     "type": "string",
-                    "description": "The short description of the offer.\n\nIt might be a short description one of the product at order. Alternatively it might be also a direct message to the target customer. The recommended length is max. 500 characters."
+                    "description": "The short description of the offer.\n\nIt might be a short description of one of the products from the order. Alternatively, it might be also a direct message to the target customer. The recommended length is max. 500 characters."
                 },
                 "sponsor": {
                     "description": "The ConnecSys user account that will pay for this offer if accepted. Once accepted by the recipient, the sponsor will become a debtor at the invoice.",
@@ -5940,7 +5940,7 @@
                 },
                 "title": {
                     "type": "string",
-                    "description": "The offer title. A text that should take an user attention."
+                    "description": "The offer title. A text that should take user attention."
                 },
                 "totalPrice": {
                     "type": "number",
@@ -6086,7 +6086,7 @@
                 "modificationDate": {
                     "type": "string",
                     "format": "date-time",
-                    "description": "The date of the last modification of order values. Managed solely by the service. RFC 3339"
+                    "description": "The last modification date of the order values. Managed solely by the service. RFC 3339"
                 },
                 "nextBillingDate": {
                     "type": "string",
@@ -6944,7 +6944,7 @@
                 "modificationDate": {
                     "type": "string",
                     "format": "date-time",
-                    "description": "The date of the last modification of purchase order values. Managed solely by the service. RFC 3339"
+                    "description": "The last modification date of the purchase order values. Managed solely by the service. RFC 3339"
                 },
                 "nextBillingDate": {
                     "type": "string",
@@ -7054,11 +7054,11 @@
                 },
                 "snippet": {
                     "type": "string",
-                    "description": "The short description of the offer.\n\nIt might be a short description one of the product at purchase order. Alternatively it might be also a direct message to the target customer. The max length is set to 500 characters."
+                    "description": "The short description of the offer.\n\nIt might be a short description of one of the products at purchase order. Alternatively, it might be also a direct message to the target customer. The max length is set to 500 characters."
                 },
                 "title": {
                     "type": "string",
-                    "description": "The offer title. A text that should take an user attention."
+                    "description": "The offer title. A text that should take user attention."
                 }
             },
             "type": "object",

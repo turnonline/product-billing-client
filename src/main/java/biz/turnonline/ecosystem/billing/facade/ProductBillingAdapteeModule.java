@@ -41,6 +41,7 @@ import biz.turnonline.ecosystem.billing.facade.adaptee.ProductPublishingAdaptee;
 import biz.turnonline.ecosystem.billing.facade.adaptee.PurchaseOrderDeleteAdaptee;
 import biz.turnonline.ecosystem.billing.facade.adaptee.PurchaseOrderGetAdaptee;
 import biz.turnonline.ecosystem.billing.facade.adaptee.PurchaseOrderListAdaptee;
+import biz.turnonline.ecosystem.billing.facade.adaptee.PurchaseRequestInsertAdaptee;
 import biz.turnonline.ecosystem.billing.facade.adaptee.TransactionAdaptee;
 import biz.turnonline.ecosystem.billing.facade.adaptee.TransactionGetAdaptee;
 import biz.turnonline.ecosystem.billing.facade.adaptee.TransactionListAdaptee;
@@ -63,6 +64,7 @@ import biz.turnonline.ecosystem.billing.model.Product;
 import biz.turnonline.ecosystem.billing.model.ProductPicture;
 import biz.turnonline.ecosystem.billing.model.ProductPublishing;
 import biz.turnonline.ecosystem.billing.model.PurchaseOrder;
+import biz.turnonline.ecosystem.billing.model.PurchaseRequest;
 import biz.turnonline.ecosystem.billing.model.PureOffer;
 import biz.turnonline.ecosystem.billing.model.ShippingDetails;
 import biz.turnonline.ecosystem.billing.model.Transaction;
@@ -199,6 +201,10 @@ public class ProductBillingAdapteeModule
         bind( new TypeLiteral<DeleteExecutorAdaptee<CompleteOffer>>()
         {
         } ).to( OfferDeleteAdaptee.class );
+
+        bind( new TypeLiteral<InsertExecutorAdaptee<PurchaseRequest>>()
+        {
+        } ).to( PurchaseRequestInsertAdaptee.class );
 
         // Offer recipient
         bind( new TypeLiteral<ListExecutorAdaptee<OfferRecipient>>()

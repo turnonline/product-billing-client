@@ -990,14 +990,14 @@
                 ]
             }
         },
-        "/v1/offers/{offer_id}/clone": {
+        "/v1/offers/{offer_id}/purchase": {
             "post": {
                 "tags": [
                     "Direct Offers"
                 ],
-                "summary": "Clones a public offering",
-                "description": "Clones an existing public offering. The newly created offer will mirror the existing one where 'sourceId' property will be set from the original Offer.\n\nUse this endpoint when a customer has expressed interest in a public unexpired offering (single recipient). Clone the existing public Offer and enlist it as a purchased order for the specified customer.\n\nEither owner (creditor) of the offer can clone or the customer account if exist.",
-                "operationId": "cloneOffer",
+                "summary": "Purchases a public offering",
+                "description": "Purchases an existing public offering. The newly created offer will mirror the existing one where 'sourceId' property will be set from the original Offer.\n\nUse this endpoint when a customer has expressed interest in a public unexpired offering (single recipient). Purchase the existing public Offer and enlist it as a purchased order for the specified customer.\n\nEither owner (creditor) of the offer can purchase (on behalf of the customer) or the customer account if exist.",
+                "operationId": "purchaseOffer",
                 "consumes": [
                     "application/json"
                 ],
@@ -1018,26 +1018,26 @@
                         "required": true,
                         "type": "integer",
                         "format": "int64",
-                        "description": "The offer identification to be cloned"
+                        "description": "The offer identification to be purchased"
                     },
                     {
                         "in": "body",
                         "name": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/Customer"
+                            "$ref": "#/definitions/PurchaseRequest"
                         }
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "The confirmation, the offer has been cloned.",
+                        "description": "The confirmation, the offer has been purchased.",
                         "schema": {
                             "$ref": "#/definitions/CompleteOffer"
                         }
                     },
                     "400": {
-                        "description": "The error indicates the offer is not allowed to be cloned.\n\nEither it has different status as ACTIVE, TRIALING; or the offer doesn't represent a publicly available, unexpired offering (as it is customer-specific). Also, if customer ID has been provided but not found.",
+                        "description": "The error indicates the offer is not allowed to be purchased.\n\nEither it has different status as ACTIVE, TRIALING; or the offer doesn't represent a publicly available, unexpired offering (as it is customer-specific). Also, if customer ID has been provided but was not found.",
                         "schema": {
                             "$ref": "#/definitions/Error"
                         }
@@ -1055,7 +1055,7 @@
                         }
                     },
                     "404": {
-                        "description": "The error when client tries to clone an offer that does not exist.",
+                        "description": "The error when client tries to purchase an offer that does not exist.",
                         "schema": {
                             "$ref": "#/definitions/Error"
                         }
@@ -7016,6 +7016,23 @@
                     }
                 }
             }
+        },
+        "PurchaseRequest": {
+            "properties": {
+                "customer": {
+                    "description": "The identification of the customer.",
+                    "$ref": "#/definitions/Customer"
+                },
+                "delivery": {
+                    "description": "The delivery shipping details. Specified only if the order represents goods and needs to be delivered to the customer.",
+                    "$ref": "#/definitions/ShippingDetails"
+                }
+            },
+            "required": [
+                "customer"
+            ],
+            "type": "object",
+            "description": "A purchase request as a formal submission made to authorize and initiate the acquisition of goods or services."
         },
         "PureOffer": {
             "properties": {

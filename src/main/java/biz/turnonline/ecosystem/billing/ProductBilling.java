@@ -453,111 +453,6 @@ public class ProductBilling
     }
 
     /**
-     * The "number_series" collection of methods.
-     */
-    public class NumberSeries
-    {
-
-        /**
-         * Create a request for the method "number_series.list".
-         * <p>
-         * This request holds the parameters needed by the billing server.  After setting any optional
-         * parameters, call the {@link List#execute()} method to invoke the remote operation.
-         *
-         * @return the request
-         */
-        public List list() throws java.io.IOException
-        {
-            List result = new List();
-            initialize( result );
-            return result;
-        }
-
-        public class List
-                extends ProductBillingRequest<biz.turnonline.ecosystem.billing.model.NumberSeriesCollection>
-        {
-
-            private static final String REST_PATH = "codebook/number-series";
-
-            /**
-             * Create a request for the method "number_series.list".
-             * <p>
-             * This request holds the parameters needed by the the billing server.  After setting any optional
-             * parameters, call the {@link List#execute()} method to invoke the remote operation. <p> {@link
-             * List#initialize(com.google.api.client.googleapis.services.AbstractGoogleClientRequest)} must be
-             * called to initialize this instance immediately after invoking the constructor. </p>
-             *
-             * @since 1.13
-             */
-            protected List()
-            {
-                super( ProductBilling.this, "GET", REST_PATH, null, biz.turnonline.ecosystem.billing.model.NumberSeriesCollection.class );
-            }
-
-            @Override
-            public com.google.api.client.http.HttpResponse executeUsingHead() throws java.io.IOException
-            {
-                return super.executeUsingHead();
-            }
-
-            @Override
-            public com.google.api.client.http.HttpRequest buildHttpRequestUsingHead() throws java.io.IOException
-            {
-                return super.buildHttpRequestUsingHead();
-            }
-
-            @Override
-            public List setAlt( java.lang.String alt )
-            {
-                return ( List ) super.setAlt( alt );
-            }
-
-            @Override
-            public List setFields( java.lang.String fields )
-            {
-                return ( List ) super.setFields( fields );
-            }
-
-            @Override
-            public List setKey( java.lang.String key )
-            {
-                return ( List ) super.setKey( key );
-            }
-
-            @Override
-            public List setOauthToken( java.lang.String oauthToken )
-            {
-                return ( List ) super.setOauthToken( oauthToken );
-            }
-
-            @Override
-            public List setPrettyPrint( java.lang.Boolean prettyPrint )
-            {
-                return ( List ) super.setPrettyPrint( prettyPrint );
-            }
-
-            @Override
-            public List setQuotaUser( java.lang.String quotaUser )
-            {
-                return ( List ) super.setQuotaUser( quotaUser );
-            }
-
-            @Override
-            public List setUserIp( java.lang.String userIp )
-            {
-                return ( List ) super.setUserIp( userIp );
-            }
-
-            @Override
-            public List set( String parameterName, Object value )
-            {
-                return ( List ) super.set( parameterName, value );
-            }
-        }
-
-    }
-
-    /**
      * An accessor for creating requests from the Prices collection.
      *
      * <p>The typical use is:</p>
@@ -635,101 +530,6 @@ public class ProductBilling
     public VatRates vatRates()
     {
         return new VatRates();
-    }
-
-    /**
-     * The "prices" collection of methods.
-     */
-    public class Prices
-    {
-
-        /**
-         * Create a request for the method "prices.insert".
-         * <p>
-         * This request holds the parameters needed by the billing server.  After setting any optional
-         * parameters, call the {@link Insert#execute()} method to invoke the remote operation.
-         *
-         * @param content the {@link biz.turnonline.ecosystem.billing.model.Pricing}
-         * @return the request
-         */
-        public Insert insert( biz.turnonline.ecosystem.billing.model.Pricing content ) throws java.io.IOException
-        {
-            Insert result = new Insert( content );
-            initialize( result );
-            return result;
-        }
-
-        public class Insert
-                extends ProductBillingRequest<biz.turnonline.ecosystem.billing.model.Pricing>
-        {
-
-            private static final String REST_PATH = "prices";
-
-            /**
-             * Create a request for the method "prices.insert".
-             * <p>
-             * This request holds the parameters needed by the the billing server.  After setting any optional
-             * parameters, call the {@link Insert#execute()} method to invoke the remote operation. <p> {@link
-             * Insert#initialize(com.google.api.client.googleapis.services.AbstractGoogleClientRequest)} must
-             * be called to initialize this instance immediately after invoking the constructor. </p>
-             *
-             * @param content the {@link biz.turnonline.ecosystem.billing.model.Pricing}
-             * @since 1.13
-             */
-            protected Insert( biz.turnonline.ecosystem.billing.model.Pricing content )
-            {
-                super( ProductBilling.this, "POST", REST_PATH, content, biz.turnonline.ecosystem.billing.model.Pricing.class );
-            }
-
-            @Override
-            public Insert setAlt( java.lang.String alt )
-            {
-                return ( Insert ) super.setAlt( alt );
-            }
-
-            @Override
-            public Insert setFields( java.lang.String fields )
-            {
-                return ( Insert ) super.setFields( fields );
-            }
-
-            @Override
-            public Insert setKey( java.lang.String key )
-            {
-                return ( Insert ) super.setKey( key );
-            }
-
-            @Override
-            public Insert setOauthToken( java.lang.String oauthToken )
-            {
-                return ( Insert ) super.setOauthToken( oauthToken );
-            }
-
-            @Override
-            public Insert setPrettyPrint( java.lang.Boolean prettyPrint )
-            {
-                return ( Insert ) super.setPrettyPrint( prettyPrint );
-            }
-
-            @Override
-            public Insert setQuotaUser( java.lang.String quotaUser )
-            {
-                return ( Insert ) super.setQuotaUser( quotaUser );
-            }
-
-            @Override
-            public Insert setUserIp( java.lang.String userIp )
-            {
-                return ( Insert ) super.setUserIp( userIp );
-            }
-
-            @Override
-            public Insert set( String parameterName, Object value )
-            {
-                return ( Insert ) super.set( parameterName, value );
-            }
-        }
-
     }
 
     /**
@@ -879,25 +679,6 @@ public class ProductBilling
             return result;
         }
 
-        /**
-         * Create a request for the method "configs.update".
-         * <p>
-         * This request holds the parameters needed by the billing server.  After setting any optional
-         * parameters, call the {@link Update#execute()} method to invoke the remote operation.
-         *
-         * @param profileName
-         * @param content     the {@link biz.turnonline.ecosystem.billing.model.AccountingSystem}
-         * @return the request
-         */
-        public Update update( java.lang.String profileName,
-                              biz.turnonline.ecosystem.billing.model.AccountingSystem content )
-                throws java.io.IOException
-        {
-            Update result = new Update( profileName, content );
-            initialize( result );
-            return result;
-        }
-
         public class Delete
                 extends ProductBillingRequest<Void>
         {
@@ -985,6 +766,25 @@ public class ProductBilling
             {
                 return ( Delete ) super.set( parameterName, value );
             }
+        }
+
+        /**
+         * Create a request for the method "configs.update".
+         * <p>
+         * This request holds the parameters needed by the billing server.  After setting any optional
+         * parameters, call the {@link Update#execute()} method to invoke the remote operation.
+         *
+         * @param profileName
+         * @param content     the {@link biz.turnonline.ecosystem.billing.model.AccountingSystem}
+         * @return the request
+         */
+        public Update update( java.lang.String profileName,
+                              biz.turnonline.ecosystem.billing.model.AccountingSystem content )
+                throws java.io.IOException
+        {
+            Update result = new Update( profileName, content );
+            initialize( result );
+            return result;
         }
 
         public class Update
@@ -1311,6 +1111,27 @@ public class ProductBilling
             private java.lang.Integer offset;
 
             /**
+             * [ default: 0]
+             * [
+             */
+            public java.lang.Integer getOffset()
+            {
+                return offset;
+            }
+
+            public List setOffset( java.lang.Integer offset )
+            {
+                this.offset = offset;
+                return this;
+            }
+
+            public List setLightList( java.lang.Boolean lightList )
+            {
+                this.lightList = lightList;
+                return this;
+            }
+
+            /**
              * [ default: 10]
              * [
              */
@@ -1325,25 +1146,109 @@ public class ProductBilling
                 return this;
             }
 
-            public List setLightList( java.lang.Boolean lightList )
+            @Override
+            public List set( String parameterName, Object value )
             {
-                this.lightList = lightList;
-                return this;
+                return ( List ) super.set( parameterName, value );
             }
+        }
+
+    }
+
+    /**
+     * The "number_series" collection of methods.
+     */
+    public class NumberSeries
+    {
+
+        /**
+         * Create a request for the method "number_series.list".
+         * <p>
+         * This request holds the parameters needed by the billing server.  After setting any optional
+         * parameters, call the {@link List#execute()} method to invoke the remote operation.
+         *
+         * @return the request
+         */
+        public List list() throws java.io.IOException
+        {
+            List result = new List();
+            initialize( result );
+            return result;
+        }
+
+        public class List
+                extends ProductBillingRequest<biz.turnonline.ecosystem.billing.model.NumberSeriesCollection>
+        {
+
+            private static final String REST_PATH = "codebook/number-series";
 
             /**
-             * [ default: 0]
-             * [
+             * Create a request for the method "number_series.list".
+             * <p>
+             * This request holds the parameters needed by the the billing server.  After setting any optional
+             * parameters, call the {@link List#execute()} method to invoke the remote operation. <p> {@link
+             * List#initialize(com.google.api.client.googleapis.services.AbstractGoogleClientRequest)} must be
+             * called to initialize this instance immediately after invoking the constructor. </p>
+             *
+             * @since 1.13
              */
-            public java.lang.Integer getOffset()
+            protected List()
             {
-                return offset;
+                super( ProductBilling.this, "GET", REST_PATH, null, biz.turnonline.ecosystem.billing.model.NumberSeriesCollection.class );
             }
 
-            public List setOffset( java.lang.Integer offset )
+            @Override
+            public com.google.api.client.http.HttpResponse executeUsingHead() throws java.io.IOException
             {
-                this.offset = offset;
-                return this;
+                return super.executeUsingHead();
+            }
+
+            @Override
+            public com.google.api.client.http.HttpRequest buildHttpRequestUsingHead() throws java.io.IOException
+            {
+                return super.buildHttpRequestUsingHead();
+            }
+
+            @Override
+            public List setAlt( java.lang.String alt )
+            {
+                return ( List ) super.setAlt( alt );
+            }
+
+            @Override
+            public List setFields( java.lang.String fields )
+            {
+                return ( List ) super.setFields( fields );
+            }
+
+            @Override
+            public List setKey( java.lang.String key )
+            {
+                return ( List ) super.setKey( key );
+            }
+
+            @Override
+            public List setOauthToken( java.lang.String oauthToken )
+            {
+                return ( List ) super.setOauthToken( oauthToken );
+            }
+
+            @Override
+            public List setPrettyPrint( java.lang.Boolean prettyPrint )
+            {
+                return ( List ) super.setPrettyPrint( prettyPrint );
+            }
+
+            @Override
+            public List setQuotaUser( java.lang.String quotaUser )
+            {
+                return ( List ) super.setQuotaUser( quotaUser );
+            }
+
+            @Override
+            public List setUserIp( java.lang.String userIp )
+            {
+                return ( List ) super.setUserIp( userIp );
             }
 
             @Override
@@ -1375,121 +1280,6 @@ public class ProductBilling
             Accept result = new Accept( offerId );
             initialize( result );
             return result;
-        }
-
-        /**
-         * Create a request for the method "offers.clone".
-         * <p>
-         * This request holds the parameters needed by the billing server.  After setting any optional
-         * parameters, call the {@link Clone#execute()} method to invoke the remote operation.
-         *
-         * @param offerId
-         * @param content the {@link biz.turnonline.ecosystem.billing.model.Customer}
-         * @return the request
-         */
-        public Clone clone( java.lang.Long offerId, biz.turnonline.ecosystem.billing.model.Customer content )
-                throws java.io.IOException
-        {
-            Clone result = new Clone( offerId, content );
-            initialize( result );
-            return result;
-        }
-
-        /**
-         * Create a request for the method "offers.delete".
-         * <p>
-         * This request holds the parameters needed by the billing server.  After setting any optional
-         * parameters, call the {@link Delete#execute()} method to invoke the remote operation.
-         *
-         * @param offerId
-         * @return the request
-         */
-        public Delete delete( java.lang.Long offerId ) throws java.io.IOException
-        {
-            Delete result = new Delete( offerId );
-            initialize( result );
-            return result;
-        }
-
-        /**
-         * Create a request for the method "offers.get".
-         * <p>
-         * This request holds the parameters needed by the billing server.  After setting any optional
-         * parameters, call the {@link Get#execute()} method to invoke the remote operation.
-         *
-         * @param offerId
-         * @return the request
-         */
-        public Get get( java.lang.Long offerId ) throws java.io.IOException
-        {
-            Get result = new Get( offerId );
-            initialize( result );
-            return result;
-        }
-
-        /**
-         * Create a request for the method "offers.insert".
-         * <p>
-         * This request holds the parameters needed by the billing server.  After setting any optional
-         * parameters, call the {@link Insert#execute()} method to invoke the remote operation.
-         *
-         * @param content the {@link biz.turnonline.ecosystem.billing.model.PureOffer}
-         * @return the request
-         */
-        public Insert insert( biz.turnonline.ecosystem.billing.model.PureOffer content ) throws java.io.IOException
-        {
-            Insert result = new Insert( content );
-            initialize( result );
-            return result;
-        }
-
-        /**
-         * Create a request for the method "offers.list".
-         * <p>
-         * This request holds the parameters needed by the billing server.  After setting any optional
-         * parameters, call the {@link List#execute()} method to invoke the remote operation.
-         *
-         * @return the request
-         */
-        public List list() throws java.io.IOException
-        {
-            List result = new List();
-            initialize( result );
-            return result;
-        }
-
-        /**
-         * Create a request for the method "offers.update".
-         * <p>
-         * This request holds the parameters needed by the billing server.  After setting any optional
-         * parameters, call the {@link Update#execute()} method to invoke the remote operation.
-         *
-         * @param orderId
-         * @param content the {@link biz.turnonline.ecosystem.billing.model.PureOffer}
-         * @return the request
-         */
-        public Update update( java.lang.Long orderId, biz.turnonline.ecosystem.billing.model.PureOffer content )
-                throws java.io.IOException
-        {
-            Update result = new Update( orderId, content );
-            initialize( result );
-            return result;
-        }
-
-        /**
-         * An accessor for creating requests from the Recipients collection.
-         *
-         * <p>The typical use is:</p>
-         * <pre>
-         *   {@code ProductBilling billing = new ProductBilling(...);}
-         *   {@code ProductBilling.Recipients.List request = billing.recipients().list(parameters ...)}
-         * </pre>
-         *
-         * @return the resource collection
-         */
-        public Recipients recipients()
-        {
-            return new Recipients();
         }
 
         public class Accept
@@ -1581,165 +1371,20 @@ public class ProductBilling
             }
         }
 
-        public class Insert
-                extends ProductBillingRequest<biz.turnonline.ecosystem.billing.model.CompleteOffer>
+        /**
+         * Create a request for the method "offers.delete".
+         * <p>
+         * This request holds the parameters needed by the billing server.  After setting any optional
+         * parameters, call the {@link Delete#execute()} method to invoke the remote operation.
+         *
+         * @param offerId
+         * @return the request
+         */
+        public Delete delete( java.lang.Long offerId ) throws java.io.IOException
         {
-
-            private static final String REST_PATH = "offers";
-
-            /**
-             * Create a request for the method "offers.insert".
-             * <p>
-             * This request holds the parameters needed by the the billing server.  After setting any optional
-             * parameters, call the {@link Insert#execute()} method to invoke the remote operation. <p> {@link
-             * Insert#initialize(com.google.api.client.googleapis.services.AbstractGoogleClientRequest)} must
-             * be called to initialize this instance immediately after invoking the constructor. </p>
-             *
-             * @param content the {@link biz.turnonline.ecosystem.billing.model.PureOffer}
-             * @since 1.13
-             */
-            protected Insert( biz.turnonline.ecosystem.billing.model.PureOffer content )
-            {
-                super( ProductBilling.this, "POST", REST_PATH, content, biz.turnonline.ecosystem.billing.model.CompleteOffer.class );
-            }
-
-            @Override
-            public Insert setAlt( java.lang.String alt )
-            {
-                return ( Insert ) super.setAlt( alt );
-            }
-
-            @Override
-            public Insert setFields( java.lang.String fields )
-            {
-                return ( Insert ) super.setFields( fields );
-            }
-
-            @Override
-            public Insert setKey( java.lang.String key )
-            {
-                return ( Insert ) super.setKey( key );
-            }
-
-            @Override
-            public Insert setOauthToken( java.lang.String oauthToken )
-            {
-                return ( Insert ) super.setOauthToken( oauthToken );
-            }
-
-            @Override
-            public Insert setPrettyPrint( java.lang.Boolean prettyPrint )
-            {
-                return ( Insert ) super.setPrettyPrint( prettyPrint );
-            }
-
-            @Override
-            public Insert setQuotaUser( java.lang.String quotaUser )
-            {
-                return ( Insert ) super.setQuotaUser( quotaUser );
-            }
-
-            @Override
-            public Insert setUserIp( java.lang.String userIp )
-            {
-                return ( Insert ) super.setUserIp( userIp );
-            }
-
-            @Override
-            public Insert set( String parameterName, Object value )
-            {
-                return ( Insert ) super.set( parameterName, value );
-            }
-        }
-
-        public class Clone
-                extends ProductBillingRequest<biz.turnonline.ecosystem.billing.model.CompleteOffer>
-        {
-
-            private static final String REST_PATH = "offers/{offer_id}/clone";
-
-            @com.google.api.client.util.Key( "offer_id" )
-            private java.lang.Long offerId;
-
-            @Override
-            public Clone setAlt( java.lang.String alt )
-            {
-                return ( Clone ) super.setAlt( alt );
-            }
-
-            @Override
-            public Clone setFields( java.lang.String fields )
-            {
-                return ( Clone ) super.setFields( fields );
-            }
-
-            @Override
-            public Clone setKey( java.lang.String key )
-            {
-                return ( Clone ) super.setKey( key );
-            }
-
-            @Override
-            public Clone setOauthToken( java.lang.String oauthToken )
-            {
-                return ( Clone ) super.setOauthToken( oauthToken );
-            }
-
-            @Override
-            public Clone setPrettyPrint( java.lang.Boolean prettyPrint )
-            {
-                return ( Clone ) super.setPrettyPrint( prettyPrint );
-            }
-
-            @Override
-            public Clone setQuotaUser( java.lang.String quotaUser )
-            {
-                return ( Clone ) super.setQuotaUser( quotaUser );
-            }
-
-            @Override
-            public Clone setUserIp( java.lang.String userIp )
-            {
-                return ( Clone ) super.setUserIp( userIp );
-            }
-
-            /**
-             * Create a request for the method "offers.clone".
-             * <p>
-             * This request holds the parameters needed by the the billing server.  After setting any optional
-             * parameters, call the {@link Clone#execute()} method to invoke the remote operation. <p> {@link
-             * Clone#initialize(com.google.api.client.googleapis.services.AbstractGoogleClientRequest)} must
-             * be called to initialize this instance immediately after invoking the constructor. </p>
-             *
-             * @param offerId
-             * @param content the {@link biz.turnonline.ecosystem.billing.model.Customer}
-             * @since 1.13
-             */
-            protected Clone( java.lang.Long offerId, biz.turnonline.ecosystem.billing.model.Customer content )
-            {
-                super( ProductBilling.this, "POST", REST_PATH, content, biz.turnonline.ecosystem.billing.model.CompleteOffer.class );
-                this.offerId = com.google.api.client.util.Preconditions.checkNotNull( offerId, "Required parameter offerId must be specified." );
-            }
-
-            /**
-             *
-             */
-            public java.lang.Long getOfferId()
-            {
-                return offerId;
-            }
-
-            public Clone setOfferId( java.lang.Long offerId )
-            {
-                this.offerId = offerId;
-                return this;
-            }
-
-            @Override
-            public Clone set( String parameterName, Object value )
-            {
-                return ( Clone ) super.set( parameterName, value );
-            }
+            Delete result = new Delete( offerId );
+            initialize( result );
+            return result;
         }
 
         public class Delete
@@ -1829,6 +1474,22 @@ public class ProductBilling
             {
                 return ( Delete ) super.set( parameterName, value );
             }
+        }
+
+        /**
+         * Create a request for the method "offers.get".
+         * <p>
+         * This request holds the parameters needed by the billing server.  After setting any optional
+         * parameters, call the {@link Get#execute()} method to invoke the remote operation.
+         *
+         * @param offerId
+         * @return the request
+         */
+        public Get get( java.lang.Long offerId ) throws java.io.IOException
+        {
+            Get result = new Get( offerId );
+            initialize( result );
+            return result;
         }
 
         public class Get
@@ -1932,6 +1593,161 @@ public class ProductBilling
             }
         }
 
+        /**
+         * Create a request for the method "offers.insert".
+         * <p>
+         * This request holds the parameters needed by the billing server.  After setting any optional
+         * parameters, call the {@link Insert#execute()} method to invoke the remote operation.
+         *
+         * @param content the {@link biz.turnonline.ecosystem.billing.model.PureOffer}
+         * @return the request
+         */
+        public Insert insert( biz.turnonline.ecosystem.billing.model.PureOffer content ) throws java.io.IOException
+        {
+            Insert result = new Insert( content );
+            initialize( result );
+            return result;
+        }
+
+        /**
+         * Create a request for the method "offers.list".
+         * <p>
+         * This request holds the parameters needed by the billing server.  After setting any optional
+         * parameters, call the {@link List#execute()} method to invoke the remote operation.
+         *
+         * @return the request
+         */
+        public List list() throws java.io.IOException
+        {
+            List result = new List();
+            initialize( result );
+            return result;
+        }
+
+        /**
+         * Create a request for the method "offers.purchase".
+         * <p>
+         * This request holds the parameters needed by the billing server.  After setting any optional
+         * parameters, call the {@link Purchase#execute()} method to invoke the remote operation.
+         *
+         * @param offerId
+         * @param content the {@link biz.turnonline.ecosystem.billing.model.PurchaseRequest}
+         * @return the request
+         */
+        public Purchase purchase( java.lang.Long offerId,
+                                  biz.turnonline.ecosystem.billing.model.PurchaseRequest content )
+                throws java.io.IOException
+        {
+            Purchase result = new Purchase( offerId, content );
+            initialize( result );
+            return result;
+        }
+
+        /**
+         * Create a request for the method "offers.update".
+         * <p>
+         * This request holds the parameters needed by the billing server.  After setting any optional
+         * parameters, call the {@link Update#execute()} method to invoke the remote operation.
+         *
+         * @param orderId
+         * @param content the {@link biz.turnonline.ecosystem.billing.model.PureOffer}
+         * @return the request
+         */
+        public Update update( java.lang.Long orderId, biz.turnonline.ecosystem.billing.model.PureOffer content )
+                throws java.io.IOException
+        {
+            Update result = new Update( orderId, content );
+            initialize( result );
+            return result;
+        }
+
+        /**
+         * An accessor for creating requests from the Recipients collection.
+         *
+         * <p>The typical use is:</p>
+         * <pre>
+         *   {@code ProductBilling billing = new ProductBilling(...);}
+         *   {@code ProductBilling.Recipients.List request = billing.recipients().list(parameters ...)}
+         * </pre>
+         *
+         * @return the resource collection
+         */
+        public Recipients recipients()
+        {
+            return new Recipients();
+        }
+
+        public class Insert
+                extends ProductBillingRequest<biz.turnonline.ecosystem.billing.model.CompleteOffer>
+        {
+
+            private static final String REST_PATH = "offers";
+
+            /**
+             * Create a request for the method "offers.insert".
+             * <p>
+             * This request holds the parameters needed by the the billing server.  After setting any optional
+             * parameters, call the {@link Insert#execute()} method to invoke the remote operation. <p> {@link
+             * Insert#initialize(com.google.api.client.googleapis.services.AbstractGoogleClientRequest)} must
+             * be called to initialize this instance immediately after invoking the constructor. </p>
+             *
+             * @param content the {@link biz.turnonline.ecosystem.billing.model.PureOffer}
+             * @since 1.13
+             */
+            protected Insert( biz.turnonline.ecosystem.billing.model.PureOffer content )
+            {
+                super( ProductBilling.this, "POST", REST_PATH, content, biz.turnonline.ecosystem.billing.model.CompleteOffer.class );
+            }
+
+            @Override
+            public Insert setAlt( java.lang.String alt )
+            {
+                return ( Insert ) super.setAlt( alt );
+            }
+
+            @Override
+            public Insert setFields( java.lang.String fields )
+            {
+                return ( Insert ) super.setFields( fields );
+            }
+
+            @Override
+            public Insert setKey( java.lang.String key )
+            {
+                return ( Insert ) super.setKey( key );
+            }
+
+            @Override
+            public Insert setOauthToken( java.lang.String oauthToken )
+            {
+                return ( Insert ) super.setOauthToken( oauthToken );
+            }
+
+            @Override
+            public Insert setPrettyPrint( java.lang.Boolean prettyPrint )
+            {
+                return ( Insert ) super.setPrettyPrint( prettyPrint );
+            }
+
+            @Override
+            public Insert setQuotaUser( java.lang.String quotaUser )
+            {
+                return ( Insert ) super.setQuotaUser( quotaUser );
+            }
+
+            @Override
+            public Insert setUserIp( java.lang.String userIp )
+            {
+                return ( Insert ) super.setUserIp( userIp );
+            }
+
+            @Override
+            public Insert set( String parameterName, Object value )
+            {
+                return ( Insert ) super.set( parameterName, value );
+            }
+        }
+
         public class List
                 extends ProductBillingRequest<biz.turnonline.ecosystem.billing.model.OfferListItemCollection>
         {
@@ -2020,7 +1836,7 @@ public class ProductBilling
             }
 
             @com.google.api.client.util.Key
-            private java.lang.Integer limit;
+            private java.lang.Long customerId;
 
             /**
              * Convenience method that returns only {@link Boolean#TRUE} or {@link Boolean#FALSE}.
@@ -2054,23 +1870,22 @@ public class ProductBilling
             @com.google.api.client.util.Key
             private java.lang.Integer offset;
 
-            /**
-             * [ default: 10]
-             * [
-             */
-            public java.lang.Integer getLimit()
-            {
-                return limit;
-            }
+            @com.google.api.client.util.Key
+            private java.lang.Integer limit;
 
-            public List setLimit( java.lang.Integer limit )
+            public List setIncoming( java.lang.Boolean incoming )
             {
-                this.limit = limit;
+                this.incoming = incoming;
                 return this;
             }
 
-            @com.google.api.client.util.Key
-            private java.lang.Long customerId;
+            /**
+             *
+             */
+            public java.lang.Long getCustomerId()
+            {
+                return customerId;
+            }
 
             /**
              * [ default: 0]
@@ -2087,23 +1902,24 @@ public class ProductBilling
                 return this;
             }
 
-            public List setIncoming( java.lang.Boolean incoming )
+            public List setCustomerId( java.lang.Long customerId )
             {
-                this.incoming = incoming;
+                this.customerId = customerId;
                 return this;
             }
 
             /**
-             *
+             * [ default: 10]
+             * [
              */
-            public java.lang.Long getCustomerId()
+            public java.lang.Integer getLimit()
             {
-                return customerId;
+                return limit;
             }
 
-            public List setCustomerId( java.lang.Long customerId )
+            public List setLimit( java.lang.Integer limit )
             {
-                this.customerId = customerId;
+                this.limit = limit;
                 return this;
             }
 
@@ -2204,6 +2020,97 @@ public class ProductBilling
             }
         }
 
+        public class Purchase
+                extends ProductBillingRequest<biz.turnonline.ecosystem.billing.model.CompleteOffer>
+        {
+
+            private static final String REST_PATH = "offers/{offer_id}/purchase";
+
+            @com.google.api.client.util.Key( "offer_id" )
+            private java.lang.Long offerId;
+
+            /**
+             * Create a request for the method "offers.purchase".
+             * <p>
+             * This request holds the parameters needed by the the billing server.  After setting any optional
+             * parameters, call the {@link Purchase#execute()} method to invoke the remote operation. <p>
+             * {@link
+             * Purchase#initialize(com.google.api.client.googleapis.services.AbstractGoogleClientRequest)}
+             * must be called to initialize this instance immediately after invoking the constructor. </p>
+             *
+             * @param offerId
+             * @param content the {@link biz.turnonline.ecosystem.billing.model.PurchaseRequest}
+             * @since 1.13
+             */
+            protected Purchase( java.lang.Long offerId, biz.turnonline.ecosystem.billing.model.PurchaseRequest content )
+            {
+                super( ProductBilling.this, "POST", REST_PATH, content, biz.turnonline.ecosystem.billing.model.CompleteOffer.class );
+                this.offerId = com.google.api.client.util.Preconditions.checkNotNull( offerId, "Required parameter offerId must be specified." );
+            }
+
+            @Override
+            public Purchase setAlt( java.lang.String alt )
+            {
+                return ( Purchase ) super.setAlt( alt );
+            }
+
+            @Override
+            public Purchase setFields( java.lang.String fields )
+            {
+                return ( Purchase ) super.setFields( fields );
+            }
+
+            @Override
+            public Purchase setKey( java.lang.String key )
+            {
+                return ( Purchase ) super.setKey( key );
+            }
+
+            @Override
+            public Purchase setOauthToken( java.lang.String oauthToken )
+            {
+                return ( Purchase ) super.setOauthToken( oauthToken );
+            }
+
+            @Override
+            public Purchase setPrettyPrint( java.lang.Boolean prettyPrint )
+            {
+                return ( Purchase ) super.setPrettyPrint( prettyPrint );
+            }
+
+            @Override
+            public Purchase setQuotaUser( java.lang.String quotaUser )
+            {
+                return ( Purchase ) super.setQuotaUser( quotaUser );
+            }
+
+            @Override
+            public Purchase setUserIp( java.lang.String userIp )
+            {
+                return ( Purchase ) super.setUserIp( userIp );
+            }
+
+            /**
+             *
+             */
+            public java.lang.Long getOfferId()
+            {
+                return offerId;
+            }
+
+            public Purchase setOfferId( java.lang.Long offerId )
+            {
+                this.offerId = offerId;
+                return this;
+            }
+
+            @Override
+            public Purchase set( String parameterName, Object value )
+            {
+                return ( Purchase ) super.set( parameterName, value );
+            }
+        }
+
         /**
          * The "recipients" collection of methods.
          */
@@ -2222,22 +2129,6 @@ public class ProductBilling
             public Count count( java.lang.Long offerId ) throws java.io.IOException
             {
                 Count result = new Count( offerId );
-                initialize( result );
-                return result;
-            }
-
-            /**
-             * Create a request for the method "recipients.list".
-             * <p>
-             * This request holds the parameters needed by the billing server.  After setting any optional
-             * parameters, call the {@link List#execute()} method to invoke the remote operation.
-             *
-             * @param offerId
-             * @return the request
-             */
-            public List list( java.lang.Long offerId ) throws java.io.IOException
-            {
-                List result = new List( offerId );
                 initialize( result );
                 return result;
             }
@@ -2341,6 +2232,22 @@ public class ProductBilling
                 {
                     return ( Count ) super.set( parameterName, value );
                 }
+            }
+
+            /**
+             * Create a request for the method "recipients.list".
+             * <p>
+             * This request holds the parameters needed by the billing server.  After setting any optional
+             * parameters, call the {@link List#execute()} method to invoke the remote operation.
+             *
+             * @param offerId
+             * @return the request
+             */
+            public List list( java.lang.Long offerId ) throws java.io.IOException
+            {
+                List result = new List( offerId );
+                initialize( result );
+                return result;
             }
 
             public class List
@@ -2505,209 +2412,6 @@ public class ProductBilling
             return result;
         }
 
-        /**
-         * Create a request for the method "orders.delivery".
-         * <p>
-         * This request holds the parameters needed by the billing server.  After setting any optional
-         * parameters, call the {@link Delivery#execute()} method to invoke the remote operation.
-         *
-         * @param orderId
-         * @param content the {@link biz.turnonline.ecosystem.billing.model.ShippingDetails}
-         * @return the request
-         */
-        public Delivery delivery( java.lang.Long orderId,
-                                  biz.turnonline.ecosystem.billing.model.ShippingDetails content )
-                throws java.io.IOException
-        {
-            Delivery result = new Delivery( orderId, content );
-            initialize( result );
-            return result;
-        }
-
-        /**
-         * Create a request for the method "orders.get".
-         * <p>
-         * This request holds the parameters needed by the billing server.  After setting any optional
-         * parameters, call the {@link Get#execute()} method to invoke the remote operation.
-         *
-         * @param orderId
-         * @return the request
-         */
-        public Get get( java.lang.Long orderId ) throws java.io.IOException
-        {
-            Get result = new Get( orderId );
-            initialize( result );
-            return result;
-        }
-
-        /**
-         * Create a request for the method "orders.insert".
-         * <p>
-         * This request holds the parameters needed by the billing server.  After setting any optional
-         * parameters, call the {@link Insert#execute()} method to invoke the remote operation.
-         *
-         * @param content the {@link biz.turnonline.ecosystem.billing.model.Order}
-         * @return the request
-         */
-        public Insert insert( biz.turnonline.ecosystem.billing.model.Order content ) throws java.io.IOException
-        {
-            Insert result = new Insert( content );
-            initialize( result );
-            return result;
-        }
-
-        /**
-         * Create a request for the method "orders.list".
-         * <p>
-         * This request holds the parameters needed by the billing server.  After setting any optional
-         * parameters, call the {@link List#execute()} method to invoke the remote operation.
-         *
-         * @return the request
-         */
-        public List list() throws java.io.IOException
-        {
-            List result = new List();
-            initialize( result );
-            return result;
-        }
-
-        /**
-         * Create a request for the method "orders.update".
-         * <p>
-         * This request holds the parameters needed by the billing server.  After setting any optional
-         * parameters, call the {@link Update#execute()} method to invoke the remote operation.
-         *
-         * @param orderId
-         * @param content the {@link biz.turnonline.ecosystem.billing.model.Order}
-         * @return the request
-         */
-        public Update update( java.lang.Long orderId, biz.turnonline.ecosystem.billing.model.Order content )
-                throws java.io.IOException
-        {
-            Update result = new Update( orderId, content );
-            initialize( result );
-            return result;
-        }
-
-        /**
-         * An accessor for creating requests from the Invoices collection.
-         *
-         * <p>The typical use is:</p>
-         * <pre>
-         *   {@code ProductBilling billing = new ProductBilling(...);}
-         *   {@code ProductBilling.Invoices.List request = billing.invoices().list(parameters ...)}
-         * </pre>
-         *
-         * @return the resource collection
-         */
-        public Invoices invoices()
-        {
-            return new Invoices();
-        }
-
-        public class Insert
-                extends ProductBillingRequest<biz.turnonline.ecosystem.billing.model.Order>
-        {
-
-            private static final String REST_PATH = "orders";
-
-            /**
-             * Create a request for the method "orders.insert".
-             * <p>
-             * This request holds the parameters needed by the the billing server.  After setting any optional
-             * parameters, call the {@link Insert#execute()} method to invoke the remote operation. <p> {@link
-             * Insert#initialize(com.google.api.client.googleapis.services.AbstractGoogleClientRequest)} must
-             * be called to initialize this instance immediately after invoking the constructor. </p>
-             *
-             * @param content the {@link biz.turnonline.ecosystem.billing.model.Order}
-             * @since 1.13
-             */
-            protected Insert( biz.turnonline.ecosystem.billing.model.Order content )
-            {
-                super( ProductBilling.this, "POST", REST_PATH, content, biz.turnonline.ecosystem.billing.model.Order.class );
-            }
-
-            @Override
-            public Insert setAlt( java.lang.String alt )
-            {
-                return ( Insert ) super.setAlt( alt );
-            }
-
-            @Override
-            public Insert setFields( java.lang.String fields )
-            {
-                return ( Insert ) super.setFields( fields );
-            }
-
-            @Override
-            public Insert setKey( java.lang.String key )
-            {
-                return ( Insert ) super.setKey( key );
-            }
-
-            @Override
-            public Insert setOauthToken( java.lang.String oauthToken )
-            {
-                return ( Insert ) super.setOauthToken( oauthToken );
-            }
-
-            @Override
-            public Insert setPrettyPrint( java.lang.Boolean prettyPrint )
-            {
-                return ( Insert ) super.setPrettyPrint( prettyPrint );
-            }
-
-            @Override
-            public Insert setQuotaUser( java.lang.String quotaUser )
-            {
-                return ( Insert ) super.setQuotaUser( quotaUser );
-            }
-
-            @Override
-            public Insert setUserIp( java.lang.String userIp )
-            {
-                return ( Insert ) super.setUserIp( userIp );
-            }
-
-            @Override
-            public Insert set( String parameterName, Object value )
-            {
-                return ( Insert ) super.set( parameterName, value );
-            }
-        }
-
-        /**
-         * An accessor for creating requests from the Items collection.
-         *
-         * <p>The typical use is:</p>
-         * <pre>
-         *   {@code ProductBilling billing = new ProductBilling(...);}
-         *   {@code ProductBilling.Items.List request = billing.items().list(parameters ...)}
-         * </pre>
-         *
-         * @return the resource collection
-         */
-        public Items items()
-        {
-            return new Items();
-        }
-
-        /**
-         * An accessor for creating requests from the Status collection.
-         *
-         * <p>The typical use is:</p>
-         * <pre>
-         *   {@code ProductBilling billing = new ProductBilling(...);}
-         *   {@code ProductBilling.Status.List request = billing.status().list(parameters ...)}
-         * </pre>
-         *
-         * @return the resource collection
-         */
-        public Status status()
-        {
-            return new Status();
-        }
-
         public class Delete
                 extends ProductBillingRequest<Void>
         {
@@ -2795,6 +2499,25 @@ public class ProductBilling
             {
                 return ( Delete ) super.set( parameterName, value );
             }
+        }
+
+        /**
+         * Create a request for the method "orders.delivery".
+         * <p>
+         * This request holds the parameters needed by the billing server.  After setting any optional
+         * parameters, call the {@link Delivery#execute()} method to invoke the remote operation.
+         *
+         * @param orderId
+         * @param content the {@link biz.turnonline.ecosystem.billing.model.ShippingDetails}
+         * @return the request
+         */
+        public Delivery delivery( java.lang.Long orderId,
+                                  biz.turnonline.ecosystem.billing.model.ShippingDetails content )
+                throws java.io.IOException
+        {
+            Delivery result = new Delivery( orderId, content );
+            initialize( result );
+            return result;
         }
 
         public class Delivery
@@ -2886,6 +2609,22 @@ public class ProductBilling
             {
                 return ( Delivery ) super.set( parameterName, value );
             }
+        }
+
+        /**
+         * Create a request for the method "orders.get".
+         * <p>
+         * This request holds the parameters needed by the billing server.  After setting any optional
+         * parameters, call the {@link Get#execute()} method to invoke the remote operation.
+         *
+         * @param orderId
+         * @return the request
+         */
+        public Get get( java.lang.Long orderId ) throws java.io.IOException
+        {
+            Get result = new Get( orderId );
+            initialize( result );
+            return result;
         }
 
         public class Get
@@ -3003,6 +2742,264 @@ public class ProductBilling
             public Get set( String parameterName, Object value )
             {
                 return ( Get ) super.set( parameterName, value );
+            }
+        }
+
+        /**
+         * Create a request for the method "orders.insert".
+         * <p>
+         * This request holds the parameters needed by the billing server.  After setting any optional
+         * parameters, call the {@link Insert#execute()} method to invoke the remote operation.
+         *
+         * @param content the {@link biz.turnonline.ecosystem.billing.model.Order}
+         * @return the request
+         */
+        public Insert insert( biz.turnonline.ecosystem.billing.model.Order content ) throws java.io.IOException
+        {
+            Insert result = new Insert( content );
+            initialize( result );
+            return result;
+        }
+
+        /**
+         * Create a request for the method "orders.list".
+         * <p>
+         * This request holds the parameters needed by the billing server.  After setting any optional
+         * parameters, call the {@link List#execute()} method to invoke the remote operation.
+         *
+         * @return the request
+         */
+        public List list() throws java.io.IOException
+        {
+            List result = new List();
+            initialize( result );
+            return result;
+        }
+
+        /**
+         * Create a request for the method "orders.update".
+         * <p>
+         * This request holds the parameters needed by the billing server.  After setting any optional
+         * parameters, call the {@link Update#execute()} method to invoke the remote operation.
+         *
+         * @param orderId
+         * @param content the {@link biz.turnonline.ecosystem.billing.model.Order}
+         * @return the request
+         */
+        public Update update( java.lang.Long orderId, biz.turnonline.ecosystem.billing.model.Order content )
+                throws java.io.IOException
+        {
+            Update result = new Update( orderId, content );
+            initialize( result );
+            return result;
+        }
+
+        /**
+         * An accessor for creating requests from the Invoices collection.
+         *
+         * <p>The typical use is:</p>
+         * <pre>
+         *   {@code ProductBilling billing = new ProductBilling(...);}
+         *   {@code ProductBilling.Invoices.List request = billing.invoices().list(parameters ...)}
+         * </pre>
+         *
+         * @return the resource collection
+         */
+        public Invoices invoices()
+        {
+            return new Invoices();
+        }
+
+        /**
+         * An accessor for creating requests from the Items collection.
+         *
+         * <p>The typical use is:</p>
+         * <pre>
+         *   {@code ProductBilling billing = new ProductBilling(...);}
+         *   {@code ProductBilling.Items.List request = billing.items().list(parameters ...)}
+         * </pre>
+         *
+         * @return the resource collection
+         */
+        public Items items()
+        {
+            return new Items();
+        }
+
+        public class Update
+                extends ProductBillingRequest<biz.turnonline.ecosystem.billing.model.Order>
+        {
+
+            private static final String REST_PATH = "orders/{order_id}";
+
+            /**
+             * Create a request for the method "orders.update".
+             * <p>
+             * This request holds the parameters needed by the the billing server.  After setting any optional
+             * parameters, call the {@link Update#execute()} method to invoke the remote operation. <p> {@link
+             * Update#initialize(com.google.api.client.googleapis.services.AbstractGoogleClientRequest)} must
+             * be called to initialize this instance immediately after invoking the constructor. </p>
+             *
+             * @param orderId
+             * @param content the {@link biz.turnonline.ecosystem.billing.model.Order}
+             * @since 1.13
+             */
+            protected Update( java.lang.Long orderId, biz.turnonline.ecosystem.billing.model.Order content )
+            {
+                super( ProductBilling.this, "PUT", REST_PATH, content, biz.turnonline.ecosystem.billing.model.Order.class );
+                this.orderId = com.google.api.client.util.Preconditions.checkNotNull( orderId, "Required parameter orderId must be specified." );
+            }
+
+            @Override
+            public Update setAlt( java.lang.String alt )
+            {
+                return ( Update ) super.setAlt( alt );
+            }
+
+            @Override
+            public Update setFields( java.lang.String fields )
+            {
+                return ( Update ) super.setFields( fields );
+            }
+
+            @Override
+            public Update setKey( java.lang.String key )
+            {
+                return ( Update ) super.setKey( key );
+            }
+
+            @Override
+            public Update setOauthToken( java.lang.String oauthToken )
+            {
+                return ( Update ) super.setOauthToken( oauthToken );
+            }
+
+            @Override
+            public Update setPrettyPrint( java.lang.Boolean prettyPrint )
+            {
+                return ( Update ) super.setPrettyPrint( prettyPrint );
+            }
+
+            @Override
+            public Update setQuotaUser( java.lang.String quotaUser )
+            {
+                return ( Update ) super.setQuotaUser( quotaUser );
+            }
+
+            @Override
+            public Update setUserIp( java.lang.String userIp )
+            {
+                return ( Update ) super.setUserIp( userIp );
+            }
+
+            @com.google.api.client.util.Key( "order_id" )
+            private java.lang.Long orderId;
+
+            /**
+             *
+             */
+            public java.lang.Long getOrderId()
+            {
+                return orderId;
+            }
+
+            public Update setOrderId( java.lang.Long orderId )
+            {
+                this.orderId = orderId;
+                return this;
+            }
+
+            @Override
+            public Update set( String parameterName, Object value )
+            {
+                return ( Update ) super.set( parameterName, value );
+            }
+        }
+
+        /**
+         * An accessor for creating requests from the Status collection.
+         *
+         * <p>The typical use is:</p>
+         * <pre>
+         *   {@code ProductBilling billing = new ProductBilling(...);}
+         *   {@code ProductBilling.Status.List request = billing.status().list(parameters ...)}
+         * </pre>
+         *
+         * @return the resource collection
+         */
+        public Status status()
+        {
+            return new Status();
+        }
+
+        public class Insert
+                extends ProductBillingRequest<biz.turnonline.ecosystem.billing.model.Order>
+        {
+
+            private static final String REST_PATH = "orders";
+
+            /**
+             * Create a request for the method "orders.insert".
+             * <p>
+             * This request holds the parameters needed by the the billing server.  After setting any optional
+             * parameters, call the {@link Insert#execute()} method to invoke the remote operation. <p> {@link
+             * Insert#initialize(com.google.api.client.googleapis.services.AbstractGoogleClientRequest)} must
+             * be called to initialize this instance immediately after invoking the constructor. </p>
+             *
+             * @param content the {@link biz.turnonline.ecosystem.billing.model.Order}
+             * @since 1.13
+             */
+            protected Insert( biz.turnonline.ecosystem.billing.model.Order content )
+            {
+                super( ProductBilling.this, "POST", REST_PATH, content, biz.turnonline.ecosystem.billing.model.Order.class );
+            }
+
+            @Override
+            public Insert setAlt( java.lang.String alt )
+            {
+                return ( Insert ) super.setAlt( alt );
+            }
+
+            @Override
+            public Insert setFields( java.lang.String fields )
+            {
+                return ( Insert ) super.setFields( fields );
+            }
+
+            @Override
+            public Insert setKey( java.lang.String key )
+            {
+                return ( Insert ) super.setKey( key );
+            }
+
+            @Override
+            public Insert setOauthToken( java.lang.String oauthToken )
+            {
+                return ( Insert ) super.setOauthToken( oauthToken );
+            }
+
+            @Override
+            public Insert setPrettyPrint( java.lang.Boolean prettyPrint )
+            {
+                return ( Insert ) super.setPrettyPrint( prettyPrint );
+            }
+
+            @Override
+            public Insert setQuotaUser( java.lang.String quotaUser )
+            {
+                return ( Insert ) super.setQuotaUser( quotaUser );
+            }
+
+            @Override
+            public Insert setUserIp( java.lang.String userIp )
+            {
+                return ( Insert ) super.setUserIp( userIp );
+            }
+
+            @Override
+            public Insert set( String parameterName, Object value )
+            {
+                return ( Insert ) super.set( parameterName, value );
             }
         }
 
@@ -3129,27 +3126,6 @@ public class ProductBilling
             private java.lang.Integer offset;
 
             /**
-             * [ default: 10]
-             * [
-             */
-            public java.lang.Integer getLimit()
-            {
-                return limit;
-            }
-
-            public List setLimit( java.lang.Integer limit )
-            {
-                this.limit = limit;
-                return this;
-            }
-
-            public List setLightList( java.lang.Boolean lightList )
-            {
-                this.lightList = lightList;
-                return this;
-            }
-
-            /**
              * [ default: 0]
              * [
              */
@@ -3164,100 +3140,31 @@ public class ProductBilling
                 return this;
             }
 
-            @Override
-            public List set( String parameterName, Object value )
+            public List setLightList( java.lang.Boolean lightList )
             {
-                return ( List ) super.set( parameterName, value );
+                this.lightList = lightList;
+                return this;
             }
-        }
-
-        public class Update
-                extends ProductBillingRequest<biz.turnonline.ecosystem.billing.model.Order>
-        {
-
-            private static final String REST_PATH = "orders/{order_id}";
 
             /**
-             * Create a request for the method "orders.update".
-             * <p>
-             * This request holds the parameters needed by the the billing server.  After setting any optional
-             * parameters, call the {@link Update#execute()} method to invoke the remote operation. <p> {@link
-             * Update#initialize(com.google.api.client.googleapis.services.AbstractGoogleClientRequest)} must
-             * be called to initialize this instance immediately after invoking the constructor. </p>
-             *
-             * @param orderId
-             * @param content the {@link biz.turnonline.ecosystem.billing.model.Order}
-             * @since 1.13
+             * [ default: 10]
+             * [
              */
-            protected Update( java.lang.Long orderId, biz.turnonline.ecosystem.billing.model.Order content )
+            public java.lang.Integer getLimit()
             {
-                super( ProductBilling.this, "PUT", REST_PATH, content, biz.turnonline.ecosystem.billing.model.Order.class );
-                this.orderId = com.google.api.client.util.Preconditions.checkNotNull( orderId, "Required parameter orderId must be specified." );
+                return limit;
             }
 
-            @Override
-            public Update setAlt( java.lang.String alt )
+            public List setLimit( java.lang.Integer limit )
             {
-                return ( Update ) super.setAlt( alt );
-            }
-
-            @Override
-            public Update setFields( java.lang.String fields )
-            {
-                return ( Update ) super.setFields( fields );
-            }
-
-            @Override
-            public Update setKey( java.lang.String key )
-            {
-                return ( Update ) super.setKey( key );
-            }
-
-            @Override
-            public Update setOauthToken( java.lang.String oauthToken )
-            {
-                return ( Update ) super.setOauthToken( oauthToken );
-            }
-
-            @Override
-            public Update setPrettyPrint( java.lang.Boolean prettyPrint )
-            {
-                return ( Update ) super.setPrettyPrint( prettyPrint );
-            }
-
-            @Override
-            public Update setQuotaUser( java.lang.String quotaUser )
-            {
-                return ( Update ) super.setQuotaUser( quotaUser );
-            }
-
-            @Override
-            public Update setUserIp( java.lang.String userIp )
-            {
-                return ( Update ) super.setUserIp( userIp );
-            }
-
-            @com.google.api.client.util.Key( "order_id" )
-            private java.lang.Long orderId;
-
-            /**
-             *
-             */
-            public java.lang.Long getOrderId()
-            {
-                return orderId;
-            }
-
-            public Update setOrderId( java.lang.Long orderId )
-            {
-                this.orderId = orderId;
+                this.limit = limit;
                 return this;
             }
 
             @Override
-            public Update set( String parameterName, Object value )
+            public List set( String parameterName, Object value )
             {
-                return ( Update ) super.set( parameterName, value );
+                return ( List ) super.set( parameterName, value );
             }
         }
 
@@ -3282,109 +3189,6 @@ public class ProductBilling
                 Delete result = new Delete( orderId, invoiceId );
                 initialize( result );
                 return result;
-            }
-
-            /**
-             * Create a request for the method "invoices.get".
-             * <p>
-             * This request holds the parameters needed by the billing server.  After setting any optional
-             * parameters, call the {@link Get#execute()} method to invoke the remote operation.
-             *
-             * @param orderId
-             * @param invoiceId
-             * @return the request
-             */
-            public Get get( java.lang.Long orderId, java.lang.Long invoiceId ) throws java.io.IOException
-            {
-                Get result = new Get( orderId, invoiceId );
-                initialize( result );
-                return result;
-            }
-
-            /**
-             * Create a request for the method "invoices.insert".
-             * <p>
-             * This request holds the parameters needed by the billing server.  After setting any optional
-             * parameters, call the {@link Insert#execute()} method to invoke the remote operation.
-             *
-             * @param orderId
-             * @param content the {@link biz.turnonline.ecosystem.billing.model.Invoice}
-             * @return the request
-             */
-            public Insert insert( java.lang.Long orderId, biz.turnonline.ecosystem.billing.model.Invoice content )
-                    throws java.io.IOException
-            {
-                Insert result = new Insert( orderId, content );
-                initialize( result );
-                return result;
-            }
-
-            /**
-             * Create a request for the method "invoices.list".
-             * <p>
-             * This request holds the parameters needed by the billing server.  After setting any optional
-             * parameters, call the {@link List#execute()} method to invoke the remote operation.
-             *
-             * @param orderId
-             * @return the request
-             */
-            public List list( java.lang.Long orderId ) throws java.io.IOException
-            {
-                List result = new List( orderId );
-                initialize( result );
-                return result;
-            }
-
-            /**
-             * Create a request for the method "invoices.update".
-             * <p>
-             * This request holds the parameters needed by the billing server.  After setting any optional
-             * parameters, call the {@link Update#execute()} method to invoke the remote operation.
-             *
-             * @param orderId
-             * @param invoiceId
-             * @param content   the {@link biz.turnonline.ecosystem.billing.model.Invoice}
-             * @return the request
-             */
-            public Update update( java.lang.Long orderId,
-                                  java.lang.Long invoiceId,
-                                  biz.turnonline.ecosystem.billing.model.Invoice content ) throws java.io.IOException
-            {
-                Update result = new Update( orderId, invoiceId, content );
-                initialize( result );
-                return result;
-            }
-
-            /**
-             * An accessor for creating requests from the Items collection.
-             *
-             * <p>The typical use is:</p>
-             * <pre>
-             *   {@code ProductBilling billing = new ProductBilling(...);}
-             *   {@code ProductBilling.Items.List request = billing.items().list(parameters ...)}
-             * </pre>
-             *
-             * @return the resource collection
-             */
-            public Items items()
-            {
-                return new Items();
-            }
-
-            /**
-             * An accessor for creating requests from the Status collection.
-             *
-             * <p>The typical use is:</p>
-             * <pre>
-             *   {@code ProductBilling billing = new ProductBilling(...);}
-             *   {@code ProductBilling.Status.List request = billing.status().list(parameters ...)}
-             * </pre>
-             *
-             * @return the resource collection
-             */
-            public Status status()
-            {
-                return new Status();
             }
 
             public class Delete
@@ -3493,6 +3297,23 @@ public class ProductBilling
                 {
                     return ( Delete ) super.set( parameterName, value );
                 }
+            }
+
+            /**
+             * Create a request for the method "invoices.get".
+             * <p>
+             * This request holds the parameters needed by the billing server.  After setting any optional
+             * parameters, call the {@link Get#execute()} method to invoke the remote operation.
+             *
+             * @param orderId
+             * @param invoiceId
+             * @return the request
+             */
+            public Get get( java.lang.Long orderId, java.lang.Long invoiceId ) throws java.io.IOException
+            {
+                Get result = new Get( orderId, invoiceId );
+                initialize( result );
+                return result;
             }
 
             public class Get
@@ -3615,6 +3436,24 @@ public class ProductBilling
                 }
             }
 
+            /**
+             * Create a request for the method "invoices.insert".
+             * <p>
+             * This request holds the parameters needed by the billing server.  After setting any optional
+             * parameters, call the {@link Insert#execute()} method to invoke the remote operation.
+             *
+             * @param orderId
+             * @param content the {@link biz.turnonline.ecosystem.billing.model.Invoice}
+             * @return the request
+             */
+            public Insert insert( java.lang.Long orderId, biz.turnonline.ecosystem.billing.model.Invoice content )
+                    throws java.io.IOException
+            {
+                Insert result = new Insert( orderId, content );
+                initialize( result );
+                return result;
+            }
+
             public class Insert
                     extends ProductBillingRequest<biz.turnonline.ecosystem.billing.model.Invoice>
             {
@@ -3703,6 +3542,185 @@ public class ProductBilling
                 {
                     return ( Insert ) super.set( parameterName, value );
                 }
+            }
+
+            /**
+             * Create a request for the method "invoices.list".
+             * <p>
+             * This request holds the parameters needed by the billing server.  After setting any optional
+             * parameters, call the {@link List#execute()} method to invoke the remote operation.
+             *
+             * @param orderId
+             * @return the request
+             */
+            public List list( java.lang.Long orderId ) throws java.io.IOException
+            {
+                List result = new List( orderId );
+                initialize( result );
+                return result;
+            }
+
+            /**
+             * Create a request for the method "invoices.update".
+             * <p>
+             * This request holds the parameters needed by the billing server.  After setting any optional
+             * parameters, call the {@link Update#execute()} method to invoke the remote operation.
+             *
+             * @param orderId
+             * @param invoiceId
+             * @param content   the {@link biz.turnonline.ecosystem.billing.model.Invoice}
+             * @return the request
+             */
+            public Update update( java.lang.Long orderId,
+                                  java.lang.Long invoiceId,
+                                  biz.turnonline.ecosystem.billing.model.Invoice content ) throws java.io.IOException
+            {
+                Update result = new Update( orderId, invoiceId, content );
+                initialize( result );
+                return result;
+            }
+
+            /**
+             * An accessor for creating requests from the Items collection.
+             *
+             * <p>The typical use is:</p>
+             * <pre>
+             *   {@code ProductBilling billing = new ProductBilling(...);}
+             *   {@code ProductBilling.Items.List request = billing.items().list(parameters ...)}
+             * </pre>
+             *
+             * @return the resource collection
+             */
+            public Items items()
+            {
+                return new Items();
+            }
+
+            public class Update
+                    extends ProductBillingRequest<biz.turnonline.ecosystem.billing.model.Invoice>
+            {
+
+                private static final String REST_PATH = "orders/{order_id}/invoices/{invoice_id}";
+
+                /**
+                 * Create a request for the method "invoices.update".
+                 * <p>
+                 * This request holds the parameters needed by the the billing server.  After setting any optional
+                 * parameters, call the {@link Update#execute()} method to invoke the remote operation. <p> {@link
+                 * Update#initialize(com.google.api.client.googleapis.services.AbstractGoogleClientRequest)} must
+                 * be called to initialize this instance immediately after invoking the constructor. </p>
+                 *
+                 * @param orderId
+                 * @param invoiceId
+                 * @param content   the {@link biz.turnonline.ecosystem.billing.model.Invoice}
+                 * @since 1.13
+                 */
+                protected Update( java.lang.Long orderId,
+                                  java.lang.Long invoiceId,
+                                  biz.turnonline.ecosystem.billing.model.Invoice content )
+                {
+                    super( ProductBilling.this, "PUT", REST_PATH, content, biz.turnonline.ecosystem.billing.model.Invoice.class );
+                    this.orderId = com.google.api.client.util.Preconditions.checkNotNull( orderId, "Required parameter orderId must be specified." );
+                    this.invoiceId = com.google.api.client.util.Preconditions.checkNotNull( invoiceId, "Required parameter invoiceId must be specified." );
+                }
+
+                @Override
+                public Update setAlt( java.lang.String alt )
+                {
+                    return ( Update ) super.setAlt( alt );
+                }
+
+                @Override
+                public Update setFields( java.lang.String fields )
+                {
+                    return ( Update ) super.setFields( fields );
+                }
+
+                @Override
+                public Update setKey( java.lang.String key )
+                {
+                    return ( Update ) super.setKey( key );
+                }
+
+                @Override
+                public Update setOauthToken( java.lang.String oauthToken )
+                {
+                    return ( Update ) super.setOauthToken( oauthToken );
+                }
+
+                @Override
+                public Update setPrettyPrint( java.lang.Boolean prettyPrint )
+                {
+                    return ( Update ) super.setPrettyPrint( prettyPrint );
+                }
+
+                @Override
+                public Update setQuotaUser( java.lang.String quotaUser )
+                {
+                    return ( Update ) super.setQuotaUser( quotaUser );
+                }
+
+                @Override
+                public Update setUserIp( java.lang.String userIp )
+                {
+                    return ( Update ) super.setUserIp( userIp );
+                }
+
+                @com.google.api.client.util.Key( "order_id" )
+                private java.lang.Long orderId;
+
+                /**
+                 *
+                 */
+                public java.lang.Long getOrderId()
+                {
+                    return orderId;
+                }
+
+                public Update setOrderId( java.lang.Long orderId )
+                {
+                    this.orderId = orderId;
+                    return this;
+                }
+
+                @com.google.api.client.util.Key( "invoice_id" )
+                private java.lang.Long invoiceId;
+
+                /**
+                 *
+                 */
+                public java.lang.Long getInvoiceId()
+                {
+                    return invoiceId;
+                }
+
+                public Update setInvoiceId( java.lang.Long invoiceId )
+                {
+                    this.invoiceId = invoiceId;
+                    return this;
+                }
+
+                @Override
+                public Update set( String parameterName, Object value )
+                {
+                    return ( Update ) super.set( parameterName, value );
+                }
+            }
+
+            /**
+             * An accessor for creating requests from the Status collection.
+             *
+             * <p>The typical use is:</p>
+             * <pre>
+             *   {@code ProductBilling billing = new ProductBilling(...);}
+             *   {@code ProductBilling.Status.List request = billing.status().list(parameters ...)}
+             * </pre>
+             *
+             * @return the resource collection
+             */
+            public Status status()
+            {
+                return new Status();
             }
 
             public class List
@@ -3847,27 +3865,6 @@ public class ProductBilling
                 private java.lang.Integer offset;
 
                 /**
-                 * [ default: 10]
-                 * [
-                 */
-                public java.lang.Integer getLimit()
-                {
-                    return limit;
-                }
-
-                public List setLimit( java.lang.Integer limit )
-                {
-                    this.limit = limit;
-                    return this;
-                }
-
-                public List setLightList( java.lang.Boolean lightList )
-                {
-                    this.lightList = lightList;
-                    return this;
-                }
-
-                /**
                  * [ default: 0]
                  * [
                  */
@@ -3882,121 +3879,31 @@ public class ProductBilling
                     return this;
                 }
 
+                public List setLightList( java.lang.Boolean lightList )
+                {
+                    this.lightList = lightList;
+                    return this;
+                }
+
+                /**
+                 * [ default: 10]
+                 * [
+                 */
+                public java.lang.Integer getLimit()
+                {
+                    return limit;
+                }
+
+                public List setLimit( java.lang.Integer limit )
+                {
+                    this.limit = limit;
+                    return this;
+                }
+
                 @Override
                 public List set( String parameterName, Object value )
                 {
                     return ( List ) super.set( parameterName, value );
-                }
-            }
-
-            public class Update
-                    extends ProductBillingRequest<biz.turnonline.ecosystem.billing.model.Invoice>
-            {
-
-                private static final String REST_PATH = "orders/{order_id}/invoices/{invoice_id}";
-
-                /**
-                 * Create a request for the method "invoices.update".
-                 * <p>
-                 * This request holds the parameters needed by the the billing server.  After setting any optional
-                 * parameters, call the {@link Update#execute()} method to invoke the remote operation. <p> {@link
-                 * Update#initialize(com.google.api.client.googleapis.services.AbstractGoogleClientRequest)} must
-                 * be called to initialize this instance immediately after invoking the constructor. </p>
-                 *
-                 * @param orderId
-                 * @param invoiceId
-                 * @param content   the {@link biz.turnonline.ecosystem.billing.model.Invoice}
-                 * @since 1.13
-                 */
-                protected Update( java.lang.Long orderId,
-                                  java.lang.Long invoiceId,
-                                  biz.turnonline.ecosystem.billing.model.Invoice content )
-                {
-                    super( ProductBilling.this, "PUT", REST_PATH, content, biz.turnonline.ecosystem.billing.model.Invoice.class );
-                    this.orderId = com.google.api.client.util.Preconditions.checkNotNull( orderId, "Required parameter orderId must be specified." );
-                    this.invoiceId = com.google.api.client.util.Preconditions.checkNotNull( invoiceId, "Required parameter invoiceId must be specified." );
-                }
-
-                @Override
-                public Update setAlt( java.lang.String alt )
-                {
-                    return ( Update ) super.setAlt( alt );
-                }
-
-                @Override
-                public Update setFields( java.lang.String fields )
-                {
-                    return ( Update ) super.setFields( fields );
-                }
-
-                @Override
-                public Update setKey( java.lang.String key )
-                {
-                    return ( Update ) super.setKey( key );
-                }
-
-                @Override
-                public Update setOauthToken( java.lang.String oauthToken )
-                {
-                    return ( Update ) super.setOauthToken( oauthToken );
-                }
-
-                @Override
-                public Update setPrettyPrint( java.lang.Boolean prettyPrint )
-                {
-                    return ( Update ) super.setPrettyPrint( prettyPrint );
-                }
-
-                @Override
-                public Update setQuotaUser( java.lang.String quotaUser )
-                {
-                    return ( Update ) super.setQuotaUser( quotaUser );
-                }
-
-                @Override
-                public Update setUserIp( java.lang.String userIp )
-                {
-                    return ( Update ) super.setUserIp( userIp );
-                }
-
-                @com.google.api.client.util.Key( "order_id" )
-                private java.lang.Long orderId;
-
-                /**
-                 *
-                 */
-                public java.lang.Long getOrderId()
-                {
-                    return orderId;
-                }
-
-                public Update setOrderId( java.lang.Long orderId )
-                {
-                    this.orderId = orderId;
-                    return this;
-                }
-
-                @com.google.api.client.util.Key( "invoice_id" )
-                private java.lang.Long invoiceId;
-
-                /**
-                 *
-                 */
-                public java.lang.Long getInvoiceId()
-                {
-                    return invoiceId;
-                }
-
-                public Update setInvoiceId( java.lang.Long invoiceId )
-                {
-                    this.invoiceId = invoiceId;
-                    return this;
-                }
-
-                @Override
-                public Update set( String parameterName, Object value )
-                {
-                    return ( Update ) super.set( parameterName, value );
                 }
             }
 
@@ -4021,86 +3928,6 @@ public class ProductBilling
                         throws java.io.IOException
                 {
                     Delete result = new Delete( orderId, invoiceId, itemId );
-                    initialize( result );
-                    return result;
-                }
-
-                /**
-                 * Create a request for the method "items.get".
-                 * <p>
-                 * This request holds the parameters needed by the billing server.  After setting any optional
-                 * parameters, call the {@link Get#execute()} method to invoke the remote operation.
-                 *
-                 * @param orderId
-                 * @param invoiceId
-                 * @param itemId
-                 * @return the request
-                 */
-                public Get get( java.lang.Long orderId, java.lang.Long invoiceId, java.lang.Long itemId )
-                        throws java.io.IOException
-                {
-                    Get result = new Get( orderId, invoiceId, itemId );
-                    initialize( result );
-                    return result;
-                }
-
-                /**
-                 * Create a request for the method "items.insert".
-                 * <p>
-                 * This request holds the parameters needed by the billing server.  After setting any optional
-                 * parameters, call the {@link Insert#execute()} method to invoke the remote operation.
-                 *
-                 * @param orderId
-                 * @param invoiceId
-                 * @param content   the {@link biz.turnonline.ecosystem.billing.model.PricingItem}
-                 * @return the request
-                 */
-                public Insert insert( java.lang.Long orderId,
-                                      java.lang.Long invoiceId,
-                                      biz.turnonline.ecosystem.billing.model.PricingItem content )
-                        throws java.io.IOException
-                {
-                    Insert result = new Insert( orderId, invoiceId, content );
-                    initialize( result );
-                    return result;
-                }
-
-                /**
-                 * Create a request for the method "items.list".
-                 * <p>
-                 * This request holds the parameters needed by the billing server.  After setting any optional
-                 * parameters, call the {@link List#execute()} method to invoke the remote operation.
-                 *
-                 * @param orderId
-                 * @param invoiceId
-                 * @return the request
-                 */
-                public List list( java.lang.Long orderId, java.lang.Long invoiceId ) throws java.io.IOException
-                {
-                    List result = new List( orderId, invoiceId );
-                    initialize( result );
-                    return result;
-                }
-
-                /**
-                 * Create a request for the method "items.update".
-                 * <p>
-                 * This request holds the parameters needed by the billing server.  After setting any optional
-                 * parameters, call the {@link Update#execute()} method to invoke the remote operation.
-                 *
-                 * @param orderId
-                 * @param invoiceId
-                 * @param itemId
-                 * @param content   the {@link biz.turnonline.ecosystem.billing.model.PricingItem}
-                 * @return the request
-                 */
-                public Update update( java.lang.Long orderId,
-                                      java.lang.Long invoiceId,
-                                      java.lang.Long itemId,
-                                      biz.turnonline.ecosystem.billing.model.PricingItem content )
-                        throws java.io.IOException
-                {
-                    Update result = new Update( orderId, invoiceId, itemId, content );
                     initialize( result );
                     return result;
                 }
@@ -4230,6 +4057,25 @@ public class ProductBilling
                     {
                         return ( Delete ) super.set( parameterName, value );
                     }
+                }
+
+                /**
+                 * Create a request for the method "items.get".
+                 * <p>
+                 * This request holds the parameters needed by the billing server.  After setting any optional
+                 * parameters, call the {@link Get#execute()} method to invoke the remote operation.
+                 *
+                 * @param orderId
+                 * @param invoiceId
+                 * @param itemId
+                 * @return the request
+                 */
+                public Get get( java.lang.Long orderId, java.lang.Long invoiceId, java.lang.Long itemId )
+                        throws java.io.IOException
+                {
+                    Get result = new Get( orderId, invoiceId, itemId );
+                    initialize( result );
+                    return result;
                 }
 
                 public class Get
@@ -4371,6 +4217,27 @@ public class ProductBilling
                     }
                 }
 
+                /**
+                 * Create a request for the method "items.insert".
+                 * <p>
+                 * This request holds the parameters needed by the billing server.  After setting any optional
+                 * parameters, call the {@link Insert#execute()} method to invoke the remote operation.
+                 *
+                 * @param orderId
+                 * @param invoiceId
+                 * @param content   the {@link biz.turnonline.ecosystem.billing.model.PricingItem}
+                 * @return the request
+                 */
+                public Insert insert( java.lang.Long orderId,
+                                      java.lang.Long invoiceId,
+                                      biz.turnonline.ecosystem.billing.model.PricingItem content )
+                        throws java.io.IOException
+                {
+                    Insert result = new Insert( orderId, invoiceId, content );
+                    initialize( result );
+                    return result;
+                }
+
                 public class Insert
                         extends ProductBillingRequest<biz.turnonline.ecosystem.billing.model.Pricing>
                 {
@@ -4480,6 +4347,23 @@ public class ProductBilling
                     {
                         return ( Insert ) super.set( parameterName, value );
                     }
+                }
+
+                /**
+                 * Create a request for the method "items.list".
+                 * <p>
+                 * This request holds the parameters needed by the billing server.  After setting any optional
+                 * parameters, call the {@link List#execute()} method to invoke the remote operation.
+                 *
+                 * @param orderId
+                 * @param invoiceId
+                 * @return the request
+                 */
+                public List list( java.lang.Long orderId, java.lang.Long invoiceId ) throws java.io.IOException
+                {
+                    List result = new List( orderId, invoiceId );
+                    initialize( result );
+                    return result;
                 }
 
                 public class List
@@ -4600,6 +4484,29 @@ public class ProductBilling
                     {
                         return ( List ) super.set( parameterName, value );
                     }
+                }
+
+                /**
+                 * Create a request for the method "items.update".
+                 * <p>
+                 * This request holds the parameters needed by the billing server.  After setting any optional
+                 * parameters, call the {@link Update#execute()} method to invoke the remote operation.
+                 *
+                 * @param orderId
+                 * @param invoiceId
+                 * @param itemId
+                 * @param content   the {@link biz.turnonline.ecosystem.billing.model.PricingItem}
+                 * @return the request
+                 */
+                public Update update( java.lang.Long orderId,
+                                      java.lang.Long invoiceId,
+                                      java.lang.Long itemId,
+                                      biz.turnonline.ecosystem.billing.model.PricingItem content )
+                        throws java.io.IOException
+                {
+                    Update result = new Update( orderId, invoiceId, itemId, content );
+                    initialize( result );
+                    return result;
                 }
 
                 public class Update
@@ -4904,78 +4811,6 @@ public class ProductBilling
                 return result;
             }
 
-            /**
-             * Create a request for the method "items.get".
-             * <p>
-             * This request holds the parameters needed by the billing server.  After setting any optional
-             * parameters, call the {@link Get#execute()} method to invoke the remote operation.
-             *
-             * @param orderId
-             * @param itemId
-             * @return the request
-             */
-            public Get get( java.lang.Long orderId, java.lang.Long itemId ) throws java.io.IOException
-            {
-                Get result = new Get( orderId, itemId );
-                initialize( result );
-                return result;
-            }
-
-            /**
-             * Create a request for the method "items.insert".
-             * <p>
-             * This request holds the parameters needed by the billing server.  After setting any optional
-             * parameters, call the {@link Insert#execute()} method to invoke the remote operation.
-             *
-             * @param orderId
-             * @param content the {@link biz.turnonline.ecosystem.billing.model.PricingItem}
-             * @return the request
-             */
-            public Insert insert( java.lang.Long orderId, biz.turnonline.ecosystem.billing.model.PricingItem content )
-                    throws java.io.IOException
-            {
-                Insert result = new Insert( orderId, content );
-                initialize( result );
-                return result;
-            }
-
-            /**
-             * Create a request for the method "items.list".
-             * <p>
-             * This request holds the parameters needed by the billing server.  After setting any optional
-             * parameters, call the {@link List#execute()} method to invoke the remote operation.
-             *
-             * @param orderId
-             * @return the request
-             */
-            public List list( java.lang.Long orderId ) throws java.io.IOException
-            {
-                List result = new List( orderId );
-                initialize( result );
-                return result;
-            }
-
-            /**
-             * Create a request for the method "items.update".
-             * <p>
-             * This request holds the parameters needed by the billing server.  After setting any optional
-             * parameters, call the {@link Update#execute()} method to invoke the remote operation.
-             *
-             * @param orderId
-             * @param itemId
-             * @param content the {@link biz.turnonline.ecosystem.billing.model.PricingItem}
-             * @return the request
-             */
-            public Update update( java.lang.Long orderId,
-                                  java.lang.Long itemId,
-                                  biz.turnonline.ecosystem.billing.model.PricingItem content )
-                    throws java.io.IOException
-            {
-                Update result = new Update( orderId, itemId, content );
-                initialize( result );
-                return result;
-            }
-
             public class Delete
                     extends ProductBillingRequest<biz.turnonline.ecosystem.billing.model.Pricing>
             {
@@ -5082,6 +4917,23 @@ public class ProductBilling
                 {
                     return ( Delete ) super.set( parameterName, value );
                 }
+            }
+
+            /**
+             * Create a request for the method "items.get".
+             * <p>
+             * This request holds the parameters needed by the billing server.  After setting any optional
+             * parameters, call the {@link Get#execute()} method to invoke the remote operation.
+             *
+             * @param orderId
+             * @param itemId
+             * @return the request
+             */
+            public Get get( java.lang.Long orderId, java.lang.Long itemId ) throws java.io.IOException
+            {
+                Get result = new Get( orderId, itemId );
+                initialize( result );
+                return result;
             }
 
             public class Get
@@ -5204,6 +5056,24 @@ public class ProductBilling
                 }
             }
 
+            /**
+             * Create a request for the method "items.insert".
+             * <p>
+             * This request holds the parameters needed by the billing server.  After setting any optional
+             * parameters, call the {@link Insert#execute()} method to invoke the remote operation.
+             *
+             * @param orderId
+             * @param content the {@link biz.turnonline.ecosystem.billing.model.PricingItem}
+             * @return the request
+             */
+            public Insert insert( java.lang.Long orderId, biz.turnonline.ecosystem.billing.model.PricingItem content )
+                    throws java.io.IOException
+            {
+                Insert result = new Insert( orderId, content );
+                initialize( result );
+                return result;
+            }
+
             public class Insert
                     extends ProductBillingRequest<biz.turnonline.ecosystem.billing.model.Pricing>
             {
@@ -5292,6 +5162,22 @@ public class ProductBilling
                 {
                     return ( Insert ) super.set( parameterName, value );
                 }
+            }
+
+            /**
+             * Create a request for the method "items.list".
+             * <p>
+             * This request holds the parameters needed by the billing server.  After setting any optional
+             * parameters, call the {@link List#execute()} method to invoke the remote operation.
+             *
+             * @param orderId
+             * @return the request
+             */
+            public List list( java.lang.Long orderId ) throws java.io.IOException
+            {
+                List result = new List( orderId );
+                initialize( result );
+                return result;
             }
 
             public class List
@@ -5393,6 +5279,27 @@ public class ProductBilling
                 {
                     return ( List ) super.set( parameterName, value );
                 }
+            }
+
+            /**
+             * Create a request for the method "items.update".
+             * <p>
+             * This request holds the parameters needed by the billing server.  After setting any optional
+             * parameters, call the {@link Update#execute()} method to invoke the remote operation.
+             *
+             * @param orderId
+             * @param itemId
+             * @param content the {@link biz.turnonline.ecosystem.billing.model.PricingItem}
+             * @return the request
+             */
+            public Update update( java.lang.Long orderId,
+                                  java.lang.Long itemId,
+                                  biz.turnonline.ecosystem.billing.model.PricingItem content )
+                    throws java.io.IOException
+            {
+                Update result = new Update( orderId, itemId, content );
+                initialize( result );
+                return result;
             }
 
             public class Update
@@ -5530,24 +5437,6 @@ public class ProductBilling
                 return result;
             }
 
-            /**
-             * Create a request for the method "status.update".
-             * <p>
-             * This request holds the parameters needed by the billing server.  After setting any optional
-             * parameters, call the {@link Update#execute()} method to invoke the remote operation.
-             *
-             * @param orderId
-             * @param content the {@link biz.turnonline.ecosystem.billing.model.OrderStatus}
-             * @return the request
-             */
-            public Update update( java.lang.Long orderId, biz.turnonline.ecosystem.billing.model.OrderStatus content )
-                    throws java.io.IOException
-            {
-                Update result = new Update( orderId, content );
-                initialize( result );
-                return result;
-            }
-
             public class Get
                     extends ProductBillingRequest<biz.turnonline.ecosystem.billing.model.OrderStatus>
             {
@@ -5649,6 +5538,24 @@ public class ProductBilling
                 }
             }
 
+            /**
+             * Create a request for the method "status.update".
+             * <p>
+             * This request holds the parameters needed by the billing server.  After setting any optional
+             * parameters, call the {@link Update#execute()} method to invoke the remote operation.
+             *
+             * @param orderId
+             * @param content the {@link biz.turnonline.ecosystem.billing.model.OrderStatus}
+             * @return the request
+             */
+            public Update update( java.lang.Long orderId, biz.turnonline.ecosystem.billing.model.OrderStatus content )
+                    throws java.io.IOException
+            {
+                Update result = new Update( orderId, content );
+                initialize( result );
+                return result;
+            }
+
             public class Update
                     extends ProductBillingRequest<Void>
             {
@@ -5743,6 +5650,101 @@ public class ProductBilling
     }
 
     /**
+     * The "prices" collection of methods.
+     */
+    public class Prices
+    {
+
+        /**
+         * Create a request for the method "prices.insert".
+         * <p>
+         * This request holds the parameters needed by the billing server.  After setting any optional
+         * parameters, call the {@link Insert#execute()} method to invoke the remote operation.
+         *
+         * @param content the {@link biz.turnonline.ecosystem.billing.model.Pricing}
+         * @return the request
+         */
+        public Insert insert( biz.turnonline.ecosystem.billing.model.Pricing content ) throws java.io.IOException
+        {
+            Insert result = new Insert( content );
+            initialize( result );
+            return result;
+        }
+
+        public class Insert
+                extends ProductBillingRequest<biz.turnonline.ecosystem.billing.model.Pricing>
+        {
+
+            private static final String REST_PATH = "prices";
+
+            /**
+             * Create a request for the method "prices.insert".
+             * <p>
+             * This request holds the parameters needed by the the billing server.  After setting any optional
+             * parameters, call the {@link Insert#execute()} method to invoke the remote operation. <p> {@link
+             * Insert#initialize(com.google.api.client.googleapis.services.AbstractGoogleClientRequest)} must
+             * be called to initialize this instance immediately after invoking the constructor. </p>
+             *
+             * @param content the {@link biz.turnonline.ecosystem.billing.model.Pricing}
+             * @since 1.13
+             */
+            protected Insert( biz.turnonline.ecosystem.billing.model.Pricing content )
+            {
+                super( ProductBilling.this, "POST", REST_PATH, content, biz.turnonline.ecosystem.billing.model.Pricing.class );
+            }
+
+            @Override
+            public Insert setAlt( java.lang.String alt )
+            {
+                return ( Insert ) super.setAlt( alt );
+            }
+
+            @Override
+            public Insert setFields( java.lang.String fields )
+            {
+                return ( Insert ) super.setFields( fields );
+            }
+
+            @Override
+            public Insert setKey( java.lang.String key )
+            {
+                return ( Insert ) super.setKey( key );
+            }
+
+            @Override
+            public Insert setOauthToken( java.lang.String oauthToken )
+            {
+                return ( Insert ) super.setOauthToken( oauthToken );
+            }
+
+            @Override
+            public Insert setPrettyPrint( java.lang.Boolean prettyPrint )
+            {
+                return ( Insert ) super.setPrettyPrint( prettyPrint );
+            }
+
+            @Override
+            public Insert setQuotaUser( java.lang.String quotaUser )
+            {
+                return ( Insert ) super.setQuotaUser( quotaUser );
+            }
+
+            @Override
+            public Insert setUserIp( java.lang.String userIp )
+            {
+                return ( Insert ) super.setUserIp( userIp );
+            }
+
+            @Override
+            public Insert set( String parameterName, Object value )
+            {
+                return ( Insert ) super.set( parameterName, value );
+            }
+        }
+
+    }
+
+    /**
      * The "products" collection of methods.
      */
     public class Products
@@ -5762,87 +5764,6 @@ public class ProductBilling
             Delete result = new Delete( productId );
             initialize( result );
             return result;
-        }
-
-        /**
-         * Create a request for the method "products.get".
-         * <p>
-         * This request holds the parameters needed by the billing server.  After setting any optional
-         * parameters, call the {@link Get#execute()} method to invoke the remote operation.
-         *
-         * @param productId
-         * @return the request
-         */
-        public Get get( java.lang.Long productId ) throws java.io.IOException
-        {
-            Get result = new Get( productId );
-            initialize( result );
-            return result;
-        }
-
-        /**
-         * Create a request for the method "products.insert".
-         * <p>
-         * This request holds the parameters needed by the billing server.  After setting any optional
-         * parameters, call the {@link Insert#execute()} method to invoke the remote operation.
-         *
-         * @param content the {@link biz.turnonline.ecosystem.billing.model.Product}
-         * @return the request
-         */
-        public Insert insert( biz.turnonline.ecosystem.billing.model.Product content ) throws java.io.IOException
-        {
-            Insert result = new Insert( content );
-            initialize( result );
-            return result;
-        }
-
-        /**
-         * Create a request for the method "products.list".
-         * <p>
-         * This request holds the parameters needed by the billing server.  After setting any optional
-         * parameters, call the {@link List#execute()} method to invoke the remote operation.
-         *
-         * @return the request
-         */
-        public List list() throws java.io.IOException
-        {
-            List result = new List();
-            initialize( result );
-            return result;
-        }
-
-        /**
-         * Create a request for the method "products.update".
-         * <p>
-         * This request holds the parameters needed by the billing server.  After setting any optional
-         * parameters, call the {@link Update#execute()} method to invoke the remote operation.
-         *
-         * @param productId
-         * @param content   the {@link biz.turnonline.ecosystem.billing.model.Product}
-         * @return the request
-         */
-        public Update update( java.lang.Long productId, biz.turnonline.ecosystem.billing.model.Product content )
-                throws java.io.IOException
-        {
-            Update result = new Update( productId, content );
-            initialize( result );
-            return result;
-        }
-
-        /**
-         * An accessor for creating requests from the Publishing collection.
-         *
-         * <p>The typical use is:</p>
-         * <pre>
-         *   {@code ProductBilling billing = new ProductBilling(...);}
-         *   {@code ProductBilling.Publishing.List request = billing.publishing().list(parameters ...)}
-         * </pre>
-         *
-         * @return the resource collection
-         */
-        public Publishing publishing()
-        {
-            return new Publishing();
         }
 
         public class Delete
@@ -5932,6 +5853,22 @@ public class ProductBilling
             {
                 return ( Delete ) super.set( parameterName, value );
             }
+        }
+
+        /**
+         * Create a request for the method "products.get".
+         * <p>
+         * This request holds the parameters needed by the billing server.  After setting any optional
+         * parameters, call the {@link Get#execute()} method to invoke the remote operation.
+         *
+         * @param productId
+         * @return the request
+         */
+        public Get get( java.lang.Long productId ) throws java.io.IOException
+        {
+            Get result = new Get( productId );
+            initialize( result );
+            return result;
         }
 
         public class Get
@@ -6035,6 +5972,22 @@ public class ProductBilling
             }
         }
 
+        /**
+         * Create a request for the method "products.insert".
+         * <p>
+         * This request holds the parameters needed by the billing server.  After setting any optional
+         * parameters, call the {@link Insert#execute()} method to invoke the remote operation.
+         *
+         * @param content the {@link biz.turnonline.ecosystem.billing.model.Product}
+         * @return the request
+         */
+        public Insert insert( biz.turnonline.ecosystem.billing.model.Product content ) throws java.io.IOException
+        {
+            Insert result = new Insert( content );
+            initialize( result );
+            return result;
+        }
+
         public class Insert
                 extends ProductBillingRequest<biz.turnonline.ecosystem.billing.model.Product>
         {
@@ -6120,6 +6073,162 @@ public class ProductBilling
             public Insert set( String parameterName, Object value )
             {
                 return ( Insert ) super.set( parameterName, value );
+            }
+        }
+
+        /**
+         * Create a request for the method "products.list".
+         * <p>
+         * This request holds the parameters needed by the billing server.  After setting any optional
+         * parameters, call the {@link List#execute()} method to invoke the remote operation.
+         *
+         * @return the request
+         */
+        public List list() throws java.io.IOException
+        {
+            List result = new List();
+            initialize( result );
+            return result;
+        }
+
+        /**
+         * Create a request for the method "products.update".
+         * <p>
+         * This request holds the parameters needed by the billing server.  After setting any optional
+         * parameters, call the {@link Update#execute()} method to invoke the remote operation.
+         *
+         * @param productId
+         * @param content   the {@link biz.turnonline.ecosystem.billing.model.Product}
+         * @return the request
+         */
+        public Update update( java.lang.Long productId, biz.turnonline.ecosystem.billing.model.Product content )
+                throws java.io.IOException
+        {
+            Update result = new Update( productId, content );
+            initialize( result );
+            return result;
+        }
+
+        /**
+         * An accessor for creating requests from the Publishing collection.
+         *
+         * <p>The typical use is:</p>
+         * <pre>
+         *   {@code ProductBilling billing = new ProductBilling(...);}
+         *   {@code ProductBilling.Publishing.List request = billing.publishing().list(parameters ...)}
+         * </pre>
+         *
+         * @return the resource collection
+         */
+        public Publishing publishing()
+        {
+            return new Publishing();
+        }
+
+        public class Update
+                extends ProductBillingRequest<biz.turnonline.ecosystem.billing.model.Product>
+        {
+
+            private static final String REST_PATH = "products/{product_id}";
+
+            /**
+             * Create a request for the method "products.update".
+             * <p>
+             * This request holds the parameters needed by the the billing server.  After setting any optional
+             * parameters, call the {@link Update#execute()} method to invoke the remote operation. <p> {@link
+             * Update#initialize(com.google.api.client.googleapis.services.AbstractGoogleClientRequest)} must
+             * be called to initialize this instance immediately after invoking the constructor. </p>
+             *
+             * @param productId
+             * @param content   the {@link biz.turnonline.ecosystem.billing.model.Product}
+             * @since 1.13
+             */
+            protected Update( java.lang.Long productId, biz.turnonline.ecosystem.billing.model.Product content )
+            {
+                super( ProductBilling.this, "PUT", REST_PATH, content, biz.turnonline.ecosystem.billing.model.Product.class );
+                this.productId = com.google.api.client.util.Preconditions.checkNotNull( productId, "Required parameter productId must be specified." );
+            }
+
+            @Override
+            public Update setAlt( java.lang.String alt )
+            {
+                return ( Update ) super.setAlt( alt );
+            }
+
+            @Override
+            public Update setFields( java.lang.String fields )
+            {
+                return ( Update ) super.setFields( fields );
+            }
+
+            @Override
+            public Update setKey( java.lang.String key )
+            {
+                return ( Update ) super.setKey( key );
+            }
+
+            @Override
+            public Update setOauthToken( java.lang.String oauthToken )
+            {
+                return ( Update ) super.setOauthToken( oauthToken );
+            }
+
+            @Override
+            public Update setPrettyPrint( java.lang.Boolean prettyPrint )
+            {
+                return ( Update ) super.setPrettyPrint( prettyPrint );
+            }
+
+            @Override
+            public Update setQuotaUser( java.lang.String quotaUser )
+            {
+                return ( Update ) super.setQuotaUser( quotaUser );
+            }
+
+            @Override
+            public Update setUserIp( java.lang.String userIp )
+            {
+                return ( Update ) super.setUserIp( userIp );
+            }
+
+            @com.google.api.client.util.Key( "product_id" )
+            private java.lang.Long productId;
+
+            /**
+             *
+             */
+            public java.lang.Long getProductId()
+            {
+                return productId;
+            }
+
+            public Update setProductId( java.lang.Long productId )
+            {
+                this.productId = productId;
+                return this;
+            }
+
+            @com.google.api.client.util.Key
+            private java.util.List<java.lang.String> picsFrom;
+
+            /**
+             *
+             */
+            public java.util.List<java.lang.String> getPicsFrom()
+            {
+                return picsFrom;
+            }
+
+            public Update setPicsFrom( java.util.List<java.lang.String> picsFrom )
+            {
+                this.picsFrom = picsFrom;
+                return this;
+            }
+
+            @Override
+            public Update set( String parameterName, Object value )
+            {
+                return ( Update ) super.set( parameterName, value );
             }
         }
 
@@ -6246,27 +6355,6 @@ public class ProductBilling
             private java.lang.Integer offset;
 
             /**
-             * [ default: 10]
-             * [
-             */
-            public java.lang.Integer getLimit()
-            {
-                return limit;
-            }
-
-            public List setLimit( java.lang.Integer limit )
-            {
-                this.limit = limit;
-                return this;
-            }
-
-            public List setLightList( java.lang.Boolean lightList )
-            {
-                this.lightList = lightList;
-                return this;
-            }
-
-            /**
              * [ default: 0]
              * [
              */
@@ -6281,117 +6369,31 @@ public class ProductBilling
                 return this;
             }
 
+            public List setLightList( java.lang.Boolean lightList )
+            {
+                this.lightList = lightList;
+                return this;
+            }
+
+            /**
+             * [ default: 10]
+             * [
+             */
+            public java.lang.Integer getLimit()
+            {
+                return limit;
+            }
+
+            public List setLimit( java.lang.Integer limit )
+            {
+                this.limit = limit;
+                return this;
+            }
+
             @Override
             public List set( String parameterName, Object value )
             {
                 return ( List ) super.set( parameterName, value );
-            }
-        }
-
-        public class Update
-                extends ProductBillingRequest<biz.turnonline.ecosystem.billing.model.Product>
-        {
-
-            private static final String REST_PATH = "products/{product_id}";
-
-            /**
-             * Create a request for the method "products.update".
-             * <p>
-             * This request holds the parameters needed by the the billing server.  After setting any optional
-             * parameters, call the {@link Update#execute()} method to invoke the remote operation. <p> {@link
-             * Update#initialize(com.google.api.client.googleapis.services.AbstractGoogleClientRequest)} must
-             * be called to initialize this instance immediately after invoking the constructor. </p>
-             *
-             * @param productId
-             * @param content   the {@link biz.turnonline.ecosystem.billing.model.Product}
-             * @since 1.13
-             */
-            protected Update( java.lang.Long productId, biz.turnonline.ecosystem.billing.model.Product content )
-            {
-                super( ProductBilling.this, "PUT", REST_PATH, content, biz.turnonline.ecosystem.billing.model.Product.class );
-                this.productId = com.google.api.client.util.Preconditions.checkNotNull( productId, "Required parameter productId must be specified." );
-            }
-
-            @Override
-            public Update setAlt( java.lang.String alt )
-            {
-                return ( Update ) super.setAlt( alt );
-            }
-
-            @Override
-            public Update setFields( java.lang.String fields )
-            {
-                return ( Update ) super.setFields( fields );
-            }
-
-            @Override
-            public Update setKey( java.lang.String key )
-            {
-                return ( Update ) super.setKey( key );
-            }
-
-            @Override
-            public Update setOauthToken( java.lang.String oauthToken )
-            {
-                return ( Update ) super.setOauthToken( oauthToken );
-            }
-
-            @Override
-            public Update setPrettyPrint( java.lang.Boolean prettyPrint )
-            {
-                return ( Update ) super.setPrettyPrint( prettyPrint );
-            }
-
-            @Override
-            public Update setQuotaUser( java.lang.String quotaUser )
-            {
-                return ( Update ) super.setQuotaUser( quotaUser );
-            }
-
-            @Override
-            public Update setUserIp( java.lang.String userIp )
-            {
-                return ( Update ) super.setUserIp( userIp );
-            }
-
-            @com.google.api.client.util.Key( "product_id" )
-            private java.lang.Long productId;
-
-            /**
-             *
-             */
-            public java.lang.Long getProductId()
-            {
-                return productId;
-            }
-
-            public Update setProductId( java.lang.Long productId )
-            {
-                this.productId = productId;
-                return this;
-            }
-
-            @com.google.api.client.util.Key
-            private java.util.List<java.lang.String> picsFrom;
-
-            /**
-             *
-             */
-            public java.util.List<java.lang.String> getPicsFrom()
-            {
-                return picsFrom;
-            }
-
-            public Update setPicsFrom( java.util.List<java.lang.String> picsFrom )
-            {
-                this.picsFrom = picsFrom;
-                return this;
-            }
-
-            @Override
-            public Update set( String parameterName, Object value )
-            {
-                return ( Update ) super.set( parameterName, value );
             }
         }
 
@@ -6415,57 +6417,6 @@ public class ProductBilling
                 Delete result = new Delete( productId );
                 initialize( result );
                 return result;
-            }
-
-            /**
-             * Create a request for the method "publishing.get".
-             * <p>
-             * This request holds the parameters needed by the billing server.  After setting any optional
-             * parameters, call the {@link Get#execute()} method to invoke the remote operation.
-             *
-             * @param productId
-             * @return the request
-             */
-            public Get get( java.lang.Long productId ) throws java.io.IOException
-            {
-                Get result = new Get( productId );
-                initialize( result );
-                return result;
-            }
-
-            /**
-             * Create a request for the method "publishing.update".
-             * <p>
-             * This request holds the parameters needed by the billing server.  After setting any optional
-             * parameters, call the {@link Update#execute()} method to invoke the remote operation.
-             *
-             * @param productId
-             * @param content   the {@link biz.turnonline.ecosystem.billing.model.ProductPublishing}
-             * @return the request
-             */
-            public Update update( java.lang.Long productId,
-                                  biz.turnonline.ecosystem.billing.model.ProductPublishing content )
-                    throws java.io.IOException
-            {
-                Update result = new Update( productId, content );
-                initialize( result );
-                return result;
-            }
-
-            /**
-             * An accessor for creating requests from the Pictures collection.
-             *
-             * <p>The typical use is:</p>
-             * <pre>
-             *   {@code ProductBilling billing = new ProductBilling(...);}
-             *   {@code ProductBilling.Pictures.List request = billing.pictures().list(parameters ...)}
-             * </pre>
-             *
-             * @return the resource collection
-             */
-            public Pictures pictures()
-            {
-                return new Pictures();
             }
 
             public class Delete
@@ -6555,6 +6506,22 @@ public class ProductBilling
                 {
                     return ( Delete ) super.set( parameterName, value );
                 }
+            }
+
+            /**
+             * Create a request for the method "publishing.get".
+             * <p>
+             * This request holds the parameters needed by the billing server.  After setting any optional
+             * parameters, call the {@link Get#execute()} method to invoke the remote operation.
+             *
+             * @param productId
+             * @return the request
+             */
+            public Get get( java.lang.Long productId ) throws java.io.IOException
+            {
+                Get result = new Get( productId );
+                initialize( result );
+                return result;
             }
 
             public class Get
@@ -6656,6 +6623,25 @@ public class ProductBilling
                 {
                     return ( Get ) super.set( parameterName, value );
                 }
+            }
+
+            /**
+             * Create a request for the method "publishing.update".
+             * <p>
+             * This request holds the parameters needed by the billing server.  After setting any optional
+             * parameters, call the {@link Update#execute()} method to invoke the remote operation.
+             *
+             * @param productId
+             * @param content   the {@link biz.turnonline.ecosystem.billing.model.ProductPublishing}
+             * @return the request
+             */
+            public Update update( java.lang.Long productId,
+                                  biz.turnonline.ecosystem.billing.model.ProductPublishing content )
+                    throws java.io.IOException
+            {
+                Update result = new Update( productId, content );
+                initialize( result );
+                return result;
             }
 
             public class Update
@@ -6764,6 +6750,22 @@ public class ProductBilling
                 {
                     return ( Update ) super.set( parameterName, value );
                 }
+            }
+
+            /**
+             * An accessor for creating requests from the Pictures collection.
+             *
+             * <p>The typical use is:</p>
+             * <pre>
+             *   {@code ProductBilling billing = new ProductBilling(...);}
+             *   {@code ProductBilling.Pictures.List request = billing.pictures().list(parameters ...)}
+             * </pre>
+             *
+             * @return the resource collection
+             */
+            public Pictures pictures()
+            {
+                return new Pictures();
             }
 
             /**
@@ -7135,7 +7137,7 @@ public class ProductBilling
                 }
 
                 @com.google.api.client.util.Key
-                private java.lang.Integer limit;
+                private java.lang.Long orderId;
 
                 /**
                  * Convenience method that returns only {@link Boolean#TRUE} or {@link Boolean#FALSE}.
@@ -7169,23 +7171,22 @@ public class ProductBilling
                 @com.google.api.client.util.Key
                 private java.lang.Integer offset;
 
-                /**
-                 * [ default: 10]
-                 * [
-                 */
-                public java.lang.Integer getLimit()
-                {
-                    return limit;
-                }
+                @com.google.api.client.util.Key
+                private java.lang.Integer limit;
 
-                public List setLimit( java.lang.Integer limit )
+                public List setLightList( java.lang.Boolean lightList )
                 {
-                    this.limit = limit;
+                    this.lightList = lightList;
                     return this;
                 }
 
-                @com.google.api.client.util.Key
-                private java.lang.Long orderId;
+                /**
+                 *
+                 */
+                public java.lang.Long getOrderId()
+                {
+                    return orderId;
+                }
 
                 /**
                  * [ default: 0]
@@ -7202,23 +7203,24 @@ public class ProductBilling
                     return this;
                 }
 
-                public List setLightList( java.lang.Boolean lightList )
+                public List setOrderId( java.lang.Long orderId )
                 {
-                    this.lightList = lightList;
+                    this.orderId = orderId;
                     return this;
                 }
 
                 /**
-                 *
+                 * [ default: 10]
+                 * [
                  */
-                public java.lang.Long getOrderId()
+                public java.lang.Integer getLimit()
                 {
-                    return orderId;
+                    return limit;
                 }
 
-                public List setOrderId( java.lang.Long orderId )
+                public List setLimit( java.lang.Integer limit )
                 {
-                    this.orderId = orderId;
+                    this.limit = limit;
                     return this;
                 }
 
@@ -7251,53 +7253,6 @@ public class ProductBilling
                 Delete result = new Delete( orderId );
                 initialize( result );
                 return result;
-            }
-
-            /**
-             * Create a request for the method "orders.get".
-             * <p>
-             * This request holds the parameters needed by the billing server.  After setting any optional
-             * parameters, call the {@link Get#execute()} method to invoke the remote operation.
-             *
-             * @param orderId
-             * @return the request
-             */
-            public Get get( java.lang.Long orderId ) throws java.io.IOException
-            {
-                Get result = new Get( orderId );
-                initialize( result );
-                return result;
-            }
-
-            /**
-             * Create a request for the method "orders.list".
-             * <p>
-             * This request holds the parameters needed by the billing server.  After setting any optional
-             * parameters, call the {@link List#execute()} method to invoke the remote operation.
-             *
-             * @return the request
-             */
-            public List list() throws java.io.IOException
-            {
-                List result = new List();
-                initialize( result );
-                return result;
-            }
-
-            /**
-             * An accessor for creating requests from the Invoices collection.
-             *
-             * <p>The typical use is:</p>
-             * <pre>
-             *   {@code ProductBilling billing = new ProductBilling(...);}
-             *   {@code ProductBilling.Invoices.List request = billing.invoices().list(parameters ...)}
-             * </pre>
-             *
-             * @return the resource collection
-             */
-            public Invoices invoices()
-            {
-                return new Invoices();
             }
 
             public class Delete
@@ -7387,6 +7342,22 @@ public class ProductBilling
                 {
                     return ( Delete ) super.set( parameterName, value );
                 }
+            }
+
+            /**
+             * Create a request for the method "orders.get".
+             * <p>
+             * This request holds the parameters needed by the billing server.  After setting any optional
+             * parameters, call the {@link Get#execute()} method to invoke the remote operation.
+             *
+             * @param orderId
+             * @return the request
+             */
+            public Get get( java.lang.Long orderId ) throws java.io.IOException
+            {
+                Get result = new Get( orderId );
+                initialize( result );
+                return result;
             }
 
             public class Get
@@ -7505,6 +7476,37 @@ public class ProductBilling
                 {
                     return ( Get ) super.set( parameterName, value );
                 }
+            }
+
+            /**
+             * Create a request for the method "orders.list".
+             * <p>
+             * This request holds the parameters needed by the billing server.  After setting any optional
+             * parameters, call the {@link List#execute()} method to invoke the remote operation.
+             *
+             * @return the request
+             */
+            public List list() throws java.io.IOException
+            {
+                List result = new List();
+                initialize( result );
+                return result;
+            }
+
+            /**
+             * An accessor for creating requests from the Invoices collection.
+             *
+             * <p>The typical use is:</p>
+             * <pre>
+             *   {@code ProductBilling billing = new ProductBilling(...);}
+             *   {@code ProductBilling.Invoices.List request = billing.invoices().list(parameters ...)}
+             * </pre>
+             *
+             * @return the resource collection
+             */
+            public Invoices invoices()
+            {
+                return new Invoices();
             }
 
             public class List
@@ -7630,27 +7632,6 @@ public class ProductBilling
                 private java.lang.Integer offset;
 
                 /**
-                 * [ default: 10]
-                 * [
-                 */
-                public java.lang.Integer getLimit()
-                {
-                    return limit;
-                }
-
-                public List setLimit( java.lang.Integer limit )
-                {
-                    this.limit = limit;
-                    return this;
-                }
-
-                public List setLightList( java.lang.Boolean lightList )
-                {
-                    this.lightList = lightList;
-                    return this;
-                }
-
-                /**
                  * [ default: 0]
                  * [
                  */
@@ -7662,6 +7643,27 @@ public class ProductBilling
                 public List setOffset( java.lang.Integer offset )
                 {
                     this.offset = offset;
+                    return this;
+                }
+
+                public List setLightList( java.lang.Boolean lightList )
+                {
+                    this.lightList = lightList;
+                    return this;
+                }
+
+                /**
+                 * [ default: 10]
+                 * [
+                 */
+                public java.lang.Integer getLimit()
+                {
+                    return limit;
+                }
+
+                public List setLimit( java.lang.Integer limit )
+                {
+                    this.limit = limit;
                     return this;
                 }
 
@@ -7691,39 +7693,6 @@ public class ProductBilling
                 public Delete delete( java.lang.Long orderId, java.lang.Long invoiceId ) throws java.io.IOException
                 {
                     Delete result = new Delete( orderId, invoiceId );
-                    initialize( result );
-                    return result;
-                }
-
-                /**
-                 * Create a request for the method "invoices.get".
-                 * <p>
-                 * This request holds the parameters needed by the billing server.  After setting any optional
-                 * parameters, call the {@link Get#execute()} method to invoke the remote operation.
-                 *
-                 * @param orderId
-                 * @param invoiceId
-                 * @return the request
-                 */
-                public Get get( java.lang.Long orderId, java.lang.Long invoiceId ) throws java.io.IOException
-                {
-                    Get result = new Get( orderId, invoiceId );
-                    initialize( result );
-                    return result;
-                }
-
-                /**
-                 * Create a request for the method "invoices.list".
-                 * <p>
-                 * This request holds the parameters needed by the billing server.  After setting any optional
-                 * parameters, call the {@link List#execute()} method to invoke the remote operation.
-                 *
-                 * @param orderId
-                 * @return the request
-                 */
-                public List list( java.lang.Long orderId ) throws java.io.IOException
-                {
-                    List result = new List( orderId );
                     initialize( result );
                     return result;
                 }
@@ -7834,6 +7803,23 @@ public class ProductBilling
                     {
                         return ( Delete ) super.set( parameterName, value );
                     }
+                }
+
+                /**
+                 * Create a request for the method "invoices.get".
+                 * <p>
+                 * This request holds the parameters needed by the billing server.  After setting any optional
+                 * parameters, call the {@link Get#execute()} method to invoke the remote operation.
+                 *
+                 * @param orderId
+                 * @param invoiceId
+                 * @return the request
+                 */
+                public Get get( java.lang.Long orderId, java.lang.Long invoiceId ) throws java.io.IOException
+                {
+                    Get result = new Get( orderId, invoiceId );
+                    initialize( result );
+                    return result;
                 }
 
                 public class Get
@@ -7954,6 +7940,22 @@ public class ProductBilling
                     {
                         return ( Get ) super.set( parameterName, value );
                     }
+                }
+
+                /**
+                 * Create a request for the method "invoices.list".
+                 * <p>
+                 * This request holds the parameters needed by the billing server.  After setting any optional
+                 * parameters, call the {@link List#execute()} method to invoke the remote operation.
+                 *
+                 * @param orderId
+                 * @return the request
+                 */
+                public List list( java.lang.Long orderId ) throws java.io.IOException
+                {
+                    List result = new List( orderId );
+                    initialize( result );
+                    return result;
                 }
 
                 public class List
@@ -8097,21 +8099,6 @@ public class ProductBilling
                     @com.google.api.client.util.Key
                     private java.lang.Integer offset;
 
-                    /**
-                     * [ default: 10]
-                     * [
-                     */
-                    public java.lang.Integer getLimit()
-                    {
-                        return limit;
-                    }
-
-                    public List setLimit( java.lang.Integer limit )
-                    {
-                        this.limit = limit;
-                        return this;
-                    }
-
                     public List setLightList( java.lang.Boolean lightList )
                     {
                         this.lightList = lightList;
@@ -8133,6 +8120,21 @@ public class ProductBilling
                         return this;
                     }
 
+                    /**
+                     * [ default: 10]
+                     * [
+                     */
+                    public java.lang.Integer getLimit()
+                    {
+                        return limit;
+                    }
+
+                    public List setLimit( java.lang.Integer limit )
+                    {
+                        this.limit = limit;
+                        return this;
+                    }
+
                     @Override
                     public List set( String parameterName, Object value )
                     {
@@ -8142,437 +8144,6 @@ public class ProductBilling
 
             }
         }
-    }
-
-    /**
-     * The "transactions" collection of methods.
-     */
-    public class Transactions
-    {
-
-        /**
-         * Create a request for the method "transactions.get".
-         * <p>
-         * This request holds the parameters needed by the billing server.  After setting any optional
-         * parameters, call the {@link Get#execute()} method to invoke the remote operation.
-         *
-         * @param transactionId
-         * @return the request
-         */
-        public Get get( java.lang.Long transactionId ) throws java.io.IOException
-        {
-            Get result = new Get( transactionId );
-            initialize( result );
-            return result;
-        }
-
-        /**
-         * Create a request for the method "transactions.insert".
-         * <p>
-         * This request holds the parameters needed by the billing server.  After setting any optional
-         * parameters, call the {@link Insert#execute()} method to invoke the remote operation.
-         *
-         * @param content the {@link biz.turnonline.ecosystem.billing.model.Transaction}
-         * @return the request
-         */
-        public Insert insert( biz.turnonline.ecosystem.billing.model.Transaction content ) throws java.io.IOException
-        {
-            Insert result = new Insert( content );
-            initialize( result );
-            return result;
-        }
-
-        /**
-         * Create a request for the method "transactions.list".
-         * <p>
-         * This request holds the parameters needed by the billing server.  After setting any optional
-         * parameters, call the {@link List#execute()} method to invoke the remote operation.
-         *
-         * @return the request
-         */
-        public List list() throws java.io.IOException
-        {
-            List result = new List();
-            initialize( result );
-            return result;
-        }
-
-        public class Insert
-                extends ProductBillingRequest<Void>
-        {
-
-            private static final String REST_PATH = "transactions";
-
-            /**
-             * Create a request for the method "transactions.insert".
-             * <p>
-             * This request holds the parameters needed by the the billing server.  After setting any optional
-             * parameters, call the {@link Insert#execute()} method to invoke the remote operation. <p> {@link
-             * Insert#initialize(com.google.api.client.googleapis.services.AbstractGoogleClientRequest)} must
-             * be called to initialize this instance immediately after invoking the constructor. </p>
-             *
-             * @param content the {@link biz.turnonline.ecosystem.billing.model.Transaction}
-             * @since 1.13
-             */
-            protected Insert( biz.turnonline.ecosystem.billing.model.Transaction content )
-            {
-                super( ProductBilling.this, "POST", REST_PATH, content, Void.class );
-            }
-
-            @Override
-            public Insert setAlt( java.lang.String alt )
-            {
-                return ( Insert ) super.setAlt( alt );
-            }
-
-            @Override
-            public Insert setFields( java.lang.String fields )
-            {
-                return ( Insert ) super.setFields( fields );
-            }
-
-            @Override
-            public Insert setKey( java.lang.String key )
-            {
-                return ( Insert ) super.setKey( key );
-            }
-
-            @Override
-            public Insert setOauthToken( java.lang.String oauthToken )
-            {
-                return ( Insert ) super.setOauthToken( oauthToken );
-            }
-
-            @Override
-            public Insert setPrettyPrint( java.lang.Boolean prettyPrint )
-            {
-                return ( Insert ) super.setPrettyPrint( prettyPrint );
-            }
-
-            @Override
-            public Insert setQuotaUser( java.lang.String quotaUser )
-            {
-                return ( Insert ) super.setQuotaUser( quotaUser );
-            }
-
-            @Override
-            public Insert setUserIp( java.lang.String userIp )
-            {
-                return ( Insert ) super.setUserIp( userIp );
-            }
-
-            @Override
-            public Insert set( String parameterName, Object value )
-            {
-                return ( Insert ) super.set( parameterName, value );
-            }
-        }
-
-        public class Get
-                extends ProductBillingRequest<biz.turnonline.ecosystem.billing.model.Transaction>
-        {
-
-            private static final String REST_PATH = "transactions/{transaction_id}";
-
-            /**
-             * Create a request for the method "transactions.get".
-             * <p>
-             * This request holds the parameters needed by the the billing server.  After setting any optional
-             * parameters, call the {@link Get#execute()} method to invoke the remote operation. <p> {@link
-             * Get#initialize(com.google.api.client.googleapis.services.AbstractGoogleClientRequest)} must be
-             * called to initialize this instance immediately after invoking the constructor. </p>
-             *
-             * @param transactionId
-             * @since 1.13
-             */
-            protected Get( java.lang.Long transactionId )
-            {
-                super( ProductBilling.this, "GET", REST_PATH, null, biz.turnonline.ecosystem.billing.model.Transaction.class );
-                this.transactionId = com.google.api.client.util.Preconditions.checkNotNull( transactionId, "Required parameter transactionId must be specified." );
-            }
-
-            @Override
-            public com.google.api.client.http.HttpResponse executeUsingHead() throws java.io.IOException
-            {
-                return super.executeUsingHead();
-            }
-
-            @Override
-            public com.google.api.client.http.HttpRequest buildHttpRequestUsingHead() throws java.io.IOException
-            {
-                return super.buildHttpRequestUsingHead();
-            }
-
-            @Override
-            public Get setAlt( java.lang.String alt )
-            {
-                return ( Get ) super.setAlt( alt );
-            }
-
-            @Override
-            public Get setFields( java.lang.String fields )
-            {
-                return ( Get ) super.setFields( fields );
-            }
-
-            @Override
-            public Get setKey( java.lang.String key )
-            {
-                return ( Get ) super.setKey( key );
-            }
-
-            @Override
-            public Get setOauthToken( java.lang.String oauthToken )
-            {
-                return ( Get ) super.setOauthToken( oauthToken );
-            }
-
-            @Override
-            public Get setPrettyPrint( java.lang.Boolean prettyPrint )
-            {
-                return ( Get ) super.setPrettyPrint( prettyPrint );
-            }
-
-            @Override
-            public Get setQuotaUser( java.lang.String quotaUser )
-            {
-                return ( Get ) super.setQuotaUser( quotaUser );
-            }
-
-            @Override
-            public Get setUserIp( java.lang.String userIp )
-            {
-                return ( Get ) super.setUserIp( userIp );
-            }
-
-            @com.google.api.client.util.Key( "transaction_id" )
-            private java.lang.Long transactionId;
-
-            /**
-             *
-             */
-            public java.lang.Long getTransactionId()
-            {
-                return transactionId;
-            }
-
-            public Get setTransactionId( java.lang.Long transactionId )
-            {
-                this.transactionId = transactionId;
-                return this;
-            }
-
-            @Override
-            public Get set( String parameterName, Object value )
-            {
-                return ( Get ) super.set( parameterName, value );
-            }
-        }
-
-        public class List
-                extends ProductBillingRequest<biz.turnonline.ecosystem.billing.model.TransactionCollection>
-        {
-
-            private static final String REST_PATH = "transactions";
-
-            /**
-             * Create a request for the method "transactions.list".
-             * <p>
-             * This request holds the parameters needed by the the billing server.  After setting any optional
-             * parameters, call the {@link List#execute()} method to invoke the remote operation. <p> {@link
-             * List#initialize(com.google.api.client.googleapis.services.AbstractGoogleClientRequest)} must be
-             * called to initialize this instance immediately after invoking the constructor. </p>
-             *
-             * @since 1.13
-             */
-            protected List()
-            {
-                super( ProductBilling.this, "GET", REST_PATH, null, biz.turnonline.ecosystem.billing.model.TransactionCollection.class );
-            }
-
-            @Override
-            public com.google.api.client.http.HttpResponse executeUsingHead() throws java.io.IOException
-            {
-                return super.executeUsingHead();
-            }
-
-            @Override
-            public com.google.api.client.http.HttpRequest buildHttpRequestUsingHead() throws java.io.IOException
-            {
-                return super.buildHttpRequestUsingHead();
-            }
-
-            @Override
-            public List setAlt( java.lang.String alt )
-            {
-                return ( List ) super.setAlt( alt );
-            }
-
-            @Override
-            public List setFields( java.lang.String fields )
-            {
-                return ( List ) super.setFields( fields );
-            }
-
-            @Override
-            public List setKey( java.lang.String key )
-            {
-                return ( List ) super.setKey( key );
-            }
-
-            @Override
-            public List setOauthToken( java.lang.String oauthToken )
-            {
-                return ( List ) super.setOauthToken( oauthToken );
-            }
-
-            @Override
-            public List setPrettyPrint( java.lang.Boolean prettyPrint )
-            {
-                return ( List ) super.setPrettyPrint( prettyPrint );
-            }
-
-            @Override
-            public List setQuotaUser( java.lang.String quotaUser )
-            {
-                return ( List ) super.setQuotaUser( quotaUser );
-            }
-
-            @Override
-            public List setUserIp( java.lang.String userIp )
-            {
-                return ( List ) super.setUserIp( userIp );
-            }
-
-            @com.google.api.client.util.Key
-            private java.lang.Integer limit;
-
-            /**
-             * [ default: 20]
-             * [
-             */
-            public java.lang.Integer getLimit()
-            {
-                return limit;
-            }
-
-            public List setLimit( java.lang.Integer limit )
-            {
-                this.limit = limit;
-                return this;
-            }
-
-            @com.google.api.client.util.Key
-            private java.lang.Integer offset;
-
-            @com.google.api.client.util.Key
-            private java.lang.String operation;
-
-            @com.google.api.client.util.Key
-            private java.lang.Long orderId;
-
-            @com.google.api.client.util.Key
-            private java.lang.String type;
-
-            /**
-             * [ default: both]
-             * [
-             */
-            public java.lang.String getOperation()
-            {
-                return operation;
-            }
-
-            public List setOperation( java.lang.String operation )
-            {
-                this.operation = operation;
-                return this;
-            }
-
-            @com.google.api.client.util.Key
-            private java.lang.Long invoiceId;
-
-            @com.google.api.client.util.Key
-            private java.lang.Long billId;
-
-            /**
-             * [ default: 0]
-             * [
-             */
-            public java.lang.Integer getOffset()
-            {
-                return offset;
-            }
-
-            public List setOffset( java.lang.Integer offset )
-            {
-                this.offset = offset;
-                return this;
-            }
-
-            /**
-             *
-             */
-            public java.lang.String getType()
-            {
-                return type;
-            }
-
-            public List setType( java.lang.String type )
-            {
-                this.type = type;
-                return this;
-            }
-
-            /**
-             *
-             */
-            public java.lang.Long getOrderId()
-            {
-                return orderId;
-            }
-
-            /**
-             *
-             */
-            public java.lang.Long getInvoiceId()
-            {
-                return invoiceId;
-            }
-
-            public List setInvoiceId( java.lang.Long invoiceId )
-            {
-                this.invoiceId = invoiceId;
-                return this;
-            }
-
-            public List setOrderId( java.lang.Long orderId )
-            {
-                this.orderId = orderId;
-                return this;
-            }
-
-            /**
-             *
-             */
-            public java.lang.Long getBillId()
-            {
-                return billId;
-            }
-
-            public List setBillId( java.lang.Long billId )
-            {
-                this.billId = billId;
-                return this;
-            }
-
-            @Override
-            public List set( String parameterName, Object value )
-            {
-                return ( List ) super.set( parameterName, value );
-            }
-        }
-
     }
 
     /**
@@ -8685,6 +8256,437 @@ public class ProductBilling
             public List setDomicile( java.lang.String domicile )
             {
                 this.domicile = domicile;
+                return this;
+            }
+
+            @Override
+            public List set( String parameterName, Object value )
+            {
+                return ( List ) super.set( parameterName, value );
+            }
+        }
+
+    }
+
+    /**
+     * The "transactions" collection of methods.
+     */
+    public class Transactions
+    {
+
+        /**
+         * Create a request for the method "transactions.get".
+         * <p>
+         * This request holds the parameters needed by the billing server.  After setting any optional
+         * parameters, call the {@link Get#execute()} method to invoke the remote operation.
+         *
+         * @param transactionId
+         * @return the request
+         */
+        public Get get( java.lang.Long transactionId ) throws java.io.IOException
+        {
+            Get result = new Get( transactionId );
+            initialize( result );
+            return result;
+        }
+
+        public class Get
+                extends ProductBillingRequest<biz.turnonline.ecosystem.billing.model.Transaction>
+        {
+
+            private static final String REST_PATH = "transactions/{transaction_id}";
+
+            /**
+             * Create a request for the method "transactions.get".
+             * <p>
+             * This request holds the parameters needed by the the billing server.  After setting any optional
+             * parameters, call the {@link Get#execute()} method to invoke the remote operation. <p> {@link
+             * Get#initialize(com.google.api.client.googleapis.services.AbstractGoogleClientRequest)} must be
+             * called to initialize this instance immediately after invoking the constructor. </p>
+             *
+             * @param transactionId
+             * @since 1.13
+             */
+            protected Get( java.lang.Long transactionId )
+            {
+                super( ProductBilling.this, "GET", REST_PATH, null, biz.turnonline.ecosystem.billing.model.Transaction.class );
+                this.transactionId = com.google.api.client.util.Preconditions.checkNotNull( transactionId, "Required parameter transactionId must be specified." );
+            }
+
+            @Override
+            public com.google.api.client.http.HttpResponse executeUsingHead() throws java.io.IOException
+            {
+                return super.executeUsingHead();
+            }
+
+            @Override
+            public com.google.api.client.http.HttpRequest buildHttpRequestUsingHead() throws java.io.IOException
+            {
+                return super.buildHttpRequestUsingHead();
+            }
+
+            @Override
+            public Get setAlt( java.lang.String alt )
+            {
+                return ( Get ) super.setAlt( alt );
+            }
+
+            @Override
+            public Get setFields( java.lang.String fields )
+            {
+                return ( Get ) super.setFields( fields );
+            }
+
+            @Override
+            public Get setKey( java.lang.String key )
+            {
+                return ( Get ) super.setKey( key );
+            }
+
+            @Override
+            public Get setOauthToken( java.lang.String oauthToken )
+            {
+                return ( Get ) super.setOauthToken( oauthToken );
+            }
+
+            @Override
+            public Get setPrettyPrint( java.lang.Boolean prettyPrint )
+            {
+                return ( Get ) super.setPrettyPrint( prettyPrint );
+            }
+
+            @Override
+            public Get setQuotaUser( java.lang.String quotaUser )
+            {
+                return ( Get ) super.setQuotaUser( quotaUser );
+            }
+
+            @Override
+            public Get setUserIp( java.lang.String userIp )
+            {
+                return ( Get ) super.setUserIp( userIp );
+            }
+
+            @com.google.api.client.util.Key( "transaction_id" )
+            private java.lang.Long transactionId;
+
+            /**
+             *
+             */
+            public java.lang.Long getTransactionId()
+            {
+                return transactionId;
+            }
+
+            public Get setTransactionId( java.lang.Long transactionId )
+            {
+                this.transactionId = transactionId;
+                return this;
+            }
+
+            @Override
+            public Get set( String parameterName, Object value )
+            {
+                return ( Get ) super.set( parameterName, value );
+            }
+        }
+
+        /**
+         * Create a request for the method "transactions.insert".
+         * <p>
+         * This request holds the parameters needed by the billing server.  After setting any optional
+         * parameters, call the {@link Insert#execute()} method to invoke the remote operation.
+         *
+         * @param content the {@link biz.turnonline.ecosystem.billing.model.Transaction}
+         * @return the request
+         */
+        public Insert insert( biz.turnonline.ecosystem.billing.model.Transaction content ) throws java.io.IOException
+        {
+            Insert result = new Insert( content );
+            initialize( result );
+            return result;
+        }
+
+        /**
+         * Create a request for the method "transactions.list".
+         * <p>
+         * This request holds the parameters needed by the billing server.  After setting any optional
+         * parameters, call the {@link List#execute()} method to invoke the remote operation.
+         *
+         * @return the request
+         */
+        public List list() throws java.io.IOException
+        {
+            List result = new List();
+            initialize( result );
+            return result;
+        }
+
+        public class Insert
+                extends ProductBillingRequest<Void>
+        {
+
+            private static final String REST_PATH = "transactions";
+
+            /**
+             * Create a request for the method "transactions.insert".
+             * <p>
+             * This request holds the parameters needed by the the billing server.  After setting any optional
+             * parameters, call the {@link Insert#execute()} method to invoke the remote operation. <p> {@link
+             * Insert#initialize(com.google.api.client.googleapis.services.AbstractGoogleClientRequest)} must
+             * be called to initialize this instance immediately after invoking the constructor. </p>
+             *
+             * @param content the {@link biz.turnonline.ecosystem.billing.model.Transaction}
+             * @since 1.13
+             */
+            protected Insert( biz.turnonline.ecosystem.billing.model.Transaction content )
+            {
+                super( ProductBilling.this, "POST", REST_PATH, content, Void.class );
+            }
+
+            @Override
+            public Insert setAlt( java.lang.String alt )
+            {
+                return ( Insert ) super.setAlt( alt );
+            }
+
+            @Override
+            public Insert setFields( java.lang.String fields )
+            {
+                return ( Insert ) super.setFields( fields );
+            }
+
+            @Override
+            public Insert setKey( java.lang.String key )
+            {
+                return ( Insert ) super.setKey( key );
+            }
+
+            @Override
+            public Insert setOauthToken( java.lang.String oauthToken )
+            {
+                return ( Insert ) super.setOauthToken( oauthToken );
+            }
+
+            @Override
+            public Insert setPrettyPrint( java.lang.Boolean prettyPrint )
+            {
+                return ( Insert ) super.setPrettyPrint( prettyPrint );
+            }
+
+            @Override
+            public Insert setQuotaUser( java.lang.String quotaUser )
+            {
+                return ( Insert ) super.setQuotaUser( quotaUser );
+            }
+
+            @Override
+            public Insert setUserIp( java.lang.String userIp )
+            {
+                return ( Insert ) super.setUserIp( userIp );
+            }
+
+            @Override
+            public Insert set( String parameterName, Object value )
+            {
+                return ( Insert ) super.set( parameterName, value );
+            }
+        }
+
+        public class List
+                extends ProductBillingRequest<biz.turnonline.ecosystem.billing.model.TransactionCollection>
+        {
+
+            private static final String REST_PATH = "transactions";
+
+            /**
+             * Create a request for the method "transactions.list".
+             * <p>
+             * This request holds the parameters needed by the the billing server.  After setting any optional
+             * parameters, call the {@link List#execute()} method to invoke the remote operation. <p> {@link
+             * List#initialize(com.google.api.client.googleapis.services.AbstractGoogleClientRequest)} must be
+             * called to initialize this instance immediately after invoking the constructor. </p>
+             *
+             * @since 1.13
+             */
+            protected List()
+            {
+                super( ProductBilling.this, "GET", REST_PATH, null, biz.turnonline.ecosystem.billing.model.TransactionCollection.class );
+            }
+
+            @Override
+            public com.google.api.client.http.HttpResponse executeUsingHead() throws java.io.IOException
+            {
+                return super.executeUsingHead();
+            }
+
+            @Override
+            public com.google.api.client.http.HttpRequest buildHttpRequestUsingHead() throws java.io.IOException
+            {
+                return super.buildHttpRequestUsingHead();
+            }
+
+            @Override
+            public List setAlt( java.lang.String alt )
+            {
+                return ( List ) super.setAlt( alt );
+            }
+
+            @Override
+            public List setFields( java.lang.String fields )
+            {
+                return ( List ) super.setFields( fields );
+            }
+
+            @Override
+            public List setKey( java.lang.String key )
+            {
+                return ( List ) super.setKey( key );
+            }
+
+            @Override
+            public List setOauthToken( java.lang.String oauthToken )
+            {
+                return ( List ) super.setOauthToken( oauthToken );
+            }
+
+            @Override
+            public List setPrettyPrint( java.lang.Boolean prettyPrint )
+            {
+                return ( List ) super.setPrettyPrint( prettyPrint );
+            }
+
+            @Override
+            public List setQuotaUser( java.lang.String quotaUser )
+            {
+                return ( List ) super.setQuotaUser( quotaUser );
+            }
+
+            @Override
+            public List setUserIp( java.lang.String userIp )
+            {
+                return ( List ) super.setUserIp( userIp );
+            }
+
+            @com.google.api.client.util.Key
+            private java.lang.String operation;
+
+            /**
+             * [ default: both]
+             * [
+             */
+            public java.lang.String getOperation()
+            {
+                return operation;
+            }
+
+            public List setOperation( java.lang.String operation )
+            {
+                this.operation = operation;
+                return this;
+            }
+
+            @com.google.api.client.util.Key
+            private java.lang.Long orderId;
+
+            @com.google.api.client.util.Key
+            private java.lang.String type;
+
+            @com.google.api.client.util.Key
+            private java.lang.Integer limit;
+
+            @com.google.api.client.util.Key
+            private java.lang.Long invoiceId;
+
+            /**
+             *
+             */
+            public java.lang.String getType()
+            {
+                return type;
+            }
+
+            public List setType( java.lang.String type )
+            {
+                this.type = type;
+                return this;
+            }
+
+            @com.google.api.client.util.Key
+            private java.lang.Integer offset;
+
+            @com.google.api.client.util.Key
+            private java.lang.Long billId;
+
+            /**
+             *
+             */
+            public java.lang.Long getOrderId()
+            {
+                return orderId;
+            }
+
+            public List setOrderId( java.lang.Long orderId )
+            {
+                this.orderId = orderId;
+                return this;
+            }
+
+            /**
+             *
+             */
+            public java.lang.Long getInvoiceId()
+            {
+                return invoiceId;
+            }
+
+            public List setInvoiceId( java.lang.Long invoiceId )
+            {
+                this.invoiceId = invoiceId;
+                return this;
+            }
+
+            /**
+             * [ default: 20]
+             * [
+             */
+            public java.lang.Integer getLimit()
+            {
+                return limit;
+            }
+
+            public List setLimit( java.lang.Integer limit )
+            {
+                this.limit = limit;
+                return this;
+            }
+
+            /**
+             * [ default: 0]
+             * [
+             */
+            public java.lang.Integer getOffset()
+            {
+                return offset;
+            }
+
+            public List setOffset( java.lang.Integer offset )
+            {
+                this.offset = offset;
+                return this;
+            }
+
+            /**
+             *
+             */
+            public java.lang.Long getBillId()
+            {
+                return billId;
+            }
+
+            public List setBillId( java.lang.Long billId )
+            {
+                this.billId = billId;
                 return this;
             }
 

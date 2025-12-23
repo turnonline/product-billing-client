@@ -1080,6 +1080,77 @@
                 ]
             }
         },
+        "/v1/offers/{offer_id}/send": {
+            "post": {
+                "tags": [
+                    "Direct Offers"
+                ],
+                "summary": "Sends an existing offer to a specific customer.",
+                "description": "Triggers the process of sending an offer identified by offer_id to a customer account.",
+                "operationId": "sendOfferToCustomer",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "offer_id",
+                        "in": "path",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64",
+                        "description": "The unique identifier of the offer to be sent."
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/SendOfferRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns the CompleteOffer object representing the offer after the send operation is completed.",
+                        "schema": {
+                            "$ref": "#/definitions/CompleteOffer"
+                        }
+                    },
+                    "400": {
+                        "description": "The customer account ID is mandatory. Or the offer payload definition is invalid (ApiValidationException).",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "The error when offer has a different owner as the authenticated account.",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Thrown if the offer/order identified by offer_id does not exist.",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "It's a failure of the server. The client can repeat the request without modifications at any later time.",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "firebase-a9a2a51a": []
+                    }
+                ]
+            }
+        },
         "/v1/offers/{offer_id}/recipients": {
             "get": {
                 "tags": [
@@ -7103,6 +7174,19 @@
                 "externalId": {
                     "type": "string",
                     "description": "The pickup point unique identification for the specified carrier."
+                }
+            }
+        },
+        "SendOfferRequest": {
+            "type": "object",
+            "required": [
+                "customerId"
+            ],
+            "properties": {
+                "customerId": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": "The identification of the customer as a recipient of the offer."
                 }
             }
         },

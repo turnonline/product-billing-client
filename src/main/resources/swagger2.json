@@ -6673,6 +6673,13 @@
                 "snippet": {
                     "type": "string",
                     "description": "The product short description, a brief overview (not appearing at invoice). The plain text only."
+                },
+                "breadcrumb": {
+                    "type": "array",
+                    "description": "The product hierarchical categorisation (breadcrumb).",
+                    "items": {
+                        "type": "string"
+                    }
                 }
             },
             "description": "The product definition within product catalog. It might be listed at invoice as a billing item with corresponding billing unit and amount or used anywhere publicly as a web page or content for a mobile app if published."

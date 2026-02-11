@@ -4544,8 +4544,7 @@
                 "produces": [
                     "application/json"
                 ],
-                "parameters": [
-                ],
+                "parameters": [],
                 "responses": {
                     "200": {
                         "description": "The transaction for given ID.",
@@ -6687,6 +6686,10 @@
                     "items": {
                         "type": "string"
                     }
+                },
+                "partner": {
+                    "description": "Rich product metadata from external partner.",
+                    "$ref": "#/definitions/PartnerMetadata"
                 }
             },
             "description": "The product definition within product catalog. It might be listed at invoice as a billing item with corresponding billing unit and amount or used anywhere publicly as a web page or content for a mobile app if published."
@@ -7544,6 +7547,89 @@
                 }
             },
             "description": "Summary per VAT rate."
+        },
+        "PartnerMetadata": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Internal identification within partner portfolio."
+                },
+                "logistics": {
+                    "description": "The product logistics properties.",
+                    "$ref": "#/definitions/Logistics"
+                },
+                "trade": {
+                    "description": "Trade and customs identification codes.",
+                    "$ref": "#/definitions/Trade"
+                },
+                "pricing": {
+                    "description": "Partner specific pricing configuration.",
+                    "$ref": "#/definitions/PartnerPricing"
+                }
+            },
+            "description": "The rich product metadata from external partner."
+        },
+        "Logistics": {
+            "type": "object",
+            "properties": {
+                "width": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "The width of the product in cm."
+                },
+                "height": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "The height of the product in cm."
+                },
+                "depth": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "The depth of the product in cm."
+                },
+                "weight": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "The weight of the product in kg."
+                }
+            },
+            "description": "Logistics related product properties."
+        },
+        "Trade": {
+            "type": "object",
+            "properties": {
+                "ean13": {
+                    "type": "string",
+                    "description": "European Article Number (EAN-13 barcode)."
+                },
+                "intrastat": {
+                    "type": "string",
+                    "description": "Intrastat Commodity Code (HS Code / CN8) for customs and trade statistics."
+                }
+            },
+            "description": "Trade and customs related product properties."
+        },
+        "PartnerPricing": {
+            "type": "object",
+            "properties": {
+                "retailPrice": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "Recommended Retail Price (RRP). Excl. VAT."
+                },
+                "wholesalePrice": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "Wholesale Price (net purchase cost). Excl. VAT."
+                },
+                "marketPrice": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "Estimated market price or average traditional store price. Excl. VAT."
+                }
+            },
+            "description": "Partner specific pricing details. All prices are excluding VAT."
         }
     }
 }

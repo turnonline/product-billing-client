@@ -6948,6 +6948,10 @@
                     "type": "string",
                     "description": "The product description for public use. It might be any plain text or HTML document."
                 },
+                "generateSummary": {
+                    "type": "boolean",
+                    "description": "The boolean indications whether to allow/disallow generate a summary from Gemini."
+                },
                 "modificationDate": {
                     "type": "string",
                     "format": "date-time",

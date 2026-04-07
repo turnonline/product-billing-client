@@ -6633,6 +6633,11 @@
         "Product": {
             "type": "object",
             "properties": {
+                "brand": {
+                    "type": "string",
+                    "description": "The product manufacturer or brand name.",
+                    "readOnly": true
+                },
                 "createdDate": {
                     "type": "string",
                     "format": "date-time",

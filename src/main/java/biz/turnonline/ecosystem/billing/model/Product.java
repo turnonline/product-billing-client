@@ -38,6 +38,12 @@ public final class Product
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
+    private java.lang.String brand;
+
+    /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
     private com.google.api.client.util.DateTime createdDate;
 
     /**
@@ -100,6 +106,23 @@ public final class Product
      */
     @com.google.api.client.util.Key
     private java.lang.String snippet;
+
+    /**
+     * @return value or {@code null} for none
+     */
+    public java.lang.String getBrand()
+    {
+        return brand;
+    }
+
+    /**
+     * @param brand brand or {@code null} for none
+     */
+    public Product setBrand( java.lang.String brand )
+    {
+        this.brand = brand;
+        return this;
+    }
 
     /**
      * @return value or {@code null} for none

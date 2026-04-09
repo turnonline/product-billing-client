@@ -6828,7 +6828,7 @@
                     "type": "object",
                     "description": "The map of key-value pairs representing the metadata field values.",
                     "additionalProperties": {
-                        "type": "string"
+                        "type": "object"
                     }
                 }
             },

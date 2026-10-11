@@ -47,6 +47,12 @@ public final class ProductMetaFields
     private java.util.List<java.lang.String> mandatory;
 
     /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
+    private java.util.Map<String, java.lang.Object> values;
+
+    /**
      * @return value or {@code null} for none
      */
     public java.util.List<java.lang.String> getAvailable()
@@ -77,6 +83,23 @@ public final class ProductMetaFields
     public ProductMetaFields setMandatory( java.util.List<java.lang.String> mandatory )
     {
         this.mandatory = mandatory;
+        return this;
+    }
+
+    /**
+     * @return value or {@code null} for none
+     */
+    public java.util.Map<String, java.lang.Object> getValues()
+    {
+        return values;
+    }
+
+    /**
+     * @param values values or {@code null} for none
+     */
+    public ProductMetaFields setValues( java.util.Map<String, java.lang.Object> values )
+    {
+        this.values = values;
         return this;
     }
 }

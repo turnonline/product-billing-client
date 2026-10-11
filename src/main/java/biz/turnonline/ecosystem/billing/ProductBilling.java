@@ -1644,6 +1644,25 @@ public class ProductBilling
         }
 
         /**
+         * Create a request for the method "offers.send".
+         * <p>
+         * This request holds the parameters needed by the billing server.  After setting any optional
+         * parameters, call the {@link Send#execute()} method to invoke the remote operation.
+         *
+         * @param offerId
+         * @param content the {@link biz.turnonline.ecosystem.billing.model.SendOfferRequest}
+         * @return the request
+         */
+        public Send send( java.lang.Long offerId,
+                          biz.turnonline.ecosystem.billing.model.SendOfferRequest content )
+                throws java.io.IOException
+        {
+            Send result = new Send( offerId, content );
+            initialize( result );
+            return result;
+        }
+
+        /**
          * Create a request for the method "offers.update".
          * <p>
          * This request holds the parameters needed by the billing server.  After setting any optional
@@ -2108,6 +2127,96 @@ public class ProductBilling
             public Purchase set( String parameterName, Object value )
             {
                 return ( Purchase ) super.set( parameterName, value );
+            }
+        }
+
+        public class Send
+                extends ProductBillingRequest<biz.turnonline.ecosystem.billing.model.CompleteOffer>
+        {
+
+            private static final String REST_PATH = "offers/{offer_id}/send";
+
+            @com.google.api.client.util.Key( "offer_id" )
+            private java.lang.Long offerId;
+
+            /**
+             * Create a request for the method "offers.send".
+             * <p>
+             * This request holds the parameters needed by the the billing server.  After setting any optional
+             * parameters, call the {@link Send#execute()} method to invoke the remote operation. <p>
+             * {@link
+             * Send#initialize(com.google.api.client.googleapis.services.AbstractGoogleClientRequest)}
+             * must be called to initialize this instance immediately after invoking the constructor. </p>
+             *
+             * @param offerId
+             * @param content the {@link biz.turnonline.ecosystem.billing.model.SendOfferRequest}
+             */
+            protected Send( java.lang.Long offerId, biz.turnonline.ecosystem.billing.model.SendOfferRequest content )
+            {
+                super( ProductBilling.this, "POST", REST_PATH, content, biz.turnonline.ecosystem.billing.model.CompleteOffer.class );
+                this.offerId = com.google.api.client.util.Preconditions.checkNotNull( offerId, "Required parameter offerId must be specified." );
+            }
+
+            @Override
+            public Send setAlt( java.lang.String alt )
+            {
+                return ( Send ) super.setAlt( alt );
+            }
+
+            @Override
+            public Send setFields( java.lang.String fields )
+            {
+                return ( Send ) super.setFields( fields );
+            }
+
+            @Override
+            public Send setKey( java.lang.String key )
+            {
+                return ( Send ) super.setKey( key );
+            }
+
+            @Override
+            public Send setOauthToken( java.lang.String oauthToken )
+            {
+                return ( Send ) super.setOauthToken( oauthToken );
+            }
+
+            @Override
+            public Send setPrettyPrint( java.lang.Boolean prettyPrint )
+            {
+                return ( Send ) super.setPrettyPrint( prettyPrint );
+            }
+
+            @Override
+            public Send setQuotaUser( java.lang.String quotaUser )
+            {
+                return ( Send ) super.setQuotaUser( quotaUser );
+            }
+
+            @Override
+            public Send setUserIp( java.lang.String userIp )
+            {
+                return ( Send ) super.setUserIp( userIp );
+            }
+
+            /**
+             *
+             */
+            public java.lang.Long getOfferId()
+            {
+                return offerId;
+            }
+
+            public Send setOfferId( java.lang.Long offerId )
+            {
+                this.offerId = offerId;
+                return this;
+            }
+
+            @Override
+            public Send set( String parameterName, Object value )
+            {
+                return ( Send ) super.set( parameterName, value );
             }
         }
 

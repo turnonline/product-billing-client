@@ -44,6 +44,12 @@ public final class Product
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
+    private java.util.List<java.lang.String> breadcrumb;
+
+    /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
     private com.google.api.client.util.DateTime createdDate;
 
     /**
@@ -93,6 +99,12 @@ public final class Product
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
+    private PartnerMetadata partner;
+
+    /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
     private ProductPricing pricing;
 
     /**
@@ -121,6 +133,23 @@ public final class Product
     public Product setBrand( java.lang.String brand )
     {
         this.brand = brand;
+        return this;
+    }
+
+    /**
+     * @return value or {@code null} for none
+     */
+    public java.util.List<java.lang.String> getBreadcrumb()
+    {
+        return breadcrumb;
+    }
+
+    /**
+     * @param breadcrumb breadcrumb or {@code null} for none
+     */
+    public Product setBreadcrumb( java.util.List<java.lang.String> breadcrumb )
+    {
+        this.breadcrumb = breadcrumb;
         return this;
     }
 
@@ -257,6 +286,23 @@ public final class Product
     public Product setOverview( ProductOverview overview )
     {
         this.overview = overview;
+        return this;
+    }
+
+    /**
+     * @return value or {@code null} for none
+     */
+    public PartnerMetadata getPartner()
+    {
+        return partner;
+    }
+
+    /**
+     * @param partner partner or {@code null} for none
+     */
+    public Product setPartner( PartnerMetadata partner )
+    {
+        this.partner = partner;
         return this;
     }
 

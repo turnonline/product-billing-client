@@ -75,6 +75,12 @@ public final class ProductPublishing
      * The value may be {@code null}.
      */
     @com.google.api.client.util.Key
+    private java.lang.Boolean generateSummary;
+
+    /**
+     * The value may be {@code null}.
+     */
+    @com.google.api.client.util.Key
     private com.google.api.client.util.DateTime modificationDate;
 
     /**
@@ -171,6 +177,23 @@ public final class ProductPublishing
     public ProductPublishing setDescription( java.lang.String description )
     {
         this.description = description;
+        return this;
+    }
+
+    /**
+     * @return value or {@code null} for none
+     */
+    public java.lang.Boolean getGenerateSummary()
+    {
+        return generateSummary;
+    }
+
+    /**
+     * @param generateSummary generateSummary or {@code null} for none
+     */
+    public ProductPublishing setGenerateSummary( java.lang.Boolean generateSummary )
+    {
+        this.generateSummary = generateSummary;
         return this;
     }
 

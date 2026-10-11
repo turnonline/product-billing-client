@@ -4737,8 +4737,8 @@
                 },
                 "dueDate": {
                     "type": "string",
-                    "format": "date-time",
-                    "description": "The invoice due date. If not provided, the on-premise accounting system default will be applied. RFC 3339"
+                    "format": "date",
+                    "description": "The invoice due date, a calendar date (YYYY-MM-DD). If not provided, the on-premise accounting system default will be applied."
                 },
                 "key": {
                     "type": "string",
@@ -4854,7 +4854,7 @@
             "properties": {
                 "beginOn": {
                     "type": "string",
-                    "format": "date-time",
+                    "format": "date",
                     "description": "Proposal of the start date if applicable."
                 },
                 "createdDate": {
@@ -5260,8 +5260,8 @@
                 },
                 "deadline": {
                     "type": "string",
-                    "format": "date-time",
-                    "description": "The last day to register. If not provided, the one day before begin.on will be set. Incl. time part, as an automated processing might be scheduled based on that time."
+                    "format": "date",
+                    "description": "The last day to register, a calendar date (YYYY-MM-DD). If not provided, the one day before begin.on will be set."
                 },
                 "end": {
                     "description": "The event last day definition.",
@@ -5289,7 +5289,7 @@
                 },
                 "on": {
                     "type": "string",
-                    "format": "date-time",
+                    "format": "date",
                     "description": "The event start date."
                 },
                 "show": {
@@ -5314,7 +5314,7 @@
                 },
                 "on": {
                     "type": "string",
-                    "format": "date-time",
+                    "format": "date",
                     "description": "The event end date."
                 },
                 "show": {
@@ -5427,12 +5427,12 @@
                 },
                 "dateOfIssue": {
                     "type": "string",
-                    "format": "date-time",
-                    "description": "The bill issue date. RFC 3339"
+                    "format": "date",
+                    "description": "The bill issue date, a calendar date (YYYY-MM-DD)."
                 },
                 "dateOfTaxable": {
                     "type": "string",
-                    "format": "date-time",
+                    "format": "date",
                     "description": "The date of taxable supplies. If not provided the date of issue will be used."
                 },
                 "payment": {
@@ -5468,7 +5468,7 @@
                 },
                 "dueDate": {
                     "type": "string",
-                    "format": "date-time",
+                    "format": "date",
                     "description": "The optional bill due date."
                 },
                 "totalAmount": {
@@ -5553,12 +5553,12 @@
                 },
                 "dateOfIssue": {
                     "type": "string",
-                    "format": "date-time",
-                    "description": "The bill issue date. RFC 3339"
+                    "format": "date",
+                    "description": "The bill issue date, a calendar date (YYYY-MM-DD)."
                 },
                 "dateOfTaxable": {
                     "type": "string",
-                    "format": "date-time",
+                    "format": "date",
                     "description": "The date of taxable supplies. If not provided the date of issue will be used."
                 },
                 "items": {
@@ -5646,13 +5646,13 @@
                 },
                 "dateOfIssue": {
                     "type": "string",
-                    "format": "date-time",
-                    "description": "The invoice date of issue. RFC 3339"
+                    "format": "date",
+                    "description": "The invoice date of issue, a calendar date (YYYY-MM-DD)."
                 },
                 "dateOfTaxable": {
                     "type": "string",
-                    "format": "date-time",
-                    "description": "The invoice date of taxable supplies. RFC 3339"
+                    "format": "date",
+                    "description": "The invoice date of taxable supplies, a calendar date (YYYY-MM-DD)."
                 },
                 "id": {
                     "type": "integer",
@@ -5763,13 +5763,13 @@
                 },
                 "dateOfIssue": {
                     "type": "string",
-                    "format": "date-time",
-                    "description": "The date of issue. If not provided, the current date will be used. RFC 3339"
+                    "format": "date",
+                    "description": "The date of issue, a calendar date (YYYY-MM-DD). If not provided, the current date will be used."
                 },
                 "dateOfTaxable": {
                     "type": "string",
-                    "format": "date-time",
-                    "description": "The date of taxable supplies. If not provided, the current date will be used. RFC 3339"
+                    "format": "date",
+                    "description": "The date of taxable supplies, a calendar date (YYYY-MM-DD). If not provided, the current date will be used."
                 },
                 "finalText": {
                     "type": "string",
@@ -6108,7 +6108,7 @@
             "properties": {
                 "beginOn": {
                     "type": "string",
-                    "format": "date-time",
+                    "format": "date",
                     "description": "The date of first invoice issue. Might be selected by the user."
                 },
                 "createdDate": {
@@ -6989,7 +6989,7 @@
             "properties": {
                 "beginOn": {
                     "type": "string",
-                    "format": "date-time",
+                    "format": "date",
                     "description": "The date of first invoice issue. Might be selected by the user."
                 },
                 "createdDate": {
